@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<chapter xml:id="ch-data-analysis">
+  <title>Data Analysis and Visualization with Web-R</title>
+  
+  <introduction>
+    <p>This unit introduces techniques for analyzing and visualizing data using Web-R.</p>
+  </introduction>
+  
+  <!-- Your sections will go here -->
+</chapter>

@@ -1,0 +1,2237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<chapter xml:id="ch-understanding-data">
+  <title>Understanding Data in Our World</title>
+
+  <introduction>
+    <p>This unit introduces fundamental concepts of data science, exploring how data shapes our world and the various ways we can classify, collect, and evaluate data.</p>
+  </introduction>
+
+  <!-- TOPIC 1: INTRODUCTION TO DATA -->
+  <section xml:id="sec-intro-to-data">
+    <title>Introduction to Data</title>
+    
+    <!-- Session 1: What is Data Science and its Applications? -->
+    <subsection xml:id="subsec-what-is-data-science">
+      <title>What is Data Science and its Applications?</title>
+      
+      <p>Data science combines multiple disciplines to extract meaningful insights from data. It incorporates elements of statistics, computer science, domain expertise, and critical thinking to interpret complex datasets.</p>
+      
+      <p>The field has grown exponentially as organizations recognize the value of data-driven decision making across sectors including healthcare, finance, technology, and marketing.</p>
+      
+      <definition xml:id="def-data-science">
+        <statement>
+          <p>Data Science is an interdisciplinary field that uses scientific methods, processes, algorithms, and systems to extract knowledge and insights from structured and unstructured data.</p>
+        </statement>
+      </definition>
+      
+      <example>
+        <statement>
+          <p>A healthcare provider uses patient data to predict which individuals might be at risk for specific conditions, allowing for early intervention and preventive care.</p>
+        </statement>
+      </example>
+      
+      <!-- Interactive knowledge check -->
+      <exercise xml:id="ex-data-science-applications">
+        <title>Knowledge Check: Data Science Applications</title>
+        <statement>
+          <p>Which of the following is NOT typically considered an application of data science?</p>
+        </statement>
+        <choices randomize="yes">
+          <choice>
+            <statement>
+              <p>Predictive maintenance for industrial equipment</p>
+            </statement>
+            <feedback>
+              <p>This is a common application of data science, using sensor data to predict when equipment might fail.</p>
+            </feedback>
+          </choice>
+          <choice correct="yes">
+            <statement>
+              <p>Manual data entry into spreadsheets</p>
+            </statement>
+            <feedback>
+              <p>Correct! While data entry is important for data collection, it's not considered a data science application itself.</p>
+            </feedback>
+          </choice>
+          <choice>
+            <statement>
+              <p>Customer segmentation for targeted marketing</p>
+            </statement>
+            <feedback>
+              <p>This is a common data science application in marketing analytics.</p>
+            </feedback>
+          </choice>
+          <choice>
+            <statement>
+              <p>Fraud detection in financial transactions</p>
+            </statement>
+            <feedback>
+              <p>This is a major application of data science in the financial sector.</p>
+            </feedback>
+          </choice>
+        </choices>
+      </exercise>
+      
+      <p>Data science applications continue to expand as technology evolves. From improving healthcare outcomes to optimizing supply chains, the impact of data-driven decision making touches virtually every industry.</p>
+    </subsection>
+    
+    <!-- Explore how data shapes our daily lives -->
+    <subsection xml:id="subsec-data-daily-lives">
+      <title>Explore how data shapes our daily lives</title>
+      
+      <p>Data has become integral to our daily experiences, often in ways we don't notice. From personalized recommendations on streaming platforms to traffic routing in navigation apps, data analytics influences countless aspects of modern life.</p>
+      
+      <p>Consider these common examples of data science in daily life:</p>
+      <ul>
+        <li>
+          <p>Recommendation systems on streaming and e-commerce platforms</p>
+        </li>
+        <li>
+          <p>Weather forecasting applications</p>
+        </li>
+        <li>
+          <p>Personalized health insights from wearable devices</p>
+        </li>
+        <li>
+          <p>Traffic optimization in navigation apps</p>
+        </li>
+        <li>
+          <p>Fraud detection systems for financial transactions</p>
+        </li>
+      </ul>
+      
+      <exploration>
+        <title>Data Around You</title>
+        <statement>
+          <p>Take a moment to reflect on your digital activities in the past 24 hours. List three examples where you've interacted with systems that likely used data science to customize or improve your experience.</p>
+        </statement>
+      </exploration>
+      
+      <!-- Interactive check for understanding -->
+      <exercise xml:id="ex-matching-data-examples">
+        <title>Match Data Types to Real-World Examples</title>
+        <statement>
+          <p>Match each data-driven system to the primary type of data it collects:</p>
+        </statement>
+        <matches>
+          <match>
+            <premise>Weather forecasting app</premise>
+            <response>Atmospheric sensor data</response>
+          </match>
+          <match>
+            <premise>Music streaming service</premise>
+            <response>Listening habits and preferences</response>
+          </match>
+          <match>
+            <premise>Fitness tracker</premise>
+            <response>Biometric and activity data</response>
+          </match>
+          <match>
+            <premise>E-commerce website</premise>
+            <response>Browsing and purchase history</response>
+          </match>
+        </matches>
+      </exercise>
+      
+      <p>The ubiquity of data in our lives raises important questions about privacy, security, and the ethical use of information. As we become more data-driven as a society, understanding these implications becomes increasingly important.</p>
+    </subsection>
+    
+    <!-- Set up Web-R accounts and platform familiarization -->
+    <subsection xml:id="subsec-web-r-setup">
+      <title>Set up Web-R accounts and platform familiarization</title>
+      
+      <p>In this course, we'll use Web-R as our primary platform for data analysis. Web-R provides a cloud-based environment for R programming that eliminates the need for local installation.</p>
+      
+      <technology xml:id="tech-web-r">
+        <title>Setting Up Your Web-R Account</title>
+        <p>Follow these steps to create and configure your Web-R account:</p>
+        <ol>
+          <li>
+            <p>Navigate to the Web-R platform (link provided in your course materials)</p>
+          </li>
+          <li>
+            <p>Click "Create Account" and enter your academic email address</p>
+          </li>
+          <li>
+            <p>Complete the verification process via the email sent to you</p>
+          </li>
+          <li>
+            <p>Log in and customize your workspace settings</p>
+          </li>
+        </ol>
+      </technology>
+      
+      <figure xml:id="fig-web-r-interface">
+        <caption>Web-R interface overview</caption>
+        <image source="assets/web-r-interface.png" width="80%">
+          <description>Screenshot of the Web-R interface showing the main components: script editor (top left), console (bottom left), environment/history (top right), and files/plots/packages/help (bottom right).</description>
+        </image>
+      </figure>
+      
+      <p>The Web-R environment consists of several key components:</p>
+      <ul>
+        <li>
+          <p><term>Script Editor</term>: Where you write and edit your R code</p>
+        </li>
+        <li>
+          <p><term>Console</term>: Where code is executed and results are displayed</p>
+        </li>
+        <li>
+          <p><term>Environment Pane</term>: Shows variables and objects in memory</p>
+        </li>
+        <li>
+          <p><term>Output Pane</term>: Displays plots, files, packages, and help documentation</p>
+        </li>
+      </ul>
+      
+      <program interactive="webr" xml:id="prog-first-r-commands">
+        <input>
+        <![CDATA[
+          # Your first R commands
+          # Create a simple variable
+          x <- 10
+          
+          # Print the value
+          print(x)
+          
+          # Perform a simple calculation
+          y <- x * 2
+          print(y)
+          
+          # Create a simple vector
+          numbers <- c(5, 10, 15, 20, 25)
+          
+          # Calculate the mean
+          mean(numbers)
+          ]]>
+        </input>
+      </program>
+      
+      <!-- Interactive check -->
+      <exercise xml:id="ex-web-r-interface">
+        <title>Web-R Interface Identification</title>
+        <statement>
+          <p>Identify the four main panels in the Web-R interface and their functions:</p>
+        </statement>
+        <hint>
+          <p>Look at the figure above for reference.</p>
+        </hint>
+        <answer>
+          <p>The four main panels are:</p>
+          <ol>
+            <li>
+              <p>Script Editor (top left): Where you write and edit your R code</p>
+            </li>
+            <li>
+              <p>Console (bottom left): Where code is executed and results are displayed</p>
+            </li>
+            <li>
+              <p>Environment/History (top right): Shows variables in memory and command history</p>
+            </li>
+            <li>
+              <p>Files/Plots/Packages/Help (bottom right): Tabbed panel for file navigation, viewing plots, managing packages, and accessing help documentation</p>
+            </li>
+          </ol>
+        </answer>
+      </exercise>
+    </subsection>
+  </section>
+  
+  <!-- TOPIC 2: TYPES OF DATA AND THEIR CHARACTERISTICS -->
+  <section xml:id="sec-types-of-data">
+    <title>Types of data and their characteristics</title>
+    
+    <!-- Session 2: Qualitative vs. quantitative data -->
+    <subsection xml:id="subsec-qualitative-quantitative">
+      <title>Qualitative vs. quantitative data</title>
+      
+      <p>Data can be broadly categorized into two main types: qualitative and quantitative. Understanding the difference is crucial for selecting appropriate analysis methods.</p>
+      
+      <definition xml:id="def-qualitative-data">
+        <statement>
+          <p>Qualitative data represents descriptive information that can be observed but not measured numerically. It includes categories, attributes, labels, or other descriptive properties.</p>
+        </statement>
+      </definition>
+      
+      <definition xml:id="def-quantitative-data">
+        <statement>
+          <p>Quantitative data represents numerical measurements or counts that can be expressed as numbers and analyzed mathematically.</p>
+        </statement>
+      </definition>
+      
+      <table xml:id="table-qual-quant-comparison">
+        <title>Comparison of Qualitative and Quantitative Data</title>
+        <tabular halign="center">
+          <row header="yes">
+            <cell>Aspect</cell>
+            <cell>Qualitative Data</cell>
+            <cell>Quantitative Data</cell>
+          </row>
+          <row>
+            <cell>Nature</cell>
+            <cell>Descriptive</cell>
+            <cell>Numerical</cell>
+          </row>
+          <row>
+            <cell>Examples</cell>
+            <cell>Color, gender, opinion</cell>
+            <cell>Height, weight, temperature</cell>
+          </row>
+          <row>
+            <cell>Analysis Methods</cell>
+            <cell>Thematic, content analysis</cell>
+            <cell>Statistical analysis</cell>
+          </row>
+          <row>
+            <cell>Data Collection</cell>
+            <cell>Interviews, observations</cell>
+            <cell>Experiments, surveys with numeric responses</cell>
+          </row>
+        </tabular>
+      </table>
+      
+      <p>Quantitative data can be further divided into:</p>
+      <ul>
+        <li>
+          <p><term>Discrete data</term>: Counts or whole numbers (e.g., number of students in a class)</p>
+        </li>
+        <li>
+          <p><term>Continuous data</term>: Measurements that can take any value within a range (e.g., height, weight, time)</p>
+        </li>
+      </ul>
+      
+      <p>Qualitative data can be categorized as:</p>
+      <ul>
+        <li>
+          <p><term>Nominal</term>: Categories with no inherent order (e.g., colors, gender)</p>
+        </li>
+        <li>
+          <p><term>Ordinal</term>: Categories with a meaningful order (e.g., education level, satisfaction ratings)</p>
+        </li>
+      </ul>
+      
+      <!-- Interactive sorting activity -->
+      <exercise xml:id="ex-sort-data-types">
+        <title>Sort the Data Types</title>
+        <statement>
+          <p>Classify each of the following as either qualitative or quantitative data:</p>
+        </statement>
+        <matches>
+          <match>
+            <premise>Student's favorite color</premise>
+            <response>Qualitative</response>
+          </match>
+          <match>
+            <premise>Temperature in degrees Celsius</premise>
+            <response>Quantitative</response>
+          </match>
+          <match>
+            <premise>Number of students in a class</premise>
+            <response>Quantitative</response>
+          </match>
+          <match>
+            <premise>Brand of smartphone</premise>
+            <response>Qualitative</response>
+          </match>
+          <match>
+            <premise>Customer satisfaction rating (1-5 stars)</premise>
+            <response>Quantitative</response>
+          </match>
+          <match>
+            <premise>Blood type</premise>
+            <response>Qualitative</response>
+          </match>
+        </matches>
+      </exercise>
+    </subsection>
+    
+    <!-- Structured vs. unstructured data -->
+    <subsection xml:id="subsec-structured-unstructured">
+      <title>Structured vs. unstructured data</title>
+      
+      <p>Another important distinction in data science is between structured and unstructured data, which affects how we store, process, and analyze information.</p>
+      
+      <definition xml:id="def-structured-data">
+        <statement>
+          <p>Structured data is organized in a predefined format, typically arranged in rows and columns, making it easily searchable and analyzable using traditional database techniques.</p>
+        </statement>
+      </definition>
+      
+      <definition xml:id="def-unstructured-data">
+        <statement>
+          <p>Unstructured data lacks a predefined organization or format, making it more challenging to process using conventional methods. Examples include text documents, social media posts, images, and videos.</p>
+        </statement>
+      </definition>
+      
+      <figure xml:id="fig-data-structure-types">
+        <caption>Structured vs. Unstructured Data</caption>
+        <sidebyside widths="47% 47%">
+          <figure>
+            <caption>Structured Data Example</caption>
+            <image source="assets/structured-data.png" width="100%">
+              <description>A spreadsheet showing neatly organized data in rows and columns</description>
+            </image>
+          </figure>
+          <figure>
+            <caption>Unstructured Data Example</caption>
+            <image source="assets/unstructured-data.png" width="100%">
+              <description>Various unorganized data formats including text documents, images, and audio files</description>
+            </image>
+          </figure>
+        </sidebyside>
+      </figure>
+      
+      <p>Between these two extremes is <term>semi-structured data</term>, which contains some organizational properties but doesn't conform to the strict structure of a relational database. Examples include JSON and XML files.</p>
+      
+      <example>
+        <title>Examples of Data Structure Types</title>
+        <statement>
+          <p><em>Structured data</em>: Customer database with columns for name, address, purchase history</p>
+          <p><em>Semi-structured data</em>: JSON file containing customer reviews with varying fields</p>
+          <p><em>Unstructured data</em>: Collection of video testimonials from customers</p>
+        </statement>
+      </example>
+      
+      <!-- Interactive knowledge check -->
+      <exercise xml:id="ex-structured-unstructured">
+        <title>Identify Data Structure Types</title>
+        <statement>
+          <p>Identify whether each of the following is typically structured or unstructured data:</p>
+        </statement>
+        <choices>
+          <choice correct="yes">
+            <statement>
+              <p>A CSV file containing customer purchase history</p>
+            </statement>
+            <feedback>
+              <p>Correct! CSV files are organized in rows and columns, making them structured data.</p>
+            </feedback>
+          </choice>
+          <choice correct="no">
+            <statement>
+              <p>A collection of customer reviews written as free text</p>
+            </statement>
+            <feedback>
+              <p>Free text reviews are unstructured data as they don't follow a predefined format.</p>
+            </feedback>
+          </choice>
+          <choice correct="yes">
+            <statement>
+              <p>A relational database of product inventory</p>
+            </statement>
+            <feedback>
+              <p>Correct! Relational databases are a classic example of structured data.</p>
+            </feedback>
+          </choice>
+          <choice correct="no">
+            <statement>
+              <p>A folder of surveillance camera footage</p>
+            </statement>
+            <feedback>
+              <p>Video footage is unstructured data as it doesn't have a predefined organizational format.</p>
+            </feedback>
+          </choice>
+        </choices>
+      </exercise>
+    </subsection>
+    
+    <!-- Activity: Identifying data types in real-world examples -->
+    <subsection xml:id="subsec-data-types-activity">
+      <title>Activity: Identifying data types in real-world examples</title>
+      
+      <activity xml:id="activity-data-types">
+        <title>Data Type Scavenger Hunt</title>
+        <statement>
+          <p>For this activity, you'll examine various real-world datasets and identify the types of data they contain.</p>
+          
+          <p>Instructions:</p>
+          <ol>
+            <li>
+              <p>Form small groups of 2-3 students</p>
+            </li>
+            <li>
+              <p>Access the provided sample datasets in your Web-R workspace</p>
+            </li>
+            <li>
+              <p>For each dataset, identify:</p>
+              <ul>
+                <li>
+                  <p>Whether it contains primarily qualitative or quantitative data</p>
+                </li>
+                <li>
+                  <p>Whether it is structured or unstructured</p>
+                </li>
+                <li>
+                  <p>At least three specific variables and their data types</p>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <p>Record your findings in the provided worksheet</p>
+            </li>
+            <li>
+              <p>Be prepared to share your analysis with the class</p>
+            </li>
+          </ol>
+        </statement>
+        
+        <hint>
+          <p>Remember that some datasets might contain multiple types of data. Focus on identifying the characteristics of each variable.</p>
+        </hint>
+      </activity>
+      
+      <program interactive="webr" xml:id="prog-inspect-data-types">
+        <input>
+          # Load a sample dataset
+          data(mtcars)
+          
+          # Examine the structure
+          str(mtcars)
+          
+          # Summary statistics
+          summary(mtcars)
+          
+          # First few rows
+          head(mtcars)
+        </input>
+      </program>
+      
+      <exercise xml:id="ex-data-types-reflection">
+        <title>Reflection Question</title>
+        <statement>
+          <p>After examining the mtcars dataset above, answer the following questions:</p>
+          <ol>
+            <li>
+              <p>What type of data (qualitative/quantitative) is mostly represented in this dataset?</p>
+            </li>
+            <li>
+              <p>Is this dataset structured or unstructured? Explain why.</p>
+            </li>
+            <li>
+              <p>Identify two variables that might be useful for predicting a car's fuel efficiency (mpg). Explain your reasoning.</p>
+            </li>
+          </ol>
+        </statement>
+      </exercise>
+    </subsection>
+  </section>
+  
+  <!-- TOPIC 2: DATA COLLECTION AND SOURCES -->
+  <section xml:id="sec-data-collection">
+    <title>Data Collection and Sources</title>
+    
+    <!-- Session 3: How data is collected and by whom -->
+    <subsection xml:id="subsec-data-collection-methods">
+      <title>How data is collected and by whom</title>
+      
+      <p>Data collection is the process of gathering and measuring information on variables of interest in a systematic way. The methods used and the entities involved in collection significantly impact data quality and usability.</p>
+      
+      <p>Common data collection methods include:</p>
+      <ul>
+        <li>
+          <p><term>Surveys and questionnaires</term>: Structured sets of questions presented to respondents</p>
+        </li>
+        <li>
+          <p><term>Interviews</term>: One-on-one or group discussions to gather in-depth information</p>
+        </li>
+        <li>
+          <p><term>Observations</term>: Direct recording of behaviors, events, or patterns</p>
+        </li>
+        <li>
+          <p><term>Sensors and IoT devices</term>: Automated collection of environmental or activity data</p>
+        </li>
+        <li>
+          <p><term>Web scraping</term>: Extraction of data from websites</p>
+        </li>
+        <li>
+          <p><term>Transaction records</term>: Data generated during business operations</p>
+        </li>
+      </ul>
+      
+      <exercise xml:id="ex-data-collection-methods">
+        <title>Match the Method</title>
+        <statement>
+          <p>Match each data collection scenario with the most appropriate method:</p>
+        </statement>
+        <matches>
+          <match>
+            <premise>A researcher recording the number of people entering a store each hour</premise>
+            <response>Observation</response>
+          </match>
+          <match>
+            <premise>A device measuring room temperature every 15 minutes</premise>
+            <response>Sensors and IoT devices</response>
+          </match>
+          <match>
+            <premise>A marketer gathering customer feedback on a new product</premise>
+            <response>Surveys and questionnaires</response>
+          </match>
+          <match>
+            <premise>A program collecting product prices from various online retailers</premise>
+            <response>Web scraping</response>
+          </match>
+        </matches>
+      </exercise>
+    </subsection>
+    
+    <!-- Organizations that collect data and their motivations -->
+    <subsection xml:id="subsec-data-collection-organizations">
+      <title>Organizations that collect data and their motivations</title>
+      
+      <p>Various entities collect data for different purposes, each with their own motivations and objectives:</p>
+      
+      <ul>
+        <li>
+          <p><term>Businesses</term>: Collect customer data to improve products, target marketing, and increase profitability</p>
+        </li>
+        <li>
+          <p><term>Government agencies</term>: Gather data for policy making, public service provision, and regulatory purposes</p>
+        </li>
+        <li>
+          <p><term>Academic institutions</term>: Collect data for research and knowledge advancement</p>
+        </li>
+        <li>
+          <p><term>Healthcare providers</term>: Maintain patient records for treatment planning and health management</p>
+        </li>
+        <li>
+          <p><term>Non-profit organizations</term>: Gather data to support advocacy, service delivery, and impact measurement</p>
+        </li>
+      </ul>
+      
+      <example>
+        <title>Data Collection Motivations</title>
+        <statement>
+          <p>A retail company collects purchase transaction data to:</p>
+          <ul>
+            <li>
+              <p>Optimize inventory levels</p>
+            </li>
+            <li>
+              <p>Develop targeted marketing campaigns</p>
+            </li>
+            <li>
+              <p>Identify cross-selling opportunities</p>
+            </li>
+            <li>
+              <p>Predict consumer trends</p>
+            </li>
+          </ul>
+        </statement>
+      </example>
+      
+      <exercise xml:id="ex-org-motivations">
+        <title>Identify Organizational Motivations</title>
+        <statement>
+          <p>For each organization type, identify their most likely primary motivation for collecting data:</p>
+        </statement>
+        <choices>
+          <choice correct="yes">
+            <statement>
+              <p>A social media company primarily collects user interaction data to:</p>
+            </statement>
+            <answer>Sell targeted advertising</answer>
+          </choice>
+          <choice correct="yes">
+            <statement>
+              <p>A government census bureau primarily collects population data to:</p>
+            </statement>
+            <answer>Allocate resources and representation</answer>
+          </choice>
+          <choice correct="yes">
+            <statement>
+              <p>A university primarily collects student performance data to:</p>
+            </statement>
+            <answer>Improve educational outcomes and institutional effectiveness</answer>
+          </choice>
+          <choice correct="yes">
+            <statement>
+              <p>A healthcare provider primarily collects patient health history to:</p>
+            </statement>
+            <answer>Provide appropriate and effective treatment</answer>
+          </choice>
+        </choices>
+      </exercise>
+    </subsection>
+    
+    <!-- Introduction to the DIKW pyramid -->
+    <subsection xml:id="subsec-dikw-pyramid">
+      <title>Introduction to the DIKW pyramid</title>
+      
+      <p>The DIKW (Data, Information, Knowledge, Wisdom) pyramid is a conceptual framework that illustrates the hierarchical relationships between different levels of understanding and insight.</p>
+      
+      <figure xml:id="fig-dikw-pyramid">
+        <caption>The DIKW Pyramid</caption>
+        <image source="assets/dikw-pyramid.png" width="80%">
+          <description>A pyramid showing the hierarchical progression from Data at the bottom, followed by Information, Knowledge, and Wisdom at the top.</description>
+        </image>
+      </figure>
+      
+      <p>The four levels of the pyramid are:</p>
+      
+      <definition xml:id="def-data-dikw">
+        <statement>
+          <p><term>Data</term>: Raw facts and figures without context or interpretation (e.g., a list of numbers)</p>
+        </statement>
+      </definition>
+      
+      <definition xml:id="def-information-dikw">
+        <statement>
+          <p><term>Information</term>: Data that has been processed, organized, or structured to provide meaning and context (e.g., those numbers organized into a table with labels)</p>
+        </statement>
+      </definition>
+      
+      <definition xml:id="def-knowledge-dikw">
+        <statement>
+          <p><term>Knowledge</term>: Information that has been analyzed, interpreted, and understood, allowing for its application (e.g., recognizing patterns in the table)</p>
+        </statement>
+      </definition>
+      
+      <definition xml:id="def-wisdom-dikw">
+        <statement>
+          <p><term>Wisdom</term>: The ability to apply knowledge effectively, make sound judgments, and take appropriate actions based on understanding and experience (e.g., making informed decisions based on the patterns)</p>
+        </statement>
+      </definition>
+      
+      <example>
+        <title>DIKW in Practice</title>
+        <statement>
+          <p><em>Data</em>: 98.6, 101.2, 97.9, 100.4, 99.1</p>
+          <p><em>Information</em>: Patient temperature readings over five days: 98.6°F, 101.2°F, 97.9°F, 100.4°F, 99.1°F</p>
+          <p><em>Knowledge</em>: The patient had a fever that peaked on day 2 and has been gradually subsiding</p>
+          <p><em>Wisdom</em>: Based on the pattern of decreasing fever and other symptoms, the treatment is working and should be continued</p>
+        </statement>
+      </example>
+      
+      <exercise xml:id="ex-dikw-levels">
+        <title>Identify DIKW Levels</title>
+        <statement>
+          <p>Classify each of the following examples according to its level in the DIKW pyramid:</p>
+        </statement>
+        <matches>
+          <match>
+            <premise>A spreadsheet showing raw sales figures: $10,435, $12,893, $9,260...</premise>
+            <response>Data</response>
+          </match>
+          <match>
+            <premise>A monthly sales report comparing current performance to targets and historical trends</premise>
+            <response>Information</response>
+          </match>
+          <match>
+            <premise>Understanding that sales increase during certain seasons and with specific marketing campaigns</premise>
+            <response>Knowledge</response>
+          </match>
+          <match>
+            <premise>Developing a strategic plan to optimize marketing spending and inventory based on sales patterns</premise>
+            <response>Wisdom</response>
+          </match>
+        </matches>
+      </exercise>
+    </subsection>
+    
+    <!-- Discussion: Ethics of data collection -->
+    <subsection xml:id="subsec-ethics-data-collection">
+      <title>Discussion: Ethics of data collection</title>
+      
+      <p>The collection and use of data raise important ethical considerations, particularly regarding privacy, consent, and potential biases. Key ethical principles include:</p>
+      
+      <ul>
+        <li>
+          <p><term>Informed consent</term>: Ensuring individuals understand what data is being collected and how it will be used</p>
+        </li>
+        <li>
+          <p><term>Data minimization</term>: Collecting only the data necessary for the stated purpose</p>
+        </li>
+        <li>
+          <p><term>Privacy protection</term>: Implementing measures to safeguard personal information</p>
+        </li>
+        <li>
+          <p><term>Transparency</term>: Being open about data collection practices and purposes</p>
+        </li>
+        <li>
+          <p><term>Fairness</term>: Ensuring data collection methods don't disadvantage or discriminate against particular groups</p>
+        </li>
+      </ul>
+      
+      <exploration xml:id="exp-ethical-case-study">
+        <title>Ethical Case Study</title>
+        <statement>
+          <p>Consider the following scenario:</p>
+          <p>A social media company has collected extensive data on users' browsing habits, post interactions, and private messages. They plan to use this data to develop a psychological profile of each user for targeted advertising. They included this in their terms of service, which users accepted when joining the platform.</p>
+          <p>Discuss the following questions:</p>
+          <ol>
+            <li>
+              <p>Is this data collection ethically justified? Why or why not?</p>
+            </li>
+            <li>
+              <p>Does inclusion in the terms of service constitute proper informed consent?</p>
+            </li>
+            <li>
+              <p>What potential harms could arise from this data use?</p>
+            </li>
+            <li>
+              <p>What alternative approaches might better balance business needs with ethical considerations?</p>
+            </li>
+          </ol>
+        </statement>
+      </exploration>
+      
+      <exercise xml:id="ex-ethical-principles">
+        <title>Ethical Principles in Action</title>
+        <statement>
+          <p>For each scenario, identify which ethical principle(s) is being violated or upheld:</p>
+        </statement>
+        <choices>
+          <choice correct="no">
+            <statement>
+              <p>A retail store tracks customers by their cell phone signals without notification.</p>
+            </statement>
+            <feedback>
+              <p>This violates informed consent and transparency principles, as customers are unaware their movements are being tracked.</p>
+            </feedback>
+          </choice>
+          <choice correct="yes">
+            <statement>
+              <p>A research study collects only anonymous demographic information necessary for their analysis.</p>
+            </statement>
+            <feedback>
+              <p>This upholds the data minimization principle by collecting only what's necessary for the stated purpose.</p>
+            </feedback>
+          </choice>
+          <choice correct="no">
+            <statement>
+              <p>A company stores customer credit card details in an unencrypted database.</p>
+            </statement>
+            <feedback>
+              <p>This violates privacy protection principles, as sensitive financial information is not being adequately safeguarded.</p>
+            </feedback>
+          </choice>
+          <choice correct="yes">
+            <statement>
+              <p>A website explains clearly how cookies will be used before asking for permission.</p>
+            </statement>
+            <feedback>
+              <p>This upholds informed consent and transparency principles by clearly explaining data practices before collection.</p>
+            </feedback>
+          </choice>
+        </choices>
+      </exercise>
+    </subsection>
+  </section>
+
+  <!-- TOPIC 2: DATA COLLECTION AND SOURCES (CONTINUED) -->
+  <section xml:id="sec-data-sources">
+    <title>Primary vs. secondary data sources</title>
+    
+    <!-- Session 4: Primary vs. secondary data sources -->
+    <subsection xml:id="subsec-primary-secondary-data">
+      <title>Distinguishing between data sources</title>
+      
+      <p>In data science, it's important to understand the origin of your data and how it was collected. Data sources are typically classified as either primary or secondary.</p>
+      
+      <definition xml:id="def-primary-data">
+        <statement>
+          <p><term>Primary data</term> is information collected directly by the researcher for a specific purpose. The researcher controls the collection process, design, and methods.</p>
+        </statement>
+      </definition>
+      
+      <definition xml:id="def-secondary-data">
+        <statement>
+          <p><term>Secondary data</term> is information collected by someone else for another purpose and reused by the researcher. It may have been processed or analyzed before becoming available.</p>
+        </statement>
+      </definition>
+      
+      <table xml:id="table-primary-secondary-comparison">
+        <title>Comparison of Primary and Secondary Data Sources</title>
+        <tabular halign="center">
+          <row header="yes">
+            <cell>Characteristic</cell>
+            <cell>Primary Data</cell>
+            <cell>Secondary Data</cell>
+          </row>
+          <row>
+            <cell>Collection</cell>
+            <cell>Collected firsthand by the researcher</cell>
+            <cell>Collected by someone else</cell>
+          </row>
+          <row>
+            <cell>Purpose</cell>
+            <cell>Designed for specific research objectives</cell>
+            <cell>Originally collected for different purposes</cell>
+          </row>
+          <row>
+            <cell>Time</cell>
+            <cell>More time-consuming to collect</cell>
+            <cell>Often immediately available</cell>
+          </row>
+          <row>
+            <cell>Cost</cell>
+            <cell>Usually more expensive</cell>
+            <cell>Generally less expensive or free</cell>
+          </row>
+          <row>
+            <cell>Control</cell>
+            <cell>High control over methods and quality</cell>
+            <cell>Limited or no control over methods</cell>
+          </row>
+          <row>
+            <cell>Examples</cell>
+            <cell>Surveys, experiments, interviews</cell>
+            <cell>Census data, academic publications, company reports</cell>
+          </row>
+        </tabular>
+      </table>
+      
+      <example>
+        <title>Primary vs. Secondary Data Examples</title>
+        <statement>
+          <p><em>Primary data example</em>: A researcher designs and conducts a survey to gather information about consumer preferences for a new product.</p>
+          <p><em>Secondary data example</em>: A researcher analyzes existing customer review data from an e-commerce website to understand consumer preferences.</p>
+        </statement>
+      </example>
+      
+      <exercise xml:id="ex-identify-data-sources">
+        <title>Identify Data Source Types</title>
+        <statement>
+          <p>Classify each of the following as either a primary or secondary data source:</p>
+        </statement>
+        <matches>
+          <match>
+            <premise>Conducting focus groups with potential customers</premise>
+            <response>Primary data</response>
+          </match>
+          <match>
+            <premise>Analyzing government census statistics</premise>
+            <response>Secondary data</response>
+          </match>
+          <match>
+            <premise>Tracking website user behavior with analytics tools</premise>
+            <response>Primary data</response>
+          </match>
+          <match>
+            <premise>Using historical stock market data from a financial database</premise>
+            <response>Secondary data</response>
+          </match>
+          <match>
+            <premise>Setting up sensors to monitor traffic patterns</premise>
+            <response>Primary data</response>
+          </match>
+          <match>
+            <premise>Reviewing academic journal articles for a literature review</premise>
+            <response>Secondary data</response>
+          </match>
+        </matches>
+      </exercise>
+    </subsection>
+    
+    <!-- Reliability and validity of different sources -->
+    <subsection xml:id="subsec-reliability-validity">
+      <title>Reliability and validity of different sources</title>
+      
+      <p>When evaluating data sources, it's essential to consider their reliability and validity to ensure the quality of your analysis and conclusions.</p>
+      
+      <definition xml:id="def-reliability">
+        <statement>
+          <p><term>Reliability</term> refers to the consistency and stability of a data source. A reliable source produces similar results under consistent conditions when measurements are repeated.</p>
+        </statement>
+      </definition>
+      
+      <definition xml:id="def-validity">
+        <statement>
+          <p><term>Validity</term> refers to how accurately a data source measures what it claims to measure. Valid data truly represents the concept or phenomenon being studied.</p>
+        </statement>
+      </definition>
+      
+      <p>Factors affecting the reliability and validity of data sources include:</p>
+      <ul>
+        <li>
+          <p><term>Methodology</term>: How the data was collected</p>
+        </li>
+        <li>
+          <p><term>Sample size and selection</term>: Whether the sample is representative and adequate</p>
+        </li>
+        <li>
+          <p><term>Measurement instruments</term>: The quality and calibration of tools used</p>
+        </li>
+        <li>
+          <p><term>Data processing methods</term>: How raw data was cleaned, aggregated, or transformed</p>
+        </li>
+        <li>
+          <p><term>Source reputation</term>: The credibility of the organization or individuals who collected the data</p>
+        </li>
+        <li>
+          <p><term>Potential biases</term>: Systematic errors in collection or reporting</p>
+        </li>
+        <li>
+          <p><term>Recency</term>: How recently the data was collected</p>
+        </li>
+      </ul>
+      
+      <example>
+        <title>Evaluating Data Source Quality</title>
+        <statement>
+          <p>Consider a research study on consumer spending habits:</p>
+          <p><em>High reliability and validity</em>: A large-scale, randomized survey conducted by a reputable market research firm using validated questionnaires, with transparent methodology and a representative sample</p>
+          <p><em>Low reliability and validity</em>: An online poll on a niche website with a small, self-selected sample of respondents, using ambiguous questions and no controls for duplicate submissions</p>
+        </statement>
+      </example>
+      
+      <exercise xml:id="ex-source-evaluation">
+        <title>Evaluate Data Source Quality</title>
+        <statement>
+          <p>For each scenario, identify at least two factors that might affect the reliability or validity of the data source:</p>
+        </statement>
+        <hint>
+          <p>Consider who collected the data, how it was collected, and for what purpose.</p>
+        </hint>
+        <exercise>
+          <statement>
+            <p>A survey about political opinions conducted via landline phones only</p>
+          </statement>
+          <answer>
+            <p>Sample bias (excludes those without landlines, who tend to be younger)</p>
+            <p>Response bias (people with strong political opinions may be more likely to participate)</p>
+          </answer>
+        </exercise>
+        <exercise>
+          <statement>
+            <p>Customer satisfaction data collected by a company through product registration cards</p>
+          </statement>
+          <answer>
+            <p>Sample bias (only customers who complete registration cards)</p>
+            <p>Timing bias (feedback collected immediately after purchase, before long-term use)</p>
+          </answer>
+        </exercise>
+        <exercise>
+          <statement>
+            <p>Health statistics reported by a country with limited healthcare infrastructure</p>
+          </statement>
+          <answer>
+            <p>Coverage bias (data may only reflect populations with healthcare access)</p>
+            <p>Measurement inconsistency (limited diagnostic capabilities may affect accuracy)</p>
+          </answer>
+        </exercise>
+      </exercise>
+    </subsection>
+    
+    <!-- Mini-project introduction: Personal data tracking exercise -->
+    <subsection xml:id="subsec-personal-data-tracking">
+      <title>Mini-project introduction: Personal data tracking exercise</title>
+      
+      <p>In this course-long mini-project, you'll collect and analyze your own personal data to gain hands-on experience with data science concepts.</p>
+      
+      <project xml:id="proj-personal-data-tracking">
+        <title>Personal Data Tracking Project</title>
+        <statement>
+          <p>For this project, you will:</p>
+          <ol>
+            <li>
+              <p>Select a personal data tracking topic (e.g., screen time, physical activity, study habits, spending, etc.)</p>
+            </li>
+            <li>
+              <p>Design a data collection methodology and tracking system</p>
+            </li>
+            <li>
+              <p>Consistently collect data over the course duration</p>
+            </li>
+            <li>
+              <p>Periodically analyze the data using techniques learned in class</p>
+            </li>
+            <li>
+              <p>Present insights and findings at the end of the course</p>
+            </li>
+          </ol>
+        </statement>
+      </project>
+      
+      <p>Project milestones and check-ins will occur throughout the course:</p>
+      <ul>
+        <li>
+          <p><term>Week 2-4</term>: Topic selection and tracking system design</p>
+        </li>
+        <li>
+          <p><term>Week 6</term>: Initial data review and methodology refinement</p>
+        </li>
+        <li>
+          <p><term>Week 9</term>: Mid-project check-in and preliminary analysis</p>
+        </li>
+        <li>
+          <p><term>Week 12</term>: Final analysis and presentation preparation</p>
+        </li>
+      </ul>
+      
+      <exploration xml:id="exp-tracking-brainstorm">
+        <title>Personal Data Tracking Brainstorm</title>
+        <statement>
+          <p>Take a few minutes to brainstorm potential topics for your personal data tracking project. Consider:</p>
+          <ul>
+            <li>
+              <p>What aspects of your daily life are you curious about?</p>
+            </li>
+            <li>
+              <p>What behaviors or patterns might you want to understand better?</p>
+            </li>
+            <li>
+              <p>What data would be practical for you to collect consistently?</p>
+            </li>
+            <li>
+              <p>What potential insights might be valuable to you?</p>
+            </li>
+          </ul>
+          <p>List at least three potential tracking topics and briefly explain why each interests you.</p>
+        </statement>
+      </exploration>
+      
+      <exercise xml:id="ex-tracking-methods">
+        <title>Match Data Collection Methods</title>
+        <statement>
+          <p>Match each personal tracking topic with the most appropriate data collection method:</p>
+        </statement>
+        <matches>
+          <match>
+            <premise>Sleep patterns</premise>
+            <response>Mobile app or wearable device</response>
+          </match>
+          <match>
+            <premise>Mood fluctuations</premise>
+            <response>Daily journal or rating scale</response>
+          </match>
+          <match>
+            <premise>Spending habits</premise>
+            <response>Expense tracking app or spreadsheet</response>
+          </match>
+          <match>
+            <premise>Study productivity</premise>
+            <response>Time tracking tool or timer</response>
+          </match>
+          <match>
+            <premise>Nutrition intake</premise>
+            <response>Food diary or photo log</response>
+          </match>
+        </matches>
+      </exercise>
+    </subsection>
+  </section>
+
+  <!-- TOPIC 3: DATA QUALITY AND EVALUATION -->
+  <section xml:id="sec-data-quality">
+    <title>Data Quality and Evaluation</title>
+    
+    <!-- Session 5: Evaluating dataset quality -->
+    <subsection xml:id="subsec-dataset-quality">
+      <title>Evaluating dataset quality</title>
+      
+      <p>The quality of your data directly impacts the reliability of your analysis and conclusions. Evaluating dataset quality is a critical step in the data science workflow.</p>
+      
+      <p>Key dimensions of data quality include:</p>
+      <ul>
+        <li>
+          <p><term>Accuracy</term>: The degree to which data correctly reflects the real world</p>
+        </li>
+        <li>
+          <p><term>Completeness</term>: The extent to which required data is available</p>
+        </li>
+        <li>
+          <p><term>Consistency</term>: The absence of contradictions within the data</p>
+        </li>
+        <li>
+          <p><term>Timeliness</term>: How current the data is relative to needs</p>
+        </li>
+        <li>
+          <p><term>Precision</term>: The level of detail in the data</p>
+        </li>
+        <li>
+          <p><term>Relevance</term>: How applicable the data is to the specific analysis needs</p>
+        </li>
+      </ul>
+      
+      <example>
+        <title>Data Quality Issues</title>
+        <statement>
+          <p>Consider a customer database with the following issues:</p>
+          <ul>
+            <li>
+              <p><em>Accuracy issue</em>: Some customer addresses are incorrectly formatted or contain typos</p>
+            </li>
+            <li>
+              <p><em>Completeness issue</em>: 15% of customer records are missing email addresses</p>
+            </li>
+            <li>
+              <p><em>Consistency issue</em>: The same customer appears multiple times with slightly different information</p>
+            </li>
+            <li>
+              <p><em>Timeliness issue</em>: Contact information hasn't been updated in over three years</p>
+            </li>
+          </ul>
+        </statement>
+      </example>
+    </subsection>
+    
+    <!-- The 5Vs framework: Volume, Velocity, Variety, Veracity, Value -->
+    <subsection xml:id="subsec-5vs-framework">
+      <title>The 5Vs framework: Volume, Velocity, Variety, Veracity, Value</title>
+      
+      <p>The 5Vs framework is a useful model for evaluating the characteristics and challenges of datasets, particularly in the context of big data.</p>
+      
+      <definition xml:id="def-volume">
+        <statement>
+          <p><term>Volume</term> refers to the size of the dataset. Big data typically involves datasets too large to be processed by traditional database systems.</p>
+        </statement>
+      </definition>
+      
+      <definition xml:id="def-velocity">
+        <statement>
+          <p><term>Velocity</term> refers to the speed at which data is generated, collected, and processed. High-velocity data streams require real-time or near-real-time processing.</p>
+        </statement>
+      </definition>
+      
+      <definition xml:id="def-variety">
+        <statement>
+          <p><term>Variety</term> refers to the diversity of data types and sources. Modern datasets often combine structured, semi-structured, and unstructured data.</p>
+        </statement>
+      </definition>
+      
+      <definition xml:id="def-veracity">
+        <statement>
+          <p><term>Veracity</term> refers to the reliability and trustworthiness of the data. It addresses concerns about data accuracy, completeness, and potential biases.</p>
+        </statement>
+      </definition>
+      
+      <definition xml:id="def-value">
+        <statement>
+          <p><term>Value</term> refers to the usefulness and applicability of the data for generating insights and informing decisions.</p>
+        </statement>
+      </definition>
+      
+      <figure xml:id="fig-5vs-framework">
+        <caption>The 5Vs of Big Data</caption>
+        <image source="assets/5vs-framework.png" width="80%">
+          <description>A diagram showing the five Vs of big data: Volume, Velocity, Variety, Veracity, and Value, with icons representing each concept.</description>
+        </image>
+      </figure>
+      
+      <exercise xml:id="ex-identify-5vs">
+        <title>Identify the 5Vs</title>
+        <statement>
+          <p>Match each scenario with the most relevant "V" from the 5Vs framework:</p>
+        </statement>
+        <matches>
+          <match>
+            <premise>A social media platform processes 500 million tweets per day</premise>
+            <response>Volume</response>
+          </match>
+          <match>
+            <premise>A financial system must detect fraud attempts in milliseconds</premise>
+            <response>Velocity</response>
+          </match>
+          <match>
+            <premise>A retailer combines purchase records, website clicks, and customer service interactions</premise>
+            <response>Variety</response>
+          </match>
+          <match>
+            <premise>Researchers are concerned about sampling bias in their survey data</premise>
+            <response>Veracity</response>
+          </match>
+          <match>
+            <premise>A company evaluates whether collecting certain data will improve business outcomes</premise>
+            <response>Value</response>
+          </match>
+        </matches>
+      </exercise>
+    </subsection>
+    
+    <!-- Identifying biases in datasets -->
+    <subsection xml:id="subsec-identifying-biases">
+      <title>Identifying biases in datasets</title>
+      
+      <p>Biases in datasets can lead to skewed analysis, inaccurate predictions, and potentially harmful decisions. Identifying and addressing these biases is a critical responsibility in data science.</p>
+      
+      <p>Common types of biases include:</p>
+      <ul>
+        <li>
+          <p><term>Selection bias</term>: When the data does not represent the population it's intended to analyze</p>
+        </li>
+        <li>
+          <p><term>Sampling bias</term>: When certain members of the intended population are more likely to be included than others</p>
+        </li>
+        <li>
+          <p><term>Measurement bias</term>: When the method of data collection systematically distorts the data</p>
+        </li>
+        <li>
+          <p><term>Confirmation bias</term>: When data is collected or interpreted to confirm preexisting beliefs</p>
+        </li>
+        <li>
+          <p><term>Survivorship bias</term>: When analysis focuses only on data that "survived" some selection process</p>
+        </li>
+        <li>
+          <p><term>Reporting bias</term>: When only certain outcomes or observations are reported</p>
+        </li>
+      </ul>
+      
+      <example>
+        <title>Dataset Biases in Practice</title>
+        <statement>
+          <p><em>Selection bias example</em>: A survey about internet usage conducted exclusively online will miss people with limited or no internet access.</p>
+          <p><em>Measurement bias example</em>: A health study that relies on self-reported exercise levels may be skewed by respondents overestimating their activity.</p>
+          <p><em>Survivorship bias example</em>: Analyzing only successful startups while ignoring failed ones will give an incomplete picture of success factors.</p>
+        </statement>
+      </example>
+      
+      <exercise xml:id="ex-identify-biases">
+        <title>Identify Dataset Biases</title>
+        <statement>
+          <p>For each scenario, identify the most likely type of bias:</p>
+        </statement>
+        <choices>
+          <choice correct="yes">
+            <statement>
+              <p>A study on work-life balance surveys employees during business hours at their workplace</p>
+            </statement>
+            <answer>Selection bias</answer>
+            <feedback>
+              <p>This is selection bias because it only captures employees who are at work during business hours, missing those who work different shifts or are absent.</p>
+            </feedback>
+          </choice>
+          <choice correct="yes">
+            <statement>
+              <p>A product rating system only prompts for feedback from customers who completed a purchase</p>
+            </statement>
+            <answer>Sampling bias</answer>
+            <feedback>
+              <p>This is sampling bias because it excludes potential customers who decided not to purchase, perhaps due to negative impressions.</p>
+            </feedback>
+          </choice>
+          <choice correct="yes">
+            <statement>
+              <p>A researcher examining the durability of products only analyzes items that are returned under warranty</p>
+            </statement>
+            <answer>Survivorship bias</answer>
+            <feedback>
+              <p>This is survivorship bias because it only examines failed products that were returned, missing both successful products and those that failed but weren't returned.</p>
+            </feedback>
+          </choice>
+          <choice correct="yes">
+            <statement>
+              <p>A study finds that taller people earn more on average, but doesn't account for gender differences</p>
+            </statement>
+            <answer>Measurement bias</answer>
+            <feedback>
+              <p>This is measurement bias because the relationship between height and income may be confounded by gender, as men are typically taller and often earn more due to gender-based pay disparities.</p>
+            </feedback>
+          </choice>
+        </choices>
+      </exercise>
+    </subsection>
+    
+    <!-- Activity: Apply 5Vs to evaluate sample datasets -->
+    <subsection xml:id="subsec-apply-5vs">
+      <title>Activity: Apply 5Vs to evaluate sample datasets</title>
+      
+      <activity xml:id="activity-evaluate-5vs">
+        <title>Dataset Evaluation with the 5Vs Framework</title>
+        <statement>
+          <p>In this activity, you will apply the 5Vs framework to evaluate different sample datasets.</p>
+          
+          <p>Instructions:</p>
+          <ol>
+            <li>
+              <p>Form small groups of 2-3 students</p>
+            </li>
+            <li>
+              <p>Each group will be assigned one of the following datasets:</p>
+              <ul>
+                <li>
+                  <p>Twitter sentiment data during a major sporting event</p>
+                </li>
+                <li>
+                  <p>Hospital patient records from a regional healthcare system</p>
+                </li>
+                <li>
+                  <p>Real-time sensor data from manufacturing equipment</p>
+                </li>
+                <li>
+                  <p>Customer transaction history from an e-commerce platform</p>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <p>For your assigned dataset, assess each of the 5Vs:</p>
+              <ul>
+                <li>
+                  <p>Volume: How large is the dataset likely to be?</p>
+                </li>
+                <li>
+                  <p>Velocity: At what rate is new data generated?</p>
+                </li>
+                <li>
+                  <p>Variety: What different types of data are included?</p>
+                </li>
+                <li>
+                  <p>Veracity: What quality issues or biases might be present?</p>
+                </li>
+                <li>
+                  <p>Value: What insights or applications could this data support?</p>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <p>Create a brief presentation of your evaluation</p>
+            </li>
+            <li>
+              <p>Share your findings with the class</p>
+            </li>
+          </ol>
+        </statement>
+      </activity>
+      
+      <program interactive="webr" xml:id="prog-dataset-quality-check">
+        <input>
+          # Load a dataset with quality issues
+          data(airquality)
+          
+          # Check the structure
+          str(airquality)
+          
+          # Summary to identify potential quality issues
+          summary(airquality)
+          
+          # Count missing values in each column
+          sapply(airquality, function(x) sum(is.na(x)))
+          
+          # Visualize missing data patterns
+          image(is.na(airquality), 
+                main="Missing Values in Air Quality Dataset",
+                ylab="Observations", 
+                xlab="Variables",
+                col=c("green", "red"))
+        </input>
+      </program>
+      
+      <exercise xml:id="ex-5vs-application">
+        <title>Apply the 5Vs Framework</title>
+        <statement>
+          <p>Based on the airquality dataset examined above, evaluate each dimension of the 5Vs framework:</p>
+        </statement>
+        <response/>
+      </exercise>
+    </subsection>
+  </section>
+
+  <!-- Topic 3: Data Quality and Evaluation (Continued) -->
+  <section xml:id="sec-data-decision-making">
+    <title>Data and decision-making</title>
+    
+    <!-- Session 6: How data informs decisions at different levels -->
+    <subsection xml:id="subsec-data-decision-levels">
+      <title>How data informs decisions at different levels</title>
+      
+      <p>Data-driven decision making is the practice of using data analysis to inform choices at various organizational levels. The application of data varies from strategic to operational decisions.</p>
+      
+      <p>Decision levels typically include:</p>
+      <ul>
+        <li>
+          <p><term>Strategic decisions</term>: Long-term, high-impact choices about organizational direction and priorities (e.g., entering new markets, major investments)</p>
+        </li>
+        <li>
+          <p><term>Tactical decisions</term>: Medium-term choices about resource allocation and implementation of strategic goals (e.g., marketing campaign planning, quarterly budget adjustments)</p>
+        </li>
+        <li>
+          <p><term>Operational decisions</term>: Day-to-day choices about process execution and immediate responses (e.g., inventory management, customer service responses)</p>
+        </li>
+        <li>
+          <p><term>Individual decisions</term>: Personal choices made by individuals based on available data (e.g., consumer purchase decisions, health choices)</p>
+        </li>
+      </ul>
+      
+      <example>
+        <title>Data-Driven Decisions Across Levels</title>
+        <statement>
+          <p>In a retail business:</p>
+          <p><em>Strategic level</em>: Using market trend data to decide which new product categories to develop</p>
+          <p><em>Tactical level</em>: Analyzing seasonal sales patterns to plan inventory purchases for the upcoming quarter</p>
+          <p><em>Operational level</em>: Using real-time sales data to adjust staffing levels for the next day</p>
+          <p><em>Individual level</em>: A store manager using performance metrics to provide feedback to employees</p>
+        </statement>
+      </example>
+      
+      <exercise xml:id="ex-decision-levels">
+        <title>Match Decision Levels</title>
+        <statement>
+          <p>Match each data-driven decision scenario to its appropriate level:</p>
+        </statement>
+        <matches>
+          <match>
+            <premise>A company analyzes global economic forecasts to decide on a five-year expansion plan</premise>
+            <response>Strategic</response>
+          </match>
+          <match>
+            <premise>A marketing team uses A/B testing results to refine a campaign for the next month</premise>
+            <response>Tactical</response>
+          </match>
+          <match>
+            <premise>A warehouse manager uses hourly tracking data to prioritize shipping orders</premise>
+            <response>Operational</response>
+          </match>
+          <match>
+            <premise>A consumer reviews product ratings and price comparisons before making a purchase</premise>
+            <response>Individual</response>
+          </match>
+        </matches>
+      </exercise>
+    </subsection>
+    
+    <!-- Case studies of data-driven decision making -->
+    <subsection xml:id="subsec-data-driven-case-studies">
+      <title>Case studies of data-driven decision making</title>
+      
+      <p>Examining real-world examples of data-driven decision making helps illustrate best practices and potential pitfalls.</p>
+      
+      <case xml:id="case-netflix-recommendations">
+        <title>Netflix Content Recommendations</title>
+        <statement>
+          <p>Netflix uses viewer data to inform both strategic content acquisition decisions and personalized recommendations:</p>
+          <ul>
+            <li>
+              <p>Collects detailed viewing behavior data (what users watch, when they pause, when they stop watching)</p>
+            </li>
+            <li>
+              <p>Analyzes viewing patterns to identify audience preferences and trends</p>
+            </li>
+            <li>
+              <p>Uses insights to inform original content development (e.g., "House of Cards" was commissioned partly based on data showing audience interest in political dramas and Kevin Spacey films)</p>
+            </li>
+            <li>
+              <p>Develops sophisticated recommendation algorithms to personalize each user's experience</p>
+            </li>
+            <li>
+              <p>Continually tests and refines recommendation systems to improve user engagement</p>
+            </li>
+          </ul>
+        </statement>
+        <analysis>
+          <p>Key success factors:</p>
+          <ul>
+            <li>
+              <p>Integration of data across strategic and operational decisions</p>
+            </li>
+            <li>
+              <p>Combination of algorithmic recommendations with human judgment</p>
+            </li>
+            <li>
+              <p>Substantial investment in data infrastructure and analytics capability</p>
+            </li>
+            <li>
+              <p>Continuous learning and adaptation based on results</p>
+            </li>
+          </ul>
+        </analysis>
+      </case>
+      
+      <case xml:id="case-target-predictive-analytics">
+        <title>Target's Predictive Analytics</title>
+        <statement>
+          <p>Target's pregnancy prediction model demonstrates both the power and potential concerns of predictive analytics:</p>
+          <ul>
+            <li>
+              <p>Developed a model to identify customers who were likely pregnant based on purchase patterns</p>
+            </li>
+            <li>
+              <p>Used this information to send targeted marketing for baby-related products</p>
+            </li>
+            <li>
+              <p>In a famous incident, the model correctly identified a teenage girl as pregnant before her father knew, leading to privacy concerns</p>
+            </li>
+            <li>
+              <p>Subsequently adjusted their approach to be less transparent about their targeting methods</p>
+            </li>
+          </ul>
+        </statement>
+        <analysis>
+          <p>Key lessons:</p>
+          <ul>
+            <li>
+              <p>Predictive analytics can reveal sensitive insights people may not want exposed</p>
+            </li>
+            <li>
+              <p>Technical capability should be balanced with ethical considerations</p>
+              </li>
+           <li>
+             <p>Transparency and privacy must be carefully balanced in data-driven marketing</p>
+           </li>
+           <li>
+             <p>Even accurate predictions can create negative reactions if they violate perceived privacy boundaries</p>
+           </li>
+         </ul>
+       </analysis>
+     </case>
+     
+     <exercise xml:id="ex-case-study-analysis">
+       <title>Case Study Analysis</title>
+       <statement>
+         <p>Consider the case studies presented above and answer the following questions:</p>
+         <ol>
+           <li>
+             <p>What are the key differences in how Netflix and Target used data for decision-making?</p>
+           </li>
+           <li>
+             <p>What ethical considerations arose in each case, and how might they have been addressed differently?</p>
+           </li>
+           <li>
+             <p>How did each organization balance automated data analysis with human judgment?</p>
+           </li>
+           <li>
+             <p>What lessons can other organizations learn from these examples about effective data-driven decision making?</p>
+           </li>
+         </ol>
+       </statement>
+     </exercise>
+   </subsection>
+   
+   <!-- Mini-project check-in: Personal data tracking discussion -->
+   <subsection xml:id="subsec-personal-data-tracking-checkin">
+     <title>Mini-project check-in: Personal data tracking discussion</title>
+     
+     <p>This session provides an opportunity to review progress on your personal data tracking mini-project.</p>
+     
+     <exploration xml:id="exp-tracking-progress">
+       <title>Personal Data Tracking Reflection</title>
+       <statement>
+         <p>Take a few minutes to reflect on your data tracking experience so far:</p>
+         <ol>
+           <li>
+             <p>What data are you tracking and how are you collecting it?</p>
+           </li>
+           <li>
+             <p>What challenges have you encountered in consistent data collection?</p>
+           </li>
+           <li>
+             <p>What initial patterns or insights have you observed?</p>
+           </li>
+           <li>
+             <p>How might you improve your data collection methodology?</p>
+           </li>
+           <li>
+             <p>What questions do you hope to answer with your collected data?</p>
+           </li>
+         </ol>
+       </statement>
+     </exploration>
+     
+     <program interactive="webr" xml:id="prog-personal-data-analysis">
+       <input>
+         # Example code for personal data analysis
+         # Replace with your own data and analysis as appropriate
+         
+         # Create a simple sample dataset similar to what you might collect
+         dates &lt;- seq(as.Date("2025-04-01"), as.Date("2025-04-14"), by="days")
+         values &lt;- c(45, 52, 48, 60, 65, 57, 50, 63, 58, 70, 55, 62, 59, 68)
+         
+         # Create a data frame
+         tracking_data &lt;- data.frame(
+           date = dates,
+           value = values
+         )
+         
+         # Print the data
+         print(tracking_data)
+         
+         # Simple visualization
+         plot(tracking_data$date, tracking_data$value, 
+              type = "b", 
+              main = "Personal Tracking Data",
+              xlab = "Date", 
+              ylab = "Value")
+         
+         # Basic statistics
+         summary(tracking_data$value)
+         
+         # Identify trends
+         model &lt;- lm(value ~ as.numeric(date), data = tracking_data)
+         summary(model)
+       </input>
+     </program>
+     
+     <exercise xml:id="ex-tracking-improvement">
+       <title>Improve Your Data Collection</title>
+       <statement>
+         <p>Based on our discussion and what you've learned about data quality, identify:</p>
+         <ol>
+           <li>
+             <p>Two specific ways you could improve the quality of your personal data collection</p>
+           </li>
+           <li>
+             <p>One potential bias in your current collection methodology and how you might address it</p>
+           </li>
+           <li>
+             <p>One additional variable you could track that might provide valuable context or insights</p>
+           </li>
+         </ol>
+       </statement>
+       <response/>
+     </exercise>
+   </subsection>
+ </section>
+
+ <!-- TOPIC 4: DATA IMPACT AND ETHICS -->
+ <section xml:id="sec-data-impact">
+   <title>Data Impact and Ethics</title>
+   
+   <!-- Session 7: Data's impact on equity and society -->
+   <subsection xml:id="subsec-data-equity-impact">
+     <title>Data's impact on equity and society</title>
+     
+     <p>Data and algorithms increasingly influence important decisions in society, from hiring and lending to criminal justice and healthcare. This influence carries significant implications for equity and fairness.</p>
+     
+     <p>Key areas of societal impact include:</p>
+     <ul>
+       <li>
+         <p><term>Access to opportunities</term>: How data-driven systems determine who gets jobs, loans, housing, or education</p>
+       </li>
+       <li>
+         <p><term>Resource allocation</term>: How algorithms distribute public resources, services, or attention</p>
+       </li>
+       <li>
+         <p><term>Representation</term>: How data collection and analysis shapes whose perspectives and needs are considered</p>
+       </li>
+       <li>
+         <p><term>Privacy and autonomy</term>: How data systems affect individual rights and freedoms</p>
+       </li>
+       <li>
+         <p><term>Cultural impact</term>: How data-driven platforms influence cultural expression and diversity</p>
+       </li>
+     </ul>
+     
+     <p>Data science can either reinforce existing inequities or help address them, depending on how it's practiced.</p>
+     
+     <example>
+       <title>Data Impact Examples</title>
+       <statement>
+         <p><em>Reinforcing inequity</em>: A hiring algorithm trained on historical data learns to prefer candidates from prestigious universities, perpetuating existing socioeconomic advantages</p>
+         <p><em>Promoting equity</em>: Public health data analysis identifies underserved communities and informs targeted resource allocation to address healthcare disparities</p>
+       </statement>
+     </example>
+     
+     <exploration xml:id="exp-data-impact-society">
+       <title>Data Impact Reflection</title>
+       <statement>
+         <p>Consider a data-driven system you regularly interact with (e.g., social media algorithm, customer service chatbot, navigation app, recommendation system). Reflect on:</p>
+         <ol>
+           <li>
+             <p>How does this system influence your decisions or experiences?</p>
+           </li>
+           <li>
+             <p>What assumptions might be embedded in the system's design?</p>
+           </li>
+           <li>
+             <p>Who might be advantaged or disadvantaged by how the system works?</p>
+           </li>
+           <li>
+             <p>What responsibility do the system's creators have to consider societal impacts?</p>
+           </li>
+         </ol>
+       </statement>
+     </exploration>
+   </subsection>
+   
+   <!-- How data can perpetuate or mitigate biases -->
+   <subsection xml:id="subsec-data-bias-impact">
+     <title>How data can perpetuate or mitigate biases</title>
+     
+     <p>Data and algorithms can either amplify existing biases or help identify and address them. Understanding this dual potential is essential for responsible data science practice.</p>
+     
+     <p>Ways data systems can perpetuate biases:</p>
+     <ul>
+       <li>
+         <p><term>Training on biased historical data</term>: Algorithms learn patterns from past decisions that may reflect discrimination</p>
+       </li>
+       <li>
+         <p><term>Proxy variables</term>: Even when sensitive attributes are removed, other variables may serve as proxies (e.g., zip code as a proxy for race)</p>
+       </li>
+       <li>
+         <p><term>Feedback loops</term>: Predictions influence future data collection, potentially amplifying initial biases</p>
+       </li>
+       <li>
+         <p><term>Unequal representation</term>: Some groups may be underrepresented in training data, leading to less accurate results for them</p>
+       </li>
+       <li>
+         <p><term>Lack of context</term>: Algorithms may miss important contextual factors that humans would consider</p>
+       </li>
+     </ul>
+     
+     <p>Ways data can help mitigate biases:</p>
+     <ul>
+       <li>
+         <p><term>Bias detection</term>: Data analysis can identify existing disparities in systems and outcomes</p>
+       </li>
+       <li>
+         <p><term>Fairness constraints</term>: Algorithms can be designed with explicit fairness objectives</p>
+       </li>
+       <li>
+         <p><term>Diverse data collection</term>: Intentionally gathering representative data from diverse populations</p>
+       </li>
+       <li>
+         <p><term>Transparency</term>: Making data processes more visible enables scrutiny and improvement</p>
+       </li>
+       <li>
+         <p><term>Counterfactual analysis</term>: Testing what would happen if protected attributes were different</p>
+       </li>
+     </ul>
+     
+     <exercise xml:id="ex-bias-scenarios">
+       <title>Analyze Bias Scenarios</title>
+       <statement>
+         <p>For each scenario, identify whether the data approach is more likely to perpetuate or mitigate bias, and explain why:</p>
+       </statement>
+       <exercise>
+         <statement>
+           <p>A loan approval algorithm is trained on historical lending decisions without considering whether those decisions were fair</p>
+         </statement>
+         <answer>
+           <p>Perpetuates bias: This approach risks encoding any historical discrimination in lending practices into the new algorithm. If certain groups were unfairly denied loans in the past, the algorithm will learn to continue this pattern.</p>
+         </answer>
+       </exercise>
+       <exercise>
+         <statement>
+           <p>A healthcare researcher intentionally oversamples underrepresented populations to ensure sufficient data for accurate predictions across all groups</p>
+         </statement>
+         <answer>
+           <p>Mitigates bias: This approach addresses the common problem of insufficient data for minority populations, which often leads to less accurate models for these groups. Oversampling helps ensure the model works well for everyone.</p>
+         </answer>
+       </exercise>
+       <exercise>
+         <statement>
+           <p>A company removes names from job applications before review but continues to prioritize candidates from certain universities</p>
+         </statement>
+         <answer>
+           <p>Perpetuates bias: While removing names may reduce some direct bias, university attendance often correlates with socioeconomic status, race, and other protected attributes. Using university as a proxy maintains systemic advantages for privileged groups.</p>
+         </answer>
+       </exercise>
+     </exercise>
+   </subsection>
+   
+   <!-- Case studies in algorithmic bias -->
+   <subsection xml:id="subsec-algorithmic-bias-cases">
+     <title>Case studies in algorithmic bias</title>
+     
+     <p>Examining real-world cases of algorithmic bias helps illustrate both the challenges and potential solutions in this area.</p>
+     
+     <case xml:id="case-compas">
+       <title>COMPAS Recidivism Algorithm</title>
+       <statement>
+         <p>The Correctional Offender Management Profiling for Alternative Sanctions (COMPAS) tool is used in some U.S. courts to assess defendants' risk of reoffending. In 2016, ProPublica analyzed the algorithm's performance and found:</p>
+         <ul>
+           <li>
+             <p>Black defendants were nearly twice as likely to be incorrectly labeled as high-risk compared to white defendants</p>
+           </li>
+           <li>
+             <p>White defendants were more likely to be incorrectly labeled as low-risk compared to black defendants</p>
+           </li>
+           <li>
+             <p>The tool's developer, Northpointe (now Equivant), disputed these findings, arguing that the algorithm was equally accurate across racial groups when measuring calibration rather than error rates</p>
+           </li>
+           <li>
+             <p>This case highlighted that different mathematical definitions of fairness can be mutually incompatible</p>
+           </li>
+         </ul>
+       </statement>
+       <analysis>
+         <p>Key takeaways:</p>
+         <ul>
+           <li>
+             <p>Multiple valid definitions of algorithmic fairness exist and may conflict</p>
+           </li>
+           <li>
+             <p>The choice of fairness metric is ultimately a value judgment, not just a technical decision</p>
+           </li>
+           <li>
+             <p>Automated systems in high-stakes contexts require careful scrutiny and transparency</p>
+           </li>
+           <li>
+             <p>Broader societal disparities in the criminal justice system affect the data used to train such algorithms</p>
+           </li>
+         </ul>
+       </analysis>
+     </case>
+     
+     <case xml:id="case-amazon-hiring">
+       <title>Amazon's AI Recruiting Tool</title>
+       <statement>
+         <p>In 2018, Amazon abandoned an AI recruiting tool they had been developing because it showed bias against women:</p>
+         <ul>
+           <li>
+             <p>The system was trained on resumes submitted to Amazon over a 10-year period</p>
+           </li>
+           <li>
+             <p>Since the tech industry and Amazon's workforce were predominantly male during that period, the algorithm learned to penalize resumes containing terms associated with women</p>
+           </li>
+           <li>
+             <p>It downgraded resumes that included words like "women's" (as in "women's chess club captain") and graduates of women's colleges</p>
+           </li>
+           <li>
+             <p>Amazon attempted to modify the algorithm to be neutral to these terms, but ultimately could not guarantee the system wouldn't find other ways to discriminate</p>
+           </li>
+         </ul>
+       </statement>
+       <analysis>
+         <p>Key lessons:</p>
+         <ul>
+           <li>
+             <p>Historical data often reflects historical biases and can perpetuate them</p>
+           </li>
+           <li>
+             <p>Simply removing explicit gender indicators is insufficient to prevent bias</p>
+           </li>
+           <li>
+             <p>Complex machine learning systems may find subtle proxies for protected attributes</p>
+           </li>
+           <li>
+             <p>Sometimes the responsible decision is not to deploy an algorithm if fairness cannot be ensured</p>
+           </li>
+         </ul>
+       </analysis>
+     </case>
+     
+     <exercise xml:id="ex-case-comparison">
+       <title>Compare Case Studies</title>
+       <statement>
+         <p>Compare and contrast the COMPAS and Amazon case studies by addressing the following questions:</p>
+         <ol>
+           <li>
+             <p>What similarities do you observe in how bias manifested in these two systems?</p>
+           </li>
+           <li>
+             <p>How did the organizations respond differently to the discovery of bias?</p>
+           </li>
+           <li>
+             <p>What might be the relative societal impacts of bias in criminal justice algorithms versus hiring algorithms?</p>
+           </li>
+           <li>
+             <p>What approaches might have helped prevent these biases before the systems were developed or deployed?</p>
+           </li>
+         </ol>
+       </statement>
+       <response/>
+     </exercise>
+   </subsection>
+   
+   <!-- Discussion: Responsible data practices -->
+   <subsection xml:id="subsec-responsible-data-practices">
+     <title>Discussion: Responsible data practices</title>
+     
+     <p>Responsible data practices balance innovation with ethical considerations to minimize harm and maximize benefit. Key principles include:</p>
+     
+     <ul>
+       <li>
+         <p><term>Transparency</term>: Clearly communicating how data is collected, used, and shared</p>
+       </li>
+       <li>
+         <p><term>Informed consent</term>: Ensuring individuals understand and agree to data collection</p>
+       </li>
+       <li>
+         <p><term>Data minimization</term>: Collecting only what's necessary for the intended purpose</p>
+       </li>
+       <li>
+         <p><term>Fairness assessment</term>: Evaluating systems for potential discriminatory impacts</p>
+       </li>
+       <li>
+         <p><term>Accountability</term>: Taking responsibility for data practices and their consequences</p>
+       </li>
+       <li>
+         <p><term>Security</term>: Protecting data from unauthorized access or breaches</p>
+       </li>
+       <li>
+         <p><term>Contextual integrity</term>: Respecting the context in which data was collected</p>
+       </li>
+     </ul>
+     
+     <exploration xml:id="exp-ethical-framework">
+       <title>Ethical Framework Discussion</title>
+       <statement>
+         <p>In small groups, develop a simple ethical framework that data scientists could use to guide their work. Consider:</p>
+         <ol>
+           <li>
+             <p>What key questions should data scientists ask themselves at each stage of a project?</p>
+           </li>
+           <li>
+             <p>What principles should guide decisions about data collection, analysis, and use?</p>
+           </li>
+           <li>
+             <p>How should potential harms be identified and weighed against benefits?</p>
+           </li>
+           <li>
+             <p>What stakeholders should be considered and potentially consulted?</p>
+           </li>
+           <li>
+             <p>What processes might help ensure ethical considerations are not overlooked?</p>
+           </li>
+         </ol>
+         <p>Prepare to share your framework with the class.</p>
+       </statement>
+     </exploration>
+     
+     <exercise xml:id="ex-responsible-practices">
+       <title>Apply Responsible Data Practices</title>
+       <statement>
+         <p>For the following scenario, identify at least three specific responsible data practices that should be implemented:</p>
+         <p>A healthcare app collects user data including physical activity, sleep patterns, heart rate, location, and dietary habits. The company plans to use this data to provide personalized health recommendations and potentially share insights with research partners and health insurance companies.</p>
+       </statement>
+       <response/>
+     </exercise>
+   </subsection>
+ </section>
+
+ <!-- TOPIC 4: DATA IMPACT AND ETHICS (CONTINUED) -->
+ <section xml:id="sec-unit-project">
+   <title>Unit 1 Project Work</title>
+   
+   <!-- Session 8: Mini-project completion: Personal data tracking analysis -->
+   <subsection xml:id="subsec-personal-data-analysis">
+     <title>Mini-project completion: Personal data tracking analysis</title>
+     
+     <p>In this session, you will analyze the personal data you've been tracking throughout Unit 1 and prepare a presentation of your findings.</p>
+     
+     <p>Analysis steps include:</p>
+     <ol>
+       <li>
+         <p>Organize and clean your collected data</p>
+       </li>
+       <li>
+         <p>Perform basic statistical analysis (e.g., averages, ranges, patterns)</p>
+       </li>
+       <li>
+         <p>Create visualizations to illustrate key insights</p>
+       </li>
+       <li>
+         <p>Identify limitations and potential biases in your data</p>
+       </li>
+       <li>
+         <p>Draw preliminary conclusions based on your analysis</p>
+       </li>
+       <li>
+         <p>Prepare a brief presentation of your findings</p>
+       </li>
+     </ol>
+     
+     <program interactive="webr" xml:id="prog-data-analysis-template">
+       <input>
+         # Template for personal data analysis
+         # Replace this with your actual data analysis code
+         
+         # Sample data - replace with your own
+         dates &lt;- seq(as.Date("2025-04-01"), as.Date("2025-04-28"), by="days")
+         
+         # Create a simple dataset with a trend and some randomness
+         set.seed(123)  # For reproducibility
+         base_values &lt;- seq(50, 70, length.out = length(dates))
+         random_variation &lt;- rnorm(length(dates), mean = 0, sd = 5)
+         weekend_effect &lt;- ifelse(weekdays(dates) %in% c("Saturday", "Sunday"), 10, 0)
+         values &lt;- base_values + random_variation + weekend_effect
+         
+         # Create a data frame
+         tracking_data &lt;- data.frame(
+           date = dates,
+           day_of_week = weekdays(dates),
+           value = values
+         )
+         
+         # Basic summary statistics
+         summary(tracking_data$value)
+         
+         # Calculate daily averages
+         daily_avg &lt;- aggregate(value ~ day_of_week, data = tracking_data, mean)
+         daily_avg &lt;- daily_avg[order(daily_avg$value), ]
+         daily_avg
+         
+         # Plot time series
+         plot(tracking_data$date, tracking_data$value, 
+              type = "l", 
+              main = "Personal Tracking Data Over Time",
+              xlab = "Date", 
+              ylab = "Value",
+              col = "blue")
+         points(tracking_data$date, tracking_data$value, pch = 16, col = "blue")
+         
+         # Create a boxplot by day of week
+         boxplot(value ~ day_of_week, data = tracking_data,
+                 main = "Values by Day of Week",
+                 xlab = "Day of Week",
+                 ylab = "Value",
+                 col = "lightblue")
+         
+         # Check for trend over time
+         model &lt;- lm(value ~ as.numeric(date), data = tracking_data)
+         summary(model)
+         
+         # Add trend line to the time series plot
+         plot(tracking_data$date, tracking_data$value, 
+              type = "l", 
+              main = "Personal Tracking Data with Trend Line",
+              xlab = "Date", 
+              ylab = "Value",
+              col = "blue")
+         points(tracking_data$date, tracking_data$value, pch = 16, col = "blue")
+         abline(model, col = "red", lwd = 2)
+         
+         # Calculate correlation with day of the week (numeric 1-7)
+         tracking_data$day_num &lt;- as.numeric(format(tracking_data$date, "%u"))
+         cor.test(tracking_data$day_num, tracking_data$value)
+       </input>
+     </program>
+     
+     <p>Your mini-project presentation should include:</p>
+     <ul>
+       <li>
+         <p>A brief description of what data you collected and why</p>
+       </li>
+       <li>
+         <p>Your data collection methodology</p>
+       </li>
+       <li>
+         <p>Key findings from your analysis</p>
+       </li>
+       <li>
+         <p>Visualizations to illustrate patterns or insights</p>
+       </li>
+       <li>
+         <p>Limitations of your data and analysis</p>
+       </li>
+       <li>
+         <p>Potential next steps or questions for future investigation</p>
+       </li>
+     </ul>
+   </subsection>
+   
+   <!-- Group presentations of findings -->
+   <subsection xml:id="subsec-group-presentations">
+     <title>Group presentations of findings</title>
+     
+     <p>In this part of the session, each student or group will present their personal data tracking analysis to the class.</p>
+     
+     <p>Presentation guidelines:</p>
+     <ul>
+       <li>
+         <p>Each presentation should be 3-5 minutes</p>
+       </li>
+       <li>
+         <p>Focus on your most interesting or surprising findings</p>
+       </li>
+       <li>
+         <p>Include at least one visualization</p>
+       </li>
+       <li>
+         <p>Discuss one challenge you encountered and how you addressed it</p>
+       </li>
+       <li>
+         <p>Be prepared to answer 1-2 questions from classmates</p>
+       </li>
+     </ul>
+     
+     <p>While listening to other presentations, consider:</p>
+     <ul>
+       <li>
+         <p>What similarities or differences do you notice in findings across different tracking topics?</p>
+       </li>
+       <li>
+         <p>What data collection or analysis approaches could you adapt for your own project?</p>
+       </li>
+       <li>
+         <p>What questions or suggestions might help your classmates extend their analysis?</p>
+       </li>
+     </ul>
+   </subsection>
+   
+   <!-- Reflection on data's role in students' lives -->
+   <subsection xml:id="subsec-data-reflection">
+     <title>Reflection on data's role in students' lives</title>
+     
+     <p>This final activity encourages reflection on how data shapes your lives and your relationship with data after completing Unit 1.</p>
+     
+     <exploration xml:id="exp-data-role-reflection">
+       <title>Data in Your Life Reflection</title>
+       <statement>
+         <p>After completing this unit and your personal data tracking project, reflect on the following questions:</p>
+         <ol>
+           <li>
+             <p>How has your awareness of data in your daily life changed since beginning this course?</p>
+           </li>
+           <li>
+             <p>What surprised you most about your own data in the tracking project?</p>
+           </li>
+           <li>
+             <p>How might you use data more intentionally in your personal or professional decision-making?</p>
+           </li>
+           <li>
+             <p>What concerns or questions do you have about how others might be using data related to your activities?</p>
+           </li>
+           <li>
+             <p>What aspects of data science are you most interested in exploring further in the upcoming units?</p>
+           </li>
+         </ol>
+       </statement>
+     </exploration>
+     
+     <exercise xml:id="ex-data-literacy">
+       <title>Data Literacy Self-Assessment</title>
+       <statement>
+         <p>Rate your current level of confidence in the following data literacy skills on a scale of 1-5 (1 = Not confident at all, 5 = Very confident):</p>
+       </statement>
+       <choices>
+         <choice>
+           <statement>
+             <p>Distinguishing between different types of data (qualitative/quantitative, structured/unstructured)</p>
+           </statement>
+         </choice>
+         <choice>
+           <statement>
+             <p>Evaluating the quality and reliability of data sources</p>
+           </statement>
+         </choice>
+         <choice>
+           <statement>
+             <p>Identifying potential biases in data collection and analysis</p>
+           </statement>
+         </choice>
+         <choice>
+           <statement>
+             <p>Creating basic visualizations to represent data</p>
+           </statement>
+         </choice>
+         <choice>
+           <statement>
+             <p>Using data to inform personal or academic decisions</p>
+           </statement>
+         </choice>
+         <choice>
+           <statement>
+             <p>Understanding ethical implications of data collection and use</p>
+           </statement>
+         </choice>
+       </choices>
+     </exercise>
+     
+     <p>As we conclude Unit 1, take a moment to review the key concepts we've covered:</p>
+     <ul>
+       <li>
+         <p>The fundamentals of data science and its applications</p>
+       </li>
+       <li>
+         <p>Different types and characteristics of data</p>
+       </li>
+       <li>
+         <p>How data is collected and by whom</p>
+       </li>
+       <li>
+         <p>Evaluating data quality and sources</p>
+       </li>
+       <li>
+         <p>Data's role in decision-making</p>
+       </li>
+       <li>
+         <p>Ethical considerations and societal impacts of data</p>
+       </li>
+     </ul>
+     
+     <p>In Unit 2, we'll build on these foundational concepts by developing computational skills with Web-R to work with data more effectively.</p>
+   </subsection>
+ </section>
+</chapter>
