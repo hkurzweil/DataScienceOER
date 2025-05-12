@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-modern                 *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Data Transformation</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+<link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/ol-markers.css" rel="stylesheet" type="text/css">
+<script>
+var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  "tex": {
+    "inlineMath": [
+      [
+        "\\(",
+        "\\)"
+      ]
+    ],
+    "tags": "none",
+    "tagSide": "right",
+    "tagIndent": ".8em",
+    "packages": {
+      "[+]": [
+        "base",
+        "extpfeil",
+        "ams",
+        "amscd",
+        "color",
+        "newcommand",
+        "knowl"
+      ]
+    }
+  },
+  "options": {
+    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
+    "processHtmlClass": "process-math"
+  },
+  "chtml": {
+    "scale": 0.98,
+    "mtextInheritFont": true
+  },
+  "loader": {
+    "load": [
+      "input/asciimath",
+      "[tex]/extpfeil",
+      "[tex]/amscd",
+      "[tex]/color",
+      "[tex]/newcommand",
+      "[pretext]/mathjaxknowl3.js"
+    ],
+    "paths": {
+      "pretext": "_static/pretext/js/lib"
+    }
+  },
+  "startup": {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  }
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Introduction to Data Science">
+<meta property="book:author" content="Hannah Kurzweil">
+<script src="_static/pretext/js/lib/jquery.min.js"></script><script src="_static/pretext/js/lib/jquery.sticky.js"></script><script src="_static/pretext/js/lib/jquery.espy.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><script src="_static/pretext/js/user_preferences.js"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX_Course_Title_Here';
+eBookConfig.basecourse = 'PTX_Base_Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.runestone_version = '7.6.3';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script src="_static/prefix-runtime.1dbf799015a9933a.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.253ff4af1e53e55f.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.541c9106f2c605b9.css">
+<script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/components/prism-core.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/autoloader/prism-autoloader.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/line-numbers/prism-line-numbers.min.js" integrity="sha512-dubtf8xMHSQlExGRQ5R7toxHLgSDZ0K7AunqPWHXmJQ8XyVIG19S1T95gBxlAeGOK02P4Da2RTnQz0Za0H0ebQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/line-highlight/prism-line-highlight.min.js" integrity="sha512-93uCmm0q+qO5Lb1huDqr7tywS8A2TFA+1/WHvyiWaK6/pvsFl6USnILagntBx8JnVbQH5s3n0vQZY6xNthNfKA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script>
+</head>
+<body id="changeme" class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner"><div class="title-container">
+<h1 class="heading"><a href="data-science-intro.html"><span class="title">Introduction to Data Science:</span> <span class="subtitle">Unlocking Insights from Data</span></a></h1>
+<p class="byline">Hannah Kurzweil</p>
+</div></div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
+<button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="searchbox">
+<div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
+<div class="search-results-controls">
+<input aria-label="Search term" id="ptxsearch" class="ptxsearch" type="text" name="terms" placeholder="Search term"><button title="Close search" id="closesearchresults" class="closesearchresults"><span class="material-symbols-outlined">close</span></button>
+</div>
+<h2 class="search-results-heading">Search Results: </h2>
+<div id="searchempty" class="searchempty"><span>No results.</span></div>
+<ol id="searchresults" class="searchresults"></ol>
+</div>
+</div>
+<span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="sec-data-exploration.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-computational-foundations.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="sec-creating-transforming-variables.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+</div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N} \newcommand{\Z}{\mathbb Z} \newcommand{\Q}{\mathbb Q} \newcommand{\R}{\mathbb R}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2 focused" data-preexpanded-levels="0" data-max-levels="2"><ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-frontmatter"><div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div></li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-understanding-data.html" class="internal"><span class="codenumber">1</span> <span class="title">Understanding Data in Our World</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-intro-to-data.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Introduction to Data</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-intro-to-data.html#subsec-what-is-data-science" class="internal"><span class="codenumber">1.1.1</span> <span class="title">What is Data Science and its Applications?</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-intro-to-data.html#subsec-data-daily-lives" class="internal"><span class="codenumber">1.1.2</span> <span class="title">Explore how data shapes our daily lives</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-intro-to-data.html#subsec-web-r-setup" class="internal"><span class="codenumber">1.1.3</span> <span class="title">Set up Web-R accounts and platform familiarization</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-types-of-data.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Types of data and their characteristics</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-types-of-data.html#subsec-qualitative-quantitative" class="internal"><span class="codenumber">1.2.1</span> <span class="title">Qualitative vs. quantitative data</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-types-of-data.html#subsec-structured-unstructured" class="internal"><span class="codenumber">1.2.2</span> <span class="title">Structured vs. unstructured data</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-types-of-data.html#subsec-data-types-activity" class="internal"><span class="codenumber">1.2.3</span> <span class="title">Activity: Identifying data types in real-world examples</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-data-collection.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Data Collection and Sources</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-data-collection.html#subsec-data-collection-methods" class="internal"><span class="codenumber">1.3.1</span> <span class="title">How data is collected and by whom</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-data-collection.html#subsec-data-collection-organizations" class="internal"><span class="codenumber">1.3.2</span> <span class="title">Organizations that collect data and their motivations</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-data-collection.html#subsec-dikw-pyramid" class="internal"><span class="codenumber">1.3.3</span> <span class="title">Introduction to the DIKW pyramid</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-data-collection.html#subsec-ethics-data-collection" class="internal"><span class="codenumber">1.3.4</span> <span class="title">Discussion: Ethics of data collection</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-data-sources.html" class="internal"><span class="codenumber">1.4</span> <span class="title">Primary vs. secondary data sources</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-data-sources.html#subsec-primary-secondary-data" class="internal"><span class="codenumber">1.4.1</span> <span class="title">Distinguishing between data sources</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-data-sources.html#subsec-reliability-validity" class="internal"><span class="codenumber">1.4.2</span> <span class="title">Reliability and validity of different sources</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-data-sources.html#subsec-personal-data-tracking" class="internal"><span class="codenumber">1.4.3</span> <span class="title">Mini-project introduction: Personal data tracking exercise</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-data-quality.html" class="internal"><span class="codenumber">1.5</span> <span class="title">Data Quality and Evaluation</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-data-quality.html#subsec-dataset-quality" class="internal"><span class="codenumber">1.5.1</span> <span class="title">Evaluating dataset quality</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-data-quality.html#subsec-5vs-framework" class="internal"><span class="codenumber">1.5.2</span> <span class="title">The 5Vs framework: Volume, Velocity, Variety, Veracity, Value</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-data-quality.html#subsec-identifying-biases" class="internal"><span class="codenumber">1.5.3</span> <span class="title">Identifying biases in datasets</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-data-quality.html#subsec-apply-5vs" class="internal"><span class="codenumber">1.5.4</span> <span class="title">Activity: Apply 5Vs to evaluate sample datasets</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-data-decision-making.html" class="internal"><span class="codenumber">1.6</span> <span class="title">Data and decision-making</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-data-decision-making.html#subsec-data-decision-levels" class="internal"><span class="codenumber">1.6.1</span> <span class="title">How data informs decisions at different levels</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-data-decision-making.html#subsec-data-driven-case-studies" class="internal"><span class="codenumber">1.6.2</span> <span class="title">Case studies of data-driven decision making</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-data-decision-making.html#subsec-personal-data-tracking-checkin" class="internal"><span class="codenumber">1.6.3</span> <span class="title">Mini-project check-in: Personal data tracking discussion</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-data-impact.html" class="internal"><span class="codenumber">1.7</span> <span class="title">Data Impact and Ethics</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-data-impact.html#subsec-data-equity-impact" class="internal"><span class="codenumber">1.7.1</span> <span class="title">Data’s impact on equity and society</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-data-impact.html#subsec-data-bias-impact" class="internal"><span class="codenumber">1.7.2</span> <span class="title">How data can perpetuate or mitigate biases</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-data-impact.html#subsec-algorithmic-bias-cases" class="internal"><span class="codenumber">1.7.3</span> <span class="title">Case studies in algorithmic bias</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-data-impact.html#subsec-responsible-data-practices" class="internal"><span class="codenumber">1.7.4</span> <span class="title">Discussion: Responsible data practices</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-unit-project.html" class="internal"><span class="codenumber">1.8</span> <span class="title">Unit 1 Project Work</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-unit-project.html#subsec-personal-data-analysis" class="internal"><span class="codenumber">1.8.1</span> <span class="title">Mini-project completion: Personal data tracking analysis</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-unit-project.html#subsec-group-presentations" class="internal"><span class="codenumber">1.8.2</span> <span class="title">Group presentations of findings</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-unit-project.html#subsec-data-reflection" class="internal"><span class="codenumber">1.8.3</span> <span class="title">Reflection on data’s role in students’ lives</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="ch-computational-foundations.html" class="internal"><span class="codenumber">2</span> <span class="title">Computational Foundations with Web-R</span></a></div>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-intro-to-web-r.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Introduction to Web-R</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-intro-to-web-r.html#subsec-r-environment" class="internal"><span class="codenumber">2.1.1</span> <span class="title">R environment overview and basic syntax</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-intro-to-web-r.html#subsec-variables-datatypes" class="internal"><span class="codenumber">2.1.2</span> <span class="title">Variables, data types, and basic operations</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-intro-to-web-r.html#subsec-r-practice" class="internal"><span class="codenumber">2.1.3</span> <span class="title">Hands-on practice: Simple calculations and variable assignments</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-data-structures.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Working with data structures</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-data-structures.html#subsec-r-data-structures" class="internal"><span class="codenumber">2.2.1</span> <span class="title">Vectors, lists, and data frames</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-data-structures.html#subsec-manipulating-structures" class="internal"><span class="codenumber">2.2.2</span> <span class="title">Creating and manipulating basic data structures</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-data-structures.html#subsec-exercise-data-structures" class="internal"><span class="codenumber">2.2.3</span> <span class="title">Exercise: Building and transforming data structures</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-data-import.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Data Import and Exploration</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-data-import.html#subsec-importing-data" class="internal"><span class="codenumber">2.3.1</span> <span class="title">Reading CSV files and other data formats</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-data-import.html#subsec-data-inspection" class="internal"><span class="codenumber">2.3.2</span> <span class="title">Basic data inspection functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-data-import.html#subsec-activity-import-explore" class="internal"><span class="codenumber">2.3.3</span> <span class="title">Activity: Import and explore a dataset of interest</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-data-exploration.html" class="internal"><span class="codenumber">2.4</span> <span class="title">Data exploration techniques</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-data-exploration.html#subsec-summary-statistics" class="internal"><span class="codenumber">2.4.1</span> <span class="title">Summary statistics and data summaries</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-data-exploration.html#subsec-initial-visualization" class="internal"><span class="codenumber">2.4.2</span> <span class="title">Initial data visualization</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-data-exploration.html#subsec-exploratory-analysis" class="internal"><span class="codenumber">2.4.3</span> <span class="title">Exercise: Exploratory analysis of a dataset</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section contains-active">
+<div class="toc-title-box"><a href="sec-data-transformation.html" class="internal"><span class="codenumber">2.5</span> <span class="title">Data Transformation</span></a></div>
+<ul class="structural toc-item-list active">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-data-transformation.html#subsec-filtering-selecting" class="internal"><span class="codenumber">2.5.1</span> <span class="title">Filtering and selecting data</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-data-transformation.html#subsec-subsetting-dataframes" class="internal"><span class="codenumber">2.5.2</span> <span class="title">Subsetting data frames</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-data-transformation.html#subsec-activity-extract-subsets" class="internal"><span class="codenumber">2.5.3</span> <span class="title">Activity: Extract meaningful subsets from datasets</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-creating-transforming-variables.html" class="internal"><span class="codenumber">2.6</span> <span class="title">Creating and transforming variables</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-creating-transforming-variables.html#subsec-adding-modifying-columns" class="internal"><span class="codenumber">2.6.1</span> <span class="title">Adding and modifying columns</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-creating-transforming-variables.html#subsec-reshaping-data" class="internal"><span class="codenumber">2.6.2</span> <span class="title">Reshaping data (wide vs. long format)</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-creating-transforming-variables.html#subsec-group-work-transformation" class="internal"><span class="codenumber">2.6.3</span> <span class="title">Group work: Begin transforming a dataset for mid-term project</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-working-with-web-data.html" class="internal"><span class="codenumber">2.7</span> <span class="title">Working with Web Data</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-working-with-web-data.html#subsec-intro-to-apis" class="internal"><span class="codenumber">2.7.1</span> <span class="title">Introduction to APIs</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-working-with-web-data.html#subsec-using-r-with-apis" class="internal"><span class="codenumber">2.7.2</span> <span class="title">Using R to access web data</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-working-with-web-data.html#subsec-api-demonstration" class="internal"><span class="codenumber">2.7.3</span> <span class="title">Demonstration: Extracting data from a simple API</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-working-with-web-data.html#subsec-web-project-work" class="internal"><span class="codenumber">2.7.4</span> <span class="title">Web data project work</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-mid-term-project.html" class="internal"><span class="codenumber">2.8</span> <span class="title">Mid-Term Project Topic</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-mid-term-project.html#subsec-project-work-session" class="internal"><span class="codenumber">2.8.1</span> <span class="title">Mid-term project work session</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-mid-term-project.html#subsec-consultations" class="internal"><span class="codenumber">2.8.2</span> <span class="title">Instructor and peer consultations</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-mid-term-project.html#subsec-progress-checkins" class="internal"><span class="codenumber">2.8.3</span> <span class="title">Progress check-ins</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-mid-term-presentations.html" class="internal"><span class="codenumber">2.9</span> <span class="title">Mid-term project presentations</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-mid-term-presentations.html#subsec-presentation-guidelines" class="internal"><span class="codenumber">2.9.1</span> <span class="title">Presentation guidelines</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-mid-term-presentations.html#subsec-presentation-session" class="internal"><span class="codenumber">2.9.2</span> <span class="title">Groups present their data transformation and analysis</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-mid-term-presentations.html#subsec-feedback-discussion" class="internal"><span class="codenumber">2.9.3</span> <span class="title">Peer feedback and discussion</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-mid-term-presentations.html#subsec-computational-reflection" class="internal"><span class="codenumber">2.9.4</span> <span class="title">Reflection on computational techniques learned</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter"><div class="toc-title-box"><a href="ch-data-analysis.html" class="internal"><span class="codenumber">3</span> <span class="title">Data Analysis and Visualization with Web-R</span></a></div></li>
+<li class="toc-item toc-chapter"><div class="toc-title-box"><a href="ch-advanced-analysis.html" class="internal"><span class="codenumber">4</span> <span class="title">Advanced Analysis and Final Project Work</span></a></div></li>
+<li class="toc-item toc-backmatter"><div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div></li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec-data-transformation"><h2 class="heading hide-type">
+<span class="type">Section</span><span class="space"> </span><span class="codenumber">2.5</span><span class="space"> </span><span class="title">Data Transformation</span>
+</h2>
+<section class="subsection" id="subsec-filtering-selecting"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">2.5.1</span><span class="space"> </span><span class="title">Filtering and selecting data</span>
+</h3>
+<div class="para" id="subsec-filtering-selecting-2">Data transformation involves manipulating and reshaping your data to prepare it for analysis. Two fundamental transformation operations are filtering (selecting rows) and selecting (choosing columns).</div>
+<div class="para" id="subsec-filtering-selecting-3">In base R, you can filter and select data using indexing operations:</div>
+<ul class="disc" id="subsec-filtering-selecting-4">
+<li id="subsec-filtering-selecting-4-1"><div class="para" id="subsec-filtering-selecting-4-1-1">
+<dfn class="terminology">Filtering rows</dfn>: <code class="code-inline tex2jax_ignore">df[condition, ]</code> - Select rows that meet a condition</div></li>
+<li id="subsec-filtering-selecting-4-2"><div class="para" id="subsec-filtering-selecting-4-2-1">
+<dfn class="terminology">Selecting columns</dfn>: <code class="code-inline tex2jax_ignore">df[, c("col1", "col2")]</code> or <code class="code-inline tex2jax_ignore">df[, c(1, 3)]</code> - Select specific columns</div></li>
+<li id="subsec-filtering-selecting-4-3"><div class="para" id="subsec-filtering-selecting-4-3-1">
+<dfn class="terminology">Combined operations</dfn>: <code class="code-inline tex2jax_ignore">df[condition, c("col1", "col2")]</code> - Filter rows and select columns</div></li>
+<li id="subsec-filtering-selecting-4-4"><div class="para" id="subsec-filtering-selecting-4-4-1">
+<dfn class="terminology">Subset function</dfn>: <code class="code-inline tex2jax_ignore">subset(df, condition, select = c("col1", "col2"))</code> - More readable alternative</div></li>
+</ul>
+<div class="code-box"><pre class="program"><code id="rs-prog-filter-select" class="language-none"># Load the mtcars dataset
+data(mtcars)
+
+# Add rownames as a column for better demonstration
+mtcars$car_name &lt;- rownames(mtcars)
+
+# Basic row filtering
+# Cars with mpg &gt; 20
+high_mpg_cars &lt;- mtcars[mtcars$mpg &gt; 20, ]
+head(high_mpg_cars)
+
+# Cars with 6 cylinders
+six_cyl_cars &lt;- mtcars[mtcars$cyl == 6, ]
+head(six_cyl_cars)
+
+# Multiple conditions with AND (&amp;)
+efficient_six_cyl &lt;- mtcars[mtcars$mpg &gt; 20 &amp; mtcars$cyl == 6, ]
+efficient_six_cyl
+
+# Multiple conditions with OR (|)
+high_mpg_or_low_weight &lt;- mtcars[mtcars$mpg &gt; 25 | mtcars$wt &lt; 2, ]
+high_mpg_or_low_weight
+
+# Selecting specific columns
+# By column name
+mpg_hp &lt;- mtcars[, c("mpg", "hp", "car_name")]
+head(mpg_hp)
+
+# By column position
+first_three_cols &lt;- mtcars[, 1:3]
+head(first_three_cols)
+
+# Excluding columns with negative indexing
+without_rowname &lt;- mtcars[, -12]  # Exclude the car_name column
+head(without_rowname)
+
+# Combined filtering and selection
+efficient_cars_subset &lt;- mtcars[mtcars$mpg &gt; 25, c("mpg", "wt", "car_name")]
+efficient_cars_subset
+
+# Using the subset() function
+# Filter rows
+efficient_cars_alt &lt;- subset(mtcars, mpg &gt; 25)
+efficient_cars_alt$car_name
+
+# Select columns
+car_details &lt;- subset(mtcars, select = c("mpg", "hp", "wt", "car_name"))
+head(car_details)
+
+# Combined operation
+efficient_details &lt;- subset(mtcars, mpg &gt; 25, select = c("mpg", "hp", "wt", "car_name"))
+efficient_details
+
+# Filtering with %in% operator for multiple values
+specific_cyl &lt;- mtcars[mtcars$cyl %in% c(4, 8), ]
+table(specific_cyl$cyl)
+
+# Filtering with logical functions
+# Find rows with missing values (not applicable in mtcars, but showing syntax)
+# missing_rows &lt;- mtcars[!complete.cases(mtcars), ]
+
+# Filtering with text patterns (using grepl)
+merc_cars &lt;- mtcars[grepl("Merc", mtcars$car_name), ]
+merc_cars$car_name
+</code></pre></div>
+<details id="ex-filter-select" class="exercise exercise-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">2.5.1</span><span class="period">.</span><span class="space"> </span><span class="title">Filtering and Selecting Practice.</span>
+</h4></summary><article class="exercise exercise-like knowl__content"><div class="para" id="ex-filter-select-2-1">Using the iris dataset, complete the following filtering and selection tasks:</div></article></details></section><section class="subsection" id="subsec-subsetting-dataframes"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">2.5.2</span><span class="space"> </span><span class="title">Subsetting data frames</span>
+</h3>
+<div class="para" id="subsec-subsetting-dataframes-2">Subsetting refers to extracting specific portions of a data frame based on various criteria. This is an extension of filtering and selecting, with some additional techniques.</div>
+<ul class="disc" id="subsec-subsetting-dataframes-3">
+<li id="subsec-subsetting-dataframes-3-1"><div class="para" id="subsec-subsetting-dataframes-3-1-1">
+<dfn class="terminology">Random sampling</dfn>: Selecting a random subset of rows</div></li>
+<li id="subsec-subsetting-dataframes-3-2"><div class="para" id="subsec-subsetting-dataframes-3-2-1">
+<dfn class="terminology">Top/bottom rows</dfn>: Getting the first or last n rows</div></li>
+<li id="subsec-subsetting-dataframes-3-3"><div class="para" id="subsec-subsetting-dataframes-3-3-1">
+<dfn class="terminology">Stratified sampling</dfn>: Sampling proportionally from different groups</div></li>
+<li id="subsec-subsetting-dataframes-3-4"><div class="para" id="subsec-subsetting-dataframes-3-4-1">
+<dfn class="terminology">Logical indexing</dfn>: Using vectors of TRUE/FALSE to select elements</div></li>
+</ul>
+<div class="code-box"><pre class="program"><code id="rs-prog-subsetting" class="language-none"># Load datasets
+data(iris)
+
+# Random sampling
+# Set seed for reproducibility
+set.seed(123)
+
+# Sample 10 random rows
+random_sample &lt;- iris[sample(nrow(iris), 10), ]
+random_sample
+
+# Get top/bottom rows
+# First 5 rows (same as head())
+top_rows &lt;- iris[1:5, ]
+top_rows
+
+# Last 5 rows (same as tail())
+bottom_rows &lt;- iris[(nrow(iris)-4):nrow(iris), ]
+bottom_rows
+
+# Stratified sampling
+# Sample 10 rows proportionally from each species
+# First, split the data by species
+iris_by_species &lt;- split(iris, iris$Species)
+
+# Then sample from each group and combine
+set.seed(456)
+stratified_sample &lt;- do.call(rbind, lapply(iris_by_species, function(x) {
+  x[sample(nrow(x), 10), ]
+}))
+
+# Check the distribution of species in the sample
+table(stratified_sample$Species)
+
+# Logical indexing for complex conditions
+# Create a logical vector
+is_large_sepal &lt;- iris$Sepal.Length &gt; 6.5
+is_wide_sepal &lt;- iris$Sepal.Width &gt; 3.0
+is_setosa &lt;- iris$Species == "setosa"
+
+# Combine logical conditions
+combined_condition &lt;- (is_large_sepal and is_wide_sepal) | is_setosa
+
+# Use the logical vector to subset
+complex_subset &lt;- iris[combined_condition, ]
+head(complex_subset)
+
+# Count how many rows match each individual condition
+sum(is_large_sepal)
+sum(is_wide_sepal)
+sum(is_setosa)
+
+# Count how many rows match the combined condition
+sum(combined_condition)
+
+# Subsetting using %in% for selecting multiple categories
+selected_species &lt;- iris[iris$Species %in% c("setosa", "virginica"), ]
+table(selected_species$Species)
+
+# Subsetting with which() - returns indices of TRUE values
+large_sepal_indices &lt;- which(iris$Sepal.Length &gt; 7)
+large_sepal_flowers &lt;- iris[large_sepal_indices, ]
+large_sepal_flowers
+
+# Finding the index of the maximum value
+max_petal_length_index &lt;- which.max(iris$Petal.Length)
+iris[max_petal_length_index, ]
+
+# Finding the index of the minimum value
+min_petal_length_index &lt;- which.min(iris$Petal.Length)
+iris[min_petal_length_index, ]
+</code></pre></div>
+<div class="para" id="subsec-subsetting-dataframes-5">Real-world example of subsetting to create a training and testing set:</div>
+<div class="code-box"><pre class="program"><code id="rs-prog-train-test-split" class="language-none"># Create a simple train/test split using subsetting
+data(iris)
+
+# Set seed for reproducibility
+set.seed(42)
+
+# Create a random index for training data (80% of data)
+train_indices &lt;- sample(1:nrow(iris), size = round(0.8 * nrow(iris)))
+
+# Create training and testing sets
+train_data &lt;- iris[train_indices, ]
+test_data &lt;- iris[-train_indices, ]  # The '-' means "not in train_indices"
+
+# Check the dimensions
+cat("Original data dimensions:", dim(iris), "\n")
+cat("Training data dimensions:", dim(train_data), "\n")
+cat("Testing data dimensions:", dim(test_data), "\n")
+
+# Verify species distribution
+cat("\nSpecies distribution in original data:\n")
+print(table(iris$Species))
+
+cat("\nSpecies distribution in training data:\n")
+print(table(train_data$Species))
+
+cat("\nSpecies distribution in testing data:\n")
+print(table(test_data$Species))
+
+# Example: Stratified sampling for train/test split
+# Split the data by species
+iris_by_species &lt;- split(iris, iris$Species)
+
+# Function to create a stratified split
+create_stratified_split &lt;- function(data_list, train_prop = 0.8) {
+  train_data &lt;- list()
+  test_data &lt;- list()
+  
+  for (i in 1:length(data_list)) {
+    group_data &lt;- data_list[[i]]
+    n_train &lt;- round(train_prop * nrow(group_data))
+    
+    # Random indices for training
+    train_idx &lt;- sample(1:nrow(group_data), size = n_train)
+    
+    # Split the data
+    train_data[[i]] &lt;- group_data[train_idx, ]
+    test_data[[i]] &lt;- group_data[-train_idx, ]
+  }
+  
+  # Combine all groups
+  return(list(
+    train = do.call(rbind, train_data),
+    test = do.call(rbind, test_data)
+  ))
+}
+
+# Create stratified split
+set.seed(42)
+strat_split &lt;- create_stratified_split(iris_by_species, 0.8)
+
+# Check dimensions
+cat("\nStratified sampling:\n")
+cat("Training data dimensions:", dim(strat_split$train), "\n")
+cat("Testing data dimensions:", dim(strat_split$test), "\n")
+
+# Verify species distribution
+cat("\nSpecies distribution in stratified training data:\n")
+print(table(strat_split$train$Species))
+
+cat("\nSpecies distribution in stratified testing data:\n")
+print(table(strat_split$test$Species))
+</code></pre></div>
+<details id="ex-subsetting-practice" class="exercise exercise-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">2.5.2</span><span class="period">.</span><span class="space"> </span><span class="title">Subsetting Practice.</span>
+</h4></summary><article class="exercise exercise-like knowl__content"><div class="para" id="ex-subsetting-practice-2-1">Using the mtcars dataset, complete the following subsetting tasks:</div></article></details></section><section class="subsection" id="subsec-activity-extract-subsets"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">2.5.3</span><span class="space"> </span><span class="title">Activity: Extract meaningful subsets from datasets</span>
+</h3>
+<article class="activity project-like" id="activity-meaningful-subsets"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.5.1</span><span class="period">.</span><span class="space"> </span><span class="title">Extracting Insights from Data Subsets.</span>
+</h4>
+<div class="para" id="activity-meaningful-subsets-2-1">In this activity, you will extract and analyze meaningful subsets from the mpg dataset (from the ggplot2 package, but we’ll provide a version).</div> <div class="para" id="activity-meaningful-subsets-2-2">The mpg dataset contains fuel economy data for 38 popular car models from 1999 to 2008, including variables such as manufacturer, model, year, engine displacement, number of cylinders, transmission type, and fuel economy ratings.</div> <div class="para" id="activity-meaningful-subsets-2-3">Instructions:</div> <ol class="decimal" id="activity-meaningful-subsets-2-4">
+<li id="activity-meaningful-subsets-2-4-1"><div class="para" id="activity-meaningful-subsets-2-4-1-1">Create the mpg dataset using the code provided</div></li>
+<li id="activity-meaningful-subsets-2-4-2">
+<div class="para" id="activity-meaningful-subsets-2-4-2-1">Extract and analyze the following subsets:</div>
+<ul class="disc" id="activity-meaningful-subsets-2-4-2-2">
+<li id="activity-meaningful-subsets-2-4-2-2-1"><div class="para" id="activity-meaningful-subsets-2-4-2-2-1-1">All compact cars (class = "compact")</div></li>
+<li id="activity-meaningful-subsets-2-4-2-2-2"><div class="para" id="activity-meaningful-subsets-2-4-2-2-2-1">All cars manufactured by Toyota</div></li>
+<li id="activity-meaningful-subsets-2-4-2-2-3"><div class="para" id="activity-meaningful-subsets-2-4-2-2-3-1">All 4-cylinder cars with highway fuel economy (hwy) greater than 30 mpg</div></li>
+<li id="activity-meaningful-subsets-2-4-2-2-4"><div class="para" id="activity-meaningful-subsets-2-4-2-2-4-1">Compare the average city fuel economy (cty) for cars with 4, 6, and 8 cylinders</div></li>
+<li id="activity-meaningful-subsets-2-4-2-2-5"><div class="para" id="activity-meaningful-subsets-2-4-2-2-5-1">Create a random sample of 15 cars and calculate their average fuel economy</div></li>
+</ul>
+</li>
+<li id="activity-meaningful-subsets-2-4-3"><div class="para" id="activity-meaningful-subsets-2-4-3-1">For each subset, create appropriate summary statistics and visualizations</div></li>
+<li id="activity-meaningful-subsets-2-4-4"><div class="para" id="activity-meaningful-subsets-2-4-4-1">Document your findings and insights from each subset</div></li>
+</ol></article><div class="code-box"><pre class="program"><code id="rs-prog-create-mpg" class="language-none"># Create a simplified version of the mpg dataset
+  mpg &lt;- data.frame(
+    manufacturer = c("audi", "audi", "audi", "audi", "audi", "audi", "audi", "audi", "audi", "audi", "audi", "audi", "audi", "audi", "audi", "audi", "audi", "audi", "chevrolet", "chevrolet", "chevrolet", "chevrolet", "chevrolet", "chevrolet", "chevrolet", "chevrolet", "chevrolet", "chevrolet", "chevrolet", "chevrolet", "chevrolet", "chevrolet", "chevrolet", "dodge", "dodge", "dodge", "dodge", "dodge", "dodge", "dodge", "dodge", "dodge", "dodge", "dodge", "dodge", "dodge", "dodge", "dodge", "dodge", "dodge", "dodge", "dodge", "dodge", "dodge", "dodge", "dodge", "dodge", "ford", "ford", "ford", "ford", "ford", "ford", "ford", "ford", "ford", "ford", "ford", "ford", "ford", "ford", "ford", "ford", "ford", "ford", "ford", "ford", "ford", "ford", "ford", "ford", "ford", "ford", "ford", "ford", "honda", "honda", "honda", "honda", "honda", "honda", "honda", "honda", "honda", "hyundai", "hyundai", "hyundai", "hyundai", "hyundai", "hyundai", "hyundai", "hyundai", "hyundai", "hyundai", "hyundai", "hyundai", "hyundai", "hyundai", "jeep", "jeep", "jeep", "jeep", "jeep", "jeep", "jeep", "jeep", "land rover", "land rover", "land rover", "land rover", "lincoln", "lincoln", "lincoln", "mercury", "mercury", "mercury", "mercury", "nissan", "nissan", "nissan", "nissan", "nissan", "nissan", "nissan", "nissan", "nissan", "nissan", "nissan", "nissan", "nissan", "pontiac", "pontiac", "pontiac", "subaru", "subaru", "subaru", "subaru", "subaru", "subaru", "subaru", "subaru", "subaru", "subaru", "subaru", "subaru", "subaru", "subaru", "toyota", "toyota", "toyota", "toyota", "toyota", "toyota", "toyota", "toyota", "toyota", "toyota", "toyota", "toyota", "toyota", "toyota", "toyota", "toyota", "toyota", "toyota", "toyota", "toyota", "toyota", "toyota", "toyota", "toyota", "toyota", "toyota", "toyota", "toyota", "toyota", "toyota", "toyota", "toyota", "volkswagen", "volkswagen", "volkswagen", "volkswagen", "volkswagen", "volkswagen", "volkswagen", "volkswagen", "volkswagen", "volkswagen", "volkswagen", "volkswagen", "volkswagen", "volkswagen", "volkswagen", "volkswagen", "volkswagen", "volkswagen", "volkswagen", "volkswagen", "volkswagen", "volkswagen", "volkswagen", "volkswagen", "volkswagen", "volkswagen", "volkswagen"),
+    model = c("a4", "a4", "a4", "a4", "a4", "a4", "a4", "a4", "a4 quattro", "a4 quattro", "a4 quattro", "a4 quattro", "a4 quattro", "a4 quattro", "a4 quattro", "a4 quattro", "a6 quattro", "a6 quattro", "c1500 suburban 2wd", "c1500 suburban 2wd", "corvette", "corvette", "corvette", "corvette", "k1500 tahoe 4wd", "k1500 tahoe 4wd", "malibu", "malibu", "malibu", "malibu", "malibu", "malibu", "malibu", "caravan 2wd", "caravan 2wd", "caravan 2wd", "caravan 2wd", "caravan 2wd", "caravan 2wd", "caravan 2wd", "dakota pickup 4wd", "dakota pickup 4wd", "dakota pickup 4wd", "durango 4wd", "durango 4wd", "durango 4wd", "durango 4wd", "durango 4wd", "durango 4wd", "ram 1500 pickup 4wd", "ram 1500 pickup 4wd", "ram 1500 pickup 4wd", "ram 1500 pickup 4wd", "ram 1500 pickup 4wd", "ram 1500 pickup 4wd", "ram 1500 pickup 4wd", "ram 1500 pickup 4wd", "expedition 2wd", "expedition 2wd", "expedition 2wd", "explorer 4wd", "explorer 4wd", "explorer 4wd", "explorer 4wd", "explorer 4wd", "explorer 4wd", "f150 pickup 4wd", "f150 pickup 4wd", "f150 pickup 4wd", "f150 pickup 4wd", "f150 pickup 4wd", "f150 pickup 4wd", "f150 pickup 4wd", "f150 pickup 4wd", "f150 pickup 4wd", "mustang", "mustang", "mustang", "mustang", "mustang", "mustang", "mustang", "mustang", "mustang", "civic", "civic", "civic", "civic", "civic", "civic", "civic", "civic", "civic", "sonata", "sonata", "sonata", "sonata", "sonata", "sonata", "sonata", "sonata", "sonata", "tiburon", "tiburon", "tiburon", "tiburon", "tiburon", "grand cherokee 4wd", "grand cherokee 4wd", "grand cherokee 4wd", "grand cherokee 4wd", "grand cherokee 4wd", "grand cherokee 4wd", "grand cherokee 4wd", "grand cherokee 4wd", "range rover", "range rover", "range rover", "range rover", "navigator 2wd", "navigator 2wd", "navigator 2wd", "mountaineer 4wd", "mountaineer 4wd", "mountaineer 4wd", "mountaineer 4wd", "altima", "altima", "altima", "altima", "maxima", "maxima", "maxima", "maxima", "pathfinder 4wd", "pathfinder 4wd", "pathfinder 4wd", "pathfinder 4wd", "pathfinder 4wd", "grand prix", "grand prix", "grand prix", "forester awd", "forester awd", "forester awd", "forester awd", "impreza awd", "impreza awd", "impreza awd", "impreza awd", "impreza awd", "impreza awd", "impreza awd", "impreza awd", "impreza awd", "impreza awd", "4runner 4wd", "4runner 4wd", "4runner 4wd", "4runner 4wd", "4runner 4wd", "4runner 4wd", "4runner 4wd", "4runner 4wd", "camry", "camry", "camry", "camry", "camry", "camry", "camry", "camry", "camry", "camry", "camry solara", "camry solara", "camry solara", "camry solara", "camry solara", "camry solara", "corolla", "corolla", "corolla", "corolla", "corolla", "corolla", "land cruiser wagon 4wd", "land cruiser wagon 4wd", "toyota tacoma 4wd", "toyota tacoma 4wd", "toyota tacoma 4wd", "gti", "gti", "jetta", "jetta", "jetta", "jetta", "jetta", "jetta", "jetta", "jetta", "new beetle", "new beetle", "new beetle", "new beetle", "new beetle", "new beetle", "new beetle", "passat", "passat", "passat", "passat", "passat", "passat", "passat", "passat", "passat"),
+    displ = c(1.8, 1.8, 2, 2, 2.8, 2.8, 3.1, 3.1, 1.8, 1.8, 2, 2, 2.8, 2.8, 3.1, 3.1, 2.8, 4.2, 5.3, 5.3, 5.7, 5.7, 6.2, 6.2, 5.3, 5.3, 2.4, 2.4, 3.1, 3.1, 3.5, 3.5, 3.5, 2.4, 2.4, 2.4, 3.3, 3.3, 3.3, 3.8, 3.7, 3.7, 4.7, 3.7, 3.7, 4.7, 4.7, 5.7, 5.9, 4.7, 4.7, 4.7, 5.7, 5.7, 5.7, 5.7, 5.9, 4.6, 5.4, 5.4, 4, 4, 4, 4.6, 4.6, 5, 4.2, 4.2, 4.6, 4.6, 4.6, 5.4, 5.4, 5.4, 5.4, 3.8, 3.8, 4, 4, 4.6, 4.6, 5.4, 5.4, 5.4, 1.6, 1.6, 1.6, 1.6, 1.8, 1.8, 1.8, 2, 2, 2.4, 2.4, 2.5, 2.5, 3.3, 3.3, 3.3, 3.3, 2, 2, 2, 2.7, 2.7, 3, 3.7, 3.7, 4, 4, 4.7, 4.7, 4.7, 4.7, 4.7, 4, 4, 4, 4, 4.4, 4.4, 5.4, 5.4, 5.4, 4, 4, 4, 4, 2.4, 2.4, 2.4, 2.4, 3, 3, 3, 3, 3.3, 3.5, 3.8, 3.8, 3.8, 5.7, 5.7, 3.8, 2.5, 2.5, 2.5, 2.5, 2.2, 2.5, 2.5, 2.5, 2.5, 2.5, 2.5, 2.5, 2.5, 2.5, 2.7, 2.7, 3.4, 3.4, 4, 4, 4, 4.7, 2.2, 2.2, 2.2, 2.4, 2.4, 2.4, 2.4, 2.4, 2.4, 3, 2.2, 2.2, 2.4, 2.4, 3, 3, 1.8, 1.8, 1.8, 1.8, 1.8, 1.8, 4.7, 4.7, 2.7, 3.4, 4, 1.8, 2, 1.9, 1.9, 2, 2, 2, 2, 2.5, 2.5, 1.8, 1.8, 1.9, 1.9, 2, 2, 2.5, 1.8, 1.8, 1.8, 2, 2, 2, 2.8, 2.8, 3.6),
+    year = c(1999, 1999, 2008, 2008, 1999, 1999, 2008, 2008, 1999, 1999, 2008, 2008, 1999, 1999, 2008, 2008, 1999, 2008, 1999, 2008, 1999, 2008, 2008, 2008, 1999, 2008, 1999, 1999, 1999, 1999, 2008, 2008, 2008, 1999, 1999, 1999, 1999, 1999, 1999, 1999, 1999, 1999, 2008, 1999, 1999, 1999, 2008, 1999, 1999, 1999, 1999, 2008, 1999, 1999, 2008, 2008, 2008, 1999, 1999, 1999, 1999, 1999, 1999, 1999, 2008, 2008, 1999, 1999, 1999, 1999, 2008, 1999, 1999, 2008, 2008, 1999, 1999, 1999, 2008, 1999, 2008, 1999, 2008, 2008, 1999, 1999, 1999, 1999, 1999, 1999, 2008, 2008, 2008, 1999, 1999, 1999, 1999, 1999, 1999, 2008, 2008, 1999, 1999, 2008, 2008, 1999, 1999, 1999, 1999, 2008, 2008, 2008, 1999, 1999, 1999, 1999, 2008, 2008, 2008, 2008, 1999, 1999, 1999, 2008, 1999, 1999, 1999, 1999, 1999, 1999, 1999, 2008, 2008, 1999, 1999, 1999, 1999, 1999, 1999, 1999, 1999, 1999, 1999, 1999, 1999, 1999, 1999, 1999, 1999, 1999, 1999, 1999, 1999, 2008, 2008, 2008, 2008, 1999, 1999, 1999, 1999, 1999, 2008, 2008, 2008, 2008, 2008, 1999, 1999, 1999, 2008, 2008, 2008, 1999, 1999, 2008, 2008, 2008, 2008, 2008, 2008, 2008, 2008, 1999, 1999, 1999, 1999, 1999, 1999, 1999, 1999, 1999, 1999, 1999, 1999, 1999, 1999, 1999, 1999, 2008),
+    cyl = c(4, 4, 4, 4, 6, 6, 6, 6, 4, 4, 4, 4, 6, 6, 6, 6, 6, 8, 8, 8, 8, 8, 8, 8, 8, 8, 4, 4, 6, 6, 6, 6, 6, 4, 4, 4, 6, 6, 6, 6, 6, 6, 8, 6, 6, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 6, 6, 6, 8, 8, 8, 6, 6, 8, 8, 8, 8, 8, 8, 8, 6, 6, 6, 6, 8, 8, 8, 8, 8, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 6, 6, 6, 6, 6, 6, 4, 4, 4, 6, 6, 6, 6, 6, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 6, 6, 6, 6, 4, 4, 4, 4, 6, 6, 6, 6, 6, 6, 6, 6, 6, 8, 8, 6, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 6, 6, 6, 6, 6, 8, 4, 4, 4, 4, 4, 4, 4, 4, 4, 6, 4, 4, 4, 4, 6, 6, 4, 4, 4, 4, 4, 4, 8, 8, 4, 6, 6, 4, 4, 4, 4, 4, 4, 4, 4, 5, 5, 4, 4, 4, 4, 4, 4, 5, 4, 4, 4, 4, 4, 4, 6, 6, 6),
+    trans = c("auto(l5)", "manual(m5)", "manual(m6)", "auto(av)", "auto(l5)", "manual(m5)", "auto(av)", "manual(m6)", "auto(l5)", "manual(m5)", "manual(m6)", "auto(av)", "auto(l5)", "manual(m5)", "auto(av)", "manual(m6)", "auto(l5)", "auto(s6)", "auto(l4)", "auto(l4)", "manual(m6)", "manual(m6)", "manual(m6)", "auto(s6)", "auto(l4)", "auto(l4)", "auto(l4)", "manual(m5)", "auto(l4)", "manual(m5)", "auto(l4)", "auto(l6)", "auto(l6)", "auto(l3)", "auto(l4)", "manual(m5)", "auto(l4)", "auto(l4)", "manual(m5)", "auto(l4)", "auto(l4)", "manual(m5)", "auto(l5)", "auto(l4)", "manual(m5)", "auto(l4)", "auto(l5)", "auto(l4)", "auto(l4)", "auto(l4)", "manual(m5)", "auto(l5)", "auto(l4)", "manual(m5)", "auto(l5)", "manual(m6)", "auto(l5)", "auto(l4)", "auto(l4)", "auto(l4)", "auto(l5)", "manual(m5)", "auto(l5)", "auto(l5)", "auto(l5)", "auto(l5)", "auto(l4)", "manual(m5)", "auto(l4)", "manual(m5)", "auto(l4)", "auto(l4)", "manual(m5)", "auto(l4)", "auto(l5)", "auto(l4)", "manual(m5)", "auto(l5)", "manual(m5)", "auto(l5)", "manual(m5)", "auto(l5)", "manual(m5)", "manual(m5)", "auto(l4)", "auto(l4)", "manual(m5)", "manual(m5)", "auto(l4)", "manual(m5)", "auto(l4)", "manual(m5)", "auto(l4)", "auto(l4)", "manual(m5)", "auto(l4)", "manual(m5)", "auto(l4)", "manual(m5)", "auto(l4)", "manual(m5)", "auto(l4)", "manual(m5)", "auto(l4)", "manual(m5)", "auto(l4)", "manual(m5)", "auto(l4)", "manual(m5)", "auto(l4)", "auto(l4)", "auto(l4)", "auto(l4)", "auto(l4)", "auto(l5)", "auto(l5)", "auto(l4)", "auto(l4)", "auto(l4)", "auto(l4)", "auto(l4)", "auto(l5)", "auto(l4)", "auto(l4)", "auto(l4)", "auto(l4)", "auto(l4)", "auto(l4)", "auto(l4)", "auto(l4)", "auto(l4)", "auto(l4)", "auto(l4)", "auto(l4)", "auto(l4)", "auto(l4)", "auto(l4)", "auto(l4)", "auto(l4)", "auto(l4)", "auto(l4)", "auto(l4)", "auto(l4)", "auto(l4)", "manual(m5)", "manual(m5)", "auto(l4)", "auto(l4)", "manual(m5)", "auto(l5)", "auto(l5)", "auto(l5)", "auto(l5)", "auto(l4)", "auto(l4)", "manual(m5)", "auto(l4)", "manual(m5)", "auto(l5)", "auto(l5)", "auto(l5)", "auto(l4)", "auto(l5)", "auto(l5)", "auto(l4)", "auto(l4)", "auto(l4)", "auto(l5)", "auto(l5)", "auto(l4)", "auto(l4)", "auto(l4)", "auto(l4)", "manual(m5)", "auto(l4)", "manual(m5)", "auto(l4)", "manual(m5)", "auto(a5)", "auto(a6)", "auto(s5)", "auto(l5)", "auto(l4)", "manual(m5)", "auto(l4)", "manual(m5)", "auto(l4)", "manual(m5)", "auto(s6)", "manual(m5)", "auto(l4)", "manual(m5)", "auto(l4)", "manual(m5)", "auto(l4)", "manual(m5)", "auto(l4)", "manual(m5)", "auto(l4)", "manual(m5)", "auto(l4)", "manual(m5)", "auto(l4)", "manual(m5)", "auto(l4)"),
+    drv = c("f", "f", "f", "f", "f", "f", "f", "f", "4", "4", "4", "4", "4", "4", "4", "4", "4", "4", "r", "r", "r", "r", "r", "r", "4", "4", "f", "f", "f", "f", "f", "f", "f", "f", "f", "f", "f", "f", "f", "f", "4", "4", "4", "4", "4", "4", "4", "4", "4", "4", "4", "4", "4", "4", "4", "4", "4", "r", "r", "r", "4", "4", "4", "4", "4", "4", "4", "4", "4", "4", "4", "4", "4", "4", "4", "r", "r", "r", "r", "r", "r", "r", "r", "r", "f", "f", "f", "f", "f", "f", "f", "f", "f", "f", "f", "f", "f", "f", "f", "f", "f", "f", "f", "f", "f", "f", "4", "4", "4", "4", "4", "4", "4", "4", "4", "4", "4", "4", "4", "4", "r", "r", "r", "4", "4", "4", "4", "f", "f", "f", "f", "f", "f", "f", "f", "4", "4", "4", "4", "4", "r", "r", "r", "4", "4", "4", "4", "4", "4", "4", "4", "4", "4", "4", "4", "4", "4", "4", "4", "4", "4", "4", "4", "4", "4", "f", "f", "f", "f", "f", "f", "f", "f", "f", "f", "f", "f", "f", "f", "f", "f", "f", "f", "f", "f", "f", "f", "4", "4", "4", "4", "4", "f", "f", "f", "f", "f", "f", "f", "f", "f", "f", "f", "f", "f", "f", "f", "f", "f", "f", "f", "f", "f", "f", "f", "f", "f", "f"),
+    cty = c(18, 21, 20, 21, 16, 18, 18, 18, 18, 18, 20, 19, 15, 17, 17, 17, 15, 14, 11, 14, 16, 15, 16, 15, 14, 11, 19, 19, 18, 17, 17, 17, 17, 18, 18, 20, 17, 16, 16, 15, 14, 14, 13, 13, 13, 12, 12, 13, 12, 14, 12, 13, 13, 13, 13, 12, 12, 11, 11, 11, 14, 15, 15, 14, 11, 11, 12, 14, 13, 13, 13, 14, 13, 13, 12, 18, 18, 18, 16, 15, 15, 15, 15, 14, 28, 28, 27, 25, 25, 24, 25, 23, 24, 21, 21, 21, 20, 18, 18, 19, 19, 20, 19, 19, 20, 15, 15, 15, 14, 14, 13, 12, 12, 12, 12, 13, 12, 11, 11, 11, 12, 12, 12, 11, 17, 16, 16, 15, 19, 19, 19, 19, 19, 16, 16, 16, 16, 14, 14, 14, 15, 15, 15, 9, 9, 9, 22, 21, 21, 20, 20, 20, 21, 22, 21, 22, 22, 19, 19, 18, 18, 16, 15, 15, 12, 21, 21, 21, 21, 21, 31, 29, 31, 30, 26, 26, 22, 22, 22, 20, 21, 21, 27, 27, 18, 17, 19, 21, 21, 30, 31, 29, 26, 26, 28, 26, 26, 29, 29, 29, 28, 25, 24, 19, 25, 26, 26, 25, 25, 24, 21, 21, 18),
+    hwy = c(29, 29, 31, 30, 26, 26, 27, 26, 26, 25, 28, 27, 25, 25, 25, 25, 24, 19, 15, 20, 26, 25, 26, 25, 17, 17, 27, 27, 26, 25, 26, 25, 26, 24, 24, 28, 22, 22, 23, 20, 17, 19, 17, 17, 18, 17, 16, 17, 15, 17, 18, 17, 15, 17, 15, 16, 15, 17, 17, 17, 17, 19, 19, 17, 17, 15, 15, 16, 16, 17, 16, 15, 15, 17, 15, 26, 27, 27, 25, 20, 20, 20, 20, 19, 33, 32, 32, 32, 32, 32, 34, 32, 30, 28, 27, 30, 28, 24, 24, 26, 27, 27, 28, 28, 25, 20, 18, 20, 19, 19, 17, 17, 16, 15, 15, 15, 18, 17, 19, 19, 17, 17, 16, 16, 24, 25, 23, 23, 26, 25, 26, 27, 26, 24, 25, 23, 25, 20, 20, 20, 20, 22, 20, 17, 15, 14, 29, 26, 27, 25, 27, 28, 28, 29, 29, 30, 30, 26, 26, 24, 24, 23, 20, 22, 17, 31, 30, 31, 32, 30, 35, 35, 35, 35, 29, 28, 24, 24, 24, 22, 28, 29, 31, 32, 24, 23, 26, 30, 28, 40, 38, 40, 38, 36, 40, 36, 35, 38, 35, 38, 38, 35, 32, 27, 35, 35, 35, 31, 32, 32, 27, 26, 26),  
+    fl = c("p", "p", "p", "p", "p", "p", "p", "p", "p", "p", "p", "p", "p", "p", "p", "p", "p", "p", "r", "r", "p", "p", "p", "p", "r", "r", "r", "r", "r", "r", "r", "r", "r", "r", "r", "r", "r", "r", "r", "r", "r", "r", "r", "r", "r", "r", "r", "r", "r", "r", "r", "r", "r", "r", "r", "e", "r", "r", "r", "r", "r", "r", "r", "r", "r", "r", "r", "r", "r", "r", "r", "r", "r", "r", "r", "r", "r", "r", "r", "r", "r", "r", "r", "r", "r", "r", "r", "r", "r", "r", "r", "r", "r", "r", "r", "r", "r", "r", "r", "r", "r", "r", "r", "r", "r", "r", "r", "r", "r", "r", "d", "d", "d", "r", "r", "r", "r", "r", "r", "r", "r", "r", "r", "r", "r", "r", "r", "r", "r", "r", "r", "r", "r", "r", "r", "r", "r", "r", "r", "r", "r", "r", "r", "r", "r", "r", "r", "r", "r", "r", "r", "r", "r", "r", "r", "r", "r", "p", "p", "p", "p", "p", "p", "p", "p", "p", "p", "p", "p", "p", "r", "r", "p", "r", "r", "r", "r", "r", "r", "r", "r", "r", "r", "r", "r", "r", "r", "r", "r", "r", "r", "r", "r", "r", "r", "r", "r", "r", "r", "r", "r", "r", "r", "r", "r", "r", "r", "r", "r", "r", "p", "p", "d", "d", "p", "p", "p", "p", "p", "p", "p", "p", "p", "p", "p", "p", "p", "p", "p", "p", "p", "p", "p", "p", "p", "p", "p", "p"),
+    class = c("compact", "compact", "compact", "compact", "compact", "compact", "compact", "compact", "compact", "compact", "compact", "compact", "compact", "compact", "compact", "compact", "midsize", "midsize", "suv", "suv", "2seater", "2seater", "2seater", "2seater", "suv", "suv", "midsize", "midsize", "midsize", "midsize", "midsize", "midsize", "midsize", "minivan", "minivan", "minivan", "minivan", "minivan", "minivan", "minivan", "pickup", "pickup", "pickup", "suv", "suv", "suv", "suv", "suv", "suv", "pickup", "pickup", "pickup", "pickup", "pickup", "pickup", "pickup", "pickup", "suv", "suv", "suv", "suv", "suv", "suv", "suv", "suv", "suv", "pickup", "pickup", "pickup", "pickup", "pickup", "pickup", "pickup", "pickup", "pickup", "subcompact", "subcompact", "subcompact", "subcompact", "subcompact", "subcompact", "subcompact", "subcompact", "subcompact", "compact", "compact", "compact", "compact", "compact", "compact", "compact", "compact", "compact", "midsize", "midsize", "midsize", "midsize", "midsize", "midsize", "midsize", "midsize", "midsize", "subcompact", "subcompact", "subcompact", "subcompact", "subcompact", "suv", "suv", "suv", "suv", "suv", "suv", "suv", "suv", "suv", "suv", "suv", "suv", "suv", "suv", "suv", "suv", "suv", "suv", "suv", "midsize", "midsize", "midsize", "midsize", "midsize", "midsize", "midsize", "midsize", "midsize", "suv", "suv", "suv", "suv", "suv", "midsize", "midsize", "midsize", "compact", "compact", "compact", "compact", "subcompact", "subcompact", "subcompact", "subcompact", "subcompact", "subcompact", "subcompact", "subcompact", "subcompact", "subcompact", "suv", "suv", "suv", "suv", "suv", "suv", "suv", "suv", "midsize", "midsize", "midsize", "midsize", "midsize", "midsize", "midsize", "midsize", "midsize", "midsize", "compact", "compact", "compact", "compact", "compact", "compact", "compact", "compact", "compact", "compact", "compact", "compact", "suv", "suv", "pickup", "pickup", "pickup", "compact", "compact", "compact", "compact", "compact", "compact", "compact", "compact", "compact", "compact", "subcompact", "subcompact", "subcompact", "subcompact", "subcompact", "subcompact", "subcompact", "midsize", "midsize", "midsize", "midsize", "midsize", "midsize", "midsize", "midsize", "midsize")
+  )
+  
+  # Step 1: Explore the dataset
+  # First, get a quick overview of the data
+  str(mpg)
+  head(mpg)
+  summary(mpg)
+  
+  # Step 2: Extract and analyze the requested subsets
+  
+  # (a) All compact cars
+  compact_cars &lt;- mpg[mpg$class == "compact", ]
+  
+  # Basic summary of compact cars
+  cat("\n===== COMPACT CARS =====\n")
+  cat("Number of compact cars:", nrow(compact_cars), "\n")
+  
+  # Summary statistics for compact cars
+  compact_summary &lt;- summary(compact_cars[, c("cty", "hwy")])
+  compact_summary
+  
+  # Distribution of manufacturers within compact cars
+  table(compact_cars$manufacturer)
+  
+  # Visualize fuel economy of compact cars
+  par(mfrow = c(1, 2))
+  hist(compact_cars$cty, 
+       main = "City MPG - Compact Cars",
+       xlab = "MPG (City)",
+       col = "lightblue")
+  hist(compact_cars$hwy, 
+       main = "Highway MPG - Compact Cars",
+       xlab = "MPG (Highway)",
+       col = "lightgreen")
+  par(mfrow = c(1, 1))
+  
+  # (b) All cars manufactured by Toyota
+  toyota_cars &lt;- mpg[mpg$manufacturer == "toyota", ]
+  
+  cat("\n===== TOYOTA CARS =====\n")
+  cat("Number of Toyota cars:", nrow(toyota_cars), "\n")
+  
+  # Distribution of Toyota car types
+  toyota_class_table &lt;- table(toyota_cars$class)
+  toyota_class_table
+  
+  # Average fuel economy by car type for Toyota
+  toyota_mpg_by_class &lt;- aggregate(cbind(cty, hwy) ~ class, data = toyota_cars, FUN = mean)
+  toyota_mpg_by_class
+  
+  # Visualize Toyota models by class and MPG
+  boxplot(hwy ~ class, data = toyota_cars,
+         main = "Highway MPG by Toyota Vehicle Class",
+         xlab = "Vehicle Class",
+         ylab = "Highway MPG",
+         col = "lightyellow")
+  
+  # (c) All 4-cylinder cars with highway fuel economy (hwy) greater than 30 mpg
+  efficient_4cyl &lt;- mpg[mpg$cyl == 4 &amp; mpg$hwy &gt; 30, ]
+  
+  cat("\n===== EFFICIENT 4-CYLINDER CARS =====\n")
+  cat("Number of 4-cylinder cars with hwy mpg &gt; 30:", nrow(efficient_4cyl), "\n")
+  
+  # Which manufacturers are producing these efficient cars?
+  table(efficient_4cyl$manufacturer)
+  
+  # Average city and highway MPG for these efficient cars
+  cat("Average city MPG:", mean(efficient_4cyl$cty), "\n")
+  cat("Average highway MPG:", mean(efficient_4cyl$hwy), "\n")
+  
+  # Visualize these efficient cars
+  plot(efficient_4cyl$displ, efficient_4cyl$hwy, 
+       main = "Engine Displacement vs Highway MPG\nFor Efficient 4-Cylinder Cars",
+       xlab = "Engine Displacement (liters)",
+       ylab = "Highway MPG",
+       pch = 19,
+       col = "darkgreen")
+  
+  # (d) Compare average city fuel economy for cars with 4, 6, and 8 cylinders
+  cyl_comparison &lt;- aggregate(cty ~ cyl, data = mpg, FUN = mean)
+  cyl_comparison
+  
+  # Visualize the comparison
+  barplot(cyl_comparison$cty, 
+         names.arg = cyl_comparison$cyl,
+         main = "Average City MPG by Number of Cylinders",
+         xlab = "Number of Cylinders",
+         ylab = "Average City MPG",
+         col = "lightcoral",
+         ylim = c(0, 25))
+  
+  # Additional analysis - relationship between cylinders and highway MPG
+  hwy_comparison &lt;- aggregate(hwy ~ cyl, data = mpg, FUN = mean)
+  
+  # (e) Create a random sample of 15 cars
+  set.seed(123)  # For reproducibility
+  car_sample &lt;- mpg[sample(nrow(mpg), 15), ]
+  
+  cat("\n===== RANDOM SAMPLE OF 15 CARS =====\n")
+  # Show the models in the sample
+  car_sample$model
+  
+  # Calculate average fuel economy for the sample
+  cat("Average city MPG in sample:", mean(car_sample$cty), "\n")
+  cat("Average highway MPG in sample:", mean(car_sample$hwy), "\n")
+  
+  # Compare sample averages to population averages
+  cat("\nComparison to overall averages:\n")
+  cat("Overall average city MPG:", mean(mpg$cty), "\n")
+  cat("Overall average highway MPG:", mean(mpg$hwy), "\n")
+  
+  # Step 3: Document findings and insights
+  
+  cat("\n\n===== SUMMARY OF FINDINGS =====\n")
+  cat("1. Compact Cars:\n")
+  cat("   - There are", nrow(compact_cars), "compact cars in the dataset\n")
+  cat("   - Average city MPG:", mean(compact_cars$cty), "\n")
+  cat("   - Average highway MPG:", mean(compact_cars$hwy), "\n")
+  cat("   - Main manufacturers:", names(sort(table(compact_cars$manufacturer), decreasing = TRUE)[1:3]), "\n\n")
+  
+  cat("2. Toyota Vehicles:\n")
+  cat("   - Toyota offers", length(toyota_class_table), "different vehicle classes\n")
+  cat("   - Most common Toyota class:", names(which.max(toyota_class_table)), "\n")
+  cat("   - Toyota's most fuel-efficient class (highway):", 
+      toyota_mpg_by_class$class[which.max(toyota_mpg_by_class$hwy)], "\n\n")
+  
+  cat("3. Efficient 4-Cylinder Cars (MPG &gt; 30):\n")
+  cat("   - There are", nrow(efficient_4cyl), "4-cylinder cars with highway MPG &gt; 30\n")
+  cat("   - Top manufacturer of efficient cars:", names(which.max(table(efficient_4cyl$manufacturer))), "\n")
+  cat("   - Average highway MPG:", mean(efficient_4cyl$hwy), "\n\n")
+  
+  cat("4. Cylinder Comparison:\n")
+  cat("   - 4-cylinder cars average", cyl_comparison$cty[cyl_comparison$cyl == 4], "city MPG\n")
+  cat("   - 6-cylinder cars average", cyl_comparison$cty[cyl_comparison$cyl == 6], "city MPG\n")
+  cat("   - 8-cylinder cars average", cyl_comparison$cty[cyl_comparison$cyl == 8], "city MPG\n")
+  cat("   - Each additional 2 cylinders reduces city MPG by approximately", 
+      round((cyl_comparison$cty[cyl_comparison$cyl == 4] - cyl_comparison$cty[cyl_comparison$cyl == 8])/2, 1), 
+      "MPG\n\n")
+</code></pre></div>
+<details id="ex-mpg-insights" class="exercise exercise-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">2.5.3</span><span class="period">.</span><span class="space"> </span><span class="title">Dataset Analysis Insights.</span>
+</h4></summary><article class="exercise exercise-like knowl__content"><div class="para" id="ex-mpg-insights-2-1">Based on the exploratory analysis of the mpg dataset, answer the following questions:</div></article></details></section></section></div>
+<div id="ptx-content-footer" class="ptx-content-footer">
+<a class="previous-button button" href="sec-data-exploration.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-creating-transforming-variables.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="338 3000 8772 6866" role="img"><title>PreTeXt logo</title><g style="stroke-width:.025in; stroke:currentColor; fill:none"><polyline points="472,3590 472,9732 " style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png" alt="Runstone Academy logo"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png" alt="MathJax logo"></a>
+</div>
+</body>
+</html>
