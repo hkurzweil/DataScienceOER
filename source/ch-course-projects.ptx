@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<chapter xml:id="ch-course-projects">
+  <title>Solidifying Concepts: Course Projects</title>
+
+  <introduction>
+    <p>The concepts learned in this course are not going to truly come to life until we dive into data that excites us. The textbook will reference this section several times as we work through various aspects of the projects.</p>
+  </introduction>
+<section xml:id="sec-personal-data-tracking">
+      <title>Project 1: Gleaning Insights from Personal Data</title>
+      
+      <p>In this course-long mini-project, you'll collect and analyze your own personal data to gain hands-on experience with data science concepts, and maybe learn something new about yourself!</p>
+      
+      <project xml:id="proj-personal-data-tracking">
+        <title>Personal Data Tracking Project</title>
+        <statement>
+          <p>For this project, you will:</p>
+          <ol>
+            <li>
+              <p>Select a personal data tracking topic (e.g., screen time, physical activity, study habits, spending, etc.)</p>
+            </li>
+            <li>
+              <p>Design a data collection methodology and tracking system</p>
+            </li>
+            <li>
+              <p>Consistently collect data over the course duration</p>
+            </li>
+            <li>
+              <p>Periodically analyze the data using techniques learned in class</p>
+            </li>
+            <li>
+              <p>Present insights and findings at the end of the course</p>
+            </li>
+          </ol>
+        </statement>
+      </project>
+      
+      <p>Project milestones and check-ins will occur throughout the course:</p>
+      <ul>
+        <li>
+          <p><term>Week 2-4</term>: Topic selection and tracking system design</p>
+        </li>
+        <li>
+          <p><term>Week 6</term>: Initial data review and methodology refinement</p>
+        </li>
+        <li>
+          <p><term>Week 9</term>: Mid-project check-in and preliminary analysis</p>
+        </li>
+        <li>
+          <p><term>Week 12</term>: Final analysis and presentation preparation</p>
+        </li>
+      </ul>
+      
+      <exploration xml:id="exp-tracking-brainstorm">
+        <title>Personal Data Tracking Brainstorm</title>
+        <statement>
+          <p>Take a few minutes to brainstorm potential topics for your personal data tracking project. Consider:</p>
+          <ul>
+            <li>
+              <p>What aspects of your daily life are you curious about?</p>
+            </li>
+            <li>
+              <p>What behaviors or patterns might you want to understand better?</p>
+            </li>
+            <li>
+              <p>What data would be practical for you to collect consistently?</p>
+            </li>
+            <li>
+              <p>What potential insights might be valuable to you?</p>
+            </li>
+          </ul>
+          <p>List at least three potential tracking topics and briefly explain why each interests you.</p>
+        </statement>
+      </exploration>
+    </section>
+    </chapter>

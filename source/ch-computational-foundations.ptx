@@ -56,7 +56,7 @@
       </ul>
       
       <program interactive="webr" xml:id="prog-r-basics">
-        <input>
+        <code>
           # This is a comment - R ignores everything after the # symbol
           
           # Basic arithmetic operations
@@ -89,7 +89,7 @@
           # Getting help
           # Uncomment to run:
           # ?mean   # Opens help for the mean function
-        </input>
+        </code>
       </program>
       
       <exercise xml:id="ex-r-syntax">
@@ -211,7 +211,7 @@
      </ul>
      
      <program interactive="webr" xml:id="prog-data-types">
-       <input>
+       <code>
          # Creating variables of different data types
          
          # Numeric
@@ -257,7 +257,7 @@
          x == 2*y  # Is x equal to 2 times y?
          (x &gt; 5) and (y &lt; 10)  # Both conditions must be TRUE
          (x &gt; 15) | (y &lt; 10)  # At least one condition must be TRUE
-       </input>
+       </code>
      </program>
      
      <exercise xml:id="ex-data-types">
@@ -322,7 +322,7 @@
      </activity>
      
      <program interactive="webr" xml:id="prog-practice-template">
-       <input>
+       <code>
          # Exercise 1: Calculate the area of a circle with radius 5
          radius &lt;- 5
          # Insert your code here
@@ -341,11 +341,11 @@
          # Exercise 4: Determine if the average is greater than 20
          # Insert your code here
          
-       </input>
+       </code>
      </program>
      
      <program interactive="webr" xml:id="prog-practice-solution">
-       <input>
+       <code>
          # Exercise 1: Calculate the area of a circle with radius 5
          radius &lt;- 5
          area &lt;- pi * radius^2
@@ -363,7 +363,7 @@
          
          # Exercise 4: Determine if the average is greater than 20
          avg &gt; 20
-       </input>
+       </code>
      </program>
      
      <exercise xml:id="ex-debugging-practice">
@@ -452,7 +452,7 @@
      </definition>
      
      <program interactive="webr" xml:id="prog-data-structures">
-       <input>
+       <code>
          # Vectors
          # Creating vectors
          numeric_vector &lt;- c(1, 2, 3, 4, 5)
@@ -511,7 +511,7 @@
          # Matrix operations
          my_matrix * 2
          t(my_matrix)   # Transpose
-       </input>
+       </code>
      </program>
      
      <exercise xml:id="ex-data-structures">
@@ -585,7 +585,7 @@
      </ul>
      
      <program interactive="webr" xml:id="prog-manipulating-structures">
-       <input>
+       <code>
          # Vector creation and manipulation
          
          # Creating sequences
@@ -667,7 +667,7 @@
          # Adding the new row
          students &lt;- rbind(students, new_student)
          students
-       </input>
+       </code>
      </program>
      
      <exercise xml:id="ex-manipulation">
@@ -758,7 +758,7 @@
      </activity>
      
      <program interactive="webr" xml:id="prog-build-dataset">
-       <input>
+       <code>
          # Step 1: Create the student data frame
          # Your code here
          
@@ -778,11 +778,11 @@
          # Step 5: Calculate average GPA by major
          # Your code here
          
-       </input>
+       </code>
      </program>
      
      <program interactive="webr" xml:id="prog-build-dataset-solution">
-       <input>
+       <code>
          # Step 1: Create the student data frame
          students &lt;- data.frame(
            student_id = 1:5,
@@ -811,7 +811,7 @@
          # Using aggregate function
          avg_gpa_by_major &lt;- aggregate(gpa ~ major, data = students, FUN = mean)
          avg_gpa_by_major
-       </input>
+       </code>
      </program>
      
      <exercise xml:id="ex-challenge-task">
@@ -903,7 +903,7 @@
       </ul>
       
       <program interactive="webr" xml:id="prog-create-csv">
-        <input>
+        <code>
           # First, let's create a sample CSV file to use
           # Create a sample dataset
           sample_data &lt;- data.frame(
@@ -954,13 +954,13 @@
           employees_na
           is.na(employees_na)
           colSums(is.na(employees_na))  # Count NAs in each column
-        </input>
+        </code>
       </program>
       
       <p>In real-world applications, you might need to import data from URLs or from other packages:</p>
       
       <program interactive="webr" xml:id="prog-import-url">
-        <input>
+        <code>
           # Importing data from a URL
           # Note: This URL is a placeholder and may not work in the actual Web-R environment
           
@@ -983,7 +983,7 @@
           data(iris)
           head(iris)
           str(iris)
-        </input>
+        </code>
       </program>
       
       <exercise xml:id="ex-import-practice">
@@ -1080,7 +1080,7 @@
       </table>
       
       <program interactive="webr" xml:id="prog-data-inspection">
-        <input>
+        <code>
           # Load the built-in iris dataset
           data(iris)
           
@@ -1137,7 +1137,7 @@
           
           # Proportions in cross-tabulation
           prop.table(cross_tab, margin = 1)  # Row proportions
-        </input>
+        </code>
       </program>
       
       <exercise xml:id="ex-inspection-matching">
@@ -1215,7 +1215,7 @@
       </activity>
       
       <program interactive="webr" xml:id="prog-explore-mtcars">
-        <input>
+        <code>
           # Step 1: Load the mtcars dataset
           data(mtcars)
           
@@ -1226,11 +1226,11 @@
           # Step 3: Answer the questions
           # Your code here
           
-        </input>
+        </code>
       </program>
       
       <program interactive="webr" xml:id="prog-explore-mtcars-solution">
-        <input>
+        <code>
           # Step 1: Load the mtcars dataset
           data(mtcars)
           
@@ -1285,7 +1285,7 @@
           
           # Add a regression line
           abline(lm(mpg ~ wt, data=mtcars), col="red", lwd=2)
-        </input>
+        </code>
       </program>
       
       <exercise xml:id="ex-dataset-questions">
@@ -1377,7 +1377,7 @@
       </ul>
       
       <program interactive="webr" xml:id="prog-summary-stats">
-        <input>
+        <code>
           # Load the mtcars dataset
           data(mtcars)
           
@@ -1437,7 +1437,7 @@
           
           # Apply to multiple groups
           by(mtcars$mpg, mtcars$cyl, my_stats)
-        </input>
+        </code>
       </program>
       
       <exercise xml:id="ex-summary-stats">
@@ -1517,7 +1517,7 @@
       </ul>
       
       <program interactive="webr" xml:id="prog-basic-plots">
-        <input>
+        <code>
           # Load the iris dataset
           data(iris)
           
@@ -1611,13 +1611,13 @@
                 main = "Iris Data Scatter Plot Matrix",
                 pch = 21,
                 bg = c("red", "green", "blue")[unclass(iris$Species)])
-        </input>
+        </code>
       </program>
       
       <p>Additional plots for specific analysis needs:</p>
       
       <program interactive="webr" xml:id="prog-advanced-plots">
-        <input>
+        <code>
           # Load datasets
           data(mtcars)
           data(iris)
@@ -1692,7 +1692,7 @@
            lines(i + scaled_dens, dens$x, col = "darkred", lwd = 2)
            lines(i - scaled_dens, dens$x, col = "darkred", lwd = 2)
          }
-       </input>
+        </code>
      </program>
      
      <exercise xml:id="ex-visualization-tasks">
@@ -1780,7 +1780,7 @@
      </activity>
      
      <program interactive="webr" xml:id="prog-exploratory-analysis">
-       <input>
+       <code>
          # Step 1: Load the dataset
          data(ToothGrowth)
          
@@ -1795,11 +1795,11 @@
          # Step 4: Document findings
          # Your insights here
          
-       </input>
+       </code>
      </program>
      
      <program interactive="webr" xml:id="prog-exploratory-analysis-solution">
-       <input>
+       <code>
          # Step 1: Load the dataset
          data(ToothGrowth)
          
@@ -1928,7 +1928,7 @@
          cat("   - Orange juice (OJ) appears more effective than ascorbic acid (VC) at lower doses\n")
          cat("   - At the highest dose (2.0 mg), both supplements show similar effectiveness\n")
          cat("   - There appears to be an interaction between supplement type and dose\n")
-       </input>
+       </code>
      </program>
      
      <exercise xml:id="ex-eda-interpretation">
@@ -2005,7 +2005,7 @@
      </ul>
      
      <program interactive="webr" xml:id="prog-filter-select">
-       <input>
+       <code>
          # Load the mtcars dataset
          data(mtcars)
          
@@ -2070,7 +2070,7 @@
          # Filtering with text patterns (using grepl)
          merc_cars &lt;- mtcars[grepl("Merc", mtcars$car_name), ]
          merc_cars$car_name
-       </input>
+       </code>
      </program>
      
      <exercise xml:id="ex-filter-select">
@@ -2138,7 +2138,7 @@
      </ul>
      
      <program interactive="webr" xml:id="prog-subsetting">
-       <input>
+       <code>
          # Load datasets
          data(iris)
          
@@ -2210,13 +2210,13 @@
          # Finding the index of the minimum value
          min_petal_length_index &lt;- which.min(iris$Petal.Length)
          iris[min_petal_length_index, ]
-       </input>
+        </code>
      </program>
      
      <p>Real-world example of subsetting to create a training and testing set:</p>
      
      <program interactive="webr" xml:id="prog-train-test-split">
-       <input>
+       <code>
          # Create a simple train/test split using subsetting
          data(iris)
          
@@ -2288,7 +2288,7 @@
          
          cat("\nSpecies distribution in stratified testing data:\n")
          print(table(strat_split$test$Species))
-       </input>
+        </code>
      </program>
      
      <exercise xml:id="ex-subsetting-practice">
@@ -2382,7 +2382,7 @@
      </activity>
      
      <program interactive="webr" xml:id="prog-create-mpg">
-       <input>
+       <code>
        # Create a simplified version of the mpg dataset
          mpg &lt;- data.frame(
            manufacturer = c("audi", "audi", "audi", "audi", "audi", "audi", "audi", "audi", "audi", "audi", "audi", "audi", "audi", "audi", "audi", "audi", "audi", "audi", "chevrolet", "chevrolet", "chevrolet", "chevrolet", "chevrolet", "chevrolet", "chevrolet", "chevrolet", "chevrolet", "chevrolet", "chevrolet", "chevrolet", "chevrolet", "chevrolet", "chevrolet", "dodge", "dodge", "dodge", "dodge", "dodge", "dodge", "dodge", "dodge", "dodge", "dodge", "dodge", "dodge", "dodge", "dodge", "dodge", "dodge", "dodge", "dodge", "dodge", "dodge", "dodge", "dodge", "dodge", "dodge", "ford", "ford", "ford", "ford", "ford", "ford", "ford", "ford", "ford", "ford", "ford", "ford", "ford", "ford", "ford", "ford", "ford", "ford", "ford", "ford", "ford", "ford", "ford", "ford", "ford", "ford", "ford", "ford", "honda", "honda", "honda", "honda", "honda", "honda", "honda", "honda", "honda", "hyundai", "hyundai", "hyundai", "hyundai", "hyundai", "hyundai", "hyundai", "hyundai", "hyundai", "hyundai", "hyundai", "hyundai", "hyundai", "hyundai", "jeep", "jeep", "jeep", "jeep", "jeep", "jeep", "jeep", "jeep", "land rover", "land rover", "land rover", "land rover", "lincoln", "lincoln", "lincoln", "mercury", "mercury", "mercury", "mercury", "nissan", "nissan", "nissan", "nissan", "nissan", "nissan", "nissan", "nissan", "nissan", "nissan", "nissan", "nissan", "nissan", "pontiac", "pontiac", "pontiac", "subaru", "subaru", "subaru", "subaru", "subaru", "subaru", "subaru", "subaru", "subaru", "subaru", "subaru", "subaru", "subaru", "subaru", "toyota", "toyota", "toyota", "toyota", "toyota", "toyota", "toyota", "toyota", "toyota", "toyota", "toyota", "toyota", "toyota", "toyota", "toyota", "toyota", "toyota", "toyota", "toyota", "toyota", "toyota", "toyota", "toyota", "toyota", "toyota", "toyota", "toyota", "toyota", "toyota", "toyota", "toyota", "toyota", "volkswagen", "volkswagen", "volkswagen", "volkswagen", "volkswagen", "volkswagen", "volkswagen", "volkswagen", "volkswagen", "volkswagen", "volkswagen", "volkswagen", "volkswagen", "volkswagen", "volkswagen", "volkswagen", "volkswagen", "volkswagen", "volkswagen", "volkswagen", "volkswagen", "volkswagen", "volkswagen", "volkswagen", "volkswagen", "volkswagen", "volkswagen"),
@@ -2534,7 +2534,7 @@
          cat("   - Each additional 2 cylinders reduces city MPG by approximately", 
              round((cyl_comparison$cty[cyl_comparison$cyl == 4] - cyl_comparison$cty[cyl_comparison$cyl == 8])/2, 1), 
              "MPG\n\n")
-       </input>
+       </code>
      </program>
      
      <exercise xml:id="ex-mpg-insights">
@@ -2611,7 +2611,7 @@
      </ul>
      
      <program interactive="webr" xml:id="prog-adding-columns">
-       <input>
+       <code>
          # Create a sample dataset
          students &lt;- data.frame(
            id = 1:6,
@@ -2672,13 +2672,13 @@
          # Calculate maximum score across all subjects
          students$max_score &lt;- apply(students[, c("math_score", "science_score", "english_score")], 1, max)
          students
-       </input>
+       </code>
      </program>
      
      <p>More advanced transformations:</p>
      
      <program interactive="webr" xml:id="prog-advanced-transformations">
-       <input>
+       <code>
          # Load the iris dataset
          data(iris)
          
@@ -2776,7 +2776,7 @@
          text_data$full_name_upper &lt;- toupper(text_data$full_name)
          
          text_data
-       </input>
+       </code>
      </program>
      
      <exercise xml:id="ex-column-transformations">
@@ -2838,7 +2838,7 @@
      <p>In base R, reshaping can be done with the <c>reshape()</c> function:</p>
      
      <program interactive="webr" xml:id="prog-reshaping">
-       <input>
+       <code>
          # Create a sample dataset in wide format
          # Student scores for different subjects
          student_scores_wide &lt;- data.frame(
@@ -2977,7 +2977,7 @@
          
          # Cleaning up column names for better readability (not executed in this example)
          # Would need to rename columns like value.weight.baseline to baseline_weight
-       </input>
+       </code>
      </program>
      
      <exercise xml:id="ex-reshaping-practice">
@@ -3081,7 +3081,7 @@
      </activity>
      
      <program interactive="webr" xml:id="prog-dataset-transformation-example">
-       <input>
+       <code>
          # Example transformation workflow for the airquality dataset
          # This is an example of what students might do in their group work
          
@@ -3196,7 +3196,7 @@
               pch = 19,
               col = "darkblue")
          abline(lm(Ozone ~ Temp, data = airquality_imputed), col = "red", lwd = 2)
-       </input>
+        </code>
      </program>
      
      <exercise xml:id="ex-transformation-explanation">
@@ -3282,7 +3282,7 @@
      <p>In R, there are several packages for working with APIs, including <c>httr</c> for making HTTP requests and <c>jsonlite</c> for parsing JSON data.</p>
      
      <program interactive="webr" xml:id="prog-api-basics">
-       <input>
+       <code>
          # Basic API concepts and demonstration
          # Note: Some code is commented out since we can't install packages or make actual API calls in Web-R
          
@@ -3407,7 +3407,7 @@
          # Parse CSV string
          parsed_csv &lt;- read.csv(text = csv_example)
          parsed_csv
-       </input>
+        </code>
      </program>
      
      <p>Examples of popular APIs for data science:</p>
@@ -3489,7 +3489,7 @@
      </ul>
      
      <program interactive="webr" xml:id="prog-r-web-data">
-       <input>
+       <code>
          # Working with web data in R
          # Note: Most code is commented out as we can't make actual web requests in Web-R
          
@@ -3674,7 +3674,7 @@
               xlab = "Value",
               col = "lightblue",
               breaks = 10)
-       </input>
+        </code>
      </program>
      
      <exercise xml:id="ex-api-workflow">
@@ -3712,7 +3712,7 @@
      <p>We'll use a simulated weather API as our example, as weather data is commonly used in data science projects and is readily available through many public APIs.</p>
      
      <program interactive="webr" xml:id="prog-weather-api-example">
-       <input>
+       <code>
          # Simulated Weather API Example
          
          # Function to simulate weather API response for a city
@@ -3888,7 +3888,7 @@
                 pch = c(25, 22, 22, 24),
                 pt.bg = c("blue", "lightblue", "pink", "red"),
                 title = "Temperature (°C)")
-       </input>
+       </code>
      </program>
      
      <p>In a real-world scenario, you would need to consider several additional factors when working with APIs:</p>
@@ -4037,7 +4037,7 @@
      </activity>
      
      <program interactive="webr" xml:id="prog-project-example">
-       <input>
+       <code>
          # Example of a simulated data analysis project: Weather and Energy Consumption
          # This is a simplified simulation of what a real project might involve
          
@@ -4254,7 +4254,7 @@
                           "Energy", "Energy (7-day avg)"),
                 col = c("blue", "darkblue", "red", "darkred"),
                 lwd = c(2, 3, 2, 3))
-       </input>
+       </code>
      </program>
      
      <exercise xml:id="ex-project-planning">
@@ -4511,7 +4511,7 @@
      </ul>
      
      <program interactive="webr" xml:id="prog-project-template">
-       <input>
+       <code>
          # Mid-Term Project Template
          # Names: [Your Names Here]
          # Date: [Date]
@@ -4656,7 +4656,7 @@
          
          # Conclusions:
          # [Summarize your main conclusions from the analysis]
-       </input>
+       </code>
      </program>
      
      <exercise xml:id="ex-project-planning-template">

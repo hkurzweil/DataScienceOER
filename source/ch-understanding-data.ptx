@@ -145,7 +145,7 @@
       
       <figure xml:id="fig-web-r-interface">
         <caption>Web-R interface overview</caption>
-        <image source="assets/web-r-interface.png" width="80%">
+        <image source="web-r-interface.png" width="80%">
           <description>Screenshot of the Web-R interface showing the main components: script editor (top left), console (bottom left), environment/history (top right), and files/plots/packages/help (bottom right).</description>
         </image>
       </figure>
@@ -166,7 +166,7 @@
         </li>
       </ul>
       
-      <p> While we will dive more into using R later in the course, let's go ahead and practice a few lines of code now.</p>
+      <p> While we will dive more into using R later in the course, let's go ahead and practice a few lines of code now. While this is not a coding focused class, it is important to understand a few operators. What you will notice first is the the symbols &lt;- combined define a variable. In the first section of code, you'll see that it defines x as 10. This does not actually give you any output in R, but the next operation, the print() function then tells the code to give the output value of 10. The next section of code defines the variable y as a function of x. The last piece defines the variable numbers as a set and then calculates the mean.</p>
       <sage language="r">
         <input>
         <![CDATA[
@@ -217,6 +217,27 @@
           </ol>
         </answer>
       </exercise>
+
+<exercise xml:id="ex-coding-intro">
+        <title>Web-R Coding</title>
+        <statement>
+          <p>Go back up to the code box above and decide what lines of code you would need to change to get: (1) the y variable to compute to be 70 and (2) give an output of the median instead of the mean for the numbers variable</p>
+        </statement>
+        <hint>
+          <p>(1) What variable does y depend on? (2) What key word should be changed? Type your answers in the code box and click Evaluate to see if you're right!</p>
+        </hint>
+        <answer>
+          <ol>
+            <li>
+              <p>Change the 10 in line 3 to a 35 so that y multiplies x, which is now 35, by 2 to yield 70.</p>
+            </li>
+            <li>
+              <p>Change the word mean in line 16 to median and it will execute the new function</p>
+            </li>
+          </ol>
+        </answer>
+      </exercise>
+
     </subsection>
   </section>
   
@@ -351,13 +372,13 @@
         <sidebyside widths="47% 47%">
           <figure>
             <caption>Structured Data Example</caption>
-            <image source="assets/structured-data.png" width="100%">
+            <image source="structured-data.png" width="100%">
               <description>A spreadsheet showing neatly organized data in rows and columns</description>
             </image>
           </figure>
           <figure>
             <caption>Unstructured Data Example</caption>
-            <image source="assets/unstructured-data.png" width="100%">
+            <image source="unstructured-data.png" width="100%">
               <description>Various unorganized data formats including text documents, images, and audio files</description>
             </image>
           </figure>
@@ -433,7 +454,7 @@
               <p>Form small groups of 2-3 students</p>
             </li>
             <li>
-              <p>Access the provided sample datasets in your Web-R workspace</p>
+              <p>Evaluate the code below in the Web-R workspace</p>
             </li>
             <li>
               <p>For each dataset, identify:</p>
@@ -450,20 +471,17 @@
               </ul>
             </li>
             <li>
-              <p>Record your findings in the provided worksheet</p>
-            </li>
-            <li>
               <p>Be prepared to share your analysis with the class</p>
             </li>
           </ol>
         </statement>
         
         <hint>
-          <p>Remember that some datasets might contain multiple types of data. Focus on identifying the characteristics of each variable.</p>
+          <p>Remember that some datasets might contain multiple types of data and that's okay. Focus on identifying the characteristics of each variable and determining whether the dataset as a whole is primarily qualitative or quantitative.</p>
         </hint>
       </activity>
       
-      <program interactive="webr" xml:id="prog-inspect-data-types">
+      <sage language="r">
         <input>
           # Load a sample dataset
           data(mtcars)
@@ -477,25 +495,8 @@
           # First few rows
           head(mtcars)
         </input>
-      </program>
-      
-      <exercise xml:id="ex-data-types-reflection">
-        <title>Reflection Question</title>
-        <statement>
-          <p>After examining the mtcars dataset above, answer the following questions:</p>
-          <ol>
-            <li>
-              <p>What type of data (qualitative/quantitative) is mostly represented in this dataset?</p>
-            </li>
-            <li>
-              <p>Is this dataset structured or unstructured? Explain why.</p>
-            </li>
-            <li>
-              <p>Identify two variables that might be useful for predicting a car's fuel efficiency (mpg). Explain your reasoning.</p>
-            </li>
-          </ol>
-        </statement>
-      </exercise>
+      </sage>
+  
     </subsection>
   </section>
   
@@ -640,11 +641,11 @@
     <subsection xml:id="subsec-dikw-pyramid">
       <title>Introduction to the DIKW pyramid</title>
       
-      <p>The DIKW (Data, Information, Knowledge, Wisdom) pyramid is a conceptual framework that illustrates the hierarchical relationships between different levels of understanding and insight.</p>
+      <p>The DIKW (Data, Information, Knowledge, Wisdom) pyramid is a conceptual framework that illustrates the hierarchical relationships between different levels of understanding and insight. The graphic below is from <url href="Available from: https://www.researchgate.net/figure/The-data-information-knowledge-wisdom-DIKW-hierarchy-as-a-pyramid-to-manage-knowledge_fig6_332400827" visual="Available from: https://www.researchgate.net/figure/The-data-information-knowledge-wisdom-DIKW-hierarchy-as-a-pyramid-to-manage-knowledge_fig6_332400827">Research Gate.</url></p>
       
       <figure xml:id="fig-dikw-pyramid">
         <caption>The DIKW Pyramid</caption>
-        <image source="assets/dikw-pyramid.png" width="80%">
+        <image source="dikw-pyramid.png" width="80%">
           <description>A pyramid showing the hierarchical progression from Data at the bottom, followed by Information, Knowledge, and Wisdom at the top.</description>
         </image>
       </figure>
@@ -994,77 +995,8 @@
           </answer>
         </exercise>
       </exercise>
-    </subsection>
-    
-    <!-- Mini-project introduction: Personal data tracking exercise -->
-    <subsection xml:id="subsec-personal-data-tracking">
-      <title>Mini-project introduction: Personal data tracking exercise</title>
-      
-      <p>In this course-long mini-project, you'll collect and analyze your own personal data to gain hands-on experience with data science concepts.</p>
-      
-      <project xml:id="proj-personal-data-tracking">
-        <title>Personal Data Tracking Project</title>
-        <statement>
-          <p>For this project, you will:</p>
-          <ol>
-            <li>
-              <p>Select a personal data tracking topic (e.g., screen time, physical activity, study habits, spending, etc.)</p>
-            </li>
-            <li>
-              <p>Design a data collection methodology and tracking system</p>
-            </li>
-            <li>
-              <p>Consistently collect data over the course duration</p>
-            </li>
-            <li>
-              <p>Periodically analyze the data using techniques learned in class</p>
-            </li>
-            <li>
-              <p>Present insights and findings at the end of the course</p>
-            </li>
-          </ol>
-        </statement>
-      </project>
-      
-      <p>Project milestones and check-ins will occur throughout the course:</p>
-      <ul>
-        <li>
-          <p><term>Week 2-4</term>: Topic selection and tracking system design</p>
-        </li>
-        <li>
-          <p><term>Week 6</term>: Initial data review and methodology refinement</p>
-        </li>
-        <li>
-          <p><term>Week 9</term>: Mid-project check-in and preliminary analysis</p>
-        </li>
-        <li>
-          <p><term>Week 12</term>: Final analysis and presentation preparation</p>
-        </li>
-      </ul>
-      
-      <exploration xml:id="exp-tracking-brainstorm">
-        <title>Personal Data Tracking Brainstorm</title>
-        <statement>
-          <p>Take a few minutes to brainstorm potential topics for your personal data tracking project. Consider:</p>
-          <ul>
-            <li>
-              <p>What aspects of your daily life are you curious about?</p>
-            </li>
-            <li>
-              <p>What behaviors or patterns might you want to understand better?</p>
-            </li>
-            <li>
-              <p>What data would be practical for you to collect consistently?</p>
-            </li>
-            <li>
-              <p>What potential insights might be valuable to you?</p>
-            </li>
-          </ul>
-          <p>List at least three potential tracking topics and briefly explain why each interests you.</p>
-        </statement>
-      </exploration>
-      
-      <exercise xml:id="ex-tracking-methods">
+
+<exercise xml:id="ex-tracking-methods">
         <title>Match Data Collection Methods</title>
         <statement>
           <p>Match each personal tracking topic with the most appropriate data collection method:</p>
@@ -1092,6 +1024,15 @@
           </match>
         </matches>
       </exercise>
+
+    </subsection>
+    
+    <!-- Mini-project introduction: Personal data tracking exercise -->
+    <subsection xml:id="subsec-personal-data-tracking">
+      <title>Mini-project introduction: Personal data tracking exercise</title>
+      
+      <p>In this first mini-project, you'll collect and analyze your own personal data to gain hands-on experience with data science concepts. <xref ref="sec-personal-data-tracking" text="custom">Click here for details on the project.</xref></p>
+      
     </subsection>
   </section>
 
@@ -1184,10 +1125,12 @@
           <p><term>Value</term> refers to the usefulness and applicability of the data for generating insights and informing decisions.</p>
         </statement>
       </definition>
+
+      <p>Visually this looks like this graphic made by <url href="Available from: https://medium.com/@get_excelsior/big-data-explained-the-5v-s-of-data-ae80cbe8ded1" visual="Available from: https://medium.com/@get_excelsior/big-data-explained-the-5v-s-of-data-ae80cbe8ded1">Excelsior.</url></p>
       
       <figure xml:id="fig-5vs-framework">
         <caption>The 5Vs of Big Data</caption>
-        <image source="assets/5vs-framework.png" width="80%">
+        <image source="5vs-framework.png" width="80%">
           <description>A diagram showing the five Vs of big data: Volume, Velocity, Variety, Veracity, and Value, with icons representing each concept.</description>
         </image>
       </figure>
@@ -1367,7 +1310,8 @@
       </activity>
       
       <program interactive="webr" xml:id="prog-dataset-quality-check">
-        <input>
+        <sage language="r">
+              <input>
           # Load a dataset with quality issues
           data(airquality)
           
@@ -1386,7 +1330,8 @@
                 ylab="Observations", 
                 xlab="Variables",
                 col=c("green", "red"))
-        </input>
+              </input>
+            </sage>
       </program>
       
       <exercise xml:id="ex-5vs-application">
@@ -1600,7 +1545,7 @@
      </exploration>
      
      <program interactive="webr" xml:id="prog-personal-data-analysis">
-       <input>
+       <code>
          # Example code for personal data analysis
          # Replace with your own data and analysis as appropriate
          
@@ -1630,7 +1575,7 @@
          # Identify trends
          model &lt;- lm(value ~ as.numeric(date), data = tracking_data)
          summary(model)
-       </input>
+       </code>
      </program>
      
      <exercise xml:id="ex-tracking-improvement">
@@ -1995,7 +1940,7 @@
      </ol>
      
      <program interactive="webr" xml:id="prog-data-analysis-template">
-       <input>
+       <code>
          # Template for personal data analysis
          # Replace this with your actual data analysis code
          
@@ -2057,7 +2002,7 @@
          # Calculate correlation with day of the week (numeric 1-7)
          tracking_data$day_num &lt;- as.numeric(format(tracking_data$date, "%u"))
          cor.test(tracking_data$day_num, tracking_data$value)
-       </input>
+       </code>
      </program>
      
      <p>Your mini-project presentation should include:</p>

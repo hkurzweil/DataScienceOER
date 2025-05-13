@@ -16,6 +16,7 @@
     <xi:include href="./ch-computational-foundations.ptx" />
     <xi:include href="./ch-data-analysis.ptx" />
     <xi:include href="./ch-advanced-analysis.ptx" />
+    <xi:include href="./ch-course-projects.ptx" />
 
 
     <!-- Include backmatter -->

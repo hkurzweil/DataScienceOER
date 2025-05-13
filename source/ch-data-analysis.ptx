@@ -333,7 +333,7 @@
       <p>This layered approach allows for building complex visualizations by combining simple elements in a systematic way.</p>
       
       <program interactive="webr" xml:id="prog-ggplot2-intro">
-        <input>
+        <code>
 <![CDATA[
 # Load required packages (in a real environment)
 # install.packages("ggplot2")
@@ -391,7 +391,7 @@ boxplot(mpg ~ factor(cyl), data = mtcars,
 #        x = "Number of Cylinders",
 #        y = "Miles per Gallon")
 ]]>
-        </input>
+        </code>
       </program>
       
       <exercise xml:id="ex-ggplot-components">
@@ -500,7 +500,7 @@ ggplot(data, aes(x = category_variable, y = continuous_variable)) +
       </paragraphs>
       
       <program interactive="webr" xml:id="prog-base-r-plots">
-        <input>
+        <code>
 <![CDATA[
 # Since we can't use ggplot2 directly in Web-R,
 # we'll create equivalents in base R
@@ -573,7 +573,7 @@ pairs(iris[, 1:4],
       pch = 19,
       col = as.numeric(iris$Species))
 ]]>
-        </input>
+        </code>
       </program>
       
       <exercise xml:id="ex-plot-selection">
@@ -827,7 +827,7 @@ ggplot(ts_data, aes(x = date, y = value)) +
       </paragraphs>
       
       <program interactive="webr" xml:id="prog-single-var-viz">
-        <input>
+        <code>
 <![CDATA[
 # Load datasets
 data(mtcars)
@@ -901,7 +901,7 @@ boxplot(Sepal.Length ~ Species, data = iris,
         ylab = "Sepal Length (cm)",
         col = c("lightpink", "lightblue", "lightgreen"))
 ]]>
-        </input>
+        </code>
       </program>
       
       <exercise xml:id="ex-distribution-viz">
@@ -1015,7 +1015,7 @@ boxplot(Sepal.Length ~ Species, data = iris,
       </paragraphs>
       
       <program interactive="webr" xml:id="prog-customization">
-        <input>
+        <code>
 <![CDATA[
 # Load dataset
 data(iris)
@@ -1146,7 +1146,7 @@ hist(iris$Petal.Width,
 # Reset to default settings
 par(mfrow = c(1, 1), mar = c(5, 4, 4, 2) + 0.1)
 ]]>
-        </input>
+        </code>
       </program>
       
       <exercise xml:id="ex-visualization-makeover">
@@ -1227,7 +1227,7 @@ plot(mtcars$wt, mtcars$mpg)
       </activity>
       
       <program interactive="webr" xml:id="prog-polished-example">
-        <input>
+        <code>
 <![CDATA[
 # Example of a polished visualization for a continuous variable
 # We'll use the mpg variable from mtcars
@@ -1352,7 +1352,7 @@ text(seq(0.7, by = 1.2, length.out = 3),
 mtext("8-cylinder engines were the most common in the 1974 dataset, reflecting the prevalence of large engines before fuel economy became a priority.",
       side = 1, line = 4, cex = 0.8)
 ]]>
-        </input>
+        </code>
       </program>
       
       <exercise xml:id="ex-visualization-critique">
@@ -1454,7 +1454,7 @@ barplot(sales, names.arg = months,
       </paragraphs>
       
       <program interactive="webr" xml:id="prog-relationship-viz">
-        <input>
+        <code>
 <![CDATA[
 # Load datasets
 data(mtcars)
@@ -1615,7 +1615,7 @@ mtext("Correlation", side = 4, line = 2)
 layout(1)
 par(mar = c(5, 4, 4, 2) + 0.1)  # Reset to default margins
 ]]>
-        </input>
+        </code>
       </program>
       
       <exercise xml:id="ex-relationship-plots">
@@ -1735,7 +1735,7 @@ par(mar = c(5, 4, 4, 2) + 0.1)  # Reset to default margins
       </paragraphs>
       
       <program interactive="webr" xml:id="prog-correlation-viz">
-        <input>
+        <code>
 <![CDATA[
 # Load dataset
 data(mtcars)
@@ -1893,7 +1893,7 @@ filled.contour(kde2d(x, y, n = 50),
               main = "Density Map Example",
               color.palette = colorRampPalette(c("white", "blue", "red", "darkred")))
 ]]>
-        </input>
+        </code>
       </program>
       
       <exercise xml:id="ex-correlation-patterns">
@@ -2011,7 +2011,7 @@ filled.contour(kde2d(x, y, n = 50),
      </activity>
      
      <program interactive="webr" xml:id="prog-relationship-activity">
-       <input>
+       <code>
 <![CDATA[
 # Example solution for the relationship visualization activity
 # Using the iris dataset
@@ -2198,7 +2198,7 @@ mtext("with petal length (bubble size) strongly correlated with species classifi
 # Reset plotting parameters
 par(mar = c(5, 4, 4, 2) + 0.1)  # Reset to default margins
 ]]>
-       </input>
+       </code>
      </program>
      
      <exercise xml:id="ex-viz-interpretation">
@@ -2285,7 +2285,7 @@ par(mar = c(5, 4, 4, 2) + 0.1)  # Reset to default margins
      </paragraphs>
      
      <program interactive="webr" xml:id="prog-descriptive-stats">
-       <input>
+       <code>
 <![CDATA[
 # Descriptive statistics examples in R
 # Load the built-in datasets
@@ -2447,7 +2447,7 @@ text(bar_positions, cyl_means$mpg + cyl_sds$mpg + 1,
 # Reset to default plotting parameters
 par(mfrow = c(1, 1))
 ]]>
-       </input>
+       </code>
      </program>
      
      <exercise xml:id="ex-descriptive-stats">
@@ -2608,7 +2608,7 @@ aggregate(Petal.Length ~ Species, data = iris,
      </paragraphs>
      
      <program interactive="webr" xml:id="prog-distributions-outliers">
-       <input>
+       <code>
 <![CDATA[
 # Analyzing distributions and outliers in R
 # Load necessary data
@@ -2892,7 +2892,7 @@ for (cyl in names(mpg_outliers)) {
  }
 }
 ]]>
-       </input>
+       </code>
      </program>
      
      <exercise xml:id="ex-distribution-analysis">
@@ -3011,7 +3011,7 @@ for (cyl in names(mpg_outliers)) {
      </activity>
      
      <program interactive="webr" xml:id="prog-stat-summary">
-       <input>
+       <code>
 <![CDATA[
 # Comprehensive Statistical Analysis of the mtcars dataset
 # Focus on fuel efficiency (mpg)
@@ -3292,7 +3292,7 @@ cat("   - Engine characteristics (cylinders, displacement, shape) also play sign
 cat("   - Manual transmission cars tend to be more fuel-efficient than automatics\n")
 cat("   - The data suggests trade-offs between performance (horsepower) and efficiency (MPG)\n")
 ]]>
-       </input>
+       </code>
      </program>
      
      <exercise xml:id="ex-statistical-interpretation">
@@ -3402,7 +3402,7 @@ cat("   - The data suggests trade-offs between performance (horsepower) and effi
      </paragraphs>
      
      <program interactive="webr" xml:id="prog-confidence-intervals">
-       <input>
+       <code>
 <![CDATA[
 # Confidence Interval Examples in R
 # Set a seed for reproducibility
@@ -3665,7 +3665,7 @@ legend("topright",
       lwd = c(NA, 2),
       bty = "n")
 ]]>
-       </input>
+       </code>
      </program>
      
      <exercise xml:id="ex-ci-interpretation">
@@ -3802,7 +3802,7 @@ legend("topright",
      </paragraphs>
      
      <program interactive="webr" xml:id="prog-linear-regression">
-       <input>
+       <code>
 <![CDATA[
 # Linear Regression Examples in R
 # Load necessary data
@@ -4060,7 +4060,7 @@ cat("not included in our model might influence both our predictors and MPG.\n\n"
 cat("Further analysis could explore additional predictor variables, interaction effects,\n")
 cat("and non-linear relationships to build a more comprehensive model of fuel efficiency.\n")
 ]]>
-    </input>
+    </code>
   </program>
   
   <exercise xml:id="ex-multi-regression">
@@ -4202,7 +4202,7 @@ cat("and non-linear relationships to build a more comprehensive model of fuel ef
   </paragraphs>
   
   <program interactive="webr" xml:id="prog-hypothesis-testing">
-    <input>
+    <code>
 <![CDATA[
 # Hypothesis Testing Examples in R
 # Set a seed for reproducibility
@@ -4325,7 +4325,7 @@ text(4, 30, paste("r =", round(cor_test$estimate, 2),
                  "\np-value =", round(cor_test$p.value, 5)),
      pos = 4)
 ]]>
-    </input>
+    </code>
   </program>
   
       <exercise xml:id="ex-hypothesis-testing">
@@ -4482,7 +4482,7 @@ text(4, 30, paste("r =", round(cor_test$estimate, 2),
       </paragraphs>
       
       <program interactive="webr" xml:id="prog-anova">
-        <input>
+        <code>
 <![CDATA[
 # ANOVA Examples in R
 # Load necessary data
@@ -4612,7 +4612,7 @@ text(2, max(species_means) + 3 * max(species_se) - 0.5,
      "Different letters indicate\nsignificantly different means\n(Tukey HSD, p < 0.05)",
      cex = 0.8)
 ]]>
-        </input>
+        </code>
       </program>
       
       <exercise xml:id="ex-anova-practice">
@@ -4820,7 +4820,7 @@ text(2, max(species_means) + 3 * max(species_se) - 0.5,
         </paragraphs>
         
         <program interactive="webr" xml:id="prog-predictive-modeling">
-          <input>
+          <code>
 <![CDATA[
 # Predictive Modeling Examples in R
 # Set a seed for reproducibility
@@ -5125,7 +5125,7 @@ cat("   using prediction intervals or similar measures.\n\n")
 cat("7. Data Quality: The quality of predictions depends heavily on the quality,\n")
 cat("   representativeness, and completeness of the training data.\n\n")
 ]]>
-          </input>
+          </code>
         </program>
         
         <exercise xml:id="ex-predictive-modeling">
