@@ -141,26 +141,7 @@
     <subsection xml:id="subsec-web-r-setup">
       <title>Set up Web-R accounts and platform familiarization</title>
       
-      <p>In this course, we'll use Web-R as our primary platform for data analysis. Web-R provides a cloud-based environment for R programming that eliminates the need for local installation.</p>
-      
-      <technology xml:id="tech-web-r">
-        <title>Setting Up Your Web-R Account</title>
-        <p>Follow these steps to create and configure your Web-R account:</p>
-        <ol>
-          <li>
-            <p>Navigate to the Web-R platform (link provided in your course materials)</p>
-          </li>
-          <li>
-            <p>Click "Create Account" and enter your academic email address</p>
-          </li>
-          <li>
-            <p>Complete the verification process via the email sent to you</p>
-          </li>
-          <li>
-            <p>Log in and customize your workspace settings</p>
-          </li>
-        </ol>
-      </technology>
+      <p>In this course, we'll use Web-R as our primary platform for data analysis. Web-R provides a cloud-based environment for the R programming language many statisticians and data scientists use, but it eliminates the need for local installation. You will be able to work with small snippets of code withing this textbook, but for homework and some activities you will want to navigate to www.web.r-wasm.org/latest/ in a different web browswer tab. </p>
       
       <figure xml:id="fig-web-r-interface">
         <caption>Web-R interface overview</caption>
@@ -185,7 +166,8 @@
         </li>
       </ul>
       
-      <program interactive="webr" xml:id="prog-first-r-commands">
+      <p> While we will dive more into using R later in the course, let's go ahead and practice a few lines of code now.</p>
+      <sage language="r">
         <input>
         <![CDATA[
           # Your first R commands
@@ -206,7 +188,7 @@
           mean(numbers)
           ]]>
         </input>
-      </program>
+      </sage>
       
       <!-- Interactive check -->
       <exercise xml:id="ex-web-r-interface">
