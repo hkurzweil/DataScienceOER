@@ -14,7 +14,7 @@
 <!--******************************************-->
 <head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Colophon</title>
+<title>Advanced Visualizations</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
@@ -147,7 +147,7 @@ eBookConfig.enable_chatcodes =  false;
 <ol id="searchresults" class="searchresults"></ol>
 </div>
 </div>
-<span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="backmatter.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="backmatter.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><span class="next-button button disabled"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></span></span>
+<span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="sec-intro-ggplot2.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-data-analysis.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="sec-relationships-viz.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
 </div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N} \newcommand{\Z}{\mathbb Z} \newcommand{\Q}{\mathbb Q} \newcommand{\R}{\mathbb R}
 \newcommand{\lt}{&lt;}
 \newcommand{\gt}{&gt;}
@@ -309,9 +309,9 @@ eBookConfig.enable_chatcodes =  false;
 </li>
 </ul>
 </li>
-<li class="toc-item toc-chapter">
+<li class="toc-item toc-chapter contains-active">
 <div class="toc-title-box"><a href="ch-data-analysis.html" class="internal"><span class="codenumber">3</span> <span class="title">Data Analysis and Visualization with Web-R</span></a></div>
-<ul class="structural toc-item-list">
+<ul class="structural toc-item-list contains-active">
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec-visualization-principles.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Data Visualization Principles</span></a></div>
 <ul class="structural toc-item-list">
@@ -329,9 +329,9 @@ eBookConfig.enable_chatcodes =  false;
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-intro-ggplot2.html#subsec-transform-to-ggplot" class="internal"><span class="codenumber">3.2.3</span> <span class="title">Exercise: Transform basic R plots into ggplot2</span></a></div></li>
 </ul>
 </li>
-<li class="toc-item toc-section">
+<li class="toc-item toc-section contains-active">
 <div class="toc-title-box"><a href="sec-advanced-visualizations.html" class="internal"><span class="codenumber">3.3</span> <span class="title">Advanced Visualizations</span></a></div>
-<ul class="structural toc-item-list">
+<ul class="structural toc-item-list active">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-advanced-visualizations.html#subsec-single-var-viz" class="internal"><span class="codenumber">3.3.1</span> <span class="title">Histograms, density plots, and bar charts</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-advanced-visualizations.html#subsec-aesthetics-themes" class="internal"><span class="codenumber">3.3.2</span> <span class="title">Customizing aesthetics and themes</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-advanced-visualizations.html#subsec-practice-polished-plots" class="internal"><span class="codenumber">3.3.3</span> <span class="title">Hands-on practice: Create polished single-variable plots</span></a></div></li>
@@ -374,12 +374,489 @@ eBookConfig.enable_chatcodes =  false;
 <li class="toc-item toc-chapter"><div class="toc-title-box"><a href="ch-advanced-analysis.html" class="internal"><span class="codenumber">4</span> <span class="title">Advanced Analysis and Final Project Work</span></a></div></li>
 <li class="toc-item toc-backmatter"><div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div></li>
 </ul></nav></div>
-<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="colophon" id="backmatter-2"><h2 class="heading hide-type">
-<span class="type">Colophon</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Colophon</span>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec-advanced-visualizations"><h2 class="heading hide-type">
+<span class="type">Section</span><span class="space"> </span><span class="codenumber">3.3</span><span class="space"> </span><span class="title">Advanced Visualizations</span>
 </h2>
-<div class="para" id="backmatter-2-1">This book was authored in PreTeXt.</div></section></div>
+<section class="subsection" id="subsec-single-var-viz"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">3.3.1</span><span class="space"> </span><span class="title">Histograms, density plots, and bar charts</span>
+</h3>
+<div class="para" id="subsec-single-var-viz-2">Visualizing the distribution of a single variable is fundamental in exploratory data analysis. There are several techniques for effectively visualizing both continuous and categorical variables.</div>
+<div class="para" id="subsec-single-var-viz-3">
+<dfn class="terminology">For continuous variables</dfn>, the main visualization types include:</div>
+<section class="paragraphs" id="subsec-single-var-viz-4"><h4 class="heading"><span class="title">Histograms.</span></h4>
+<div class="para" id="subsec-single-var-viz-4-2">Histograms divide the data into bins and show the frequency or count of observations in each bin. They are useful for understanding the shape, center, and spread of a distribution.</div>
+<div class="para" id="subsec-single-var-viz-4-3">Key considerations:</div>
+<ul class="disc" id="subsec-single-var-viz-4-4">
+<li id="subsec-single-var-viz-4-4-1"><div class="para" id="subsec-single-var-viz-4-4-1-1">Bin width affects the appearance and interpretation</div></li>
+<li id="subsec-single-var-viz-4-4-2"><div class="para" id="subsec-single-var-viz-4-4-2-1">Can reveal modality, skewness, and potential outliers</div></li>
+<li id="subsec-single-var-viz-4-4-3"><div class="para" id="subsec-single-var-viz-4-4-3-1">Y-axis can show counts or density</div></li>
+</ul></section><section class="paragraphs" id="subsec-single-var-viz-5"><h4 class="heading"><span class="title">Density Plots.</span></h4>
+<div class="para" id="subsec-single-var-viz-5-2">Density plots show a smoothed version of the distribution, making it easier to identify the shape. They’re particularly useful for comparing multiple distributions.</div>
+<div class="para" id="subsec-single-var-viz-5-3">Key considerations:</div>
+<ul class="disc" id="subsec-single-var-viz-5-4">
+<li id="subsec-single-var-viz-5-4-1"><div class="para" id="subsec-single-var-viz-5-4-1-1">Smoothing parameter affects the appearance</div></li>
+<li id="subsec-single-var-viz-5-4-2"><div class="para" id="subsec-single-var-viz-5-4-2-1">Can be overlaid with other density plots for comparison</div></li>
+<li id="subsec-single-var-viz-5-4-3"><div class="para" id="subsec-single-var-viz-5-4-3-1">Area under the curve equals 1</div></li>
+</ul></section><section class="paragraphs" id="subsec-single-var-viz-6"><h4 class="heading"><span class="title">Box Plots.</span></h4>
+<div class="para" id="subsec-single-var-viz-6-2">Box plots display the five-number summary (minimum, first quartile, median, third quartile, maximum) and highlight potential outliers. They’re compact and show key distribution features.</div>
+<div class="para" id="subsec-single-var-viz-6-3">Key considerations:</div>
+<ul class="disc" id="subsec-single-var-viz-6-4">
+<li id="subsec-single-var-viz-6-4-1"><div class="para" id="subsec-single-var-viz-6-4-1-1">Shows central tendency, spread, and outliers</div></li>
+<li id="subsec-single-var-viz-6-4-2"><div class="para" id="subsec-single-var-viz-6-4-2-1">Facilitates comparison between groups</div></li>
+<li id="subsec-single-var-viz-6-4-3"><div class="para" id="subsec-single-var-viz-6-4-3-1">Less detailed than histograms about distribution shape</div></li>
+</ul></section><div class="para" id="subsec-single-var-viz-7">
+<dfn class="terminology">For categorical variables</dfn>, the main visualization type is:</div>
+<section class="paragraphs" id="subsec-single-var-viz-8"><h4 class="heading"><span class="title">Bar Charts.</span></h4>
+<div class="para" id="subsec-single-var-viz-8-2">Bar charts show the frequency or count of observations in each category. They’re ideal for comparing values across discrete categories.</div>
+<div class="para" id="subsec-single-var-viz-8-3">Key considerations:</div>
+<ul class="disc" id="subsec-single-var-viz-8-4">
+<li id="subsec-single-var-viz-8-4-1"><div class="para" id="subsec-single-var-viz-8-4-1-1">Can be sorted by frequency for better interpretation</div></li>
+<li id="subsec-single-var-viz-8-4-2"><div class="para" id="subsec-single-var-viz-8-4-2-1">Categories can be reordered based on another variable</div></li>
+<li id="subsec-single-var-viz-8-4-3"><div class="para" id="subsec-single-var-viz-8-4-3-1">Horizontal orientation works well for long category labels</div></li>
+</ul></section><div class="code-box"><pre class="program"><code id="rs-prog-single-var-viz" class="language-none"># Load datasets
+data(mtcars)
+data(iris)
+
+# Histogram example
+hist(mtcars$mpg, 
+     main = "Distribution of Fuel Efficiency",
+     xlab = "Miles Per Gallon",
+     col = "lightblue",
+     breaks = 10)
+
+# Box plot example
+boxplot(mtcars$mpg, 
+       main = "Box Plot of Fuel Efficiency",
+       ylab = "Miles Per Gallon",
+       col = "lightgreen")
+
+# Density plot example (using base R)
+plot(density(mtcars$mpg), 
+     main = "Density Plot of Fuel Efficiency",
+     xlab = "Miles Per Gallon",
+     col = "blue",
+     lwd = 2)
+
+# Filling the density curve
+polygon(density(mtcars$mpg), col = "lightblue", border = "blue")
+
+# Bar chart for a categorical variable
+# First, create a categorical variable from cyl
+cyl_factor &lt;- factor(mtcars$cyl, levels = c(4, 6, 8), 
+                    labels = c("4 cylinders", "6 cylinders", "8 cylinders"))
+
+# Create a table of counts
+cyl_counts &lt;- table(cyl_factor)
+
+# Bar chart
+barplot(cyl_counts,
+        main = "Number of Cars by Cylinder Count",
+        xlab = "Cylinder Count",
+        ylab = "Number of Cars",
+        col = c("lightgreen", "lightblue", "lightpink"))
+
+# Comparing multiple distributions
+# Create separate density plots for each species
+plot(density(iris$Sepal.Length[iris$Species == "setosa"]), 
+     main = "Sepal Length Distribution by Species",
+     xlab = "Sepal Length (cm)",
+     ylim = c(0, 1.5),
+     col = "red",
+     lwd = 2)
+
+# Add the other species
+lines(density(iris$Sepal.Length[iris$Species == "versicolor"]), 
+      col = "blue", 
+      lwd = 2)
+lines(density(iris$Sepal.Length[iris$Species == "virginica"]), 
+      col = "green", 
+      lwd = 2)
+
+# Add a legend
+legend("topright", 
+       legend = c("Setosa", "Versicolor", "Virginica"),
+       col = c("red", "blue", "green"),
+       lwd = 2)
+
+# Compare distributions with box plots
+boxplot(Sepal.Length ~ Species, data = iris,
+        main = "Sepal Length by Species",
+        xlab = "Species",
+        ylab = "Sepal Length (cm)",
+        col = c("lightpink", "lightblue", "lightgreen"))
+</code></pre></div>
+<details id="ex-distribution-viz" class="exercise exercise-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">3.3.1</span><span class="period">.</span><span class="space"> </span><span class="title">Distribution Visualization.</span>
+</h4></summary><article class="exercise exercise-like knowl__content"><div class="para" id="ex-distribution-viz-2-1">For each of the following scenarios, identify the most appropriate visualization type and explain why:</div></article></details></section><section class="subsection" id="subsec-aesthetics-themes"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">3.3.2</span><span class="space"> </span><span class="title">Customizing aesthetics and themes</span>
+</h3>
+<div class="para" id="subsec-aesthetics-themes-2">Visual customization is essential for creating effective and appealing visualizations. Thoughtful customization can enhance readability, emphasize key patterns, and create a professional appearance.</div>
+<div class="para" id="subsec-aesthetics-themes-3">Key aspects of visualization customization include:</div>
+<section class="paragraphs" id="subsec-aesthetics-themes-4"><h4 class="heading"><span class="title">Color Selection.</span></h4>
+<div class="para" id="subsec-aesthetics-themes-4-2">Colors should be chosen deliberately to enhance understanding and accessibility:</div>
+<ul class="disc" id="subsec-aesthetics-themes-4-3">
+<li id="subsec-aesthetics-themes-4-3-1"><div class="para" id="subsec-aesthetics-themes-4-3-1-1">Use color to highlight important data or distinguish categories</div></li>
+<li id="subsec-aesthetics-themes-4-3-2"><div class="para" id="subsec-aesthetics-themes-4-3-2-1">Consider color blindness (avoid red-green combinations)</div></li>
+<li id="subsec-aesthetics-themes-4-3-3"><div class="para" id="subsec-aesthetics-themes-4-3-3-1">Use sequential color schemes for ordered data (e.g., light to dark blue for low to high values)</div></li>
+<li id="subsec-aesthetics-themes-4-3-4"><div class="para" id="subsec-aesthetics-themes-4-3-4-1">Use diverging color schemes for data with a meaningful midpoint (e.g., blue-white-red for negative-zero-positive)</div></li>
+<li id="subsec-aesthetics-themes-4-3-5"><div class="para" id="subsec-aesthetics-themes-4-3-5-1">Use qualitative color schemes for categorical data (e.g., distinct colors for different categories)</div></li>
+</ul></section><section class="paragraphs" id="subsec-aesthetics-themes-5"><h4 class="heading"><span class="title">Titles and Labels.</span></h4>
+<div class="para" id="subsec-aesthetics-themes-5-2">Clear and informative text elements improve understanding:</div>
+<ul class="disc" id="subsec-aesthetics-themes-5-3">
+<li id="subsec-aesthetics-themes-5-3-1"><div class="para" id="subsec-aesthetics-themes-5-3-1-1">Use descriptive titles that explain what the visualization shows</div></li>
+<li id="subsec-aesthetics-themes-5-3-2"><div class="para" id="subsec-aesthetics-themes-5-3-2-1">Label axes clearly with both the variable name and units</div></li>
+<li id="subsec-aesthetics-themes-5-3-3"><div class="para" id="subsec-aesthetics-themes-5-3-3-1">Include a subtitle or caption for additional context if needed</div></li>
+<li id="subsec-aesthetics-themes-5-3-4"><div class="para" id="subsec-aesthetics-themes-5-3-4-1">Consider direct labeling instead of or in addition to legends</div></li>
+<li id="subsec-aesthetics-themes-5-3-5"><div class="para" id="subsec-aesthetics-themes-5-3-5-1">Use consistent terminology throughout the visualization</div></li>
+</ul></section><section class="paragraphs" id="subsec-aesthetics-themes-6"><h4 class="heading"><span class="title">Visual Elements.</span></h4>
+<div class="para" id="subsec-aesthetics-themes-6-2">Adjust visual properties to enhance clarity and focus:</div>
+<ul class="disc" id="subsec-aesthetics-themes-6-3">
+<li id="subsec-aesthetics-themes-6-3-1"><div class="para" id="subsec-aesthetics-themes-6-3-1-1">Control point size, line width, and transparency</div></li>
+<li id="subsec-aesthetics-themes-6-3-2"><div class="para" id="subsec-aesthetics-themes-6-3-2-1">Use appropriate fonts and font sizes</div></li>
+<li id="subsec-aesthetics-themes-6-3-3"><div class="para" id="subsec-aesthetics-themes-6-3-3-1">Consider the aspect ratio of the plot</div></li>
+<li id="subsec-aesthetics-themes-6-3-4"><div class="para" id="subsec-aesthetics-themes-6-3-4-1">Use grid lines and backgrounds judiciously</div></li>
+<li id="subsec-aesthetics-themes-6-3-5"><div class="para" id="subsec-aesthetics-themes-6-3-5-1">Add reference lines or annotations to highlight key values</div></li>
+</ul></section><section class="paragraphs" id="subsec-aesthetics-themes-7"><h4 class="heading"><span class="title">Themes.</span></h4>
+<div class="para" id="subsec-aesthetics-themes-7-2">Overall visual style can be customized through themes:</div>
+<ul class="disc" id="subsec-aesthetics-themes-7-3">
+<li id="subsec-aesthetics-themes-7-3-1"><div class="para" id="subsec-aesthetics-themes-7-3-1-1">Control background colors, grid lines, fonts, and other non-data elements</div></li>
+<li id="subsec-aesthetics-themes-7-3-2"><div class="para" id="subsec-aesthetics-themes-7-3-2-1">Choose themes appropriate for the context (presentation, publication, dashboard)</div></li>
+<li id="subsec-aesthetics-themes-7-3-3"><div class="para" id="subsec-aesthetics-themes-7-3-3-1">Create consistent visual identity across multiple visualizations</div></li>
+<li id="subsec-aesthetics-themes-7-3-4"><div class="para" id="subsec-aesthetics-themes-7-3-4-1">Consider minimalist themes that emphasize the data</div></li>
+</ul></section><div class="code-box"><pre class="program"><code id="rs-prog-customization" class="language-none"># Load dataset
+data(iris)
+
+# Basic customization in base R plots
+# Create a custom color palette
+my_colors &lt;- c("#E69F00", "#56B4E9", "#009E73")
+
+# Create a scatterplot with customization
+plot(iris$Sepal.Length, iris$Sepal.Width,
+     main = "Sepal Dimensions by Species",
+     xlab = "Sepal Length (cm)",
+     ylab = "Sepal Width (cm)",
+     pch = 19,                     # Solid circle points
+     col = my_colors[iris$Species], # Custom colors by species
+     cex = 1.2,                    # Slightly larger points
+     font.main = 2,                # Bold title
+     family = "serif",             # Font family
+     bty = "l",                    # Box type - "L" shaped axes
+     las = 1)                      # Horizontal axis labels
+
+# Add a customized legend
+legend("topright", 
+       legend = levels(iris$Species),
+       col = my_colors, 
+       pch = 19,
+       pt.cex = 1.2,
+       title = "Species",
+       bg = "white",
+       box.lty = 1,
+       box.lwd = 1,
+       box.col = "gray80",
+       cex = 0.9)
+
+# Custom axes and grid
+# Create a plot with custom axes
+par(mar = c(5, 5, 4, 2))  # Increase margin for larger labels
+
+plot(iris$Petal.Length, iris$Petal.Width,
+     main = "Petal Dimensions by Species",
+     xlab = "",  # We'll add custom labels
+     ylab = "",
+     pch = c(21, 22, 24)[iris$Species],  # Different point shapes
+     bg = my_colors[iris$Species],       # Background colors
+     col = "black",                      # Point borders
+     cex = 1.3,                          # Point size
+     axes = FALSE)                       # No default axes
+
+# Add custom axes
+axis(1, at = seq(1, 7, by = 1), 
+     labels = seq(1, 7, by = 1), 
+     lwd = 1.5, cex.axis = 0.9)
+axis(2, at = seq(0, 2.5, by = 0.5), 
+     labels = seq(0, 2.5, by = 0.5), 
+     lwd = 1.5, cex.axis = 0.9, las = 1)
+
+# Add grid lines
+grid(nx = 6, ny = 5, 
+     lty = 2, col = "gray80")
+
+# Add axis labels with more customization
+mtext("Petal Length (cm)", side = 1, line = 3, cex = 1.2)
+mtext("Petal Width (cm)", side = 2, line = 3, cex = 1.2, las = 0)
+
+# Add a legend
+legend("topleft", 
+       legend = levels(iris$Species),
+       pt.bg = my_colors, 
+       pch = c(21, 22, 24),
+       pt.cex = 1.3,
+       title = "Species",
+       bg = "white",
+       box.lty = 1,
+       box.lwd = 1.5,
+       cex = 0.9)
+
+# Add a box around the plot
+box(lwd = 1.5)
+
+# Add a subtitle
+mtext("Comparing Petal Dimensions Across Three Iris Species", 
+      side = 3, line = 0.5, cex = 0.8)
+
+# Reset plotting parameters
+par(mar = c(5, 4, 4, 2) + 0.1)  # Reset to default margins
+
+# Creating multiple plots with consistent styling
+par(mfrow = c(2, 2), 
+    mar = c(4, 4, 3, 1),  # Reduced margins
+    bg = "white",         # White background
+    col.main = "black",   # Title color
+    col.axis = "darkgray", # Axis color
+    col.lab = "black",    # Label color
+    family = "serif")     # Font family
+
+# Plot 1: Sepal Length Histogram
+hist(iris$Sepal.Length, 
+     main = "Sepal Length",
+     xlab = "Length (cm)",
+     col = "#E69F00",
+     border = "white",
+     breaks = 10)
+
+# Plot 2: Sepal Width Histogram
+hist(iris$Sepal.Width, 
+     main = "Sepal Width",
+     xlab = "Width (cm)",
+     col = "#56B4E9",
+     border = "white",
+     breaks = 10)
+
+# Plot 3: Petal Length Histogram
+hist(iris$Petal.Length, 
+     main = "Petal Length",
+     xlab = "Length (cm)",
+     col = "#009E73",
+     border = "white",
+     breaks = 10)
+
+# Plot 4: Petal Width Histogram
+hist(iris$Petal.Width, 
+     main = "Petal Width",
+     xlab = "Width (cm)",
+     col = "#CC79A7",
+     border = "white",
+     breaks = 10)
+
+# Reset to default settings
+par(mfrow = c(1, 1), mar = c(5, 4, 4, 2) + 0.1)
+</code></pre></div>
+<details id="ex-visualization-makeover" class="exercise exercise-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">3.3.2</span><span class="period">.</span><span class="space"> </span><span class="title">Visualization Makeover.</span>
+</h4></summary><article class="exercise exercise-like knowl__content"><div class="para" id="ex-visualization-makeover-2-1">Consider the following base plot code which creates a simple scatter plot:</div>
+<pre class="code-block tex2jax_ignore">plot(mtcars$wt, mtcars$mpg)
+</pre>
+<div class="para" id="ex-visualization-makeover-2-3">Describe how you would enhance this visualization to make it more informative and visually appealing. Include specific improvements for each of the following aspects:</div> <ol class="decimal" id="ex-visualization-makeover-2-4">
+<li id="ex-visualization-makeover-2-4-1"><div class="para" id="ex-visualization-makeover-2-4-1-1">Titles and labels</div></li>
+<li id="ex-visualization-makeover-2-4-2"><div class="para" id="ex-visualization-makeover-2-4-2-1">Point styling (color, shape, size)</div></li>
+<li id="ex-visualization-makeover-2-4-3"><div class="para" id="ex-visualization-makeover-2-4-3-1">Additional elements to enhance understanding (e.g., trend line, annotations)</div></li>
+<li id="ex-visualization-makeover-2-4-4"><div class="para" id="ex-visualization-makeover-2-4-4-1">Overall theme and aesthetics</div></li>
+<li id="ex-visualization-makeover-2-4-5"><div class="para" id="ex-visualization-makeover-2-4-5-1">How you would use color to add another dimension of information</div></li>
+</ol></article></details></section><section class="subsection" id="subsec-practice-polished-plots"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">3.3.3</span><span class="space"> </span><span class="title">Hands-on practice: Create polished single-variable plots</span>
+</h3>
+<article class="activity project-like" id="activity-polished-plots"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.3.1</span><span class="period">.</span><span class="space"> </span><span class="title">Creating Polished Plots.</span>
+</h4>
+<div class="para" id="activity-polished-plots-2-1">In this activity, you will create polished, publication-quality visualizations for single variables. While we’ll use base R for this exercise, the principles apply to any visualization tool.</div> <div class="para" id="activity-polished-plots-2-2">Choose one continuous variable and one categorical variable from the built-in datasets (mtcars, iris, etc.) and create polished visualizations for each:</div> <div class="para" id="activity-polished-plots-2-3">For the continuous variable:</div> <ol class="decimal" id="activity-polished-plots-2-4">
+<li id="activity-polished-plots-2-4-1">
+<div class="para" id="activity-polished-plots-2-4-1-1">Create a histogram with the following enhancements:</div>
+<ul class="disc" id="activity-polished-plots-2-4-1-2">
+<li id="activity-polished-plots-2-4-1-2-1"><div class="para" id="activity-polished-plots-2-4-1-2-1-1">Informative title and axis labels</div></li>
+<li id="activity-polished-plots-2-4-1-2-2"><div class="para" id="activity-polished-plots-2-4-1-2-2-1">Appropriate bin width</div></li>
+<li id="activity-polished-plots-2-4-1-2-3"><div class="para" id="activity-polished-plots-2-4-1-2-3-1">Pleasing color scheme</div></li>
+<li id="activity-polished-plots-2-4-1-2-4"><div class="para" id="activity-polished-plots-2-4-1-2-4-1">Added reference lines for mean and median</div></li>
+<li id="activity-polished-plots-2-4-1-2-5"><div class="para" id="activity-polished-plots-2-4-1-2-5-1">Annotations explaining key features</div></li>
+</ul>
+</li>
+<li id="activity-polished-plots-2-4-2"><div class="para" id="activity-polished-plots-2-4-2-1">Create a boxplot for the same variable, grouped by another categorical variable, with similar enhancements</div></li>
+</ol> <div class="para" id="activity-polished-plots-2-5">For the categorical variable:</div> <ol class="decimal" id="activity-polished-plots-2-6"><li id="activity-polished-plots-2-6-1">
+<div class="para" id="activity-polished-plots-2-6-1-1">Create a bar chart with the following enhancements:</div>
+<ul class="disc" id="activity-polished-plots-2-6-1-2">
+<li id="activity-polished-plots-2-6-1-2-1"><div class="para" id="activity-polished-plots-2-6-1-2-1-1">Informative title and axis labels</div></li>
+<li id="activity-polished-plots-2-6-1-2-2"><div class="para" id="activity-polished-plots-2-6-1-2-2-1">Ordered bars (by frequency or another meaningful order)</div></li>
+<li id="activity-polished-plots-2-6-1-2-3"><div class="para" id="activity-polished-plots-2-6-1-2-3-1">Color scheme that highlights important categories</div></li>
+<li id="activity-polished-plots-2-6-1-2-4"><div class="para" id="activity-polished-plots-2-6-1-2-4-1">Value labels on the bars</div></li>
+<li id="activity-polished-plots-2-6-1-2-5"><div class="para" id="activity-polished-plots-2-6-1-2-5-1">Explanation of significance in a caption or annotation</div></li>
+</ul>
+</li></ol> <div class="para" id="activity-polished-plots-2-7">Document your code and explain the customization choices you made.</div></article><div class="code-box"><pre class="program"><code id="rs-prog-polished-example" class="language-none"># Example of a polished visualization for a continuous variable
+# We'll use the mpg variable from mtcars
+
+# Load data
+data(mtcars)
+
+# Calculate statistics for reference lines
+mean_mpg &lt;- mean(mtcars$mpg)
+median_mpg &lt;- median(mtcars$mpg)
+
+# Set up a pleasing color scheme
+hist_color &lt;- "#4292c6"
+mean_color &lt;- "#de2d26"
+median_color &lt;- "#31a354"
+
+# Create a polished histogram
+hist(mtcars$mpg,
+     main = "Distribution of Fuel Efficiency in 1974 Cars",
+     xlab = "Miles Per Gallon (MPG)",
+     ylab = "Number of Cars",
+     col = hist_color,
+     border = "white",
+     breaks = 10,
+     xlim = c(10, 35),
+     cex.main = 1.2,
+     cex.lab = 1.1)
+
+# Add reference lines for mean and median
+abline(v = mean_mpg, col = mean_color, lwd = 2, lty = 2)
+abline(v = median_mpg, col = median_color, lwd = 2, lty = 3)
+
+# Add a legend
+legend("topright",
+       legend = c(paste("Mean:", round(mean_mpg, 1)),
+                  paste("Median:", round(median_mpg, 1))),
+       col = c(mean_color, median_color),
+       lwd = 2,
+       lty = c(2, 3),
+       bg = "white",
+       cex = 0.9)
+
+# Add annotations
+text(14, 7, "Low efficiency\nrange", cex = 0.8)
+text(30, 7, "High efficiency\nrange", cex = 0.8)
+
+# Add a meaningful caption
+mtext("Most cars in the dataset fall between 15-20 MPG, with a few high-efficiency outliers.",
+      side = 1, line = 4, cex = 0.8)
+
+# Example of a boxplot for the same variable, grouped by cylinder count
+# First, convert cylinders to a factor for better labels
+mtcars$cyl_f &lt;- factor(mtcars$cyl, 
+                      levels = c(4, 6, 8),
+                      labels = c("4-cylinder", "6-cylinder", "8-cylinder"))
+
+# Create a custom color palette
+cyl_colors &lt;- c("4-cylinder" = "#4daf4a", 
+               "6-cylinder" = "#377eb8", 
+               "8-cylinder" = "#e41a1c")
+
+# Create a polished boxplot
+boxplot(mpg ~ cyl_f, data = mtcars,
+        main = "Fuel Efficiency by Engine Size",
+        xlab = "Engine Type",
+        ylab = "Miles Per Gallon (MPG)",
+        col = cyl_colors,
+        border = "gray30",
+        notch = TRUE,  # Add notches for confidence intervals
+        cex.main = 1.2,
+        cex.lab = 1.1,
+        cex.axis = 0.9,
+        outpch = 16,   # Solid circle for outliers
+        outcol = "gray30")
+
+# Add a horizontal line for overall average
+abline(h = mean(mtcars$mpg), col = "gray30", lwd = 1.5, lty = 2)
+text(3.2, mean(mtcars$mpg) + 1, "Overall Mean", cex = 0.8)
+
+# Add annotations
+mtext("Notches indicate 95% confidence interval around median", 
+      side = 3, line = 0.3, cex = 0.8)
+mtext("Data source: 1974 Motor Trend US magazine", 
+      side = 1, line = 3, cex = 0.8)
+
+# Example of a polished bar chart for a categorical variable
+# We'll use the number of cars by cylinder count
+
+# Calculate the count of cars by cylinder
+cyl_counts &lt;- table(mtcars$cyl)
+
+# Create a data frame for easier manipulation
+cyl_data &lt;- data.frame(
+  Cylinders = c("4-cylinder", "6-cylinder", "8-cylinder"),
+  Count = as.numeric(cyl_counts),
+  Percentage = round(100 * as.numeric(cyl_counts) / sum(cyl_counts), 1)
+)
+
+# Sort by count (descending)
+cyl_data &lt;- cyl_data[order(-cyl_data$Count), ]
+
+# Create a polished bar chart
+barplot(cyl_data$Count,
+        names.arg = cyl_data$Cylinders,
+        main = "Distribution of Cars by Engine Type",
+        xlab = "Engine Type",
+        ylab = "Number of Cars",
+        col = cyl_colors[cyl_data$Cylinders],
+        border = "white",
+        ylim = c(0, max(cyl_data$Count) * 1.2),  # Make room for labels
+        cex.main = 1.2,
+        cex.lab = 1.1,
+        cex.names = 0.9)
+
+# Add count labels on top of bars
+text(seq(0.7, by = 1.2, length.out = 3), 
+     cyl_data$Count + 0.8, 
+     paste0(cyl_data$Count, " (", cyl_data$Percentage, "%)"), 
+     cex = 0.9)
+
+# Add a caption
+mtext("8-cylinder engines were the most common in the 1974 dataset, reflecting the prevalence of large engines before fuel economy became a priority.",
+      side = 1, line = 4, cex = 0.8)
+</code></pre></div>
+<details id="ex-visualization-critique" class="exercise exercise-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">3.3.3</span><span class="period">.</span><span class="space"> </span><span class="title">Visualization Critique.</span>
+</h4></summary><article class="exercise exercise-like knowl__content"><div class="para" id="ex-visualization-critique-2-1">Examine the following R code and the visualization it creates. Identify three specific ways to improve the visualization and explain why these changes would make the chart more effective.</div>
+<pre class="code-block tex2jax_ignore"># Problematic visualization code
+sales &lt;- c(120, 90, 115, 45, 170)
+months &lt;- c("Jan", "Feb", "Mar", "Apr", "May")
+barplot(sales, names.arg = months, 
+        col = rainbow(5), 
+        main = "DATA",
+        border = "blue")
+</pre>
+<div class="solutions"><details id="ex-visualization-critique-3" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content">
+<div class="para" id="ex-visualization-critique-3-1">Three key improvements for this visualization:</div>
+<div class="para" id="ex-visualization-critique-3-2">1. Improve the title and add axis labels</div>
+<ul class="disc" id="ex-visualization-critique-3-3">
+<li id="ex-visualization-critique-3-3-1"><div class="para" id="ex-visualization-critique-3-3-1-1">
+<em class="emphasis">Issue</em>: The title "DATA" is vague and uninformative. There are no axis labels to indicate what the values represent.</div></li>
+<li id="ex-visualization-critique-3-3-2"><div class="para" id="ex-visualization-critique-3-3-2-1">
+<em class="emphasis">Improvement</em>: Replace with a descriptive title like "Monthly Sales: January-May 2025" and add a y-axis label such as "Sales ($ thousands)" to clearly communicate what data is being shown.</div></li>
+<li id="ex-visualization-critique-3-3-3"><div class="para" id="ex-visualization-critique-3-3-3-1">
+<em class="emphasis">Why it matters</em>: Proper titles and labels are essential for viewers to understand what they’re looking at without requiring additional explanation.</div></li>
+</ul>
+<div class="para" id="ex-visualization-critique-3-4">2. Use a more appropriate color scheme</div>
+<ul class="disc" id="ex-visualization-critique-3-5">
+<li id="ex-visualization-critique-3-5-1"><div class="para" id="ex-visualization-critique-3-5-1-1">
+<em class="emphasis">Issue</em>: The rainbow color scheme creates visual confusion by assigning unrelated colors to sequential months, suggesting categorical differences when the data is actually a time series.</div></li>
+<li id="ex-visualization-critique-3-5-2"><div class="para" id="ex-visualization-critique-3-5-2-1">
+<em class="emphasis">Improvement</em>: Use a single color for all bars (since months are part of a sequence) or a sequential color palette if highlighting a trend. Remove the blue borders which add visual noise.</div></li>
+<li id="ex-visualization-critique-3-5-3"><div class="para" id="ex-visualization-critique-3-5-3-1">
+<em class="emphasis">Why it matters</em>: Color should enhance understanding, not distract from it. Rainbow palettes are generally discouraged in data visualization as they can be hard to interpret and problematic for color-blind viewers.</div></li>
+</ul>
+<div class="para" id="ex-visualization-critique-3-6">3. Add value labels and context</div>
+<ul class="disc" id="ex-visualization-critique-3-7">
+<li id="ex-visualization-critique-3-7-1"><div class="para" id="ex-visualization-critique-3-7-1-1">
+<em class="emphasis">Issue</em>: The chart lacks context about the dramatic drop in April and subsequent rise in May. There are no exact values shown.</div></li>
+<li id="ex-visualization-critique-3-7-2"><div class="para" id="ex-visualization-critique-3-7-2-1">
+<em class="emphasis">Improvement</em>: Add value labels on top of each bar and include annotations explaining significant changes (e.g., "April sales dropped due to warehouse closure"). Consider adding a reference line showing the average sales.</div></li>
+<li id="ex-visualization-critique-3-7-3"><div class="para" id="ex-visualization-critique-3-7-3-1">
+<em class="emphasis">Why it matters</em>: Context and precise values help readers understand not just the pattern but the significance of the data, especially for unexpected values that might otherwise be misinterpreted.</div></li>
+</ul>
+<div class="para" id="ex-visualization-critique-3-8">Implementing these changes would transform this basic chart into a more professional, informative visualization that effectively communicates the sales trend.</div>
+</div></details></div></article></details></section></section></div>
 <div id="ptx-content-footer" class="ptx-content-footer">
-<a class="previous-button button" href="backmatter.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><span class="next-button button disabled"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></span>
+<a class="previous-button button" href="sec-intro-ggplot2.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-relationships-viz.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
 </div>
 <div id="ptx-page-footer" class="ptx-page-footer">

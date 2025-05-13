@@ -14,7 +14,7 @@
 <!--******************************************-->
 <head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Colophon</title>
+<title>Introduction to ggplot2</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
@@ -147,7 +147,7 @@ eBookConfig.enable_chatcodes =  false;
 <ol id="searchresults" class="searchresults"></ol>
 </div>
 </div>
-<span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="backmatter.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="backmatter.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><span class="next-button button disabled"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></span></span>
+<span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="sec-visualization-principles.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-data-analysis.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="sec-advanced-visualizations.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
 </div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N} \newcommand{\Z}{\mathbb Z} \newcommand{\Q}{\mathbb Q} \newcommand{\R}{\mathbb R}
 \newcommand{\lt}{&lt;}
 \newcommand{\gt}{&gt;}
@@ -309,9 +309,9 @@ eBookConfig.enable_chatcodes =  false;
 </li>
 </ul>
 </li>
-<li class="toc-item toc-chapter">
+<li class="toc-item toc-chapter contains-active">
 <div class="toc-title-box"><a href="ch-data-analysis.html" class="internal"><span class="codenumber">3</span> <span class="title">Data Analysis and Visualization with Web-R</span></a></div>
-<ul class="structural toc-item-list">
+<ul class="structural toc-item-list contains-active">
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec-visualization-principles.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Data Visualization Principles</span></a></div>
 <ul class="structural toc-item-list">
@@ -321,9 +321,9 @@ eBookConfig.enable_chatcodes =  false;
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-visualization-principles.html#subsec-critique-visualizations" class="internal"><span class="codenumber">3.1.4</span> <span class="title">Activity: Critique and improve sample visualizations</span></a></div></li>
 </ul>
 </li>
-<li class="toc-item toc-section">
+<li class="toc-item toc-section contains-active">
 <div class="toc-title-box"><a href="sec-intro-ggplot2.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Introduction to ggplot2</span></a></div>
-<ul class="structural toc-item-list">
+<ul class="structural toc-item-list active">
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-intro-ggplot2.html#subsec-ggplot2-intro" class="internal"><span class="codenumber">3.2.1</span> <span class="title">Grammar of graphics concept</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-intro-ggplot2.html#subsec-basic-ggplot" class="internal"><span class="codenumber">3.2.2</span> <span class="title">Creating basic plots in ggplot2</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-intro-ggplot2.html#subsec-transform-to-ggplot" class="internal"><span class="codenumber">3.2.3</span> <span class="title">Exercise: Transform basic R plots into ggplot2</span></a></div></li>
@@ -374,12 +374,255 @@ eBookConfig.enable_chatcodes =  false;
 <li class="toc-item toc-chapter"><div class="toc-title-box"><a href="ch-advanced-analysis.html" class="internal"><span class="codenumber">4</span> <span class="title">Advanced Analysis and Final Project Work</span></a></div></li>
 <li class="toc-item toc-backmatter"><div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div></li>
 </ul></nav></div>
-<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="colophon" id="backmatter-2"><h2 class="heading hide-type">
-<span class="type">Colophon</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Colophon</span>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec-intro-ggplot2"><h2 class="heading hide-type">
+<span class="type">Section</span><span class="space"> </span><span class="codenumber">3.2</span><span class="space"> </span><span class="title">Introduction to ggplot2</span>
 </h2>
-<div class="para" id="backmatter-2-1">This book was authored in PreTeXt.</div></section></div>
+<section class="subsection" id="subsec-ggplot2-intro"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">3.2.1</span><span class="space"> </span><span class="title">Grammar of graphics concept</span>
+</h3>
+<div class="para" id="subsec-ggplot2-intro-2">The <dfn class="terminology">grammar of graphics</dfn> is a systematic approach to creating visualizations by breaking them down into semantic components. Developed by Leland Wilkinson, this framework provides a structured way to describe and construct visualizations.</div>
+<div class="para" id="subsec-ggplot2-intro-3">In R, the ggplot2 package (created by Hadley Wickham) implements this grammar, allowing for a consistent and flexible approach to creating a wide range of visualizations.</div>
+<div class="para" id="subsec-ggplot2-intro-4">The key components of the grammar of graphics include:</div>
+<ul class="disc" id="subsec-ggplot2-intro-5">
+<li id="subsec-ggplot2-intro-5-1"><div class="para" id="subsec-ggplot2-intro-5-1-1">
+<dfn class="terminology">Data</dfn>: The dataset being visualized</div></li>
+<li id="subsec-ggplot2-intro-5-2"><div class="para" id="subsec-ggplot2-intro-5-2-1">
+<dfn class="terminology">Aesthetics</dfn>: Mappings from data variables to visual properties (position, color, size, shape, etc.)</div></li>
+<li id="subsec-ggplot2-intro-5-3"><div class="para" id="subsec-ggplot2-intro-5-3-1">
+<dfn class="terminology">Geometries</dfn>: The visual elements used to represent data points (points, lines, bars, etc.)</div></li>
+<li id="subsec-ggplot2-intro-5-4"><div class="para" id="subsec-ggplot2-intro-5-4-1">
+<dfn class="terminology">Facets</dfn>: Division of the plot into subplots based on categorical variables</div></li>
+<li id="subsec-ggplot2-intro-5-5"><div class="para" id="subsec-ggplot2-intro-5-5-1">
+<dfn class="terminology">Statistics</dfn>: Statistical transformations applied to the data (counts, means, regressions, etc.)</div></li>
+<li id="subsec-ggplot2-intro-5-6"><div class="para" id="subsec-ggplot2-intro-5-6-1">
+<dfn class="terminology">Coordinates</dfn>: The space in which data is mapped (Cartesian, polar, etc.)</div></li>
+<li id="subsec-ggplot2-intro-5-7"><div class="para" id="subsec-ggplot2-intro-5-7-1">
+<dfn class="terminology">Themes</dfn>: Visual styling of non-data elements (background, grid lines, labels, etc.)</div></li>
+</ul>
+<div class="para" id="subsec-ggplot2-intro-6">This layered approach allows for building complex visualizations by combining simple elements in a systematic way.</div>
+<div class="code-box"><pre class="program"><code id="rs-prog-ggplot2-intro" class="language-none"># Load required packages (in a real environment)
+# install.packages("ggplot2")
+# library(ggplot2)
+
+# For our Web-R environment, we'll use a built-in dataset
+data(mtcars)
+
+# Let's examine the data structure
+head(mtcars)
+
+# Basic ggplot2 syntax demonstration
+# Step 1: Initialize a plot with data
+# Step 2: Map variables to aesthetics
+# Step 3: Add geometric elements
+
+# In a real R environment, you would use:
+# ggplot(mtcars, aes(x = wt, y = mpg)) +
+#   geom_point()
+
+# In our limited environment, we'll create a similar plot using base R
+plot(mtcars$wt, mtcars$mpg,
+     main = "Car Weight vs. Fuel Efficiency",
+     xlab = "Weight (1000 lbs)",
+     ylab = "Miles per Gallon",
+     pch = 19,
+     col = "blue")
+
+# Add a regression line
+abline(lm(mpg ~ wt, data = mtcars), col = "red", lwd = 2)
+
+# Another example: Distribution of MPG
+hist(mtcars$mpg,
+     main = "Distribution of Fuel Efficiency",
+     xlab = "Miles per Gallon",
+     col = "lightblue",
+     breaks = 10)
+
+# In ggplot2, this would be:
+# ggplot(mtcars, aes(x = mpg)) +
+#   geom_histogram(bins = 10, fill = "lightblue", color = "black")
+
+# Boxplot by cylinder count
+boxplot(mpg ~ factor(cyl), data = mtcars,
+        main = "Fuel Efficiency by Number of Cylinders",
+        xlab = "Number of Cylinders",
+        ylab = "Miles per Gallon",
+        col = c("lightgreen", "lightblue", "lightpink"))
+
+# In ggplot2, this would be:
+# ggplot(mtcars, aes(x = factor(cyl), y = mpg, fill = factor(cyl))) +
+#   geom_boxplot() +
+#   scale_fill_manual(values = c("lightgreen", "lightblue", "lightpink")) +
+#   labs(title = "Fuel Efficiency by Number of Cylinders",
+#        x = "Number of Cylinders",
+#        y = "Miles per Gallon")
+</code></pre></div>
+<details id="ex-ggplot-components" class="exercise exercise-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">3.2.1</span><span class="period">.</span><span class="space"> </span><span class="title">Grammar of Graphics Components.</span>
+</h4></summary><article class="exercise exercise-like knowl__content"><div class="ptx-runestone-container"><div class="runestone cardsort_section"><ul data-component="dragndrop" data-question_label="" style="visibility: hidden;" id="rs-ex-ggplot-components">
+<span data-subcomponent="question"><div class="para" id="ex-ggplot-components-2-1">Match each ggplot2 component with its correct description:</div></span><li data-subcomponent="draggable" id="rs-ex-ggplot-components_drag1" data-category="1"><code class="code-inline tex2jax_ignore">ggplot(data, aes(x = var1, y = var2))</code></li>
+<li data-subcomponent="dropzone" for="rs-ex-ggplot-components_drag1" data-category="1">Initializes a plot and maps variables to aesthetic properties</li>
+<li data-subcomponent="draggable" id="rs-ex-ggplot-components_drag2" data-category="2"><code class="code-inline tex2jax_ignore">geom_point()</code></li>
+<li data-subcomponent="dropzone" for="rs-ex-ggplot-components_drag2" data-category="2">Adds a scatter plot layer using points to represent observations</li>
+<li data-subcomponent="draggable" id="rs-ex-ggplot-components_drag3" data-category="3"><code class="code-inline tex2jax_ignore">geom_smooth(method = "lm")</code></li>
+<li data-subcomponent="dropzone" for="rs-ex-ggplot-components_drag3" data-category="3">Adds a statistical model layer showing a linear trend line</li>
+<li data-subcomponent="draggable" id="rs-ex-ggplot-components_drag4" data-category="4"><code class="code-inline tex2jax_ignore">facet_wrap(~ category)</code></li>
+<li data-subcomponent="dropzone" for="rs-ex-ggplot-components_drag4" data-category="4">Creates separate subplots for each unique value of a categorical variable</li>
+<li data-subcomponent="draggable" id="rs-ex-ggplot-components_drag5" data-category="5"><code class="code-inline tex2jax_ignore">scale_color_manual(values = c("red", "blue"))</code></li>
+<li data-subcomponent="dropzone" for="rs-ex-ggplot-components_drag5" data-category="5">Customizes the mapping between categorical values and colors</li>
+<li data-subcomponent="draggable" id="rs-ex-ggplot-components_drag6" data-category="6"><code class="code-inline tex2jax_ignore">theme_minimal()</code></li>
+<li data-subcomponent="dropzone" for="rs-ex-ggplot-components_drag6" data-category="6">Changes the visual style of non-data plot elements to a simplified design</li>
+</ul></div></div></article></details></section><section class="subsection" id="subsec-basic-ggplot"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">3.2.2</span><span class="space"> </span><span class="title">Creating basic plots in ggplot2</span>
+</h3>
+<div class="para" id="subsec-basic-ggplot-2">While we can’t use ggplot2 directly in our Web-R environment, we’ll learn the principles and syntax for creating basic plot types with ggplot2. These principles can be applied when you work in a full R environment.</div>
+<div class="para" id="subsec-basic-ggplot-3">The basic structure of a ggplot2 visualization follows this pattern:</div>
+<ol class="decimal" id="subsec-basic-ggplot-4">
+<li id="subsec-basic-ggplot-4-1"><div class="para" id="subsec-basic-ggplot-4-1-1">Start with <code class="code-inline tex2jax_ignore">ggplot(data, aes(...))</code> to specify the data and aesthetic mappings</div></li>
+<li id="subsec-basic-ggplot-4-2"><div class="para" id="subsec-basic-ggplot-4-2-1">Add layers with <code class="code-inline tex2jax_ignore">geom_*()</code> functions for different plot types</div></li>
+<li id="subsec-basic-ggplot-4-3"><div class="para" id="subsec-basic-ggplot-4-3-1">Customize with additional elements like labels, scales, and themes</div></li>
+</ol>
+<div class="para" id="subsec-basic-ggplot-5">Let’s examine the code structure for common plot types:</div>
+<section class="paragraphs" id="subsec-basic-ggplot-6"><h4 class="heading"><span class="title">Scatter Plot.</span></h4>
+<div class="para" id="subsec-basic-ggplot-6-2">Used to show relationship between two continuous variables</div>
+<pre class="code-block tex2jax_ignore">ggplot(data, aes(x = variable1, y = variable2)) +
+  geom_point() +
+  labs(title = "Title", x = "X Label", y = "Y Label")
+</pre></section><section class="paragraphs" id="subsec-basic-ggplot-7"><h4 class="heading"><span class="title">Line Chart.</span></h4>
+<div class="para" id="subsec-basic-ggplot-7-2">Used to show trends over time or ordered categories</div>
+<pre class="code-block tex2jax_ignore">ggplot(data, aes(x = time_variable, y = value_variable)) +
+  geom_line() +
+  labs(title = "Title", x = "Time", y = "Value")
+</pre></section><section class="paragraphs" id="subsec-basic-ggplot-8"><h4 class="heading"><span class="title">Bar Chart.</span></h4>
+<div class="para" id="subsec-basic-ggplot-8-2">Used to compare values across categories</div>
+<pre class="code-block tex2jax_ignore">ggplot(data, aes(x = category_variable, y = value_variable)) +
+  geom_bar(stat = "identity") +
+  labs(title = "Title", x = "Category", y = "Value")
+</pre></section><section class="paragraphs" id="subsec-basic-ggplot-9"><h4 class="heading"><span class="title">Histogram.</span></h4>
+<div class="para" id="subsec-basic-ggplot-9-2">Used to show distribution of a continuous variable</div>
+<pre class="code-block tex2jax_ignore">ggplot(data, aes(x = continuous_variable)) +
+  geom_histogram(bins = 30) +
+  labs(title = "Title", x = "Variable", y = "Count")
+</pre></section><section class="paragraphs" id="subsec-basic-ggplot-10"><h4 class="heading"><span class="title">Box Plot.</span></h4>
+<div class="para" id="subsec-basic-ggplot-10-2">Used to show distribution and summary statistics by group</div>
+<pre class="code-block tex2jax_ignore">ggplot(data, aes(x = category_variable, y = continuous_variable)) +
+  geom_boxplot() +
+  labs(title = "Title", x = "Category", y = "Value")
+</pre></section><div class="code-box"><pre class="program"><code id="rs-prog-base-r-plots" class="language-none"># Since we can't use ggplot2 directly in Web-R,
+# we'll create equivalents in base R
+
+# Load the built-in iris dataset
+data(iris)
+
+# Examine the data
+head(iris)
+summary(iris)
+
+# 1. Scatter Plot
+plot(iris$Sepal.Length, iris$Sepal.Width,
+     main = "Sepal Length vs. Width",
+     xlab = "Sepal Length (cm)",
+     ylab = "Sepal Width (cm)",
+     pch = 19,
+     col = as.numeric(iris$Species))
+
+# Add a legend
+legend("topright", 
+       legend = levels(iris$Species),
+       col = 1:3, 
+       pch = 19,
+       title = "Species")
+
+# 2. Grouped Box Plot
+boxplot(Petal.Length ~ Species, data = iris,
+        main = "Petal Length by Species",
+        xlab = "Species",
+        ylab = "Petal Length (cm)",
+        col = c("lightpink", "lightblue", "lightgreen"))
+
+# 3. Histogram
+hist(iris$Petal.Width,
+     main = "Distribution of Petal Width",
+     xlab = "Petal Width (cm)",
+     col = "lightblue",
+     breaks = 15)
+
+# 4. Multiple histograms (by group)
+# Create a layout with 3 rows and 1 column
+par(mfrow = c(3, 1))
+
+# Create histograms for each species
+hist(iris$Petal.Length[iris$Species == "setosa"],
+     main = "Petal Length: Setosa",
+     xlab = "Length (cm)",
+     col = "lightpink",
+     xlim = c(1, 7))
+
+hist(iris$Petal.Length[iris$Species == "versicolor"],
+     main = "Petal Length: Versicolor",
+     xlab = "Length (cm)",
+     col = "lightblue",
+     xlim = c(1, 7))
+
+hist(iris$Petal.Length[iris$Species == "virginica"],
+     main = "Petal Length: Virginica",
+     xlab = "Length (cm)",
+     col = "lightgreen",
+     xlim = c(1, 7))
+
+# Reset the layout
+par(mfrow = c(1, 1))
+
+# 5. Scatterplot Matrix
+pairs(iris[, 1:4],
+      main = "Scatterplot Matrix of Iris Dataset",
+      pch = 19,
+      col = as.numeric(iris$Species))
+</code></pre></div>
+<details id="ex-plot-selection" class="exercise exercise-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">3.2.2</span><span class="period">.</span><span class="space"> </span><span class="title">Plot Selection Exercise.</span>
+</h4></summary><article class="exercise exercise-like knowl__content"><div class="para" id="ex-plot-selection-2-1">For each of the following analytical questions, identify the most appropriate plot type and explain why it would be effective:</div></article></details></section><section class="subsection" id="subsec-transform-to-ggplot"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">3.2.3</span><span class="space"> </span><span class="title">Exercise: Transform basic R plots into ggplot2</span>
+</h3>
+<article class="activity project-like" id="activity-transform-plots"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.2.1</span><span class="period">.</span><span class="space"> </span><span class="title">Transforming Plots to ggplot2.</span>
+</h4>
+<div class="para" id="activity-transform-plots-2-1">In this exercise, you will practice transforming basic R plots into their ggplot2 equivalents. While we can’t directly run ggplot2 code in our Web-R environment, this will help you understand the syntax and structure for when you work in a full R environment.</div> <div class="para" id="activity-transform-plots-2-2">For each of the following base R plots, write the equivalent ggplot2 code:</div> <section class="paragraphs" id="activity-transform-plots-2-3"><h5 class="heading"><span class="title">Plot 1: Scatter Plot.</span></h5>
+<pre class="code-block tex2jax_ignore"># Base R code
+plot(mtcars$wt, mtcars$mpg,
+     main = "Car Weight vs. Fuel Efficiency",
+     xlab = "Weight (1000 lbs)",
+     ylab = "Miles per Gallon",
+     pch = 19,
+     col = "blue")
+</pre></section> <section class="paragraphs" id="activity-transform-plots-2-4"><h5 class="heading"><span class="title">Plot 2: Histogram.</span></h5>
+<pre class="code-block tex2jax_ignore"># Base R code
+hist(mtcars$mpg,
+     main = "Distribution of Fuel Efficiency",
+     xlab = "Miles per Gallon",
+     col = "lightblue",
+     breaks = 10)
+</pre></section> <section class="paragraphs" id="activity-transform-plots-2-5"><h5 class="heading"><span class="title">Plot 3: Box Plot.</span></h5>
+<pre class="code-block tex2jax_ignore"># Base R code
+boxplot(mpg ~ factor(cyl), data = mtcars,
+        main = "Fuel Efficiency by Number of Cylinders",
+        xlab = "Number of Cylinders",
+        ylab = "Miles per Gallon",
+        col = c("lightgreen", "lightblue", "lightpink"))
+</pre></section> <section class="paragraphs" id="activity-transform-plots-2-6"><h5 class="heading"><span class="title">Plot 4: Line Plot.</span></h5>
+<pre class="code-block tex2jax_ignore"># Base R code
+# Assume we have time series data in a data frame called 'ts_data'
+# with columns 'date' and 'value'
+plot(ts_data$date, ts_data$value,
+     type = "l",
+     main = "Time Series Data",
+     xlab = "Date",
+     ylab = "Value",
+     col = "red")
+</pre></section></article><details id="ex-ggplot2-equivalents" class="exercise exercise-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">3.2.3</span><span class="period">.</span><span class="space"> </span><span class="title">ggplot2 Equivalents.</span>
+</h4></summary><article class="exercise exercise-like knowl__content"><div class="para" id="ex-ggplot2-equivalents-2-1">Write ggplot2 code for each of the following base R plots:</div></article></details></section></section></div>
 <div id="ptx-content-footer" class="ptx-content-footer">
-<a class="previous-button button" href="backmatter.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><span class="next-button button disabled"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></span>
+<a class="previous-button button" href="sec-visualization-principles.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-advanced-visualizations.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
 </div>
 <div id="ptx-page-footer" class="ptx-page-footer">

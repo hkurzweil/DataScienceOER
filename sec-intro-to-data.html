@@ -47,7 +47,24 @@ window.MathJax = {
   },
   "options": {
     "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
-    "processHtmlClass": "process-math"
+    "processHtmlClass": "process-math",
+    "renderActions": {
+      "findScript": [
+        10,
+        function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        },
+        ""
+      ]
+    }
   },
   "chtml": {
     "scale": 0.98,
@@ -111,7 +128,19 @@ eBookConfig.enable_chatcodes =  false;
 <!--*** Runestone Services ***-->
 <script src="_static/prefix-runtime.1dbf799015a9933a.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.253ff4af1e53e55f.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
 <link rel="stylesheet" type="text/css" href="_static/prefix-runestone.541c9106f2c605b9.css">
-<script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/components/prism-core.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/autoloader/prism-autoloader.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/line-numbers/prism-line-numbers.min.js" integrity="sha512-dubtf8xMHSQlExGRQ5R7toxHLgSDZ0K7AunqPWHXmJQ8XyVIG19S1T95gBxlAeGOK02P4Da2RTnQz0Za0H0ebQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/line-highlight/prism-line-highlight.min.js" integrity="sha512-93uCmm0q+qO5Lb1huDqr7tywS8A2TFA+1/WHvyiWaK6/pvsFl6USnILagntBx8JnVbQH5s3n0vQZY6xNthNfKA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/components/prism-core.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/autoloader/prism-autoloader.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/line-numbers/prism-line-numbers.min.js" integrity="sha512-dubtf8xMHSQlExGRQ5R7toxHLgSDZ0K7AunqPWHXmJQ8XyVIG19S1T95gBxlAeGOK02P4Da2RTnQz0Za0H0ebQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/line-highlight/prism-line-highlight.min.js" integrity="sha512-93uCmm0q+qO5Lb1huDqr7tywS8A2TFA+1/WHvyiWaK6/pvsFl6USnILagntBx8JnVbQH5s3n0vQZY6xNthNfKA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><script>// Make *any* div with class 'sagecell-r' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({
+  "inputLocation": "div.sagecell-r",
+  "linked": true,
+  "linkKey": "linked-r",
+  "autoeval": false,
+  "languages": [
+    "r"
+  ],
+  "evalButtonText": "Evaluate (R)"
+});
 </script>
 </head>
 <body id="changeme" class="pretext book ignore-math">
@@ -292,7 +321,68 @@ eBookConfig.enable_chatcodes =  false;
 </li>
 </ul>
 </li>
-<li class="toc-item toc-chapter"><div class="toc-title-box"><a href="ch-data-analysis.html" class="internal"><span class="codenumber">3</span> <span class="title">Data Analysis and Visualization with Web-R</span></a></div></li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-data-analysis.html" class="internal"><span class="codenumber">3</span> <span class="title">Data Analysis and Visualization with Web-R</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-visualization-principles.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Data Visualization Principles</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-visualization-principles.html#subsec-effective-visualization" class="internal"><span class="codenumber">3.1.1</span> <span class="title">Principles of effective visualization</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-visualization-principles.html#subsec-visual-perception" class="internal"><span class="codenumber">3.1.2</span> <span class="title">Visual perception principles</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-visualization-principles.html#subsec-choosing-charts" class="internal"><span class="codenumber">3.1.3</span> <span class="title">Choosing appropriate chart types</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-visualization-principles.html#subsec-critique-visualizations" class="internal"><span class="codenumber">3.1.4</span> <span class="title">Activity: Critique and improve sample visualizations</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-intro-ggplot2.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Introduction to ggplot2</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-intro-ggplot2.html#subsec-ggplot2-intro" class="internal"><span class="codenumber">3.2.1</span> <span class="title">Grammar of graphics concept</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-intro-ggplot2.html#subsec-basic-ggplot" class="internal"><span class="codenumber">3.2.2</span> <span class="title">Creating basic plots in ggplot2</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-intro-ggplot2.html#subsec-transform-to-ggplot" class="internal"><span class="codenumber">3.2.3</span> <span class="title">Exercise: Transform basic R plots into ggplot2</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-advanced-visualizations.html" class="internal"><span class="codenumber">3.3</span> <span class="title">Advanced Visualizations</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-advanced-visualizations.html#subsec-single-var-viz" class="internal"><span class="codenumber">3.3.1</span> <span class="title">Histograms, density plots, and bar charts</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-advanced-visualizations.html#subsec-aesthetics-themes" class="internal"><span class="codenumber">3.3.2</span> <span class="title">Customizing aesthetics and themes</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-advanced-visualizations.html#subsec-practice-polished-plots" class="internal"><span class="codenumber">3.3.3</span> <span class="title">Hands-on practice: Create polished single-variable plots</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-relationships-viz.html" class="internal"><span class="codenumber">3.4</span> <span class="title">Relationships between variables</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-relationships-viz.html#subsec-scatter-plots" class="internal"><span class="codenumber">3.4.1</span> <span class="title">Scatter plots, line charts, and heatmaps</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-relationships-viz.html#subsec-visualizing-correlations" class="internal"><span class="codenumber">3.4.2</span> <span class="title">Visualizing correlations and patterns</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-relationships-viz.html#subsec-activity-relationship-viz" class="internal"><span class="codenumber">3.4.3</span> <span class="title">Activity: Create visualizations showing relationships in data</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-statistical-analysis.html" class="internal"><span class="codenumber">3.5</span> <span class="title">Statistical Analysis</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-statistical-analysis.html#subsec-descriptive-stats" class="internal"><span class="codenumber">3.5.1</span> <span class="title">Measures of center and spread</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-statistical-analysis.html#subsec-distributions-outliers" class="internal"><span class="codenumber">3.5.2</span> <span class="title">Distributions and outliers</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-statistical-analysis.html#subsec-exercise-stats-summary" class="internal"><span class="codenumber">3.5.3</span> <span class="title">Exercise: Statistical summary of datasets</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-statistical-testing.html" class="internal"><span class="codenumber">3.6</span> <span class="title">Introduction to statistical testing</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-statistical-testing.html#subsec-confidence-intervals" class="internal"><span class="codenumber">3.6.1</span> <span class="title">Confidence intervals</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-statistical-testing.html#subsec-linear-regression" class="internal"><span class="codenumber">3.6.2</span> <span class="title">Linear regression basics</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-statistical-testing.html#subsec-hypothesis-testing" class="internal"><span class="codenumber">3.6.3</span> <span class="title">Hypothesis testing basics</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-statistical-testing.html#sec-anova-basics" class="internal"><span class="codenumber">3.6.1</span> <span class="title">ANOVA basics</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-statistical-testing.html#sec-advanced-analysis" class="internal"><span class="codenumber">3.6.2</span> <span class="title">Advanced Analysis and Final Project Work</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-statistical-testing.html#subsec-prediction-modeling" class="internal"><span class="codenumber">3.6.2.1</span> <span class="title">Building simple predictive models</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-statistical-testing.html#subsec-interpreting-models" class="internal"><span class="codenumber">3.6.2.2</span> <span class="title">Interpreting model results</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toc-item toc-chapter"><div class="toc-title-box"><a href="ch-advanced-analysis.html" class="internal"><span class="codenumber">4</span> <span class="title">Advanced Analysis and Final Project Work</span></a></div></li>
 <li class="toc-item toc-backmatter"><div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div></li>
 </ul></nav></div>
@@ -350,47 +440,39 @@ eBookConfig.enable_chatcodes =  false;
 </ul></div></div></article></details><div class="para" id="subsec-data-daily-lives-7">The ubiquity of data in our lives raises important questions about privacy, security, and the ethical use of information. As we become more data-driven as a society, understanding these implications becomes increasingly important.</div></section><section class="subsection" id="subsec-web-r-setup"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">1.1.3</span><span class="space"> </span><span class="title">Set up Web-R accounts and platform familiarization</span>
 </h3>
-<div class="para" id="subsec-web-r-setup-2">In this course, we’ll use Web-R as our primary platform for data analysis. Web-R provides a cloud-based environment for R programming that eliminates the need for local installation.</div>
-<article class="technology computation-like" id="tech-web-r"><h4 class="heading">
-<span class="type">Technology</span><span class="space"> </span><span class="codenumber">1.1.5</span><span class="period">.</span><span class="space"> </span><span class="title">Setting Up Your Web-R Account.</span>
-</h4>
-<div class="para" id="tech-web-r-2">Follow these steps to create and configure your Web-R account:</div>
-<ol class="decimal" id="tech-web-r-3">
-<li id="tech-web-r-3-1"><div class="para" id="tech-web-r-3-1-1">Navigate to the Web-R platform (link provided in your course materials)</div></li>
-<li id="tech-web-r-3-2"><div class="para" id="tech-web-r-3-2-1">Click "Create Account" and enter your academic email address</div></li>
-<li id="tech-web-r-3-3"><div class="para" id="tech-web-r-3-3-1">Complete the verification process via the email sent to you</div></li>
-<li id="tech-web-r-3-4"><div class="para" id="tech-web-r-3-4-1">Log in and customize your workspace settings</div></li>
-</ol></article><figure class="figure figure-like" id="fig-web-r-interface"><div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="external/assets/web-r-interface.png" class="contained" alt="Screenshot of the Web-R interface showing the main components: script editor (top left), console (bottom left), environment/history (top right), and files/plots/packages/help (bottom right)."></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.1.6<span class="period">.</span></span><span class="space"> </span>Web-R interface overview</figcaption></figure><div class="para" id="subsec-web-r-setup-5">The Web-R environment consists of several key components:</div>
-<ul class="disc" id="subsec-web-r-setup-6">
-<li id="subsec-web-r-setup-6-1"><div class="para" id="subsec-web-r-setup-6-1-1">
+<div class="para" id="subsec-web-r-setup-2">In this course, we’ll use Web-R as our primary platform for data analysis. Web-R provides a cloud-based environment for the R programming language many statisticians and data scientists use, but it eliminates the need for local installation. You will be able to work with small snippets of code withing this textbook, but for homework and some activities you will want to navigate to www.web.r-wasm.org/latest/ in a different web browswer tab.</div>
+<figure class="figure figure-like" id="fig-web-r-interface"><div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="external/assets/web-r-interface.png" class="contained" alt="Screenshot of the Web-R interface showing the main components: script editor (top left), console (bottom left), environment/history (top right), and files/plots/packages/help (bottom right)."></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.1.5<span class="period">.</span></span><span class="space"> </span>Web-R interface overview</figcaption></figure><div class="para" id="subsec-web-r-setup-4">The Web-R environment consists of several key components:</div>
+<ul class="disc" id="subsec-web-r-setup-5">
+<li id="subsec-web-r-setup-5-1"><div class="para" id="subsec-web-r-setup-5-1-1">
 <dfn class="terminology">Script Editor</dfn>: Where you write and edit your R code</div></li>
-<li id="subsec-web-r-setup-6-2"><div class="para" id="subsec-web-r-setup-6-2-1">
+<li id="subsec-web-r-setup-5-2"><div class="para" id="subsec-web-r-setup-5-2-1">
 <dfn class="terminology">Console</dfn>: Where code is executed and results are displayed</div></li>
-<li id="subsec-web-r-setup-6-3"><div class="para" id="subsec-web-r-setup-6-3-1">
+<li id="subsec-web-r-setup-5-3"><div class="para" id="subsec-web-r-setup-5-3-1">
 <dfn class="terminology">Environment Pane</dfn>: Shows variables and objects in memory</div></li>
-<li id="subsec-web-r-setup-6-4"><div class="para" id="subsec-web-r-setup-6-4-1">
+<li id="subsec-web-r-setup-5-4"><div class="para" id="subsec-web-r-setup-5-4-1">
 <dfn class="terminology">Output Pane</dfn>: Displays plots, files, packages, and help documentation</div></li>
 </ul>
-<div class="code-box"><pre class="program"><code id="rs-prog-first-r-commands" class="language-none"># Your first R commands
+<div class="para" id="subsec-web-r-setup-6">While we will dive more into using R later in the course, let’s go ahead and practice a few lines of code now.</div>
+<div id="subsec-web-r-setup-7" class="ptx-sagecell sagecell-r"><script type="text/x-sage"># Your first R commands
 # Create a simple variable
-x &lt;- 10
+x <- 10
 
 # Print the value
 print(x)
 
 # Perform a simple calculation
-y &lt;- x * 2
+y <- x * 2
 print(y)
 
 # Create a simple vector
-numbers &lt;- c(5, 10, 15, 20, 25)
+numbers <- c(5, 10, 15, 20, 25)
 
 # Calculate the mean
 mean(numbers)
-</code></pre></div>
+</script></div>
 <details id="ex-web-r-interface" class="exercise exercise-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
-<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">1.1.7</span><span class="period">.</span><span class="space"> </span><span class="title">Web-R Interface Identification.</span>
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">1.1.6</span><span class="period">.</span><span class="space"> </span><span class="title">Web-R Interface Identification.</span>
 </h4></summary><article class="exercise exercise-like knowl__content"><div class="para" id="ex-web-r-interface-2-1">Identify the four main panels in the Web-R interface and their functions:</div>
 <div class="solutions">
 <details id="ex-web-r-interface-3" class="hint solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Hint</span><span class="period">.</span></summary><div class="hint solution-like knowl__content"><div class="para" id="ex-web-r-interface-3-1">Look at the figure above for reference.</div></div></details><details id="ex-web-r-interface-4" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content">
