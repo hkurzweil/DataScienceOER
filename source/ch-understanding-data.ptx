@@ -15,7 +15,7 @@
     <subsection xml:id="subsec-what-is-data-science">
       <title>What is Data Science and its Applications?</title>
       
-      <p>Data science combines multiple disciplines to extract meaningful insights from data. It incorporates elements of statistics, computer science, domain expertise, and critical thinking to interpret complex datasets.</p>
+      <p>Data science combines multiple disciplines to extract meaningful insights from data. It incorporates elements of statistics, computer science, domain expertise, and critical thinking to interpret complex datasets. Many people use data science and statistics interchangably, but they are not the same. Both statistics and data science explore, quantify, and understand uncertainty in data. They both design experiments, test hypotheses, create visualizations to better understand the data, and conduct inference from data. However, data science goes further. Data science uses statistical concepts, but also builds machine learning models and uses programming tools to solve real world problems. Data science is powerful and empowering.</p>
       
       <p>The field has grown exponentially as organizations recognize the value of data-driven decision making across sectors including healthcare, finance, technology, and marketing.</p>
       
@@ -30,7 +30,11 @@
           <p>A healthcare provider uses patient data to predict which individuals might be at risk for specific conditions, allowing for early intervention and preventive care.</p>
         </statement>
       </example>
-      
+
+      <p>A great team from North Carolina State University published <url href="https://iase-pub.org/ojs/SERJ/article/view/41/457" visual="https://iase-pub.org/ojs/SERJ/article/view/41/457">Investigating Data Like a Scientist: Key Practices and Processes</url>  in 2022 that yields a lot of insight into data science. I'd like to highlight their framework for data investigation, as seen below in the figure. While the process is iterative, it almost always starts with framing the problem.</p>
+      <image source="ds-investigation-process.png" width="85%">
+        <description>Team at NCSU's graphic for the data investigation process framework.</description>
+      </image>
       <!-- Interactive knowledge check -->
       <exercise xml:id="ex-data-science-applications">
         <title>Knowledge Check: Data Science Applications</title>
@@ -73,7 +77,7 @@
         </choices>
       </exercise>
       
-      <p>Data science applications continue to expand as technology evolves. From improving healthcare outcomes to optimizing supply chains, the impact of data-driven decision making touches virtually every industry.</p>
+      <p>Data science applications continue to expand as technology evolves. From improving healthcare outcomes to optimizing supply chains and business operations, the impact of data-driven decision making touches virtually every industry.</p>
     </subsection>
     
     <!-- Explore how data shapes our daily lives -->
@@ -141,7 +145,7 @@
     <subsection xml:id="subsec-web-r-setup">
       <title>Set up Web-R accounts and platform familiarization</title>
       
-      <p>In this course, we'll use Web-R as our primary platform for data analysis. Web-R provides a cloud-based environment for the R programming language many statisticians and data scientists use, but it eliminates the need for local installation. You will be able to work with small snippets of code withing this textbook, but for homework and some activities you will want to navigate to www.web.r-wasm.org/latest/ in a different web browswer tab. </p>
+      <p>Programming knowledge is not a prerequisite for this course, but programming is extremely helpful in the iterative process of data science, especially for data analysis, visualizations, and statistical computing. The most common languages used in data science are called R and python. In this course, we will use the R programming language and Web-R as our primary online platform. Web-R provides a cloud-based environment for the R programming language many statisticians and data scientists use, but it eliminates the need for local installation or downloading any software. You will be able to work with small snippets of code withing this textbook, but for homework and some activities you will want to navigate to www.web.r-wasm.org/latest/ in a different web browswer tab. </p>
       
       <figure xml:id="fig-web-r-interface">
         <caption>Web-R interface overview</caption>
@@ -294,7 +298,7 @@
         </tabular>
       </table>
       
-      <p>Quantitative data can be further divided into:</p>
+      <p>Visually, quantitative data is typically described in histograms, line graphs, and scatter plots. Quantitative data can be further divided into:</p>
       <ul>
         <li>
           <p><term>Discrete data</term>: Counts or whole numbers (e.g., number of students in a class)</p>
@@ -304,7 +308,7 @@
         </li>
       </ul>
       
-      <p>Qualitative data can be categorized as:</p>
+      <p>Visually, qualitative data is typically described using pie charts and bar charts. Qualitative data can be categorized as:</p>
       <ul>
         <li>
           <p><term>Nominal</term>: Categories with no inherent order (e.g., colors, gender)</p>
@@ -1308,217 +1312,13 @@
           </ol>
         </statement>
       </activity>
-      
-      <program interactive="webr" xml:id="prog-dataset-quality-check">
-        <sage language="r">
-              <input>
-          # Load a dataset with quality issues
-          data(airquality)
-          
-          # Check the structure
-          str(airquality)
-          
-          # Summary to identify potential quality issues
-          summary(airquality)
-          
-          # Count missing values in each column
-          sapply(airquality, function(x) sum(is.na(x)))
-          
-          # Visualize missing data patterns
-          image(is.na(airquality), 
-                main="Missing Values in Air Quality Dataset",
-                ylab="Observations", 
-                xlab="Variables",
-                col=c("green", "red"))
-              </input>
-            </sage>
-      </program>
-      
-      <exercise xml:id="ex-5vs-application">
-        <title>Apply the 5Vs Framework</title>
-        <statement>
-          <p>Based on the airquality dataset examined above, evaluate each dimension of the 5Vs framework:</p>
-        </statement>
-        <response/>
-      </exercise>
     </subsection>
-  </section>
 
-  <!-- Topic 3: Data Quality and Evaluation (Continued) -->
-  <section xml:id="sec-data-decision-making">
-    <title>Data and decision-making</title>
-    
-    <!-- Session 6: How data informs decisions at different levels -->
-    <subsection xml:id="subsec-data-decision-levels">
-      <title>How data informs decisions at different levels</title>
-      
-      <p>Data-driven decision making is the practice of using data analysis to inform choices at various organizational levels. The application of data varies from strategic to operational decisions.</p>
-      
-      <p>Decision levels typically include:</p>
-      <ul>
-        <li>
-          <p><term>Strategic decisions</term>: Long-term, high-impact choices about organizational direction and priorities (e.g., entering new markets, major investments)</p>
-        </li>
-        <li>
-          <p><term>Tactical decisions</term>: Medium-term choices about resource allocation and implementation of strategic goals (e.g., marketing campaign planning, quarterly budget adjustments)</p>
-        </li>
-        <li>
-          <p><term>Operational decisions</term>: Day-to-day choices about process execution and immediate responses (e.g., inventory management, customer service responses)</p>
-        </li>
-        <li>
-          <p><term>Individual decisions</term>: Personal choices made by individuals based on available data (e.g., consumer purchase decisions, health choices)</p>
-        </li>
-      </ul>
-      
-      <example>
-        <title>Data-Driven Decisions Across Levels</title>
-        <statement>
-          <p>In a retail business:</p>
-          <p><em>Strategic level</em>: Using market trend data to decide which new product categories to develop</p>
-          <p><em>Tactical level</em>: Analyzing seasonal sales patterns to plan inventory purchases for the upcoming quarter</p>
-          <p><em>Operational level</em>: Using real-time sales data to adjust staffing levels for the next day</p>
-          <p><em>Individual level</em>: A store manager using performance metrics to provide feedback to employees</p>
-        </statement>
-      </example>
-      
-      <exercise xml:id="ex-decision-levels">
-        <title>Match Decision Levels</title>
-        <statement>
-          <p>Match each data-driven decision scenario to its appropriate level:</p>
-        </statement>
-        <matches>
-          <match>
-            <premise>A company analyzes global economic forecasts to decide on a five-year expansion plan</premise>
-            <response>Strategic</response>
-          </match>
-          <match>
-            <premise>A marketing team uses A/B testing results to refine a campaign for the next month</premise>
-            <response>Tactical</response>
-          </match>
-          <match>
-            <premise>A warehouse manager uses hourly tracking data to prioritize shipping orders</premise>
-            <response>Operational</response>
-          </match>
-          <match>
-            <premise>A consumer reviews product ratings and price comparisons before making a purchase</premise>
-            <response>Individual</response>
-          </match>
-        </matches>
-      </exercise>
-    </subsection>
-    
-    <!-- Case studies of data-driven decision making -->
-    <subsection xml:id="subsec-data-driven-case-studies">
-      <title>Case studies of data-driven decision making</title>
-      
-      <p>Examining real-world examples of data-driven decision making helps illustrate best practices and potential pitfalls.</p>
-      
-      <case xml:id="case-netflix-recommendations">
-        <title>Netflix Content Recommendations</title>
-        <statement>
-          <p>Netflix uses viewer data to inform both strategic content acquisition decisions and personalized recommendations:</p>
-          <ul>
-            <li>
-              <p>Collects detailed viewing behavior data (what users watch, when they pause, when they stop watching)</p>
-            </li>
-            <li>
-              <p>Analyzes viewing patterns to identify audience preferences and trends</p>
-            </li>
-            <li>
-              <p>Uses insights to inform original content development (e.g., "House of Cards" was commissioned partly based on data showing audience interest in political dramas and Kevin Spacey films)</p>
-            </li>
-            <li>
-              <p>Develops sophisticated recommendation algorithms to personalize each user's experience</p>
-            </li>
-            <li>
-              <p>Continually tests and refines recommendation systems to improve user engagement</p>
-            </li>
-          </ul>
-        </statement>
-        <analysis>
-          <p>Key success factors:</p>
-          <ul>
-            <li>
-              <p>Integration of data across strategic and operational decisions</p>
-            </li>
-            <li>
-              <p>Combination of algorithmic recommendations with human judgment</p>
-            </li>
-            <li>
-              <p>Substantial investment in data infrastructure and analytics capability</p>
-            </li>
-            <li>
-              <p>Continuous learning and adaptation based on results</p>
-            </li>
-          </ul>
-        </analysis>
-      </case>
-      
-      <case xml:id="case-target-predictive-analytics">
-        <title>Target's Predictive Analytics</title>
-        <statement>
-          <p>Target's pregnancy prediction model demonstrates both the power and potential concerns of predictive analytics:</p>
-          <ul>
-            <li>
-              <p>Developed a model to identify customers who were likely pregnant based on purchase patterns</p>
-            </li>
-            <li>
-              <p>Used this information to send targeted marketing for baby-related products</p>
-            </li>
-            <li>
-              <p>In a famous incident, the model correctly identified a teenage girl as pregnant before her father knew, leading to privacy concerns</p>
-            </li>
-            <li>
-              <p>Subsequently adjusted their approach to be less transparent about their targeting methods</p>
-            </li>
-          </ul>
-        </statement>
-        <analysis>
-          <p>Key lessons:</p>
-          <ul>
-            <li>
-              <p>Predictive analytics can reveal sensitive insights people may not want exposed</p>
-            </li>
-            <li>
-              <p>Technical capability should be balanced with ethical considerations</p>
-              </li>
-           <li>
-             <p>Transparency and privacy must be carefully balanced in data-driven marketing</p>
-           </li>
-           <li>
-             <p>Even accurate predictions can create negative reactions if they violate perceived privacy boundaries</p>
-           </li>
-         </ul>
-       </analysis>
-     </case>
-     
-     <exercise xml:id="ex-case-study-analysis">
-       <title>Case Study Analysis</title>
-       <statement>
-         <p>Consider the case studies presented above and answer the following questions:</p>
-         <ol>
-           <li>
-             <p>What are the key differences in how Netflix and Target used data for decision-making?</p>
-           </li>
-           <li>
-             <p>What ethical considerations arose in each case, and how might they have been addressed differently?</p>
-           </li>
-           <li>
-             <p>How did each organization balance automated data analysis with human judgment?</p>
-           </li>
-           <li>
-             <p>What lessons can other organizations learn from these examples about effective data-driven decision making?</p>
-           </li>
-         </ol>
-       </statement>
-     </exercise>
-   </subsection>
-   
-   <!-- Mini-project check-in: Personal data tracking discussion -->
+<!-- Mini-project check-in: Personal data tracking discussion -->
    <subsection xml:id="subsec-personal-data-tracking-checkin">
-     <title>Mini-project check-in: Personal data tracking discussion</title>
+     <title>Project 1 check-in: Personal data tracking discussion</title>
      
-     <p>This session provides an opportunity to review progress on your personal data tracking mini-project.</p>
+     <p>Let's take this opportunity to review progress on your personal data tracking mini-project we've been working on.</p>
      
      <exploration xml:id="exp-tracking-progress">
        <title>Personal Data Tracking Reflection</title>
@@ -1544,8 +1344,8 @@
        </statement>
      </exploration>
      
-     <program interactive="webr" xml:id="prog-personal-data-analysis">
-       <code>
+       <sage language="r">
+        <input>
          # Example code for personal data analysis
          # Replace with your own data and analysis as appropriate
          
@@ -1575,8 +1375,8 @@
          # Identify trends
          model &lt;- lm(value ~ as.numeric(date), data = tracking_data)
          summary(model)
-       </code>
-     </program>
+        </input>
+      </sage>
      
      <exercise xml:id="ex-tracking-improvement">
        <title>Improve Your Data Collection</title>
@@ -1597,7 +1397,8 @@
        <response/>
      </exercise>
    </subsection>
- </section>
+
+  </section>
 
  <!-- TOPIC 4: DATA IMPACT AND ETHICS -->
  <section xml:id="sec-data-impact">
