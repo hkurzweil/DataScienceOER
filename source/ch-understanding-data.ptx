@@ -1709,170 +1709,14 @@
  </section>
 
  <!-- TOPIC 4: DATA IMPACT AND ETHICS (CONTINUED) -->
- <section xml:id="sec-unit-project">
-   <title>Unit 1 Project Work</title>
-   
-   <!-- Session 8: Mini-project completion: Personal data tracking analysis -->
-   <subsection xml:id="subsec-personal-data-analysis">
-     <title>Mini-project completion: Personal data tracking analysis</title>
-     
-     <p>In this session, you will analyze the personal data you've been tracking throughout Unit 1 and prepare a presentation of your findings.</p>
-     
-     <p>Analysis steps include:</p>
-     <ol>
-       <li>
-         <p>Organize and clean your collected data</p>
-       </li>
-       <li>
-         <p>Perform basic statistical analysis (e.g., averages, ranges, patterns)</p>
-       </li>
-       <li>
-         <p>Create visualizations to illustrate key insights</p>
-       </li>
-       <li>
-         <p>Identify limitations and potential biases in your data</p>
-       </li>
-       <li>
-         <p>Draw preliminary conclusions based on your analysis</p>
-       </li>
-       <li>
-         <p>Prepare a brief presentation of your findings</p>
-       </li>
-     </ol>
-     
-     <program interactive="webr" xml:id="prog-data-analysis-template">
-       <code>
-         # Template for personal data analysis
-         # Replace this with your actual data analysis code
-         
-         # Sample data - replace with your own
-         dates &lt;- seq(as.Date("2025-04-01"), as.Date("2025-04-28"), by="days")
-         
-         # Create a simple dataset with a trend and some randomness
-         set.seed(123)  # For reproducibility
-         base_values &lt;- seq(50, 70, length.out = length(dates))
-         random_variation &lt;- rnorm(length(dates), mean = 0, sd = 5)
-         weekend_effect &lt;- ifelse(weekdays(dates) %in% c("Saturday", "Sunday"), 10, 0)
-         values &lt;- base_values + random_variation + weekend_effect
-         
-         # Create a data frame
-         tracking_data &lt;- data.frame(
-           date = dates,
-           day_of_week = weekdays(dates),
-           value = values
-         )
-         
-         # Basic summary statistics
-         summary(tracking_data$value)
-         
-         # Calculate daily averages
-         daily_avg &lt;- aggregate(value ~ day_of_week, data = tracking_data, mean)
-         daily_avg &lt;- daily_avg[order(daily_avg$value), ]
-         daily_avg
-         
-         # Plot time series
-         plot(tracking_data$date, tracking_data$value, 
-              type = "l", 
-              main = "Personal Tracking Data Over Time",
-              xlab = "Date", 
-              ylab = "Value",
-              col = "blue")
-         points(tracking_data$date, tracking_data$value, pch = 16, col = "blue")
-         
-         # Create a boxplot by day of week
-         boxplot(value ~ day_of_week, data = tracking_data,
-                 main = "Values by Day of Week",
-                 xlab = "Day of Week",
-                 ylab = "Value",
-                 col = "lightblue")
-         
-         # Check for trend over time
-         model &lt;- lm(value ~ as.numeric(date), data = tracking_data)
-         summary(model)
-         
-         # Add trend line to the time series plot
-         plot(tracking_data$date, tracking_data$value, 
-              type = "l", 
-              main = "Personal Tracking Data with Trend Line",
-              xlab = "Date", 
-              ylab = "Value",
-              col = "blue")
-         points(tracking_data$date, tracking_data$value, pch = 16, col = "blue")
-         abline(model, col = "red", lwd = 2)
-         
-         # Calculate correlation with day of the week (numeric 1-7)
-         tracking_data$day_num &lt;- as.numeric(format(tracking_data$date, "%u"))
-         cor.test(tracking_data$day_num, tracking_data$value)
-       </code>
-     </program>
-     
-     <p>Your mini-project presentation should include:</p>
-     <ul>
-       <li>
-         <p>A brief description of what data you collected and why</p>
-       </li>
-       <li>
-         <p>Your data collection methodology</p>
-       </li>
-       <li>
-         <p>Key findings from your analysis</p>
-       </li>
-       <li>
-         <p>Visualizations to illustrate patterns or insights</p>
-       </li>
-       <li>
-         <p>Limitations of your data and analysis</p>
-       </li>
-       <li>
-         <p>Potential next steps or questions for future investigation</p>
-       </li>
-     </ul>
-   </subsection>
-   
-   <!-- Group presentations of findings -->
-   <subsection xml:id="subsec-group-presentations">
-     <title>Group presentations of findings</title>
-     
-     <p>In this part of the session, each student or group will present their personal data tracking analysis to the class.</p>
-     
-     <p>Presentation guidelines:</p>
-     <ul>
-       <li>
-         <p>Each presentation should be 3-5 minutes</p>
-       </li>
-       <li>
-         <p>Focus on your most interesting or surprising findings</p>
-       </li>
-       <li>
-         <p>Include at least one visualization</p>
-       </li>
-       <li>
-         <p>Discuss one challenge you encountered and how you addressed it</p>
-       </li>
-       <li>
-         <p>Be prepared to answer 1-2 questions from classmates</p>
-       </li>
-     </ul>
-     
-     <p>While listening to other presentations, consider:</p>
-     <ul>
-       <li>
-         <p>What similarities or differences do you notice in findings across different tracking topics?</p>
-       </li>
-       <li>
-         <p>What data collection or analysis approaches could you adapt for your own project?</p>
-       </li>
-       <li>
-         <p>What questions or suggestions might help your classmates extend their analysis?</p>
-       </li>
-     </ul>
-   </subsection>
+ <section xml:id="sec-unit-one-conclusion">
+   <title>Unit 1 Conclusion</title>
    
    <!-- Reflection on data's role in students' lives -->
    <subsection xml:id="subsec-data-reflection">
      <title>Reflection on data's role in students' lives</title>
      
-     <p>This final activity encourages reflection on how data shapes your lives and your relationship with data after completing Unit 1.</p>
+     <p>This final activity encourages reflection on how data shapes your lives and your relationship with data after all the learning we've accomplished in Unit 1.</p>
      
      <exploration xml:id="exp-data-role-reflection">
        <title>Data in Your Life Reflection</title>
@@ -1959,7 +1803,7 @@
        </li>
      </ul>
      
-     <p>In Unit 2, we'll build on these foundational concepts by developing computational skills with Web-R to work with data more effectively.</p>
+     <p>In Unit 2, we'll build on these foundational concepts learning about key data moves and by developing a few computational skills with Web-R to work with data more effectively.</p>
    </subsection>
  </section>
 </chapter>

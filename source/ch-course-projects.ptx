@@ -10,9 +10,6 @@
       <title>Project 1: Gleaning Insights from Personal Data</title>
       
       <p>In this course-long mini-project, you'll collect and analyze your own personal data to gain hands-on experience with data science concepts, and maybe learn something new about yourself!</p>
-      
-      <project xml:id="proj-personal-data-tracking">
-        <title>Personal Data Tracking Project</title>
         <statement>
           <p>For this project, you will:</p>
           <ol>
@@ -33,8 +30,7 @@
             </li>
           </ol>
         </statement>
-      </project>
-      
+       
       <p>Project milestones and check-ins will occur regularly throughout the course:</p>
       <ul>
         <li>
@@ -53,9 +49,13 @@
           <p><term>Week 12</term>: Final analysis and presentation preparation</p>
         </li>
       </ul>
-      
-      <exploration xml:id="exp-tracking-brainstorm">
-        <title>Personal Data Tracking Brainstorm</title>
+      <p> </p>
+      <p> </p>
+      <p> </p>
+      <p> </p>
+      <p> </p>
+
+        <term>Week 2: Project Brainstorm</term>
         <statement>
           <p>Take a few minutes to brainstorm potential topics for your personal data tracking project. Consider:</p>
           <ul>
@@ -74,6 +74,142 @@
           </ul>
           <p>List at least three potential tracking topics and briefly explain why each interests you.</p>
         </statement>
-      </exploration>
+      <p> </p>
+      <p> </p>
+      <p> </p>
+
+  <term>Week 3: Designing your Data Collection</term>
+     
+     <p>The success of this project relies heavily on gathering the correct data. Think about what you are studying. For example, I'm interested to see if there are any trends in my perceived stress level each day. To measure this, I will need to ask myself how stressed I felt each day and write it down. I should do this at the same time, probably the end, of every day and make sure I record that level with the date. This is just the first step, I need a way to organize this data so that I can analyze it. In this section, you will need to think about how you would like to both collect and organize your data. Because I know I will want to work with my data, I will want to move it from the notepad (or note section on my phone) to maybe a Google sheet, like the one below:</p> 
+     
+              <image source="prog-organizing-data.png" width="85%">
+        <description>Example spreadsheet for project data collection</description>
+      </image>
+
+      <p>Write a paragraph explaining how you plan to do this and submit it to your teacher. </p> 
+      <p> </p>
+      <p> </p>
+      <p> </p>
+
+<term>Week 6: Initial Data Review</term>
+     
+     <p>To make sure things are going well, you will analyze the personal data you've been tracking so far and be given the chance to refine your data collection or methodology, if needed.</p>
+     
+     <p>Analysis steps include:</p>
+     <ol>
+       <li>
+         <p>Organize and clean your collected data</p>
+       </li>
+       <li>
+         <p>Perform basic statistical analysis (e.g., averages, ranges, patterns)</p>
+       </li>
+       <li>
+         <p>Create visualizations to illustrate key insights</p>
+       </li>
+       <li>
+         <p>Identify limitations and potential biases in your data</p>
+       </li>
+       <li>
+         <p>Draw preliminary conclusions based on your analysis</p>
+       </li>
+     </ol>
+
+     <p>As I've been collecting data on my stress level, I run the code from our first check-in and notice an interesting pattern in my data, do you notice it?</p>
+      <image source="proj-identifying-pattern.png" width="85%">
+        <description>Example stress level data graph, looking to identify any patterns</description>
+      </image>
+     <p>Maybe you notice that it is trending upwards, but there is something deeper...</p>
+     <p>I'm noticing that my stress level seems to cycle up and down, why is that? This is why programming is so powerful in data analysis. If I run the following code, I might start to tease out some patterns about what days of the week my stress levels are higher or lower. What do you notice now?</p>
+       <sage language="r">
+        <input>
+         # Template for personal data analysis
+         # Replace this with your actual data analysis code
+         
+         # Sample data - replace with your own
+         dates &lt;- seq(as.Date("2025-05-01"), as.Date("2025-05-14"), by="days")
+         
+        # Create a simple sample dataset similar to what you might collect
+        dates &lt;- seq(as.Date("2025-05-01"), as.Date("2025-05-14"), by="days")
+        values &lt;- c(70,60,45,50,80,85,87,76,62,54,60,85,87,90)
+         
+         # Create a data frame
+         tracking_data &lt;- data.frame(
+           date = dates,
+           day_of_week = weekdays(dates),
+           value = values
+         )
+         
+         # Basic summary statistics
+         summary(tracking_data$value)
+         
+         # Calculate daily averages
+         daily_avg &lt;- aggregate(value ~ day_of_week, data = tracking_data, mean)
+         daily_avg &lt;- daily_avg[order(daily_avg$value), ]
+         daily_avg
+         
+         # Plot time series
+         plot(tracking_data$date, tracking_data$value, 
+              type = "l", 
+              main = "Personal Tracking Data Over Time",
+              xlab = "Date", 
+              ylab = "Value",
+              col = "blue")
+         points(tracking_data$date, tracking_data$value, pch = 16, col = "blue")
+         
+         # First, convert day_of_week to a properly ordered factor
+        tracking_data$day_of_week &lt;- factor(tracking_data$day_of_week, 
+        levels = c("Monday", "Tuesday", "Wednesday", 
+         "Thursday", "Friday", "Saturday", "Sunday"),
+         ordered = TRUE)
+
+        # Create a boxplot by day of week
+        boxplot(value ~ day_of_week, data = tracking_data,
+        main = "Values by Day of Week",
+        xlab = "Day of Week",
+        ylab = "Value",
+        col = "lightblue")
+         
+         # Check for trend over time
+         model &lt;- lm(value ~ as.numeric(date), data = tracking_data)
+         summary(model)
+         
+         # Add trend line to the time series plot
+         plot(tracking_data$date, tracking_data$value, 
+              type = "l", 
+              main = "Personal Tracking Data with Trend Line",
+              xlab = "Date", 
+              ylab = "Value",
+              col = "blue")
+         points(tracking_data$date, tracking_data$value, pch = 16, col = "blue")
+         abline(model, col = "red", lwd = 2)
+         
+         # Calculate correlation with day of the week (numeric 1-7)
+         tracking_data$day_num &lt;- as.numeric(format(tracking_data$date, "%u"))
+         cor.test(tracking_data$day_num, tracking_data$value)
+        </input>
+       </sage>
+     
+     <p>Your mini-project presentation should include:</p>
+     <ul>
+       <li>
+         <p>A brief description of what data you collected and why</p>
+       </li>
+       <li>
+         <p>Your data collection methodology</p>
+       </li>
+       <li>
+         <p>Key findings from your analysis</p>
+       </li>
+       <li>
+         <p>Visualizations to illustrate patterns or insights</p>
+       </li>
+       <li>
+         <p>Limitations of your data and analysis</p>
+       </li>
+       <li>
+         <p>Potential next steps or questions for future investigation</p>
+       </li>
+     </ul>
+
     </section>
     </chapter>
