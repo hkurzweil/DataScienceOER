@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-modern                 *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Project 1: Gleaning Insights from Personal Data</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+<link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/ol-markers.css" rel="stylesheet" type="text/css">
+<script>
+var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  "tex": {
+    "inlineMath": [
+      [
+        "\\(",
+        "\\)"
+      ]
+    ],
+    "tags": "none",
+    "tagSide": "right",
+    "tagIndent": ".8em",
+    "packages": {
+      "[+]": [
+        "base",
+        "extpfeil",
+        "ams",
+        "amscd",
+        "color",
+        "newcommand",
+        "knowl"
+      ]
+    }
+  },
+  "options": {
+    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
+    "processHtmlClass": "process-math",
+    "renderActions": {
+      "findScript": [
+        10,
+        function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        },
+        ""
+      ]
+    }
+  },
+  "chtml": {
+    "scale": 0.98,
+    "mtextInheritFont": true
+  },
+  "loader": {
+    "load": [
+      "input/asciimath",
+      "[tex]/extpfeil",
+      "[tex]/amscd",
+      "[tex]/color",
+      "[tex]/newcommand",
+      "[pretext]/mathjaxknowl3.js"
+    ],
+    "paths": {
+      "pretext": "_static/pretext/js/lib"
+    }
+  },
+  "startup": {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  }
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Introduction to Data Science">
+<meta property="book:author" content="Hannah Kurzweil">
+<script src="_static/pretext/js/lib/jquery.min.js"></script><script src="_static/pretext/js/lib/jquery.sticky.js"></script><script src="_static/pretext/js/lib/jquery.espy.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><script src="_static/pretext/js/user_preferences.js"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX_Course_Title_Here';
+eBookConfig.basecourse = 'PTX_Base_Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.runestone_version = '7.6.4';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script src="_static/prefix-runtime.670ec3fcb7b60f96.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.253ff4af1e53e55f.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.5bdeacdba067a0e3.css">
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/components/prism-core.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/autoloader/prism-autoloader.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/line-numbers/prism-line-numbers.min.js" integrity="sha512-dubtf8xMHSQlExGRQ5R7toxHLgSDZ0K7AunqPWHXmJQ8XyVIG19S1T95gBxlAeGOK02P4Da2RTnQz0Za0H0ebQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/line-highlight/prism-line-highlight.min.js" integrity="sha512-93uCmm0q+qO5Lb1huDqr7tywS8A2TFA+1/WHvyiWaK6/pvsFl6USnILagntBx8JnVbQH5s3n0vQZY6xNthNfKA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script>
+</head>
+<body id="changeme" class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner"><div class="title-container">
+<h1 class="heading"><a href="data-science-intro.html"><span class="title">Introduction to Data Science:</span> <span class="subtitle">Unlocking Insights from Data</span></a></h1>
+<p class="byline">Hannah Kurzweil</p>
+</div></div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
+<button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="searchbox">
+<div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
+<div class="search-results-controls">
+<input aria-label="Search term" id="ptxsearch" class="ptxsearch" type="text" name="terms" placeholder="Search term"><button title="Close search" id="closesearchresults" class="closesearchresults"><span class="material-symbols-outlined">close</span></button>
+</div>
+<h2 class="search-results-heading">Search Results: </h2>
+<div id="searchempty" class="searchempty"><span>No results.</span></div>
+<ol id="searchresults" class="searchresults"></ol>
+</div>
+</div>
+<span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="ch-course-projects.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-course-projects.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="backmatter.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+</div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N} \newcommand{\Z}{\mathbb Z} \newcommand{\Q}{\mathbb Q} \newcommand{\R}{\mathbb R}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2 focused" data-preexpanded-levels="0" data-max-levels="2"><ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-frontmatter"><div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div></li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-understanding-data.html" class="internal"><span class="title">Understanding Data in Our World</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-intro-to-data.html" class="internal"><span class="title">Introduction to Data</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-intro-to-data.html#subsec-what-is-data-science" class="internal"><span class="title">What is Data Science and its Applications?</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-intro-to-data.html#subsec-data-daily-lives" class="internal"><span class="title">Explore how data shapes our daily lives</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-intro-to-data.html#subsec-web-r-setup" class="internal"><span class="title">Set up Web-R accounts and platform familiarization</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-types-of-data.html" class="internal"><span class="title">Types of data and their characteristics</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-types-of-data.html#subsec-qualitative-quantitative" class="internal"><span class="title">Qualitative vs. quantitative data</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-types-of-data.html#subsec-structured-unstructured" class="internal"><span class="title">Structured vs. unstructured data</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-types-of-data.html#subsec-data-types-activity" class="internal"><span class="title">Activity: Identifying data types in real-world examples</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-data-collection.html" class="internal"><span class="title">Data Collection and Sources</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-data-collection.html#subsec-data-collection-methods" class="internal"><span class="title">How data is collected and by whom</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-data-collection.html#subsec-data-collection-organizations" class="internal"><span class="title">Organizations that collect data and their motivations</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-data-collection.html#subsec-dikw-pyramid" class="internal"><span class="title">Introduction to the DIKW pyramid</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-data-collection.html#subsec-ethics-data-collection" class="internal"><span class="title">Discussion: Ethics of data collection</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-data-sources.html" class="internal"><span class="title">Primary vs. secondary data sources</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-data-sources.html#subsec-primary-secondary-data" class="internal"><span class="title">Distinguishing between data sources</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-data-sources.html#subsec-reliability-validity" class="internal"><span class="title">Reliability and validity of different sources</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-data-sources.html#subsec-personal-data-tracking" class="internal"><span class="title">Mini-project introduction: Personal data tracking exercise</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-data-quality.html" class="internal"><span class="title">Data Quality and Evaluation</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-data-quality.html#subsec-dataset-quality" class="internal"><span class="title">Evaluating dataset quality</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-data-quality.html#subsec-5vs-framework" class="internal"><span class="title">The 5Vs framework: Volume, Velocity, Variety, Veracity, Value</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-data-quality.html#subsec-identifying-biases" class="internal"><span class="title">Identifying biases in datasets</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-data-quality.html#subsec-apply-5vs" class="internal"><span class="title">Activity: Apply 5Vs to evaluate sample datasets</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-data-quality.html#subsec-personal-data-tracking-checkin" class="internal"><span class="title">Project 1 check-in: Personal data tracking discussion</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-data-impact.html" class="internal"><span class="title">Data Impact and Ethics</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-data-impact.html#subsec-data-equity-impact" class="internal"><span class="title">Data’s impact on equity and society</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-data-impact.html#subsec-data-bias-impact" class="internal"><span class="title">How data can perpetuate or mitigate biases</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-data-impact.html#subsec-algorithmic-bias-cases" class="internal"><span class="title">Case studies in algorithmic bias</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-data-impact.html#subsec-responsible-data-practices" class="internal"><span class="title">Discussion: Responsible data practices</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-unit-project.html" class="internal"><span class="title">Unit 1 Project Work</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-unit-project.html#subsec-personal-data-analysis" class="internal"><span class="title">Mini-project completion: Personal data tracking analysis</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-unit-project.html#subsec-group-presentations" class="internal"><span class="title">Group presentations of findings</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-unit-project.html#subsec-data-reflection" class="internal"><span class="title">Reflection on data’s role in students’ lives</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-computational-foundations.html" class="internal"><span class="title">Computational Foundations with Web-R</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-intro-to-web-r.html" class="internal"><span class="title">Introduction to Web-R</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-intro-to-web-r.html#subsec-r-environment" class="internal"><span class="title">R environment overview and basic syntax</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-intro-to-web-r.html#subsec-variables-datatypes" class="internal"><span class="title">Variables, data types, and basic operations</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-intro-to-web-r.html#subsec-r-practice" class="internal"><span class="title">Hands-on practice: Simple calculations and variable assignments</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-data-structures.html" class="internal"><span class="title">Working with data structures</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-data-structures.html#subsec-r-data-structures" class="internal"><span class="title">Vectors, lists, and data frames</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-data-structures.html#subsec-manipulating-structures" class="internal"><span class="title">Creating and manipulating basic data structures</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-data-structures.html#subsec-exercise-data-structures" class="internal"><span class="title">Exercise: Building and transforming data structures</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-data-import.html" class="internal"><span class="title">Data Import and Exploration</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-data-import.html#subsec-importing-data" class="internal"><span class="title">Reading CSV files and other data formats</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-data-import.html#subsec-data-inspection" class="internal"><span class="title">Basic data inspection functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-data-import.html#subsec-activity-import-explore" class="internal"><span class="title">Activity: Import and explore a dataset of interest</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-data-exploration.html" class="internal"><span class="title">Data exploration techniques</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-data-exploration.html#subsec-summary-statistics" class="internal"><span class="title">Summary statistics and data summaries</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-data-exploration.html#subsec-initial-visualization" class="internal"><span class="title">Initial data visualization</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-data-exploration.html#subsec-exploratory-analysis" class="internal"><span class="title">Exercise: Exploratory analysis of a dataset</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-data-transformation.html" class="internal"><span class="title">Data Transformation</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-data-transformation.html#subsec-filtering-selecting" class="internal"><span class="title">Filtering and selecting data</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-data-transformation.html#subsec-subsetting-dataframes" class="internal"><span class="title">Subsetting data frames</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-data-transformation.html#subsec-activity-extract-subsets" class="internal"><span class="title">Activity: Extract meaningful subsets from datasets</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-creating-transforming-variables.html" class="internal"><span class="title">Creating and transforming variables</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-creating-transforming-variables.html#subsec-adding-modifying-columns" class="internal"><span class="title">Adding and modifying columns</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-creating-transforming-variables.html#subsec-reshaping-data" class="internal"><span class="title">Reshaping data (wide vs. long format)</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-creating-transforming-variables.html#subsec-group-work-transformation" class="internal"><span class="title">Group work: Begin transforming a dataset for mid-term project</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-working-with-web-data.html" class="internal"><span class="title">Working with Web Data</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-working-with-web-data.html#subsec-intro-to-apis" class="internal"><span class="title">Introduction to APIs</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-working-with-web-data.html#subsec-using-r-with-apis" class="internal"><span class="title">Using R to access web data</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-working-with-web-data.html#subsec-api-demonstration" class="internal"><span class="title">Demonstration: Extracting data from a simple API</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-working-with-web-data.html#subsec-web-project-work" class="internal"><span class="title">Web data project work</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-mid-term-project.html" class="internal"><span class="title">Mid-Term Project Topic</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-mid-term-project.html#subsec-project-work-session" class="internal"><span class="title">Mid-term project work session</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-mid-term-project.html#subsec-consultations" class="internal"><span class="title">Instructor and peer consultations</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-mid-term-project.html#subsec-progress-checkins" class="internal"><span class="title">Progress check-ins</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-mid-term-presentations.html" class="internal"><span class="title">Mid-term project presentations</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-mid-term-presentations.html#subsec-presentation-guidelines" class="internal"><span class="title">Presentation guidelines</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-mid-term-presentations.html#subsec-presentation-session" class="internal"><span class="title">Groups present their data transformation and analysis</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-mid-term-presentations.html#subsec-feedback-discussion" class="internal"><span class="title">Peer feedback and discussion</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-mid-term-presentations.html#subsec-computational-reflection" class="internal"><span class="title">Reflection on computational techniques learned</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-data-analysis.html" class="internal"><span class="title">Data Analysis and Visualization with Web-R</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-visualization-principles.html" class="internal"><span class="title">Data Visualization Principles</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-visualization-principles.html#subsec-effective-visualization" class="internal"><span class="title">Principles of effective visualization</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-visualization-principles.html#subsec-visual-perception" class="internal"><span class="title">Visual perception principles</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-visualization-principles.html#subsec-choosing-charts" class="internal"><span class="title">Choosing appropriate chart types</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-visualization-principles.html#subsec-critique-visualizations" class="internal"><span class="title">Activity: Critique and improve sample visualizations</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-intro-ggplot2.html" class="internal"><span class="title">Introduction to ggplot2</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-intro-ggplot2.html#subsec-ggplot2-intro" class="internal"><span class="title">Grammar of graphics concept</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-intro-ggplot2.html#subsec-basic-ggplot" class="internal"><span class="title">Creating basic plots in ggplot2</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-intro-ggplot2.html#subsec-transform-to-ggplot" class="internal"><span class="title">Exercise: Transform basic R plots into ggplot2</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-advanced-visualizations.html" class="internal"><span class="title">Advanced Visualizations</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-advanced-visualizations.html#subsec-single-var-viz" class="internal"><span class="title">Histograms, density plots, and bar charts</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-advanced-visualizations.html#subsec-aesthetics-themes" class="internal"><span class="title">Customizing aesthetics and themes</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-advanced-visualizations.html#subsec-practice-polished-plots" class="internal"><span class="title">Hands-on practice: Create polished single-variable plots</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-relationships-viz.html" class="internal"><span class="title">Relationships between variables</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-relationships-viz.html#subsec-scatter-plots" class="internal"><span class="title">Scatter plots, line charts, and heatmaps</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-relationships-viz.html#subsec-visualizing-correlations" class="internal"><span class="title">Visualizing correlations and patterns</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-relationships-viz.html#subsec-activity-relationship-viz" class="internal"><span class="title">Activity: Create visualizations showing relationships in data</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-statistical-analysis.html" class="internal"><span class="title">Statistical Analysis</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-statistical-analysis.html#subsec-descriptive-stats" class="internal"><span class="title">Measures of center and spread</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-statistical-analysis.html#subsec-distributions-outliers" class="internal"><span class="title">Distributions and outliers</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-statistical-analysis.html#subsec-exercise-stats-summary" class="internal"><span class="title">Exercise: Statistical summary of datasets</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-statistical-testing.html" class="internal"><span class="title">Introduction to statistical testing</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-statistical-testing.html#subsec-confidence-intervals" class="internal"><span class="title">Confidence intervals</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-statistical-testing.html#subsec-linear-regression" class="internal"><span class="title">Linear regression basics</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-statistical-testing.html#subsec-hypothesis-testing" class="internal"><span class="title">Hypothesis testing basics</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-statistical-testing.html#sec-anova-basics" class="internal"><span class="title">ANOVA basics</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-statistical-testing.html#sec-advanced-analysis" class="internal"><span class="title">Advanced Analysis and Final Project Work</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-statistical-testing.html#subsec-prediction-modeling" class="internal"><span class="title">Building simple predictive models</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-statistical-testing.html#subsec-interpreting-models" class="internal"><span class="title">Interpreting model results</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter"><div class="toc-title-box"><a href="ch-advanced-analysis.html" class="internal"><span class="title">Advanced Analysis and Final Project Work</span></a></div></li>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="ch-course-projects.html" class="internal"><span class="title">Solidifying Concepts: Course Projects</span></a></div>
+<ul class="structural toc-item-list contains-active"><li class="toc-item toc-section active"><div class="toc-title-box"><a href="sec-personal-data-tracking.html" class="internal"><span class="title">Project 1: Gleaning Insights from Personal Data</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-backmatter"><div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div></li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec-personal-data-tracking"><h2 class="heading hide-type">
+<span class="type">Section</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Project 1: Gleaning Insights from Personal Data</span>
+</h2>
+<div class="para" id="sec-personal-data-tracking-2">In this course-long mini-project, you’ll collect and analyze your own personal data to gain hands-on experience with data science concepts, and maybe learn something new about yourself!</div>
+<article class="project project-like" id="proj-personal-data-tracking"><h3 class="heading">
+<span class="type">Project</span><span class="space"> </span><span class="codenumber">27</span><span class="period">.</span><span class="space"> </span><span class="title">Personal Data Tracking Project.</span>
+</h3>
+<div class="para" id="proj-personal-data-tracking-2-1">For this project, you will:</div> <ol class="decimal" id="proj-personal-data-tracking-2-2">
+<li id="proj-personal-data-tracking-2-2-1"><div class="para" id="proj-personal-data-tracking-2-2-1-1">Select a personal data tracking topic (e.g., screen time, physical activity, study habits, spending, etc.)</div></li>
+<li id="proj-personal-data-tracking-2-2-2"><div class="para" id="proj-personal-data-tracking-2-2-2-1">Design a data collection methodology and tracking system</div></li>
+<li id="proj-personal-data-tracking-2-2-3"><div class="para" id="proj-personal-data-tracking-2-2-3-1">Consistently collect data over the course duration</div></li>
+<li id="proj-personal-data-tracking-2-2-4"><div class="para" id="proj-personal-data-tracking-2-2-4-1">Periodically analyze the data using techniques learned in class</div></li>
+<li id="proj-personal-data-tracking-2-2-5"><div class="para" id="proj-personal-data-tracking-2-2-5-1">Present insights and findings at the end of the course</div></li>
+</ol></article><div class="para" id="sec-personal-data-tracking-4">Project milestones and check-ins will occur regularly throughout the course:</div>
+<ul class="disc" id="sec-personal-data-tracking-5">
+<li id="sec-personal-data-tracking-5-1"><div class="para" id="sec-personal-data-tracking-5-1-1">
+<dfn class="terminology">Week 2</dfn>: Topic brainstorm and selection</div></li>
+<li id="sec-personal-data-tracking-5-2"><div class="para" id="sec-personal-data-tracking-5-2-1">
+<dfn class="terminology">Week 3</dfn>: Design your tracking system and begin data collection</div></li>
+<li id="sec-personal-data-tracking-5-3"><div class="para" id="sec-personal-data-tracking-5-3-1">
+<dfn class="terminology">Week 6</dfn>: Initial data review and methodology refinement</div></li>
+<li id="sec-personal-data-tracking-5-4"><div class="para" id="sec-personal-data-tracking-5-4-1">
+<dfn class="terminology">Week 9</dfn>: Mid-project check-in and preliminary analysis</div></li>
+<li id="sec-personal-data-tracking-5-5"><div class="para" id="sec-personal-data-tracking-5-5-1">
+<dfn class="terminology">Week 12</dfn>: Final analysis and presentation preparation</div></li>
+</ul>
+<article class="exploration project-like" id="exp-tracking-brainstorm"><h3 class="heading">
+<span class="type">Exploration</span><span class="space"> </span><span class="codenumber">28</span><span class="period">.</span><span class="space"> </span><span class="title">Personal Data Tracking Brainstorm.</span>
+</h3>
+<div class="para" id="exp-tracking-brainstorm-2-1">Take a few minutes to brainstorm potential topics for your personal data tracking project. Consider:</div> <ul class="disc" id="exp-tracking-brainstorm-2-2">
+<li id="exp-tracking-brainstorm-2-2-1"><div class="para" id="exp-tracking-brainstorm-2-2-1-1">What aspects of your daily life are you curious about?</div></li>
+<li id="exp-tracking-brainstorm-2-2-2"><div class="para" id="exp-tracking-brainstorm-2-2-2-1">What behaviors or patterns might you want to understand better?</div></li>
+<li id="exp-tracking-brainstorm-2-2-3"><div class="para" id="exp-tracking-brainstorm-2-2-3-1">What data would be practical for you to collect consistently?</div></li>
+<li id="exp-tracking-brainstorm-2-2-4"><div class="para" id="exp-tracking-brainstorm-2-2-4-1">What potential insights might be valuable to you?</div></li>
+</ul> <div class="para" id="exp-tracking-brainstorm-2-3">List at least three potential tracking topics and briefly explain why each interests you.</div></article></section></div>
+<div id="ptx-content-footer" class="ptx-content-footer">
+<a class="previous-button button" href="ch-course-projects.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="backmatter.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="338 3000 8772 6866" role="img"><title>PreTeXt logo</title><g style="stroke-width:.025in; stroke:currentColor; fill:none"><polyline points="472,3590 472,9732 " style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png" alt="Runstone Academy logo"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png" alt="MathJax logo"></a>
+</div>
+</body>
+</html>
