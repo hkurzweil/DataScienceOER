@@ -762,8 +762,8 @@ print(test_number(0))
            
            # Create age_group column
            students$age_group &lt;- cut(students$age, 
-                                     breaks = c(0, 20, 22, Inf), 
-                                     labels = c("Under 20", "20-21", "22+"))
+                    breaks = c(0, 20, 22, Inf), 
+                    labels = c("Under 20", "20-21", "22+"))
            students
          </pre>
        </answer>
@@ -844,16 +844,106 @@ print(test_number(0))
     </p>
     
     <ol>
-      <li>Inspecting the data to identify issues</li>
-      <li>Handling missing values through deletion or imputation</li>
-      <li>Correcting inconsistencies and errors</li>
-      <li>Validating and verifying the cleaned dataset</li>
-      <li>Documenting the cleaning process for reproducibility</li>
+    <li>Inspect the data to identify issues (using <c>str()</c>, <c>summary()</c>, etc.)</li>
+    <li>Handle missing values (deletion or imputation)</li>
+    <li>Identify and remove duplicates</li>
+    <li>Standardize text and categorical data</li>
+    <li>Convert data types appropriately</li>
+    <li>Standardize date and time formats</li>
+    <li>Document the cleaning process for reproducibility</li>
     </ol>
     
     <p>
       Let's explore how to perform these tasks in R.
     </p>
+
+    <introduction>
+  <p>
+    Before diving into our data cleaning example, let's review some key functions and techniques commonly used in R for data cleaning:
+  </p>
+</introduction>
+
+<paragraphs>
+  <title>Key Data Cleaning Functions in R</title>
+  
+  <p><c>sapply()</c>: Applies a function to each element of a list or each column of a data frame. The "s" stands for "simplified," meaning it attempts to return results in the simplest possible data structure.</p>
+  
+  <program language="r">
+    <input>
+# Example: Count missing values in each column of a data frame
+sapply(df, function(x) sum(is.na(x)))
+    </input>
+  </program>
+  
+  <p><c>is.na()</c>: Tests for missing values (NA) in a vector or data frame. Returns a logical vector of the same length as the input, with TRUE for missing values.</p>
+  
+  <p><c>na.omit()</c>: Removes rows with any missing values from a data frame. This can be useful but may result in significant data loss if many rows have at least one missing value.</p>
+  
+  <program language="r">
+    <input>
+# Remove all rows containing any NA values
+clean_df &lt;- na.omit(df)
+    </input>
+  </program>
+  
+  <p><c>duplicated()</c>: Returns a logical vector indicating which elements of a vector or data frame are duplicates of elements with smaller subscripts.</p>
+  
+  <program language="r">
+    <input>
+# Identify duplicate rows based on all columns
+duplicated(df)
+
+# Identify duplicate values in a specific column
+duplicated(df$id)
+
+# Remove duplicate rows
+df[!duplicated(df), ]
+    </input>
+  </program>
+  
+  <p><c>gsub()</c>: Performs pattern matching and replacement in strings using regular expressions. This function is particularly useful for standardizing text data.</p>
+  
+  <program language="r">
+    <input>
+# Convert first letter of each word to uppercase
+gsub("\\b([a-z])", "\\U\\1", "john smith", perl=TRUE)
+    </input>
+  </program>
+  
+  <p><c>as.numeric()</c>, <c>as.character()</c>, etc.: Type conversion functions that change the data type of an object. Often used in combination when cleaning data.</p>
+  
+  <program language="r">
+    <input>
+# Convert a character column to numeric
+df$age &lt;- as.numeric(as.character(df$age))
+    </input>
+  </program>
+  
+  <p><c>lubridate</c> package: A comprehensive set of functions for working with dates and times in R. Functions like <c>ymd()</c>, <c>mdy()</c>, and <c>dmy()</c> parse dates in different formats.</p>
+  
+  <program language="r">
+    <input>
+library(lubridate)
+# Parse dates in different formats
+ymd("2023-01-15")
+mdy("01/15/2023")
+dmy("15-Jan-2023")
+    </input>
+  </program>
+  
+  <p><c>Conditional indexing</c>: Using logical conditions to select and modify specific elements of a data frame is a fundamental technique for data cleaning.</p>
+  
+  <program language="r">
+    <input>
+# Replace specific values in a column
+df$city[df$city == "NY"] &lt;- "New York"
+
+# Fill missing values conditionally
+df$name[is.na(df$name)] &lt;- "Unknown"
+    </input>
+  </program>
+</paragraphs>
+
   </subsection>
 
   <subsection xml:id="subsec-data-cleaning-R">
@@ -976,7 +1066,7 @@ print(cleaning_log)
       The <c>tidyr</c> package helps reshape data to meet these principles:
     </p>
     
-    <program language="r">
+    <sage language="r">
       <input>
 # Load tidyr package
 library(tidyr)
@@ -1010,17 +1100,17 @@ wide_data &lt;- pivot_wider(
 
 print(wide_data)
       </input>
-    </program>
+    </sage>
   </subsection>
   
   <subsection xml:id="subsec-data-validation">
     <title>Data Validation</title>
     
     <p>
-      After cleaning, it's essential to validate your data to ensure it meets quality standards:
+      After cleaning, it's essential to validate your data to ensure it meets quality standards. Data validation is a process of verifying and ensuring the accuracy, consistency, and reliability of data before it's used for any purpose.
     </p>
     
-    <program language="r">
+    <sage language="r">
       <input>
 # Create a simple cleaned dataset for validation
 clean_data &lt;- data.frame(
@@ -1057,7 +1147,7 @@ for (check in names(validation_results)) {
   cat(check, ": ", status, "\n", sep="")
 }
       </input>
-    </program>
+    </sage>
   </subsection>
   
   <conclusion>
@@ -1167,21 +1257,56 @@ print(cleaned_students)
     </answer>
   </exercise>
   
-  <checkpoint xml:id="chk-data-cleaning">
-    <title>Data Cleaning Concepts</title>
-    
+<exercise xml:id="chk-data-cleaning">
+  <title>Data Cleaning Concepts</title>
+  <statement>
     <p>
       Which of the following are key principles of "tidy data"? Select all that apply.
     </p>
-    
-    <ol marker="A.">
-      <li>Each variable forms a column</li>
-      <li>Missing values should be replaced with zeros</li>
-      <li>Each observation forms a row</li>
-      <li>Variable names should be in uppercase</li>
-      <li>Each type of observational unit forms a table</li>
-    </ol>
-  </checkpoint>
+  </statement>
+  <choices multiple-correct="yes">
+    <choice correct="yes">
+      <statement>
+        <p>Each variable forms a column</p>
+      </statement>
+      <feedback>
+        <p>Correct! In tidy data, each variable forms a column.</p>
+      </feedback>
+    </choice>
+    <choice>
+      <statement>
+        <p>Missing values should be replaced with zeros</p>
+      </statement>
+      <feedback>
+        <p>Incorrect. Tidy data doesn't require missing values to be replaced with zeros. In fact, this could introduce bias in analyses.</p>
+      </feedback>
+    </choice>
+    <choice correct="yes">
+      <statement>
+        <p>Each observation forms a row</p>
+      </statement>
+      <feedback>
+        <p>Correct! In tidy data, each observation forms a row.</p>
+      </feedback>
+    </choice>
+    <choice>
+      <statement>
+        <p>Variable names should be in uppercase</p>
+      </statement>
+      <feedback>
+        <p>Incorrect. The case of variable names is a formatting preference and not a principle of tidy data.</p>
+      </feedback>
+    </choice>
+    <choice correct="yes">
+      <statement>
+        <p>Each type of observational unit forms a table</p>
+      </statement>
+      <feedback>
+        <p>Correct! In tidy data, each type of observational unit forms a table.</p>
+      </feedback>
+    </choice>
+  </choices>
+</exercise>
   
 </section>
  
@@ -1235,9 +1360,10 @@ print(cleaned_students)
           <p><term>na.strings</term>: Strings to be treated as NA values</p>
         </li>
       </ul>
-      
-      <program interactive="webr" xml:id="prog-create-csv">
-        <code>
+      <p>What we are going to practice first is creating data within the R environment, saving as a .csv file, and doing some basic functions with it:</p>
+    
+      <sage language="r">
+        <input>
           # First, let's create a sample CSV file to use
           # Create a sample dataset
           sample_data &lt;- data.frame(
@@ -1261,8 +1387,8 @@ print(cleaned_students)
           
           # Import with some options
           employees2 &lt;- read.csv("employee_data.csv", 
-                               stringsAsFactors = TRUE,  # Convert strings to factors
-                               na.strings = c("NA", "N/A", ""))  # Define NA values
+            stringsAsFactors = TRUE,  # Convert strings to factors
+            na.strings = c("NA", "N/A", ""))  # Define NA values
           
           # Compare the structure of the two imports
           str(employees)
@@ -1288,37 +1414,40 @@ print(cleaned_students)
           employees_na
           is.na(employees_na)
           colSums(is.na(employees_na))  # Count NAs in each column
-        </code>
-      </program>
+        </input>
+      </sage>
       
-      <p>In real-world applications, you might need to import data from URLs or from other packages:</p>
+      <p>The R environment has several built in datasets that you can also access as you learn R. A few examples are in the code box, uncomment the dataset that most appeals to you.</p>
       
-      <program interactive="webr" xml:id="prog-import-url">
-        <code>
+      <sage language="r">
+        <input>
           # Importing data from a URL
           # Note: This URL is a placeholder and may not work in the actual Web-R environment
           
-          # First, let's use a dataset from R's built-in datasets
-          data(mtcars)
-          head(mtcars)
+          #Dataset about cars
+          #data(mtcars)
+          #head(mtcars)
           
-          # To load from a URL (commented out as it may not work in Web-R)
-          # url &lt;- "https://raw.githubusercontent.com/datasets/sample/main/data.csv"
-          # online_data &lt;- read.csv(url)
-          
-          # Using datasets from packages
-          # Install and load a package with datasets
-          # install.packages("palmerpenguins")  # Uncomment to install
+          # Dataset about penguins (note that for this one you have to a few installation steps first)
+          # install.packages("palmerpenguins")
           # library(palmerpenguins)
           # data(penguins)
           # head(penguins)
           
-          # For this example, let's use another built-in dataset
-          data(iris)
-          head(iris)
-          str(iris)
-        </code>
-      </program>
+          # Dataset about iris flowers
+          #data(iris)
+          #head(iris)
+          #str(iris)
+
+          # Dataset about air quality from NYC in 1973
+          #data(airquality)
+          #head(airquality)
+
+          # Dataset about arrests made in the US in 1973
+          #data(USArrests)
+          #head(USArrests)
+        </input>
+      </sage>
       
       <exercise xml:id="ex-import-practice">
         <title>Data Import Practice</title>
@@ -1355,7 +1484,7 @@ print(cleaned_students)
           </choice>
         </choices>
       </exercise>
-    </subsection>
+      </subsection>
     
     <!-- Basic data inspection functions -->
     <subsection xml:id="subsec-data-inspection">
@@ -1410,69 +1539,40 @@ print(cleaned_students)
             <cell><c>table()</c></cell>
             <cell>Create frequency tables of categorical variables</cell>
           </row>
+          <row>
+            <cell><c>unique()</c></cell>
+            <cell>shows distinct types in the dataset and is useful for classification tasks</cell>
+          </row>
         </tabular>
       </table>
-      
-      <program interactive="webr" xml:id="prog-data-inspection">
-        <code>
-          # Load the built-in iris dataset
-          data(iris)
-          
-          # Basic inspection
-          # Get dimensions
-          dim(iris)
+      <p>Now let's use some of these functions to learn something about whichever of the preloaded datasets talked about above that most appeals to you! Take this opportunity to try and learn something new.</p>
+      <sage language="r">
+        <input>
+          # Load the built-in dataset of your choice
+          #Put your code here
           
           # See the first few rows
-          head(iris)
-          
-          # See the last few rows
-          tail(iris)
+          #Put your code here
           
           # Display column names
-          names(iris)
+          #Put your code here
           
           # Get the structure
-          str(iris)
+          #Put your code here
           
           # Generate summary statistics
-          summary(iris)
+          #Put your code here
           
           # Class of the object
-          class(iris)
+          #Put your code here
           
-          # Class of individual columns
-          class(iris$Sepal.Length)
-          class(iris$Species)
+          # Check for missing values and count how many, if so
+          #Put your code here
           
-          # Frequency table of a categorical variable
-          table(iris$Species)
+          # Have fun diving more into the data and experimenting with other code!
           
-          # Check for missing values
-          any(is.na(iris))  # Are there any missing values?
-          colSums(is.na(iris))  # Count missing values by column
-          
-          # Basic counts and proportions
-          # Number of observations by species
-          species_counts &lt;- table(iris$Species)
-          species_counts
-          
-          # Proportions by species
-          prop.table(species_counts)
-          
-          # Create cross-tabulation
-          # Count combinations of species and sepal width categories
-          sepal_width_cat &lt;- cut(iris$Sepal.Width, 
-                                breaks = c(0, 2.5, 3, 3.5, 4.5),
-                                labels = c("Narrow", "Medium", "Wide", "Very Wide"))
-          
-          # Cross-tabulation
-          cross_tab &lt;- table(iris$Species, sepal_width_cat)
-          cross_tab
-          
-          # Proportions in cross-tabulation
-          prop.table(cross_tab, margin = 1)  # Row proportions
-        </code>
-      </program>
+        </input>
+      </sage>
       
       <exercise xml:id="ex-inspection-matching">
         <title>Match Inspection Functions</title>
@@ -1511,7 +1611,7 @@ print(cleaned_students)
       <activity xml:id="activity-import-explore">
         <title>Dataset Exploration</title>
         <statement>
-          <p>In this activity, you will import and explore a built-in dataset to practice your data inspection skills.</p>
+          <p>In this activity, you will import and explore the mtcars dataset to practice your data inspection skills.</p>
           
           <p>Instructions:</p>
           <ol>
@@ -1548,21 +1648,19 @@ print(cleaned_students)
         </statement>
       </activity>
       
-      <program interactive="webr" xml:id="prog-explore-mtcars">
-        <code>
+      <sage language="r">
+        <input>
           # Step 1: Load the mtcars dataset
-          data(mtcars)
+          #Your code here
           
-          # Step 2: Comprehensive exploration
-          # Your code here
+          # Continue inputting your code to answer the questions
+          # Practice using the comment lines saying what the code is doing
           
-          
-          # Step 3: Answer the questions
-          # Your code here
-          
-        </code>
-      </program>
+        </input>
+      </sage>
       
+      <exercise xml:id="ex-mtcarsex-solution">
+        <title>Solution</title>
       <program interactive="webr" xml:id="prog-explore-mtcars-solution">
         <code>
           # Step 1: Load the mtcars dataset
@@ -1621,43 +1719,8 @@ print(cleaned_students)
           abline(lm(mpg ~ wt, data=mtcars), col="red", lwd=2)
         </code>
       </program>
-      
-      <exercise xml:id="ex-dataset-questions">
-        <title>Dataset Analysis Questions</title>
-        <statement>
-          <p>Based on the mtcars dataset exploration, answer the following questions:</p>
-        </statement>
-        <exercise>
-          <statement>
-            <p>What does the correlation between mpg and weight tell you about their relationship?</p>
-          </statement>
-          <answer>
-            <p>The correlation between mpg and weight is strongly negative (around -0.87), indicating that as the weight of a car increases, its fuel efficiency (mpg) tends to decrease significantly. This is an expected relationship as heavier cars generally require more energy to move, resulting in lower fuel efficiency.</p>
-          </answer>
-        </exercise>
-        <exercise>
-          <statement>
-            <p>What other variables in the dataset might be related to mpg? How would you investigate these relationships?</p>
-          </statement>
-          <answer>
-            <p>Other variables likely related to mpg include:</p>
-            <ul>
-              <li><p>cyl (number of cylinders): More cylinders typically means lower fuel efficiency</p></li>
-              <li><p>hp (horsepower): Higher horsepower often corresponds to lower mpg</p></li>
-              <li><p>disp (displacement): Larger engines generally consume more fuel</p></li>
-              <li><p>am (transmission type): Manual transmissions might be more fuel-efficient</p></li>
-            </ul>
-            <p>To investigate these relationships, I would:</p>
-            <ol>
-              <li><p>Calculate correlations between mpg and each variable</p></li>
-              <li><p>Create scatterplots for continuous variables</p></li>
-              <li><p>Create boxplots for categorical variables (like cyl and am)</p></li>
-              <li><p>Run multiple regression analysis to identify which factors have the strongest influence on mpg</p></li>
-            </ol>
-          </answer>
-        </exercise>
       </exercise>
-    </subsection>
+      </subsection>
   </section>
 
   <!-- Session 12: Data exploration techniques -->
