@@ -129,6 +129,18 @@ eBookConfig.enable_chatcodes =  false;
 <script src="_static/prefix-runtime.052b07dd5d5bd82e.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.253ff4af1e53e55f.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
 <link rel="stylesheet" type="text/css" href="_static/prefix-runestone.5bdeacdba067a0e3.css">
 <script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/components/prism-core.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/autoloader/prism-autoloader.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/line-numbers/prism-line-numbers.min.js" integrity="sha512-dubtf8xMHSQlExGRQ5R7toxHLgSDZ0K7AunqPWHXmJQ8XyVIG19S1T95gBxlAeGOK02P4Da2RTnQz0Za0H0ebQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/line-highlight/prism-line-highlight.min.js" integrity="sha512-93uCmm0q+qO5Lb1huDqr7tywS8A2TFA+1/WHvyiWaK6/pvsFl6USnILagntBx8JnVbQH5s3n0vQZY6xNthNfKA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><script>// Make *any* div with class 'sagecell-r' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({
+  "inputLocation": "div.sagecell-r",
+  "linked": true,
+  "linkKey": "linked-r",
+  "autoeval": false,
+  "languages": [
+    "r"
+  ],
+  "evalButtonText": "Evaluate (R)"
+});
 </script>
 </head>
 <body id="changeme" class="pretext book ignore-math">
@@ -147,7 +159,13 @@ eBookConfig.enable_chatcodes =  false;
 <ol id="searchresults" class="searchresults"></ol>
 </div>
 </div>
-<span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="sec-data-cleaning.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-data-and-programming-foundations.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="sec-data-exploration.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+<span class="nav-other-controls"><button id="embed-button" class="embed-button button" title="Embed this page"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe86f;</span><span class="name">Embed</span></button><div class="embed-popup hidden" id="embed-popup">
+<p>Copy the code below to embed this page in your own website or LMS page.</p>
+<div class="embed-code-container">
+<textarea class="embed-code-textbox" id="embed-code-textbox" readonly aria-label="textbox"><iframe src="https://example.com/embed" width="100%" height="1000"></iframe></textarea><button class="copy-embed-button button" id="copy-embed-button" title="Copy embed code"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe14d;</span><span class="name">Copy</span></button>
+</div>
+</div>
+<button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="sec-data-cleaning.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-data-and-programming-foundations.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="sec-data-exploration.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
 </div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N} \newcommand{\Z}{\mathbb Z} \newcommand{\Q}{\mathbb Q} \newcommand{\R}{\mathbb R}
 \newcommand{\lt}{&lt;}
 \newcommand{\gt}{&gt;}
@@ -159,7 +177,7 @@ eBookConfig.enable_chatcodes =  false;
 <div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2 focused" data-preexpanded-levels="0" data-max-levels="2"><ul class="structural toc-item-list contains-active">
 <li class="toc-item toc-frontmatter"><div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div></li>
 <li class="toc-item toc-chapter">
-<div class="toc-title-box"><a href="ch-understanding-data.html" class="internal"><span class="title">Understanding Data in Our World</span></a></div>
+<div class="toc-title-box"><a href="ch-understanding-data.html" class="internal"><span class="codenumber">1</span> <span class="title">Understanding Data in Our World</span></a></div>
 <ul class="structural toc-item-list">
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec-intro-to-data.html" class="internal"><span class="title">Introduction to Data</span></a></div>
@@ -220,7 +238,7 @@ eBookConfig.enable_chatcodes =  false;
 </ul>
 </li>
 <li class="toc-item toc-chapter contains-active">
-<div class="toc-title-box"><a href="ch-data-and-programming-foundations.html" class="internal"><span class="title">Data and Programming Foundations</span></a></div>
+<div class="toc-title-box"><a href="ch-data-and-programming-foundations.html" class="internal"><span class="codenumber">2</span> <span class="title">Data and Programming Foundations</span></a></div>
 <ul class="structural toc-item-list contains-active">
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec-intro-to-web-r.html" class="internal"><span class="title">Introduction to Web-R</span></a></div>
@@ -310,7 +328,7 @@ eBookConfig.enable_chatcodes =  false;
 </ul>
 </li>
 <li class="toc-item toc-chapter">
-<div class="toc-title-box"><a href="ch-data-analysis.html" class="internal"><span class="title">Data Analysis and Visualization with Web-R</span></a></div>
+<div class="toc-title-box"><a href="ch-data-analysis.html" class="internal"><span class="codenumber">3</span> <span class="title">Data Analysis and Visualization with Web-R</span></a></div>
 <ul class="structural toc-item-list">
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec-visualization-principles.html" class="internal"><span class="title">Data Visualization Principles</span></a></div>
@@ -371,9 +389,9 @@ eBookConfig.enable_chatcodes =  false;
 </li>
 </ul>
 </li>
-<li class="toc-item toc-chapter"><div class="toc-title-box"><a href="ch-advanced-analysis.html" class="internal"><span class="title">Advanced Analysis and Final Project Work</span></a></div></li>
+<li class="toc-item toc-chapter"><div class="toc-title-box"><a href="ch-advanced-analysis.html" class="internal"><span class="codenumber">4</span> <span class="title">Advanced Analysis and Final Project Work</span></a></div></li>
 <li class="toc-item toc-chapter">
-<div class="toc-title-box"><a href="ch-course-projects.html" class="internal"><span class="title">Solidifying Concepts: Course Projects</span></a></div>
+<div class="toc-title-box"><a href="ch-course-projects.html" class="internal"><span class="codenumber">5</span> <span class="title">Solidifying Concepts: Course Projects</span></a></div>
 <ul class="structural toc-item-list"><li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-personal-data-tracking.html" class="internal"><span class="title">Project 1: Gleaning Insights from Personal Data</span></a></div></li></ul>
 </li>
 <li class="toc-item toc-backmatter"><div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div></li>
@@ -413,9 +431,10 @@ eBookConfig.enable_chatcodes =  false;
 <li id="subsec-importing-data-6-6"><div class="para" id="subsec-importing-data-6-6-1">
 <dfn class="terminology">na.strings</dfn>: Strings to be treated as NA values</div></li>
 </ul>
-<div class="code-box"><pre class="program"><code id="rs-prog-create-csv" class="language-none"># First, let's create a sample CSV file to use
+<div class="para" id="subsec-importing-data-7">What we are going to practice first is creating data within the R environment, saving as a .csv file, and doing some basic functions with it:</div>
+<div id="subsec-importing-data-8" class="ptx-sagecell sagecell-r"><script type="text/x-sage"># First, let's create a sample CSV file to use
 # Create a sample dataset
-sample_data &lt;- data.frame(
+sample_data <- data.frame(
   ID = 1:5,
   Name = c("Alice", "Bob", "Charlie", "Diana", "Elijah"),
   Age = c(25, 32, 28, 41, 35),
@@ -431,20 +450,20 @@ list.files(pattern = "*.csv")
 
 # Now let's import the CSV file
 # Basic import
-employees &lt;- read.csv("employee_data.csv")
+employees <- read.csv("employee_data.csv")
 head(employees)
 
 # Import with some options
-employees2 &lt;- read.csv("employee_data.csv", 
-                     stringsAsFactors = TRUE,  # Convert strings to factors
-                     na.strings = c("NA", "N/A", ""))  # Define NA values
+employees2 <- read.csv("employee_data.csv", 
+  stringsAsFactors = TRUE,  # Convert strings to factors
+  na.strings = c("NA", "N/A", ""))  # Define NA values
 
 # Compare the structure of the two imports
 str(employees)
 str(employees2)
 
 # Creating a CSV with missing values
-sample_data_na &lt;- data.frame(
+sample_data_na <- data.frame(
   ID = 1:5,
   Name = c("Alice", "Bob", "Charlie", "", "Elijah"),
   Age = c(25, NA, 28, 41, 35),
@@ -456,40 +475,43 @@ sample_data_na &lt;- data.frame(
 write.csv(sample_data_na, "employee_data_na.csv", row.names = FALSE)
 
 # Import handling missing values
-employees_na &lt;- read.csv("employee_data_na.csv", 
+employees_na <- read.csv("employee_data_na.csv", 
                        na.strings = c("NA", "N/A", ""))
 
 # Check for missing values
 employees_na
 is.na(employees_na)
 colSums(is.na(employees_na))  # Count NAs in each column
-</code></pre></div>
-<div class="para" id="subsec-importing-data-8">In real-world applications, you might need to import data from URLs or from other packages:</div>
-<div class="code-box"><pre class="program"><code id="rs-prog-import-url" class="language-none"># Importing data from a URL
+</script></div>
+<div class="para" id="subsec-importing-data-9">The R environment has several built in datasets that you can also access as you learn R. A few examples are in the code box, uncomment the dataset that most appeals to you.</div>
+<div id="subsec-importing-data-10" class="ptx-sagecell sagecell-r"><script type="text/x-sage"># Importing data from a URL
 # Note: This URL is a placeholder and may not work in the actual Web-R environment
 
-# First, let's use a dataset from R's built-in datasets
-data(mtcars)
-head(mtcars)
+#Dataset about cars
+#data(mtcars)
+#head(mtcars)
 
-# To load from a URL (commented out as it may not work in Web-R)
-# url &lt;- "https://raw.githubusercontent.com/datasets/sample/main/data.csv"
-# online_data &lt;- read.csv(url)
-
-# Using datasets from packages
-# Install and load a package with datasets
-# install.packages("palmerpenguins")  # Uncomment to install
+# Dataset about penguins (note that for this one you have to a few installation steps first)
+# install.packages("palmerpenguins")
 # library(palmerpenguins)
 # data(penguins)
 # head(penguins)
 
-# For this example, let's use another built-in dataset
-data(iris)
-head(iris)
-str(iris)
-</code></pre></div>
+# Dataset about iris flowers
+#data(iris)
+#head(iris)
+#str(iris)
+
+# Dataset about air quality from NYC in 1973
+#data(airquality)
+#head(airquality)
+
+# Dataset about arrests made in the US in 1973
+#data(USArrests)
+#head(USArrests)
+</script></div>
 <details id="ex-import-practice" class="exercise exercise-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
-<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">64</span><span class="period">.</span><span class="space"> </span><span class="title">Data Import Practice.</span>
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">65</span><span class="period">.</span><span class="space"> </span><span class="title">Data Import Practice.</span>
 </h4></summary><article class="exercise exercise-like knowl__content"><div class="ptx-runestone-container"><div class="runestone multiplechoice_section"><ul data-component="multiplechoice" id="rs-ex-import-practice" data-multipleanswers="true">
 <div class="para" id="ex-import-practice-2-1">Answer the following questions about data import in R:</div>
 <li data-component="answer" id="rs-ex-import-practice_opt_a" data-correct=""><div class="para" id="ex-import-practice-3-1-1-1">Which parameter would you set to ensure empty strings are treated as missing values?</div></li>
@@ -504,7 +526,7 @@ str(iris)
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Basic data inspection functions</span>
 </h3>
 <div class="para" id="subsec-data-inspection-2">After importing data, the next step is to inspect and understand the structure and content of your dataset. R provides several functions for this purpose:</div>
-<figure class="table table-like" id="table-inspection-functions"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">65<span class="period">.</span></span><span class="space"> </span>Common Data Inspection Functions</figcaption><div class="tabular-box natural-width"><table class="tabular">
+<figure class="table table-like" id="table-inspection-functions"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">66<span class="period">.</span></span><span class="space"> </span>Common Data Inspection Functions</figcaption><div class="tabular-box natural-width"><table class="tabular">
 <tr class="header-horizontal">
 <th scope="col" class="c m b0 r0 l0 t0 lines">Function</th>
 <th scope="col" class="c m b0 r0 l0 t0 lines">Description</th>
@@ -549,65 +571,36 @@ str(iris)
 <td class="c m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">table()</code></td>
 <td class="c m b0 r0 l0 t0 lines">Create frequency tables of categorical variables</td>
 </tr>
-</table></div></figure><div class="code-box"><pre class="program"><code id="rs-prog-data-inspection" class="language-none"># Load the built-in iris dataset
-data(iris)
-
-# Basic inspection
-# Get dimensions
-dim(iris)
+<tr>
+<td class="c m b0 r0 l0 t0 lines"><code class="code-inline tex2jax_ignore">unique()</code></td>
+<td class="c m b0 r0 l0 t0 lines">shows distinct types in the dataset and is useful for classification tasks</td>
+</tr>
+</table></div></figure><div class="para" id="subsec-data-inspection-4">Now let’s use some of these functions to learn something about whichever of the preloaded datasets talked about above that most appeals to you! Take this opportunity to try and learn something new.</div>
+<div id="subsec-data-inspection-5" class="ptx-sagecell sagecell-r"><script type="text/x-sage"># Load the built-in dataset of your choice
+#Put your code here
 
 # See the first few rows
-head(iris)
-
-# See the last few rows
-tail(iris)
+#Put your code here
 
 # Display column names
-names(iris)
+#Put your code here
 
 # Get the structure
-str(iris)
+#Put your code here
 
 # Generate summary statistics
-summary(iris)
+#Put your code here
 
 # Class of the object
-class(iris)
+#Put your code here
 
-# Class of individual columns
-class(iris$Sepal.Length)
-class(iris$Species)
+# Check for missing values and count how many, if so
+#Put your code here
 
-# Frequency table of a categorical variable
-table(iris$Species)
-
-# Check for missing values
-any(is.na(iris))  # Are there any missing values?
-colSums(is.na(iris))  # Count missing values by column
-
-# Basic counts and proportions
-# Number of observations by species
-species_counts &lt;- table(iris$Species)
-species_counts
-
-# Proportions by species
-prop.table(species_counts)
-
-# Create cross-tabulation
-# Count combinations of species and sepal width categories
-sepal_width_cat &lt;- cut(iris$Sepal.Width, 
-                      breaks = c(0, 2.5, 3, 3.5, 4.5),
-                      labels = c("Narrow", "Medium", "Wide", "Very Wide"))
-
-# Cross-tabulation
-cross_tab &lt;- table(iris$Species, sepal_width_cat)
-cross_tab
-
-# Proportions in cross-tabulation
-prop.table(cross_tab, margin = 1)  # Row proportions
-</code></pre></div>
+# Have fun diving more into the data and experimenting with other code!
+</script></div>
 <details id="ex-inspection-matching" class="exercise exercise-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
-<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">66</span><span class="period">.</span><span class="space"> </span><span class="title">Match Inspection Functions.</span>
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">67</span><span class="period">.</span><span class="space"> </span><span class="title">Match Inspection Functions.</span>
 </h4></summary><article class="exercise exercise-like knowl__content"><div class="ptx-runestone-container"><div class="runestone cardsort_section"><ul data-component="dragndrop" data-question_label="" style="visibility: hidden;" id="rs-ex-inspection-matching">
 <span data-subcomponent="question"><div class="para" id="ex-inspection-matching-2-1">Match each data inspection task with the most appropriate R function:</div></span><li data-subcomponent="draggable" id="rs-ex-inspection-matching_drag1" data-category="1">Check how many rows and columns are in a dataset</li>
 <li data-subcomponent="dropzone" for="rs-ex-inspection-matching_drag1" data-category="1">dim()</li>
@@ -625,7 +618,7 @@ prop.table(cross_tab, margin = 1)  # Row proportions
 <article class="activity project-like" id="activity-import-explore"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">11</span><span class="period">.</span><span class="space"> </span><span class="title">Dataset Exploration.</span>
 </h4>
-<div class="para" id="activity-import-explore-2-1">In this activity, you will import and explore a built-in dataset to practice your data inspection skills.</div> <div class="para" id="activity-import-explore-2-2">Instructions:</div> <ol class="decimal" id="activity-import-explore-2-3">
+<div class="para" id="activity-import-explore-2-1">In this activity, you will import and explore the mtcars dataset to practice your data inspection skills.</div> <div class="para" id="activity-import-explore-2-2">Instructions:</div> <ol class="decimal" id="activity-import-explore-2-3">
 <li id="activity-import-explore-2-3-1"><div class="para" id="activity-import-explore-2-3-1-1">Load the mtcars dataset using <code class="code-inline tex2jax_ignore">data(mtcars)</code>
 </div></li>
 <li id="activity-import-explore-2-3-2"><div class="para" id="activity-import-explore-2-3-2-1">Perform a comprehensive exploration of the dataset using the inspection functions you’ve learned</div></li>
@@ -640,17 +633,15 @@ prop.table(cross_tab, margin = 1)  # Row proportions
 <li id="activity-import-explore-2-3-3-2-6"><div class="para" id="activity-import-explore-2-3-3-2-6-1">Is there a relationship between miles per gallon (mpg) and weight (wt)?</div></li>
 </ul>
 </li>
-</ol></article><div class="code-box"><pre class="program"><code id="rs-prog-explore-mtcars" class="language-none"># Step 1: Load the mtcars dataset
-data(mtcars)
+</ol></article><div id="subsec-activity-import-explore-3" class="ptx-sagecell sagecell-r"><script type="text/x-sage"># Step 1: Load the mtcars dataset
+#Your code here
 
-# Step 2: Comprehensive exploration
-# Your code here
-
-
-# Step 3: Answer the questions
-# Your code here
-</code></pre></div>
-<div class="code-box"><pre class="program"><code id="rs-prog-explore-mtcars-solution" class="language-none"># Step 1: Load the mtcars dataset
+# Continue inputting your code to answer the questions
+# Practice using the comment lines saying what the code is doing
+</script></div>
+<details id="ex-mtcarsex-solution" class="exercise exercise-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">68</span><span class="period">.</span><span class="space"> </span><span class="title">Solution.</span>
+</h4></summary><article class="exercise exercise-like knowl__content"><div class="code-box"><pre class="program"><code id="rs-ex-mtcarsex-solution" class="language-none"># Step 1: Load the mtcars dataset
 data(mtcars)
 
 # Step 2: Comprehensive exploration
@@ -704,10 +695,7 @@ plot(mtcars$wt, mtcars$mpg,
 
 # Add a regression line
 abline(lm(mpg ~ wt, data=mtcars), col="red", lwd=2)
-</code></pre></div>
-<details id="ex-dataset-questions" class="exercise exercise-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
-<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">67</span><span class="period">.</span><span class="space"> </span><span class="title">Dataset Analysis Questions.</span>
-</h4></summary><article class="exercise exercise-like knowl__content"><div class="para" id="ex-dataset-questions-2-1">Based on the mtcars dataset exploration, answer the following questions:</div></article></details></section></section></div>
+</code></pre></div></article></details></section></section></div>
 <div id="ptx-content-footer" class="ptx-content-footer">
 <a class="previous-button button" href="sec-data-cleaning.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-data-exploration.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
