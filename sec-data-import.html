@@ -9,7 +9,7 @@
 <!--******************************************-->
 <!--*  Authored with PreTeXt                 *-->
 <!--*  pretextbook.org                       *-->
-<!--*  Theme: default-modern                 *-->
+<!--*  Theme: denver                         *-->
 <!--*  Palette:                              *-->
 <!--******************************************-->
 <head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
@@ -119,14 +119,14 @@ eBookConfig.allow_pairs = false;
 eBookConfig.enableScratchAC = false;
 eBookConfig.build_info = "";
 eBookConfig.python3 = null;
-eBookConfig.runestone_version = '7.6.4';
+eBookConfig.runestone_version = '7.6.5';
 eBookConfig.jobehost = '';
 eBookConfig.proxyuri_runs = '';
 eBookConfig.proxyuri_files = '';
 eBookConfig.enable_chatcodes =  false;
 </script>
 <!--*** Runestone Services ***-->
-<script src="_static/prefix-runtime.670ec3fcb7b60f96.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.253ff4af1e53e55f.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
+<script src="_static/prefix-runtime.052b07dd5d5bd82e.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.253ff4af1e53e55f.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
 <link rel="stylesheet" type="text/css" href="_static/prefix-runestone.5bdeacdba067a0e3.css">
 <script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/components/prism-core.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/autoloader/prism-autoloader.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/line-numbers/prism-line-numbers.min.js" integrity="sha512-dubtf8xMHSQlExGRQ5R7toxHLgSDZ0K7AunqPWHXmJQ8XyVIG19S1T95gBxlAeGOK02P4Da2RTnQz0Za0H0ebQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/line-highlight/prism-line-highlight.min.js" integrity="sha512-93uCmm0q+qO5Lb1huDqr7tywS8A2TFA+1/WHvyiWaK6/pvsFl6USnILagntBx8JnVbQH5s3n0vQZY6xNthNfKA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
 </script>
@@ -147,7 +147,7 @@ eBookConfig.enable_chatcodes =  false;
 <ol id="searchresults" class="searchresults"></ol>
 </div>
 </div>
-<span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="sec-data-structures.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-computational-foundations.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="sec-data-exploration.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+<span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="sec-data-cleaning.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-data-and-programming-foundations.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="sec-data-exploration.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
 </div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N} \newcommand{\Z}{\mathbb Z} \newcommand{\Q}{\mathbb Q} \newcommand{\R}{\mathbb R}
 \newcommand{\lt}{&lt;}
 \newcommand{\gt}{&gt;}
@@ -214,17 +214,13 @@ eBookConfig.enable_chatcodes =  false;
 </ul>
 </li>
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="sec-unit-project.html" class="internal"><span class="title">Unit 1 Project Work</span></a></div>
-<ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-unit-project.html#subsec-personal-data-analysis" class="internal"><span class="title">Mini-project completion: Personal data tracking analysis</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-unit-project.html#subsec-group-presentations" class="internal"><span class="title">Group presentations of findings</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-unit-project.html#subsec-data-reflection" class="internal"><span class="title">Reflection on data’s role in students’ lives</span></a></div></li>
-</ul>
+<div class="toc-title-box"><a href="sec-unit-one-conclusion.html" class="internal"><span class="title">Unit 1 Conclusion</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-unit-one-conclusion.html#subsec-data-reflection" class="internal"><span class="title">Reflection on data’s role in students’ lives</span></a></div></li></ul>
 </li>
 </ul>
 </li>
 <li class="toc-item toc-chapter contains-active">
-<div class="toc-title-box"><a href="ch-computational-foundations.html" class="internal"><span class="title">Computational Foundations with Web-R</span></a></div>
+<div class="toc-title-box"><a href="ch-data-and-programming-foundations.html" class="internal"><span class="title">Data and Programming Foundations</span></a></div>
 <ul class="structural toc-item-list contains-active">
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec-intro-to-web-r.html" class="internal"><span class="title">Introduction to Web-R</span></a></div>
@@ -237,9 +233,20 @@ eBookConfig.enable_chatcodes =  false;
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec-data-structures.html" class="internal"><span class="title">Working with data structures</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-data-structures.html#subsec-r-data-structures" class="internal"><span class="title">Vectors, lists, and data frames</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-data-structures.html#subsec-r-data-structures" class="internal"><span class="title">Lists and Dataframes</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-data-structures.html#subsec-manipulating-structures" class="internal"><span class="title">Creating and manipulating basic data structures</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-data-structures.html#subsec-exercise-data-structures" class="internal"><span class="title">Exercise: Building and transforming data structures</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-data-cleaning.html" class="internal"><span class="title">Data Cleaning and Organizing</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-data-cleaning.html#subsec-why-clean-data" class="internal"><span class="title">Why Clean Data Matters</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-data-cleaning.html#subsec-common-data-issues" class="internal"><span class="title">Common Data Quality Issues</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-data-cleaning.html#subsec-data-cleaning-steps" class="internal"><span class="title">Data Cleaning Process</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-data-cleaning.html#subsec-data-cleaning-R" class="internal"><span class="title">Data Cleaning in R</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-data-cleaning.html#subsec-tidy-data" class="internal"><span class="title">Tidy Data Principles</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-data-cleaning.html#subsec-data-validation" class="internal"><span class="title">Data Validation</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section contains-active">
@@ -482,7 +489,7 @@ head(iris)
 str(iris)
 </code></pre></div>
 <details id="ex-import-practice" class="exercise exercise-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
-<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">65</span><span class="period">.</span><span class="space"> </span><span class="title">Data Import Practice.</span>
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">64</span><span class="period">.</span><span class="space"> </span><span class="title">Data Import Practice.</span>
 </h4></summary><article class="exercise exercise-like knowl__content"><div class="ptx-runestone-container"><div class="runestone multiplechoice_section"><ul data-component="multiplechoice" id="rs-ex-import-practice" data-multipleanswers="true">
 <div class="para" id="ex-import-practice-2-1">Answer the following questions about data import in R:</div>
 <li data-component="answer" id="rs-ex-import-practice_opt_a" data-correct=""><div class="para" id="ex-import-practice-3-1-1-1">Which parameter would you set to ensure empty strings are treated as missing values?</div></li>
@@ -497,7 +504,7 @@ str(iris)
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Basic data inspection functions</span>
 </h3>
 <div class="para" id="subsec-data-inspection-2">After importing data, the next step is to inspect and understand the structure and content of your dataset. R provides several functions for this purpose:</div>
-<figure class="table table-like" id="table-inspection-functions"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">66<span class="period">.</span></span><span class="space"> </span>Common Data Inspection Functions</figcaption><div class="tabular-box natural-width"><table class="tabular">
+<figure class="table table-like" id="table-inspection-functions"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">65<span class="period">.</span></span><span class="space"> </span>Common Data Inspection Functions</figcaption><div class="tabular-box natural-width"><table class="tabular">
 <tr class="header-horizontal">
 <th scope="col" class="c m b0 r0 l0 t0 lines">Function</th>
 <th scope="col" class="c m b0 r0 l0 t0 lines">Description</th>
@@ -600,7 +607,7 @@ cross_tab
 prop.table(cross_tab, margin = 1)  # Row proportions
 </code></pre></div>
 <details id="ex-inspection-matching" class="exercise exercise-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
-<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">67</span><span class="period">.</span><span class="space"> </span><span class="title">Match Inspection Functions.</span>
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">66</span><span class="period">.</span><span class="space"> </span><span class="title">Match Inspection Functions.</span>
 </h4></summary><article class="exercise exercise-like knowl__content"><div class="ptx-runestone-container"><div class="runestone cardsort_section"><ul data-component="dragndrop" data-question_label="" style="visibility: hidden;" id="rs-ex-inspection-matching">
 <span data-subcomponent="question"><div class="para" id="ex-inspection-matching-2-1">Match each data inspection task with the most appropriate R function:</div></span><li data-subcomponent="draggable" id="rs-ex-inspection-matching_drag1" data-category="1">Check how many rows and columns are in a dataset</li>
 <li data-subcomponent="dropzone" for="rs-ex-inspection-matching_drag1" data-category="1">dim()</li>
@@ -699,10 +706,10 @@ plot(mtcars$wt, mtcars$mpg,
 abline(lm(mpg ~ wt, data=mtcars), col="red", lwd=2)
 </code></pre></div>
 <details id="ex-dataset-questions" class="exercise exercise-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
-<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">68</span><span class="period">.</span><span class="space"> </span><span class="title">Dataset Analysis Questions.</span>
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">67</span><span class="period">.</span><span class="space"> </span><span class="title">Dataset Analysis Questions.</span>
 </h4></summary><article class="exercise exercise-like knowl__content"><div class="para" id="ex-dataset-questions-2-1">Based on the mtcars dataset exploration, answer the following questions:</div></article></details></section></section></div>
 <div id="ptx-content-footer" class="ptx-content-footer">
-<a class="previous-button button" href="sec-data-structures.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-data-exploration.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+<a class="previous-button button" href="sec-data-cleaning.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-data-exploration.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
 </div>
 <div id="ptx-page-footer" class="ptx-page-footer">

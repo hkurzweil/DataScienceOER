@@ -9,7 +9,7 @@
 <!--******************************************-->
 <!--*  Authored with PreTeXt                 *-->
 <!--*  pretextbook.org                       *-->
-<!--*  Theme: default-modern                 *-->
+<!--*  Theme: denver                         *-->
 <!--*  Palette:                              *-->
 <!--******************************************-->
 <head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
@@ -119,16 +119,28 @@ eBookConfig.allow_pairs = false;
 eBookConfig.enableScratchAC = false;
 eBookConfig.build_info = "";
 eBookConfig.python3 = null;
-eBookConfig.runestone_version = '7.6.4';
+eBookConfig.runestone_version = '7.6.5';
 eBookConfig.jobehost = '';
 eBookConfig.proxyuri_runs = '';
 eBookConfig.proxyuri_files = '';
 eBookConfig.enable_chatcodes =  false;
 </script>
 <!--*** Runestone Services ***-->
-<script src="_static/prefix-runtime.670ec3fcb7b60f96.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.253ff4af1e53e55f.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
+<script src="_static/prefix-runtime.052b07dd5d5bd82e.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.253ff4af1e53e55f.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
 <link rel="stylesheet" type="text/css" href="_static/prefix-runestone.5bdeacdba067a0e3.css">
 <script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/components/prism-core.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/autoloader/prism-autoloader.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/line-numbers/prism-line-numbers.min.js" integrity="sha512-dubtf8xMHSQlExGRQ5R7toxHLgSDZ0K7AunqPWHXmJQ8XyVIG19S1T95gBxlAeGOK02P4Da2RTnQz0Za0H0ebQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/line-highlight/prism-line-highlight.min.js" integrity="sha512-93uCmm0q+qO5Lb1huDqr7tywS8A2TFA+1/WHvyiWaK6/pvsFl6USnILagntBx8JnVbQH5s3n0vQZY6xNthNfKA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><script>// Make *any* div with class 'sagecell-r' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({
+  "inputLocation": "div.sagecell-r",
+  "linked": true,
+  "linkKey": "linked-r",
+  "autoeval": false,
+  "languages": [
+    "r"
+  ],
+  "evalButtonText": "Evaluate (R)"
+});
 </script>
 </head>
 <body id="changeme" class="pretext book ignore-math">
@@ -147,7 +159,7 @@ eBookConfig.enable_chatcodes =  false;
 <ol id="searchresults" class="searchresults"></ol>
 </div>
 </div>
-<span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="sec-intro-to-web-r.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-computational-foundations.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="sec-data-import.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+<span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="sec-intro-to-web-r.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-data-and-programming-foundations.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="sec-data-cleaning.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
 </div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N} \newcommand{\Z}{\mathbb Z} \newcommand{\Q}{\mathbb Q} \newcommand{\R}{\mathbb R}
 \newcommand{\lt}{&lt;}
 \newcommand{\gt}{&gt;}
@@ -214,17 +226,13 @@ eBookConfig.enable_chatcodes =  false;
 </ul>
 </li>
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="sec-unit-project.html" class="internal"><span class="title">Unit 1 Project Work</span></a></div>
-<ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-unit-project.html#subsec-personal-data-analysis" class="internal"><span class="title">Mini-project completion: Personal data tracking analysis</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-unit-project.html#subsec-group-presentations" class="internal"><span class="title">Group presentations of findings</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-unit-project.html#subsec-data-reflection" class="internal"><span class="title">Reflection on data’s role in students’ lives</span></a></div></li>
-</ul>
+<div class="toc-title-box"><a href="sec-unit-one-conclusion.html" class="internal"><span class="title">Unit 1 Conclusion</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-unit-one-conclusion.html#subsec-data-reflection" class="internal"><span class="title">Reflection on data’s role in students’ lives</span></a></div></li></ul>
 </li>
 </ul>
 </li>
 <li class="toc-item toc-chapter contains-active">
-<div class="toc-title-box"><a href="ch-computational-foundations.html" class="internal"><span class="title">Computational Foundations with Web-R</span></a></div>
+<div class="toc-title-box"><a href="ch-data-and-programming-foundations.html" class="internal"><span class="title">Data and Programming Foundations</span></a></div>
 <ul class="structural toc-item-list contains-active">
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec-intro-to-web-r.html" class="internal"><span class="title">Introduction to Web-R</span></a></div>
@@ -237,9 +245,20 @@ eBookConfig.enable_chatcodes =  false;
 <li class="toc-item toc-section contains-active">
 <div class="toc-title-box"><a href="sec-data-structures.html" class="internal"><span class="title">Working with data structures</span></a></div>
 <ul class="structural toc-item-list active">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-data-structures.html#subsec-r-data-structures" class="internal"><span class="title">Vectors, lists, and data frames</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-data-structures.html#subsec-r-data-structures" class="internal"><span class="title">Lists and Dataframes</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-data-structures.html#subsec-manipulating-structures" class="internal"><span class="title">Creating and manipulating basic data structures</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-data-structures.html#subsec-exercise-data-structures" class="internal"><span class="title">Exercise: Building and transforming data structures</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-data-cleaning.html" class="internal"><span class="title">Data Cleaning and Organizing</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-data-cleaning.html#subsec-why-clean-data" class="internal"><span class="title">Why Clean Data Matters</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-data-cleaning.html#subsec-common-data-issues" class="internal"><span class="title">Common Data Quality Issues</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-data-cleaning.html#subsec-data-cleaning-steps" class="internal"><span class="title">Data Cleaning Process</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-data-cleaning.html#subsec-data-cleaning-R" class="internal"><span class="title">Data Cleaning in R</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-data-cleaning.html#subsec-tidy-data" class="internal"><span class="title">Tidy Data Principles</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-data-cleaning.html#subsec-data-validation" class="internal"><span class="title">Data Validation</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section">
@@ -375,9 +394,9 @@ eBookConfig.enable_chatcodes =  false;
 <span class="type">Section</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Working with data structures</span>
 </h2>
 <section class="subsection" id="subsec-r-data-structures"><h3 class="heading hide-type">
-<span class="type">Subsection</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Vectors, lists, and data frames</span>
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Lists and Dataframes</span>
 </h3>
-<div class="para" id="subsec-r-data-structures-2">R provides several data structures for organizing and manipulating data:</div>
+<div class="para" id="subsec-r-data-structures-2">R provides several data structures for organizing and manipulating dat, but we will be primarily working with:</div>
 <article class="definition definition-like" id="def-vector"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">58</span><span class="period">.</span>
 </h4>
@@ -387,131 +406,78 @@ eBookConfig.enable_chatcodes =  false;
 <div class="para" id="def-list-1-1">A <dfn class="terminology">list</dfn> is a flexible collection that can contain elements of different data types, including other lists. Lists are created using the <code class="code-inline tex2jax_ignore">list()</code> function.</div></article><article class="definition definition-like" id="def-dataframe"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">60</span><span class="period">.</span>
 </h4>
-<div class="para" id="def-dataframe-1-1">A <dfn class="terminology">data frame</dfn> is a two-dimensional table-like structure where each column can contain a different data type. Data frames are the most common structure for datasets in R.</div></article><article class="definition definition-like" id="def-matrix"><h4 class="heading">
-<span class="type">Definition</span><span class="space"> </span><span class="codenumber">61</span><span class="period">.</span>
-</h4>
-<div class="para" id="def-matrix-1-1">A <dfn class="terminology">matrix</dfn> is a two-dimensional collection of elements of the same data type, organized in rows and columns.</div></article><div class="code-box"><pre class="program"><code id="rs-prog-data-structures" class="language-none"># Vectors
-# Creating vectors
-numeric_vector &lt;- c(1, 2, 3, 4, 5)
-character_vector &lt;- c("red", "green", "blue")
-logical_vector &lt;- c(TRUE, FALSE, TRUE, TRUE)
-
-# Vector operations
-numeric_vector + 10  # Add 10 to each element
-numeric_vector * 2    # Multiply each element by 2
-
-# Vector indexing
-numeric_vector[3]     # Access the third element
-character_vector[c(1, 3)]  # Access first and third elements
-logical_vector[logical_vector]  # Use logical indexing
-
-# Lists
+<div class="para" id="def-dataframe-1-1">A <dfn class="terminology">data frame</dfn> is a two-dimensional table-like structure where each column can contain a different data type. Data frames are the most common structure for datasets in R.</div></article><div id="subsec-r-data-structures-6" class="ptx-sagecell sagecell-r"><script type="text/x-sage"># Lists 
 # Creating a list
-my_list &lt;- list(
-  numbers = c(1, 2, 3),
-  text = "Hello, R!",
-  logical = c(TRUE, FALSE),
-  nested = list(a = 1, b = 2)
-)
-
-# Accessing list elements
-my_list$numbers      # By name
-my_list[[1]]         # By position (returns the element)
-my_list[1]           # By position (returns a sublist)
-my_list$nested$a     # Accessing nested elements
-
-# Data Frames
-# Creating a data frame
-student_df &lt;- data.frame(
-  name = c("Alice", "Bob", "Charlie", "Diana"),
-  age = c(21, 22, 20, 23),
-  gpa = c(3.8, 3.2, 3.9, 3.5),
-  international = c(FALSE, FALSE, TRUE, TRUE)
-)
-
-# Examining a data frame
-student_df           # Print the data frame
-str(student_df)      # Structure of the data frame
-summary(student_df)  # Summary statistics
-
-# Accessing data frame elements
-student_df$name      # Access a column by name
-student_df[, 2]      # Access a column by position
-student_df[3, ]      # Access a row
-student_df[2, 3]     # Access a specific element
-
-# Matrices
-# Creating a matrix
-my_matrix &lt;- matrix(1:12, nrow = 3, ncol = 4)
-my_matrix
-
-# Matrix operations
-my_matrix * 2
-t(my_matrix)   # Transpose
-</code></pre></div>
-<details id="ex-data-structures" class="exercise exercise-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
-<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">62</span><span class="period">.</span><span class="space"> </span><span class="title">Data Structures Practice.</span>
-</h4></summary><article class="exercise exercise-like knowl__content"><div class="ptx-runestone-container"><div class="runestone cardsort_section"><ul data-component="dragndrop" data-question_label="" style="visibility: hidden;" id="rs-ex-data-structures">
-<span data-subcomponent="question"><div class="para" id="ex-data-structures-2-1">Match each R code example with the appropriate data structure it creates:</div></span><li data-subcomponent="draggable" id="rs-ex-data-structures_drag1" data-category="1"><code class="code-inline tex2jax_ignore">c(45, 67, 23, 89)</code></li>
-<li data-subcomponent="dropzone" for="rs-ex-data-structures_drag1" data-category="1">Vector</li>
-<li data-subcomponent="draggable" id="rs-ex-data-structures_drag2" data-category="2"><code class="code-inline tex2jax_ignore">list(name = "John", scores = c(85, 92, 78))</code></li>
-<li data-subcomponent="dropzone" for="rs-ex-data-structures_drag2" data-category="2">List</li>
-<li data-subcomponent="draggable" id="rs-ex-data-structures_drag3" data-category="3"><code class="code-inline tex2jax_ignore">data.frame(id = 1:3, name = c("A", "B", "C"))</code></li>
-<li data-subcomponent="dropzone" for="rs-ex-data-structures_drag3" data-category="3">Data Frame</li>
-<li data-subcomponent="draggable" id="rs-ex-data-structures_drag4" data-category="4"><code class="code-inline tex2jax_ignore">matrix(1:9, nrow = 3)</code></li>
-<li data-subcomponent="dropzone" for="rs-ex-data-structures_drag4" data-category="4">Matrix</li>
-</ul></div></div></article></details></section><section class="subsection" id="subsec-manipulating-structures"><h3 class="heading hide-type">
+ my_list <- list(
+   numbers = c(1, 2, 3),
+   text = "Hello, R!",
+   logical = c(TRUE, FALSE),
+   nested = list(a = 1, b = 2)
+ )
+ 
+ # Accessing list elements
+ my_list$numbers      # By name
+ my_list[[1]]         # By position (returns the element)
+ my_list[1]           # By position (returns a sublist)
+ my_list$nested$a     # Accessing nested elements
+ 
+ # Data Frames
+ # Creating a data frame
+ student_df <- data.frame(
+   name = c("Alice", "Bob", "Charlie", "Diana"),
+   age = c(21, 22, 20, 23),
+   gpa = c(3.8, 3.2, 3.9, 3.5),
+   international = c(FALSE, FALSE, TRUE, TRUE)
+ )
+ 
+ # Examining a data frame
+ student_df           # Print the data frame
+ str(student_df)      # Structure of the data frame
+ summary(student_df)  # Summary statistics
+ 
+ # Accessing data frame elements
+ student_df$name      # Access a column by name
+ student_df[, 2]      # Access a column by position
+ student_df[3, ]      # Access a row
+ student_df[2, 3]     # Access a specific element
+</script></div></section><section class="subsection" id="subsec-manipulating-structures"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Creating and manipulating basic data structures</span>
 </h3>
-<div class="para" id="subsec-manipulating-structures-2">Let’s explore common operations for creating and manipulating data structures in R.</div>
-<div class="para" id="subsec-manipulating-structures-3">Vector operations:</div>
-<ul class="disc" id="subsec-manipulating-structures-4">
-<li id="subsec-manipulating-structures-4-1"><div class="para" id="subsec-manipulating-structures-4-1-1">
-<dfn class="terminology">Creating sequences</dfn>: <code class="code-inline tex2jax_ignore">1:10</code>, <code class="code-inline tex2jax_ignore">seq(1, 10, by = 2)</code>, <code class="code-inline tex2jax_ignore">rep(1, 5)</code>
-</div></li>
-<li id="subsec-manipulating-structures-4-2"><div class="para" id="subsec-manipulating-structures-4-2-1">
-<dfn class="terminology">Vector arithmetic</dfn>: <code class="code-inline tex2jax_ignore">v1 + v2</code>, <code class="code-inline tex2jax_ignore">v1 * v2</code> (element-wise operations)</div></li>
-<li id="subsec-manipulating-structures-4-3"><div class="para" id="subsec-manipulating-structures-4-3-1">
-<dfn class="terminology">Vector functions</dfn>: <code class="code-inline tex2jax_ignore">length()</code>, <code class="code-inline tex2jax_ignore">sum()</code>, <code class="code-inline tex2jax_ignore">mean()</code>, <code class="code-inline tex2jax_ignore">max()</code>, <code class="code-inline tex2jax_ignore">min()</code>
-</div></li>
-<li id="subsec-manipulating-structures-4-4"><div class="para" id="subsec-manipulating-structures-4-4-1">
-<dfn class="terminology">Subsetting</dfn>: <code class="code-inline tex2jax_ignore">v[3]</code>, <code class="code-inline tex2jax_ignore">v[1:3]</code>, <code class="code-inline tex2jax_ignore">v[v &gt; 5]</code>, <code class="code-inline tex2jax_ignore">v[-2]</code> (exclude element)</div></li>
-</ul>
-<div class="para" id="subsec-manipulating-structures-5">Data frame operations:</div>
-<ul class="disc" id="subsec-manipulating-structures-6">
-<li id="subsec-manipulating-structures-6-1"><div class="para" id="subsec-manipulating-structures-6-1-1">
+<div class="para" id="subsec-manipulating-structures-2">Let’s explore common operations for creating and manipulating data structures in R. Here are some common data frame operations:</div>
+<ul class="disc" id="subsec-manipulating-structures-3">
+<li id="subsec-manipulating-structures-3-1"><div class="para" id="subsec-manipulating-structures-3-1-1">
 <dfn class="terminology">Creating</dfn>: <code class="code-inline tex2jax_ignore">data.frame()</code>, <code class="code-inline tex2jax_ignore">as.data.frame()</code>
 </div></li>
-<li id="subsec-manipulating-structures-6-2"><div class="para" id="subsec-manipulating-structures-6-2-1">
+<li id="subsec-manipulating-structures-3-2"><div class="para" id="subsec-manipulating-structures-3-2-1">
 <dfn class="terminology">Selecting columns</dfn>: <code class="code-inline tex2jax_ignore">df$column</code>, <code class="code-inline tex2jax_ignore">df[, "column"]</code>, <code class="code-inline tex2jax_ignore">df[, 1]</code>
 </div></li>
-<li id="subsec-manipulating-structures-6-3"><div class="para" id="subsec-manipulating-structures-6-3-1">
+<li id="subsec-manipulating-structures-3-3"><div class="para" id="subsec-manipulating-structures-3-3-1">
 <dfn class="terminology">Selecting rows</dfn>: <code class="code-inline tex2jax_ignore">df[1:5, ]</code>, <code class="code-inline tex2jax_ignore">df[df$x &gt; 10, ]</code>
 </div></li>
-<li id="subsec-manipulating-structures-6-4"><div class="para" id="subsec-manipulating-structures-6-4-1">
+<li id="subsec-manipulating-structures-3-4"><div class="para" id="subsec-manipulating-structures-3-4-1">
 <dfn class="terminology">Adding columns</dfn>: <code class="code-inline tex2jax_ignore">df$new_col &lt;- values</code>, <code class="code-inline tex2jax_ignore">cbind(df, new_col = values)</code>
 </div></li>
-<li id="subsec-manipulating-structures-6-5"><div class="para" id="subsec-manipulating-structures-6-5-1">
+<li id="subsec-manipulating-structures-3-5"><div class="para" id="subsec-manipulating-structures-3-5-1">
 <dfn class="terminology">Adding rows</dfn>: <code class="code-inline tex2jax_ignore">rbind(df, new_row)</code>
 </div></li>
-<li id="subsec-manipulating-structures-6-6"><div class="para" id="subsec-manipulating-structures-6-6-1">
+<li id="subsec-manipulating-structures-3-6"><div class="para" id="subsec-manipulating-structures-3-6-1">
 <dfn class="terminology">Information functions</dfn>: <code class="code-inline tex2jax_ignore">nrow()</code>, <code class="code-inline tex2jax_ignore">ncol()</code>, <code class="code-inline tex2jax_ignore">dim()</code>, <code class="code-inline tex2jax_ignore">names()</code>, <code class="code-inline tex2jax_ignore">str()</code>, <code class="code-inline tex2jax_ignore">summary()</code>
 </div></li>
 </ul>
-<div class="code-box"><pre class="program"><code id="rs-prog-manipulating-structures" class="language-none"># Vector creation and manipulation
+<div id="subsec-manipulating-structures-4" class="ptx-sagecell sagecell-r"><script type="text/x-sage"># Vector creation and manipulation
 
 # Creating sequences
-seq1 &lt;- 1:10  # Integer sequence
+seq1 <- 1:10  # Integer sequence
 seq1
 
-seq2 &lt;- seq(0, 1, by = 0.1)  # Sequence with specific increment
+seq2 <- seq(0, 1, by = 0.1)  # Sequence with specific increment
 seq2
 
-seq3 &lt;- rep(c("A", "B"), times = 3)  # Repeating values
+seq3 <- rep(c("A", "B"), times = 3)  # Repeating values
 seq3
 
 # Vector functions
-numbers &lt;- c(15, 8, 23, 42, 7)
+numbers <- c(15, 8, 23, 42, 7)
 
 length(numbers)  # Number of elements
 sum(numbers)     # Sum of elements
@@ -523,13 +489,13 @@ sort(numbers)    # Sort in ascending order
 # Vector subsetting
 numbers[3]        # Third element
 numbers[c(1, 4)]  # First and fourth elements
-numbers[numbers &gt; 20]  # Elements greater than 20
+numbers[numbers > 20]  # Elements greater than 20
 numbers[-2]       # All except the second element
 
 # Data frame manipulation
 
 # Create a sample data frame
-students &lt;- data.frame(
+students <- data.frame(
   id = 1:5,
   name = c("Alice", "Bob", "Charlie", "Diana", "Elijah"),
   score = c(85, 92, 78, 90, 88),
@@ -556,18 +522,18 @@ students[, c(2, 3)] # Second and third columns
 # Selecting rows
 students[2, ]            # Second row
 students[1:3, ]          # First three rows
-students[students$score &gt;= 90, ]  # Rows where score is at least 90
+students[students$score >= 90, ]  # Rows where score is at least 90
 
 # Adding a new column
-students$grade &lt;- c("B", "A", "C", "A", "B")
+students$grade <- c("B", "A", "C", "A", "B")
 students
 
 # Adding a calculated column
-students$normalized &lt;- students$score / max(students$score) * 100
+students$normalized <- students$score / max(students$score) * 100
 students
 
 # Creating a new row
-new_student &lt;- data.frame(
+new_student <- data.frame(
   id = 6,
   name = "Fiona",
   score = 95,
@@ -577,12 +543,9 @@ new_student &lt;- data.frame(
 )
 
 # Adding the new row
-students &lt;- rbind(students, new_student)
+students <- rbind(students, new_student)
 students
-</code></pre></div>
-<details id="ex-manipulation" class="exercise exercise-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
-<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">63</span><span class="period">.</span><span class="space"> </span><span class="title">Data Structure Manipulation.</span>
-</h4></summary><article class="exercise exercise-like knowl__content"><div class="para" id="ex-manipulation-2-1">Complete the following tasks:</div></article></details></section><section class="subsection" id="subsec-exercise-data-structures"><h3 class="heading hide-type">
+</script></div></section><section class="subsection" id="subsec-exercise-data-structures"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Exercise: Building and transforming data structures</span>
 </h3>
 <article class="activity project-like" id="activity-build-dataset"><h4 class="heading">
@@ -592,18 +555,18 @@ students
 <li id="activity-build-dataset-2-3-1">
 <div class="para" id="activity-build-dataset-2-3-1-1">Create a data frame containing information for 5 students with the following columns:</div>
 <ul class="disc" id="activity-build-dataset-2-3-1-2">
-<li id="activity-build-dataset-2-3-1-2-1"><div class="para" id="activity-build-dataset-2-3-1-2-1-1">student_id (numeric)</div></li>
+<li id="activity-build-dataset-2-3-1-2-1"><div class="para" id="activity-build-dataset-2-3-1-2-1-1">last_four_digits_student_id (numeric)</div></li>
 <li id="activity-build-dataset-2-3-1-2-2"><div class="para" id="activity-build-dataset-2-3-1-2-2-1">name (character)</div></li>
 <li id="activity-build-dataset-2-3-1-2-3"><div class="para" id="activity-build-dataset-2-3-1-2-3-1">age (numeric)</div></li>
 <li id="activity-build-dataset-2-3-1-2-4"><div class="para" id="activity-build-dataset-2-3-1-2-4-1">major (character)</div></li>
-<li id="activity-build-dataset-2-3-1-2-5"><div class="para" id="activity-build-dataset-2-3-1-2-5-1">gpa (numeric)</div></li>
+<li id="activity-build-dataset-2-3-1-2-5"><div class="para" id="activity-build-dataset-2-3-1-2-5-1">gpa (numeric)   Note: you can use any GPA if you’re not comfortable sharing</div></li>
 </ul>
 </li>
 <li id="activity-build-dataset-2-3-2"><div class="para" id="activity-build-dataset-2-3-2-1">Add a new column called ’year’ indicating the year of study (1, 2, 3, or 4) for each student</div></li>
 <li id="activity-build-dataset-2-3-3"><div class="para" id="activity-build-dataset-2-3-3-1">Add a new column called ’honors’ that contains TRUE for students with GPA ≥ 3.5 and FALSE otherwise</div></li>
 <li id="activity-build-dataset-2-3-4"><div class="para" id="activity-build-dataset-2-3-4-1">Create a subset of the data frame that includes only honors students</div></li>
 <li id="activity-build-dataset-2-3-5"><div class="para" id="activity-build-dataset-2-3-5-1">Calculate and display the average GPA for each major</div></li>
-</ol></article><div class="code-box"><pre class="program"><code id="rs-prog-build-dataset" class="language-none"># Step 1: Create the student data frame
+</ol></article><div id="subsec-exercise-data-structures-3" class="ptx-sagecell sagecell-r"><script type="text/x-sage"># Step 1: Create the student data frame
 # Your code here
 
 
@@ -621,8 +584,10 @@ students
 
 # Step 5: Calculate average GPA by major
 # Your code here
-</code></pre></div>
-<div class="code-box"><pre class="program"><code id="rs-prog-build-dataset-solution" class="language-none"># Step 1: Create the student data frame
+</script></div>
+<details id="ex-student-dataset-answer" class="exercise exercise-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">61</span><span class="period">.</span><span class="space"> </span><span class="title">Answer.</span>
+</h4></summary><article class="exercise exercise-like knowl__content"><div class="code-box"><pre class="program"><code id="rs-ex-student-dataset-answer" class="language-none"># Step 1: Create the student data frame
 students &lt;- data.frame(
   student_id = 1:5,
   name = c("Alex", "Beatrice", "Carlos", "Diana", "Eli"),
@@ -650,9 +615,8 @@ honors_students
 # Using aggregate function
 avg_gpa_by_major &lt;- aggregate(gpa ~ major, data = students, FUN = mean)
 avg_gpa_by_major
-</code></pre></div>
-<details id="ex-challenge-task" class="exercise exercise-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
-<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">64</span><span class="period">.</span><span class="space"> </span><span class="title">Challenge Task.</span>
+</code></pre></div></article></details><details id="ex-challenge-task" class="exercise exercise-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">62</span><span class="period">.</span><span class="space"> </span><span class="title">Challenge Task.</span>
 </h4></summary><article class="exercise exercise-like knowl__content"><div class="para" id="ex-challenge-task-2-1">Using the student dataset from the exercise above, complete the following tasks:</div> <ol class="decimal" id="ex-challenge-task-2-2">
 <li id="ex-challenge-task-2-2-1"><div class="para" id="ex-challenge-task-2-2-1-1">Find the student with the highest GPA</div></li>
 <li id="ex-challenge-task-2-2-2"><div class="para" id="ex-challenge-task-2-2-2-1">Calculate the percentage of students who are on the honors list</div></li>
@@ -673,7 +637,7 @@ students$age_group &lt;- cut(students$age,
 students
 </pre></div></details></div></article></details></section></section></div>
 <div id="ptx-content-footer" class="ptx-content-footer">
-<a class="previous-button button" href="sec-intro-to-web-r.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-data-import.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+<a class="previous-button button" href="sec-intro-to-web-r.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-data-cleaning.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
 </div>
 <div id="ptx-page-footer" class="ptx-page-footer">

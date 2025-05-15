@@ -9,7 +9,7 @@
 <!--******************************************-->
 <!--*  Authored with PreTeXt                 *-->
 <!--*  pretextbook.org                       *-->
-<!--*  Theme: default-modern                 *-->
+<!--*  Theme: denver                         *-->
 <!--*  Palette:                              *-->
 <!--******************************************-->
 <head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
@@ -119,16 +119,28 @@ eBookConfig.allow_pairs = false;
 eBookConfig.enableScratchAC = false;
 eBookConfig.build_info = "";
 eBookConfig.python3 = null;
-eBookConfig.runestone_version = '7.6.4';
+eBookConfig.runestone_version = '7.6.5';
 eBookConfig.jobehost = '';
 eBookConfig.proxyuri_runs = '';
 eBookConfig.proxyuri_files = '';
 eBookConfig.enable_chatcodes =  false;
 </script>
 <!--*** Runestone Services ***-->
-<script src="_static/prefix-runtime.670ec3fcb7b60f96.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.253ff4af1e53e55f.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
+<script src="_static/prefix-runtime.052b07dd5d5bd82e.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.253ff4af1e53e55f.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
 <link rel="stylesheet" type="text/css" href="_static/prefix-runestone.5bdeacdba067a0e3.css">
 <script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/components/prism-core.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/autoloader/prism-autoloader.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/line-numbers/prism-line-numbers.min.js" integrity="sha512-dubtf8xMHSQlExGRQ5R7toxHLgSDZ0K7AunqPWHXmJQ8XyVIG19S1T95gBxlAeGOK02P4Da2RTnQz0Za0H0ebQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/line-highlight/prism-line-highlight.min.js" integrity="sha512-93uCmm0q+qO5Lb1huDqr7tywS8A2TFA+1/WHvyiWaK6/pvsFl6USnILagntBx8JnVbQH5s3n0vQZY6xNthNfKA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><script>// Make *any* div with class 'sagecell-r' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({
+  "inputLocation": "div.sagecell-r",
+  "linked": true,
+  "linkKey": "linked-r",
+  "autoeval": false,
+  "languages": [
+    "r"
+  ],
+  "evalButtonText": "Evaluate (R)"
+});
 </script>
 </head>
 <body id="changeme" class="pretext book ignore-math">
@@ -147,7 +159,7 @@ eBookConfig.enable_chatcodes =  false;
 <ol id="searchresults" class="searchresults"></ol>
 </div>
 </div>
-<span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="ch-computational-foundations.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-computational-foundations.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="sec-data-structures.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+<span class="nav-other-controls"><button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="ch-data-and-programming-foundations.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-data-and-programming-foundations.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="sec-data-structures.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
 </div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N} \newcommand{\Z}{\mathbb Z} \newcommand{\Q}{\mathbb Q} \newcommand{\R}{\mathbb R}
 \newcommand{\lt}{&lt;}
 \newcommand{\gt}{&gt;}
@@ -214,17 +226,13 @@ eBookConfig.enable_chatcodes =  false;
 </ul>
 </li>
 <li class="toc-item toc-section">
-<div class="toc-title-box"><a href="sec-unit-project.html" class="internal"><span class="title">Unit 1 Project Work</span></a></div>
-<ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-unit-project.html#subsec-personal-data-analysis" class="internal"><span class="title">Mini-project completion: Personal data tracking analysis</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-unit-project.html#subsec-group-presentations" class="internal"><span class="title">Group presentations of findings</span></a></div></li>
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-unit-project.html#subsec-data-reflection" class="internal"><span class="title">Reflection on data’s role in students’ lives</span></a></div></li>
-</ul>
+<div class="toc-title-box"><a href="sec-unit-one-conclusion.html" class="internal"><span class="title">Unit 1 Conclusion</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-unit-one-conclusion.html#subsec-data-reflection" class="internal"><span class="title">Reflection on data’s role in students’ lives</span></a></div></li></ul>
 </li>
 </ul>
 </li>
 <li class="toc-item toc-chapter contains-active">
-<div class="toc-title-box"><a href="ch-computational-foundations.html" class="internal"><span class="title">Computational Foundations with Web-R</span></a></div>
+<div class="toc-title-box"><a href="ch-data-and-programming-foundations.html" class="internal"><span class="title">Data and Programming Foundations</span></a></div>
 <ul class="structural toc-item-list contains-active">
 <li class="toc-item toc-section contains-active">
 <div class="toc-title-box"><a href="sec-intro-to-web-r.html" class="internal"><span class="title">Introduction to Web-R</span></a></div>
@@ -237,9 +245,20 @@ eBookConfig.enable_chatcodes =  false;
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec-data-structures.html" class="internal"><span class="title">Working with data structures</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-data-structures.html#subsec-r-data-structures" class="internal"><span class="title">Vectors, lists, and data frames</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-data-structures.html#subsec-r-data-structures" class="internal"><span class="title">Lists and Dataframes</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-data-structures.html#subsec-manipulating-structures" class="internal"><span class="title">Creating and manipulating basic data structures</span></a></div></li>
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-data-structures.html#subsec-exercise-data-structures" class="internal"><span class="title">Exercise: Building and transforming data structures</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-data-cleaning.html" class="internal"><span class="title">Data Cleaning and Organizing</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-data-cleaning.html#subsec-why-clean-data" class="internal"><span class="title">Why Clean Data Matters</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-data-cleaning.html#subsec-common-data-issues" class="internal"><span class="title">Common Data Quality Issues</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-data-cleaning.html#subsec-data-cleaning-steps" class="internal"><span class="title">Data Cleaning Process</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-data-cleaning.html#subsec-data-cleaning-R" class="internal"><span class="title">Data Cleaning in R</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-data-cleaning.html#subsec-tidy-data" class="internal"><span class="title">Tidy Data Principles</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-data-cleaning.html#subsec-data-validation" class="internal"><span class="title">Data Validation</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-section">
@@ -400,7 +419,11 @@ eBookConfig.enable_chatcodes =  false;
 </div></li>
 <li id="subsec-r-environment-6-5"><div class="para" id="subsec-r-environment-6-5-1">Indexing: Use square brackets <code class="code-inline tex2jax_ignore">[]</code> to access elements</div></li>
 </ul>
-<div class="code-box"><pre class="program"><code id="rs-prog-r-basics" class="language-none"># This is a comment - R ignores everything after the # symbol
+<div id="subsec-r-environment-7" class="ptx-sagecell sagecell-r"><script type="text/x-sage"># This is a comment - R ignores everything after the # symbol
+
+# Variable assignment
+x <- 10   # Assign the value 10 to variable x
+y <- 5    # Assign the value 5 to variable y
 
 # Basic arithmetic operations
 2 + 3    # Addition
@@ -409,10 +432,12 @@ eBookConfig.enable_chatcodes =  false;
 20 / 4   # Division
 2^3      # Exponentiation
 10 %% 3  # Modulo (remainder)
+  #Note that if you click Execute or Run, 
+  #no output will appear because they weren't told to print!
+  #So that you understand what the operators are doing,
+  #assign each line a different variable (ex:a,b,c...)
+  #then underneath tell it to print(insert variable)
 
-# Variable assignment
-x &lt;- 10   # Assign the value 10 to variable x
-y &lt;- 5    # Assign the value 5 to variable y
 
 # Perform operations with variables
 x + y
@@ -420,22 +445,58 @@ x * y
 x / y
 
 # Creating a more complex expression
-result &lt;- (x + y) * 2
+result <- (x + y) * 2
 result
 
 # Boolean operations
-x &gt; y    # Greater than
-x &lt; y    # Less than
+x > y    # Greater than
+x < y    # Less than
 x == y   # Equal to
 x != y   # Not equal to
 
 # Getting help
-# Uncomment to run:
+# To see the below execute, you need to uncomment them!
 # ?mean   # Opens help for the mean function
-</code></pre></div>
-<details id="ex-r-syntax" class="exercise exercise-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
-<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">54</span><span class="period">.</span><span class="space"> </span><span class="title">R Syntax Practice.</span>
-</h4></summary><article class="exercise exercise-like knowl__content"><div class="para" id="ex-r-syntax-2-1">Identify any syntax errors in the following R code and explain how to fix them:</div></article></details></section><section class="subsection" id="subsec-variables-datatypes"><h3 class="heading hide-type">
+</script></div>
+<details id="exercise-r-syntax-matching" class="exercise exercise-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">54</span><span class="period">.</span><span class="space"> </span><span class="title">R Syntax Fundamentals.</span>
+</h4></summary><article class="exercise exercise-like knowl__content"><div class="ptx-runestone-container"><div class="runestone cardsort_section"><ul data-component="dragndrop" data-question_label="" style="visibility: hidden;" id="rs-exercise-r-syntax-matching">
+<span data-subcomponent="question"><div class="para" id="exercise-r-syntax-matching-2-1">Match each R code example on the left with its correct description on the right.</div></span><li data-subcomponent="draggable" id="rs-exercise-r-syntax-matching_drag1" data-category="1">Assignment operator creating a variable x with value 10</li>
+<li data-subcomponent="dropzone" for="rs-exercise-r-syntax-matching_drag1" data-category="1">x&lt;-10</li>
+<li data-subcomponent="draggable" id="rs-exercise-r-syntax-matching_drag2" data-category="2">Accessing the third element of a vector or list called names</li>
+<li data-subcomponent="dropzone" for="rs-exercise-r-syntax-matching_drag2" data-category="2">names[3]</li>
+<li data-subcomponent="draggable" id="rs-exercise-r-syntax-matching_drag3" data-category="3">A comment that R ignores during execution</li>
+<li data-subcomponent="dropzone" for="rs-exercise-r-syntax-matching_drag3" data-category="3">#Calculate Mean</li>
+<li data-subcomponent="draggable" id="rs-exercise-r-syntax-matching_drag4" data-category="4">Testing if two variables have equal values</li>
+<li data-subcomponent="dropzone" for="rs-exercise-r-syntax-matching_drag4" data-category="4">total==sum</li>
+<li data-subcomponent="draggable" id="rs-exercise-r-syntax-matching_drag5" data-category="5">An operation that will return a remainder of (1)</li>
+<li data-subcomponent="dropzone" for="rs-exercise-r-syntax-matching_drag5" data-category="5">5%%2</li>
+<li data-subcomponent="draggable" id="rs-exercise-r-syntax-matching_drag6" data-category="6">Creating a complex expression that adds two variables and multiplies by 2</li>
+<li data-subcomponent="dropzone" for="rs-exercise-r-syntax-matching_drag6" data-category="6">&lt;- (x + y) * 2</li>
+<li data-subcomponent="draggable" id="rs-exercise-r-syntax-matching_drag7" data-category="7">Function call with two arguments to calculate an average while removing missing values</li>
+<li data-subcomponent="dropzone" for="rs-exercise-r-syntax-matching_drag7" data-category="7">mean(data, na.rm=TRUE)</li>
+<li data-subcomponent="draggable" id="rs-exercise-r-syntax-matching_drag8" data-category="8">Testing if a variable is not equal to zero</li>
+<li data-subcomponent="dropzone" for="rs-exercise-r-syntax-matching_drag8" data-category="8">Value !=</li>
+<li data-subcomponent="draggable" id="rs-exercise-r-syntax-matching_drag9" data-category="9">Requesting help documentation for a function</li>
+<li data-subcomponent="dropzone" for="rs-exercise-r-syntax-matching_drag9" data-category="9">?mean</li>
+<li data-subcomponent="draggable" id="rs-exercise-r-syntax-matching_drag10" data-category="10">Creating two different variables due to case sensitivity</li>
+<li data-subcomponent="dropzone" for="rs-exercise-r-syntax-matching_drag10" data-category="10">Count &lt;- count</li>
+</ul></div></div>
+<div class="solutions"><details id="exercise-r-syntax-matching-4" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="exercise-r-syntax-matching-4-1">Correct matches:</div>
+<ul class="disc" id="exercise-r-syntax-matching-4-2">
+<li id="exercise-r-syntax-matching-4-2-1"><div class="para" id="p-derived-exercise-r-syntax-matching-4-2-1">x &lt;- 10: Assignment operator creating a variable x with value 10</div></li>
+<li id="exercise-r-syntax-matching-4-2-2"><div class="para" id="p-derived-exercise-r-syntax-matching-4-2-2">names[3]: Accessing the third element of a vector or list called names</div></li>
+<li id="exercise-r-syntax-matching-4-2-3"><div class="para" id="p-derived-exercise-r-syntax-matching-4-2-3"># Calculate average: A comment that R ignores during execution</div></li>
+<li id="exercise-r-syntax-matching-4-2-4"><div class="para" id="p-derived-exercise-r-syntax-matching-4-2-4">total == sum: Testing if two variables have equal values</div></li>
+<li id="exercise-r-syntax-matching-4-2-5"><div class="para" id="p-derived-exercise-r-syntax-matching-4-2-5">5 %% 2: Modulo operation returning the remainder (1)</div></li>
+<li id="exercise-r-syntax-matching-4-2-6"><div class="para" id="p-derived-exercise-r-syntax-matching-4-2-6">result &lt;- (x + y) * 2: Creating a complex expression that adds two variables and multiplies by 2</div></li>
+<li id="exercise-r-syntax-matching-4-2-7"><div class="para" id="p-derived-exercise-r-syntax-matching-4-2-7">mean(data, na.rm=TRUE): Function call with two arguments to calculate an average while removing missing values</div></li>
+<li id="exercise-r-syntax-matching-4-2-8"><div class="para" id="p-derived-exercise-r-syntax-matching-4-2-8">Value != 0: Testing if a variable is not equal to zero</div></li>
+<li id="exercise-r-syntax-matching-4-2-9"><div class="para" id="p-derived-exercise-r-syntax-matching-4-2-9">?mean: Requesting help documentation for a function</div></li>
+<li id="exercise-r-syntax-matching-4-2-10"><div class="para" id="p-derived-exercise-r-syntax-matching-4-2-10">Count &lt;- count: Creating two different variables due to case sensitivity</div></li>
+</ul>
+</div></details></div></article></details></section><section class="subsection" id="subsec-variables-datatypes"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Variables, data types, and basic operations</span>
 </h3>
 <div class="para" id="subsec-variables-datatypes-2">R supports various data types for different kinds of information:</div>
@@ -494,67 +555,109 @@ x != y   # Not equal to
 <li id="subsec-variables-datatypes-5-5"><div class="para" id="subsec-variables-datatypes-5-5-1">
 <dfn class="terminology">Logical operations</dfn>: <code class="code-inline tex2jax_ignore">==</code>, <code class="code-inline tex2jax_ignore">!=</code>, <code class="code-inline tex2jax_ignore">&lt;</code>, <code class="code-inline tex2jax_ignore">&gt;</code>, <code class="code-inline tex2jax_ignore">&lt;=</code>, <code class="code-inline tex2jax_ignore">&gt;=</code>, <code class="code-inline tex2jax_ignore">&amp;</code> (and), <code class="code-inline tex2jax_ignore">|</code> (or), <code class="code-inline tex2jax_ignore">!</code> (not)</div></li>
 </ul>
-<div class="code-box"><pre class="program"><code id="rs-prog-data-types" class="language-none"># Creating variables of different data types
-
+<div id="subsec-variables-datatypes-6" class="ptx-sagecell sagecell-r"><script type="text/x-sage">         # Creating variables of different data types
 # Numeric
-num_var &lt;- 42.5
-class(num_var)
+num_var <- 42.5
+print(class(num_var))
 
 # Integer
-int_var &lt;- 42L  # The L suffix specifies integer
-class(int_var)
+int_var <- 42L  
+print(class(int_var))  
+is.integer(int_var)  
 
 # Character
-char_var &lt;- "Hello, R!"
-class(char_var)
+char_var <- "Hello, R!"
+print(class(char_var))  
+nchar(char_var)  
 
 # Logical
-log_var &lt;- TRUE
-class(log_var)
+log_var <- TRUE
+print(class(log_var))  
+!log_var  # Logical NOT
 
 # Creating a factor (categorical variable)
-sizes &lt;- factor(c("small", "medium", "large", "medium", "small"))
-class(sizes)
-levels(sizes)  # Get the unique categories
+sizes <- factor(c("small", "medium", "large", "medium", "small"))
+print(class(sizes))  
+print(levels(sizes))  
+print(table(sizes))  # Shows frequency of each category
 
 # Date
-date_var &lt;- as.Date("2025-05-10")
-class(date_var)
+date_var <- as.Date("2025-05-10")
+print(class(date_var))  
+print(format(date_var, "%A, %B %d, %Y"))
 
 # Type conversion examples
-
 # Character to numeric
-char_num &lt;- "42.5"
-as.numeric(char_num)
+char_num <- "42.5"
+print(class(char_num))  # Displays: "character"
+num_converted <- as.numeric(char_num)
+print(class(num_converted))  # Displays: "numeric"
 
 # Numeric to character
-num_char &lt;- 42.5
-as.character(num_char)
+num_char <- 42.5
+char_converted <- as.character(num_char)
+print(char_converted)  
+print(class(char_converted)) 
+
+# Vector operations
+vec1 <- c(1, 3, 5, 7, 9, 11)
+print(vec1) 
+print(mean(vec1))  
+print(sum(vec1))  
+print(length(vec1))  # Number of elements
 
 # Logical operations
-x &lt;- 10
-y &lt;- 5
+x <- 10
+y <- 5
+print(paste("x =", x, "and y =", y))  # Shows values for context
 
-x &gt; y    # Is x greater than y?
-x == 2*y  # Is x equal to 2 times y?
-(x &gt; 5) and (y &lt; 10)  # Both conditions must be TRUE
-(x &gt; 15) | (y &lt; 10)  # At least one condition must be TRUE
-</code></pre></div>
+# Is x greater than y?
+result1 <- x > y
+print(paste("Is x > y?", result1))  
+
+# Is x equal to 2 times y?
+result2 <- x == 2*y
+print(paste("Is x == 2*y?", result2)) 
+
+# Both conditions must be TRUE
+result3 <- (x > 5) && (y < 10)  
+print(paste("Is (x > 5) AND (y < 10)?", result3))
+
+# Simple function example
+square <- function(x) {
+  return(x^2)
+}
+print(square(4)) 
+print(square(1:5))  # Applies to each element within set
+
+# Demonstrating if statements
+test_number <- function(x) {
+  if (x > 0) {
+    return("Positive")
+  } else if (x < 0) {
+    return("Negative")
+  } else {
+    return("Zero")
+  }
+}
+
+print(test_number(10)) 
+print(test_number(-5))
+print(test_number(0))
+</script></div>
 <details id="ex-data-types" class="exercise exercise-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
 <span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">56</span><span class="period">.</span><span class="space"> </span><span class="title">Data Types Practice.</span>
 </h4></summary><article class="exercise exercise-like knowl__content"><div class="ptx-runestone-container"><div class="runestone cardsort_section"><ul data-component="dragndrop" data-question_label="" style="visibility: hidden;" id="rs-ex-data-types">
-<span data-subcomponent="question"><div class="para" id="ex-data-types-2-1">For each of the following R expressions, predict what data type the result will be:</div></span><li data-subcomponent="draggable" id="rs-ex-data-types_drag1" data-category="1"><code class="code-inline tex2jax_ignore">42 / 7</code></li>
-<li data-subcomponent="dropzone" for="rs-ex-data-types_drag1" data-category="1">numeric</li>
-<li data-subcomponent="draggable" id="rs-ex-data-types_drag2" data-category="2"><code class="code-inline tex2jax_ignore">"42" + 8</code></li>
-<li data-subcomponent="dropzone" for="rs-ex-data-types_drag2" data-category="2">error (can’t add a number to a character string)</li>
-<li data-subcomponent="draggable" id="rs-ex-data-types_drag3" data-category="3"><code class="code-inline tex2jax_ignore">as.numeric("42") + 8</code></li>
-<li data-subcomponent="dropzone" for="rs-ex-data-types_drag3" data-category="3">numeric</li>
-<li data-subcomponent="draggable" id="rs-ex-data-types_drag4" data-category="4"><code class="code-inline tex2jax_ignore">10 &gt; 5</code></li>
-<li data-subcomponent="dropzone" for="rs-ex-data-types_drag4" data-category="4">logical</li>
-<li data-subcomponent="draggable" id="rs-ex-data-types_drag5" data-category="5"><code class="code-inline tex2jax_ignore">c("red", "green", "blue")</code></li>
-<li data-subcomponent="dropzone" for="rs-ex-data-types_drag5" data-category="5">character vector</li>
-<li data-subcomponent="draggable" id="rs-ex-data-types_drag6" data-category="6"><code class="code-inline tex2jax_ignore">as.Date("2025-01-01") + 30</code></li>
-<li data-subcomponent="dropzone" for="rs-ex-data-types_drag6" data-category="6">Date</li>
+<span data-subcomponent="question"><div class="para" id="ex-data-types-2-1">For each of the following R expressions, predict what data type the result will be:</div></span><li data-subcomponent="draggable" id="rs-ex-data-types_drag1" data-category="1"><code class="code-inline tex2jax_ignore">"42" + 8</code></li>
+<li data-subcomponent="dropzone" for="rs-ex-data-types_drag1" data-category="1">error (can’t add a number to a character string)</li>
+<li data-subcomponent="draggable" id="rs-ex-data-types_drag2" data-category="2"><code class="code-inline tex2jax_ignore">as.numeric("42") + 8</code></li>
+<li data-subcomponent="dropzone" for="rs-ex-data-types_drag2" data-category="2">numeric</li>
+<li data-subcomponent="draggable" id="rs-ex-data-types_drag3" data-category="3"><code class="code-inline tex2jax_ignore">10 &gt; 5</code></li>
+<li data-subcomponent="dropzone" for="rs-ex-data-types_drag3" data-category="3">logical</li>
+<li data-subcomponent="draggable" id="rs-ex-data-types_drag4" data-category="4"><code class="code-inline tex2jax_ignore">c("red", "green", "blue")</code></li>
+<li data-subcomponent="dropzone" for="rs-ex-data-types_drag4" data-category="4">character vector</li>
+<li data-subcomponent="draggable" id="rs-ex-data-types_drag5" data-category="5"><code class="code-inline tex2jax_ignore">as.Date("2025-01-01") + 30</code></li>
+<li data-subcomponent="dropzone" for="rs-ex-data-types_drag5" data-category="5">Date</li>
 </ul></div></div></article></details></section><section class="subsection" id="subsec-r-practice"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Hands-on practice: Simple calculations and variable assignments</span>
 </h3>
@@ -567,42 +670,24 @@ x == 2*y  # Is x equal to 2 times y?
 <li id="activity-basic-calculations-2-2-2"><div class="para" id="activity-basic-calculations-2-2-2-1">Convert a temperature of 75°F to Celsius using the formula: C = (F - 32) × 5/9</div></li>
 <li id="activity-basic-calculations-2-2-3"><div class="para" id="activity-basic-calculations-2-2-3-1">Calculate the average of the following five numbers: 18, 24, 32, 21, 15</div></li>
 <li id="activity-basic-calculations-2-2-4"><div class="para" id="activity-basic-calculations-2-2-4-1">Determine whether the average you calculated is greater than 20</div></li>
-</ol></article><div class="code-box"><pre class="program"><code id="rs-prog-practice-template" class="language-none"># Exercise 1: Calculate the area of a circle with radius 5
-radius &lt;- 5
+</ol></article><div id="subsec-r-practice-4" class="ptx-sagecell sagecell-r"><script type="text/x-sage"># Exercise 1: Calculate the area of a circle with radius 5
+radius <- 5
 # Insert your code here
 
 
 # Exercise 2: Convert 75°F to Celsius
-fahrenheit &lt;- 75
+fahrenheit <- 75
 # Insert your code here
 
 
 # Exercise 3: Calculate the average of five numbers
-numbers &lt;- c(18, 24, 32, 21, 15)
+numbers <- c(18, 24, 32, 21, 15)
 # Insert your code here
 
 
 # Exercise 4: Determine if the average is greater than 20
 # Insert your code here
-</code></pre></div>
-<div class="code-box"><pre class="program"><code id="rs-prog-practice-solution" class="language-none"># Exercise 1: Calculate the area of a circle with radius 5
-radius &lt;- 5
-area &lt;- pi * radius^2
-area
-
-# Exercise 2: Convert 75°F to Celsius
-fahrenheit &lt;- 75
-celsius &lt;- (fahrenheit - 32) * 5/9
-celsius
-
-# Exercise 3: Calculate the average of five numbers
-numbers &lt;- c(18, 24, 32, 21, 15)
-avg &lt;- mean(numbers)
-avg
-
-# Exercise 4: Determine if the average is greater than 20
-avg &gt; 20
-</code></pre></div>
+</script></div>
 <details id="ex-debugging-practice" class="exercise exercise-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
 <span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">57</span><span class="period">.</span><span class="space"> </span><span class="title">Debugging Practice.</span>
 </h4></summary><article class="exercise exercise-like knowl__content"><div class="para" id="ex-debugging-practice-2-1">The following R code contains several errors. Find and fix all the errors to make the code run correctly:</div>
@@ -626,8 +711,8 @@ print("Final price:" final_price)
 print("Affordable?", is_affordable)
 </pre>
 <div class="solutions"><details id="ex-debugging-practice-3" class="answer solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Answer</span><span class="period">.</span></summary><div class="answer solution-like knowl__content"><pre class="code-block tex2jax_ignore"># Calculate the final price of an item with tax
-item_price &lt;- 29.99  # Changed = to &lt;- for consistency
-tax_rate &lt;- 0.08
+item_price &lt;- 29.99  # Proper syntax is to use &lt;- to assign variables
+tax_rate &lt;- 0.08      #though = technically still works
 
 # Calculate tax amount
 tax_amount &lt;- item_price * tax_rate  # Changed 'x' to '*'
@@ -645,7 +730,7 @@ print(paste("Final price:", final_price))  # Added paste function
 print(paste("Affordable?", is_affordable))  # Added paste function
 </pre></div></details></div></article></details></section></section></div>
 <div id="ptx-content-footer" class="ptx-content-footer">
-<a class="previous-button button" href="ch-computational-foundations.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-data-structures.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+<a class="previous-button button" href="ch-data-and-programming-foundations.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-data-structures.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
 </div>
 <div id="ptx-page-footer" class="ptx-page-footer">
