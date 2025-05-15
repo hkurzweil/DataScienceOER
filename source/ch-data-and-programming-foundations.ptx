@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<chapter xml:id="ch-data-and-computational-foundations">
-  <title>Data and Computational Foundations</title>
+<chapter xml:id="ch-data-and-programming-foundations">
+  <title>Data and Programming Foundations</title>
 
   <introduction>
-    <p>This unit introduces the data foundations as well as the computational tools and techniques needed to work effectively with data. You'll learn the fundamentals of R programming using the Web-R platform, including data structures, importing and exploring datasets, and techniques for data transformation.</p>
+    <p>This unit introduces the data foundations as well as the computational tools in programming needed to work effectively with data. You'll learn the fundamentals of R programming using the Web-R platform, including data structures, importing and exploring datasets, and techniques for data transformation.</p>
   </introduction>
 
  
