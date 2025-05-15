@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<chapter xml:id="ch-computational-foundations">
+<chapter xml:id="ch-data-and-computational-foundations">
   <title>Computational Foundations with Web-R</title>
 
   <introduction>
-    <p>This unit introduces the computational tools and techniques needed to work effectively with data. You'll learn the fundamentals of R programming using the Web-R platform, including data structures, importing and exploring datasets, and techniques for data transformation.</p>
+    <p>This unit introduces the data foundations as well as the computational tools and techniques needed to work effectively with data. You'll learn the fundamentals of R programming using the Web-R platform, including data structures, importing and exploring datasets, and techniques for data transformation.</p>
   </introduction>
 
   <!-- TOPIC 5: INTRODUCTION TO WEB-R -->
@@ -55,10 +55,14 @@
         </li>
       </ul>
       
-      <program interactive="webr" xml:id="prog-r-basics">
-        <code>
+      <sage language="r">
+        <input>
           # This is a comment - R ignores everything after the # symbol
           
+          # Variable assignment
+          x &lt;- 10   # Assign the value 10 to variable x
+          y &lt;- 5    # Assign the value 5 to variable y
+
           # Basic arithmetic operations
           2 + 3    # Addition
           10 - 4   # Subtraction
@@ -66,10 +70,12 @@
           20 / 4   # Division
           2^3      # Exponentiation
           10 %% 3  # Modulo (remainder)
-          
-          # Variable assignment
-          x &lt;- 10   # Assign the value 10 to variable x
-          y &lt;- 5    # Assign the value 5 to variable y
+            #Note that if you click Execute or Run, 
+            #no output will appear because they weren't told to print!
+            #So that you understand what the operators are doing,
+            #assign each line a different variable (ex:a,b,c...)
+            #then underneath tell it to print(insert variable)
+
           
           # Perform operations with variables
           x + y
@@ -87,60 +93,74 @@
           x != y   # Not equal to
           
           # Getting help
-          # Uncomment to run:
+          # To see the below execute, you need to uncomment them!
           # ?mean   # Opens help for the mean function
-        </code>
-      </program>
+        </input>
+      </sage>
       
-      <exercise xml:id="ex-r-syntax">
-        <title>R Syntax Practice</title>
-        <statement>
-            <p>Identify any syntax errors in the following R code and explain how to fix them:</p>
-       </statement>
-       <exercise>
-         <statement>
-           <p><c>X &lt;- 15</c></p>
-           <p><c>y &lt;- 3</c></p>
-           <p><c>result = x / Y</c></p>
-         </statement>
-         <answer>
-           <p>There are two errors:</p>
-           <ol>
-             <li><p>Case sensitivity issue: <c>X</c> is used in line 1 but <c>x</c> (lowercase) is used in line 3</p></li>
-             <li><p>Case sensitivity issue: <c>Y</c> (uppercase) is used in line 3 but <c>y</c> (lowercase) is defined in line 2</p></li>
-           </ol>
-           <p>Corrected code:</p>
-           <pre>
-             X &lt;- 15
-             y &lt;- 3
-             result = X / y
-           </pre>
-           <p>Or for more consistent style:</p>
-           <pre>
-             x &lt;- 15
-             y &lt;- 3
-             result &lt;- x / y
-           </pre>
-         </answer>
-       </exercise>
-       <exercise>
-         <statement>
-           <p><c>value1 &lt;- 10</c></p>
-           <p><c>value2 &lt;- 5</c></p>
-           <p><c>mean(value1, value2)</c></p>
-         </statement>
-         <answer>
-           <p>The error is in the usage of the <c>mean()</c> function, which expects a vector, not separate arguments.</p>
-           <p>Corrected code:</p>
-           <pre>
-             value1 &lt;- 10
-             value2 &lt;- 5
-             mean(c(value1, value2))
-           </pre>
-           <p>The <c>c()</c> function combines values into a vector, which is the proper input for <c>mean()</c>.</p>
-         </answer>
-       </exercise>
-     </exercise>
+      <exercise xml:id="exercise-r-syntax-matching">
+  <title>R Syntax Fundamentals</title>
+  <statement>
+    <p>Match each R code example on the left with its correct description on the right.</p>
+  </statement>
+  <cardsort>
+  <match>
+  <premise order="6">Assignment operator creating a variable x with value 10</premise>
+  <response>x&lt;-10</response>
+  </match>
+  <match>
+  <premise order="3">Accessing the third element of a vector or list called names</premise>
+  <response>names[3]</response>
+  </match>
+  <match>
+  <premise order="1">A comment that R ignores during execution</premise>
+  <response>#Calculate Mean</response>
+  </match>
+  <match>
+  <premise order="10">Testing if two variables have equal values</premise>
+  <response>total==sum</response>
+  </match>
+  <match>
+  <premise order="5">An operation that will return a remainder of (1)</premise>
+  <response>5%%2</response>
+  </match>
+  <match>
+  <premise order="9">Creating a complex expression that adds two variables and multiplies by 2</premise>
+  <response>&lt;- (x + y) * 2</response>
+  </match>
+  <match>
+  <premise order="4">Function call with two arguments to calculate an average while removing missing values</premise>
+  <response>mean(data, na.rm=TRUE)</response>
+  </match>
+  <match>
+  <premise order="2">Testing if a variable is not equal to zero</premise>
+  <response>Value != </response>
+  </match>
+  <match>
+  <premise order="8">Requesting help documentation for a function</premise>
+  <response>?mean</response>
+  </match>
+  <match>
+  <premise order="7">Creating two different variables due to case sensitivity</premise>
+  <response>Count &lt;- count</response>
+  </match>
+  </cardsort>   
+  <solution>
+    <p>Correct matches:</p>
+    <ul>
+      <li>x &lt;- 10: Assignment operator creating a variable x with value 10</li>
+      <li>names[3]: Accessing the third element of a vector or list called names</li>
+      <li># Calculate average: A comment that R ignores during execution</li>
+      <li>total == sum: Testing if two variables have equal values</li>
+      <li>5 %% 2: Modulo operation returning the remainder (1)</li>
+      <li>result &lt;- (x + y) * 2: Creating a complex expression that adds two variables and multiplies by 2</li>
+      <li>mean(data, na.rm=TRUE): Function call with two arguments to calculate an average while removing missing values</li>
+      <li>Value != 0: Testing if a variable is not equal to zero</li>
+      <li>?mean: Requesting help documentation for a function</li>
+      <li>Count &lt;- count: Creating two different variables due to case sensitivity</li>
+    </ul>
+  </solution>
+</exercise>
    </subsection>
    
    <!-- Variables, data types, and basic operations -->
@@ -210,55 +230,99 @@
        </li>
      </ul>
      
-     <program interactive="webr" xml:id="prog-data-types">
-       <code>
+     <sage language="r">
+      <input>
          # Creating variables of different data types
-         
-         # Numeric
-         num_var &lt;- 42.5
-         class(num_var)
-         
-         # Integer
-         int_var &lt;- 42L  # The L suffix specifies integer
-         class(int_var)
-         
-         # Character
-         char_var &lt;- "Hello, R!"
-         class(char_var)
-         
-         # Logical
-         log_var &lt;- TRUE
-         class(log_var)
-         
-         # Creating a factor (categorical variable)
-         sizes &lt;- factor(c("small", "medium", "large", "medium", "small"))
-         class(sizes)
-         levels(sizes)  # Get the unique categories
-         
-         # Date
-         date_var &lt;- as.Date("2025-05-10")
-         class(date_var)
-         
-         # Type conversion examples
-         
-         # Character to numeric
-         char_num &lt;- "42.5"
-         as.numeric(char_num)
-         
-         # Numeric to character
-         num_char &lt;- 42.5
-         as.character(num_char)
-         
-         # Logical operations
-         x &lt;- 10
-         y &lt;- 5
-         
-         x &gt; y    # Is x greater than y?
-         x == 2*y  # Is x equal to 2 times y?
-         (x &gt; 5) and (y &lt; 10)  # Both conditions must be TRUE
-         (x &gt; 15) | (y &lt; 10)  # At least one condition must be TRUE
-       </code>
-     </program>
+# Numeric
+num_var &lt;- 42.5
+print(class(num_var))
+
+# Integer
+int_var &lt;- 42L  
+print(class(int_var))  
+is.integer(int_var)  
+
+# Character
+char_var &lt;- "Hello, R!"
+print(class(char_var))  
+nchar(char_var)  
+
+# Logical
+log_var &lt;- TRUE
+print(class(log_var))  
+!log_var  # Logical NOT
+
+# Creating a factor (categorical variable)
+sizes &lt;- factor(c("small", "medium", "large", "medium", "small"))
+print(class(sizes))  
+print(levels(sizes))  
+print(table(sizes))  # Shows frequency of each category
+
+# Date
+date_var &lt;- as.Date("2025-05-10")
+print(class(date_var))  
+print(format(date_var, "%A, %B %d, %Y"))
+
+# Type conversion examples
+# Character to numeric
+char_num &lt;- "42.5"
+print(class(char_num))  # Displays: "character"
+num_converted &lt;- as.numeric(char_num)
+print(class(num_converted))  # Displays: "numeric"
+
+# Numeric to character
+num_char &lt;- 42.5
+char_converted &lt;- as.character(num_char)
+print(char_converted)  
+print(class(char_converted)) 
+
+# Vector operations
+vec1 &lt;- c(1, 3, 5, 7, 9, 11)
+print(vec1) 
+print(mean(vec1))  
+print(sum(vec1))  
+print(length(vec1))  # Number of elements
+
+# Logical operations
+x &lt;- 10
+y &lt;- 5
+print(paste("x =", x, "and y =", y))  # Shows values for context
+
+# Is x greater than y?
+result1 &lt;- x &gt; y
+print(paste("Is x &gt; y?", result1))  
+
+# Is x equal to 2 times y?
+result2 &lt;- x == 2*y
+print(paste("Is x == 2*y?", result2)) 
+
+# Both conditions must be TRUE
+result3 &lt;- (x &gt; 5) &amp;&amp; (y &lt; 10)  
+print(paste("Is (x &gt; 5) AND (y &lt; 10)?", result3))
+
+# Simple function example
+square &lt;- function(x) {
+  return(x^2)
+}
+print(square(4)) 
+print(square(1:5))  # Applies to each element within set
+
+# Demonstrating if statements
+test_number &lt;- function(x) {
+  if (x &gt; 0) {
+    return("Positive")
+  } else if (x &lt; 0) {
+    return("Negative")
+  } else {
+    return("Zero")
+  }
+}
+
+print(test_number(10)) 
+print(test_number(-5))
+print(test_number(0))
+       </input>
+      </sage>
      
      <exercise xml:id="ex-data-types">
        <title>Data Types Practice</title>
@@ -266,10 +330,6 @@
          <p>For each of the following R expressions, predict what data type the result will be:</p>
        </statement>
        <matches>
-         <match>
-           <premise><c>42 / 7</c></premise>
-           <response>numeric</response>
-         </match>
          <match>
            <premise><c>"42" + 8</c></premise>
            <response>error (can't add a number to a character string)</response>
@@ -321,8 +381,8 @@
        </statement>
      </activity>
      
-     <program interactive="webr" xml:id="prog-practice-template">
-       <code>
+     <sage language="r">
+       <input>
          # Exercise 1: Calculate the area of a circle with radius 5
          radius &lt;- 5
          # Insert your code here
@@ -341,30 +401,8 @@
          # Exercise 4: Determine if the average is greater than 20
          # Insert your code here
          
-       </code>
-     </program>
-     
-     <program interactive="webr" xml:id="prog-practice-solution">
-       <code>
-         # Exercise 1: Calculate the area of a circle with radius 5
-         radius &lt;- 5
-         area &lt;- pi * radius^2
-         area
-         
-         # Exercise 2: Convert 75°F to Celsius
-         fahrenheit &lt;- 75
-         celsius &lt;- (fahrenheit - 32) * 5/9
-         celsius
-         
-         # Exercise 3: Calculate the average of five numbers
-         numbers &lt;- c(18, 24, 32, 21, 15)
-         avg &lt;- mean(numbers)
-         avg
-         
-         # Exercise 4: Determine if the average is greater than 20
-         avg &gt; 20
-       </code>
-     </program>
+       </input>
+      </sage>
      
      <exercise xml:id="ex-debugging-practice">
        <title>Debugging Practice</title>
@@ -394,7 +432,7 @@
        <answer>
          <pre>
            # Calculate the final price of an item with tax
-           item_price &lt;- 29.99  # Changed = to &lt;- for consistency
+           item_price &lt;- 29.99  # Need to use &lt;- to assign variables
            tax_rate &lt;- 0.08
            
            # Calculate tax amount
