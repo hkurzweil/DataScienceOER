@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <chapter xml:id="ch-data-and-computational-foundations">
-  <title>Computational Foundations with Web-R</title>
+  <title>Data and Computational Foundations</title>
 
   <introduction>
     <p>This unit introduces the data foundations as well as the computational tools and techniques needed to work effectively with data. You'll learn the fundamentals of R programming using the Web-R platform, including data structures, importing and exploring datasets, and techniques for data transformation.</p>
   </introduction>
 
+ 
   <!-- TOPIC 5: INTRODUCTION TO WEB-R -->
   <section xml:id="sec-intro-to-web-r">
     <title>Introduction to Web-R</title>
@@ -432,8 +433,8 @@ print(test_number(0))
        <answer>
          <pre>
            # Calculate the final price of an item with tax
-           item_price &lt;- 29.99  # Need to use &lt;- to assign variables
-           tax_rate &lt;- 0.08
+           item_price &lt;- 29.99  # Proper syntax is to use &lt;- to assign variables
+           tax_rate &lt;- 0.08      #though = technically still works
            
            # Calculate tax amount
            tax_amount &lt;- item_price * tax_rate  # Changed 'x' to '*'
@@ -455,22 +456,21 @@ print(test_number(0))
    </subsection>
  </section>
 
- <!-- Session 10: Working with data structures -->
- <section xml:id="sec-data-structures">
+<section xml:id="sec-data-structures">
    <title>Working with data structures</title>
    
    <!-- Vectors, lists, and data frames -->
    <subsection xml:id="subsec-r-data-structures">
-     <title>Vectors, lists, and data frames</title>
+     <title>Lists and Dataframes</title>
      
-     <p>R provides several data structures for organizing and manipulating data:</p>
+     <p>R provides several data structures for organizing and manipulating dat, but we will be primarily working with:</p>
      
-     <definition xml:id="def-vector">
+         <definition xml:id="def-vector">
        <statement>
          <p>A <term>vector</term> is a one-dimensional collection of elements of the same data type. Vectors are created using the <c>c()</c> function.</p>
        </statement>
      </definition>
-     
+
      <definition xml:id="def-list">
        <statement>
          <p>A <term>list</term> is a flexible collection that can contain elements of different data types, including other lists. Lists are created using the <c>list()</c> function.</p>
@@ -483,31 +483,10 @@ print(test_number(0))
        </statement>
      </definition>
      
-     <definition xml:id="def-matrix">
-       <statement>
-         <p>A <term>matrix</term> is a two-dimensional collection of elements of the same data type, organized in rows and columns.</p>
-       </statement>
-     </definition>
-     
-     <program interactive="webr" xml:id="prog-data-structures">
-       <code>
-         # Vectors
-         # Creating vectors
-         numeric_vector &lt;- c(1, 2, 3, 4, 5)
-         character_vector &lt;- c("red", "green", "blue")
-         logical_vector &lt;- c(TRUE, FALSE, TRUE, TRUE)
-         
-         # Vector operations
-         numeric_vector + 10  # Add 10 to each element
-         numeric_vector * 2    # Multiply each element by 2
-         
-         # Vector indexing
-         numeric_vector[3]     # Access the third element
-         character_vector[c(1, 3)]  # Access first and third elements
-         logical_vector[logical_vector]  # Use logical indexing
-         
-         # Lists
-         # Creating a list
+     <sage language="r">
+       <input>
+        # Lists 
+        # Creating a list
          my_list &lt;- list(
            numbers = c(1, 2, 3),
            text = "Hello, R!",
@@ -540,67 +519,16 @@ print(test_number(0))
          student_df[, 2]      # Access a column by position
          student_df[3, ]      # Access a row
          student_df[2, 3]     # Access a specific element
-         
-         # Matrices
-         # Creating a matrix
-         my_matrix &lt;- matrix(1:12, nrow = 3, ncol = 4)
-         my_matrix
-         
-         # Matrix operations
-         my_matrix * 2
-         t(my_matrix)   # Transpose
-       </code>
-     </program>
-     
-     <exercise xml:id="ex-data-structures">
-       <title>Data Structures Practice</title>
-       <statement>
-         <p>Match each R code example with the appropriate data structure it creates:</p>
-       </statement>
-       <matches>
-         <match>
-           <premise><c>c(45, 67, 23, 89)</c></premise>
-           <response>Vector</response>
-         </match>
-         <match>
-           <premise><c>list(name = "John", scores = c(85, 92, 78))</c></premise>
-           <response>List</response>
-         </match>
-         <match>
-           <premise><c>data.frame(id = 1:3, name = c("A", "B", "C"))</c></premise>
-           <response>Data Frame</response>
-         </match>
-         <match>
-           <premise><c>matrix(1:9, nrow = 3)</c></premise>
-           <response>Matrix</response>
-         </match>
-       </matches>
-     </exercise>
+
+       </input>
+      </sage>
    </subsection>
    
    <!-- Creating and manipulating basic data structures -->
    <subsection xml:id="subsec-manipulating-structures">
      <title>Creating and manipulating basic data structures</title>
      
-     <p>Let's explore common operations for creating and manipulating data structures in R.</p>
-     
-     <p>Vector operations:</p>
-     <ul>
-       <li>
-         <p><term>Creating sequences</term>: <c>1:10</c>, <c>seq(1, 10, by = 2)</c>, <c>rep(1, 5)</c></p>
-       </li>
-       <li>
-         <p><term>Vector arithmetic</term>: <c>v1 + v2</c>, <c>v1 * v2</c> (element-wise operations)</p>
-       </li>
-       <li>
-         <p><term>Vector functions</term>: <c>length()</c>, <c>sum()</c>, <c>mean()</c>, <c>max()</c>, <c>min()</c></p>
-       </li>
-       <li>
-         <p><term>Subsetting</term>: <c>v[3]</c>, <c>v[1:3]</c>, <c>v[v > 5]</c>, <c>v[-2]</c> (exclude element)</p>
-       </li>
-     </ul>
-     
-     <p>Data frame operations:</p>
+     <p>Let's explore common operations for creating and manipulating data structures in R. Here are some common data frame operations:</p>
      <ul>
        <li>
          <p><term>Creating</term>: <c>data.frame()</c>, <c>as.data.frame()</c></p>
@@ -622,8 +550,8 @@ print(test_number(0))
        </li>
      </ul>
      
-     <program interactive="webr" xml:id="prog-manipulating-structures">
-       <code>
+     <sage language="r">
+       <input>
          # Vector creation and manipulation
          
          # Creating sequences
@@ -649,7 +577,7 @@ print(test_number(0))
          # Vector subsetting
          numbers[3]        # Third element
          numbers[c(1, 4)]  # First and fourth elements
-         numbers[numbers > 20]  # Elements greater than 20
+         numbers[numbers &gt; 20]  # Elements greater than 20
          numbers[-2]       # All except the second element
          
          # Data frame manipulation
@@ -682,7 +610,7 @@ print(test_number(0))
          # Selecting rows
          students[2, ]            # Second row
          students[1:3, ]          # First three rows
-         students[students$score >= 90, ]  # Rows where score is at least 90
+         students[students$score &gt;= 90, ]  # Rows where score is at least 90
          
          # Adding a new column
          students$grade &lt;- c("B", "A", "C", "A", "B")
@@ -705,57 +633,8 @@ print(test_number(0))
          # Adding the new row
          students &lt;- rbind(students, new_student)
          students
-       </code>
-     </program>
-     
-     <exercise xml:id="ex-manipulation">
-       <title>Data Structure Manipulation</title>
-       <statement>
-         <p>Complete the following tasks:</p>
-       </statement>
-       <exercise>
-         <statement>
-           <p>Create a vector containing the first 5 even numbers (2, 4, 6, 8, 10). Then calculate their sum and average.</p>
-         </statement>
-         <answer>
-           <pre>
-             # Create the vector
-             even_numbers &lt;- c(2, 4, 6, 8, 10)
-             # Or using a sequence
-             even_numbers &lt;- seq(2, 10, by = 2)
-             
-             # Calculate sum
-             sum(even_numbers)
-             # Output: 30
-             
-             # Calculate average
-             mean(even_numbers)
-             # Output: 6
-           </pre>
-         </answer>
-       </exercise>
-       <exercise>
-         <statement>
-           <p>Create a data frame with 3 columns: 'country' (character), 'population' (numeric in millions), and 'area' (numeric in thousand square km) for 4 countries of your choice. Then add a new column called 'density' that calculates population per square km (population / area).</p>
-         </statement>
-         <answer>
-           <pre>
-             # Create the data frame
-             countries &lt;- data.frame(
-               country = c("Canada", "Japan", "Brazil", "Germany"),
-               population = c(38, 126, 212, 83),  # in millions
-               area = c(9985, 378, 8516, 357)     # in thousand square km
-             )
-             
-             # Add density column (population per square km)
-             countries$density &lt;- countries$population / countries$area
-             
-             # View the result
-             countries
-           </pre>
-         </answer>
-       </exercise>
-     </exercise>
+       </input>
+      </sage>
    </subsection>
    
    <!-- Exercise: Building and transforming data structures -->
@@ -772,11 +651,11 @@ print(test_number(0))
            <li>
              <p>Create a data frame containing information for 5 students with the following columns:</p>
              <ul>
-               <li><p>student_id (numeric)</p></li>
+               <li><p>last_four_digits_student_id (numeric)</p></li>
                <li><p>name (character)</p></li>
                <li><p>age (numeric)</p></li>
                <li><p>major (character)</p></li>
-               <li><p>gpa (numeric)</p></li>
+               <li><p>gpa (numeric)   Note: you can use any GPA if you're not comfortable sharing</p></li>
              </ul>
            </li>
            <li>
@@ -795,8 +674,8 @@ print(test_number(0))
        </statement>
      </activity>
      
-     <program interactive="webr" xml:id="prog-build-dataset">
-       <code>
+     <sage language="r">
+       <input>
          # Step 1: Create the student data frame
          # Your code here
          
@@ -816,9 +695,11 @@ print(test_number(0))
          # Step 5: Calculate average GPA by major
          # Your code here
          
-       </code>
-     </program>
+       </input>
+      </sage>
      
+    <exercise xml:id="ex-student-dataset-answer">
+     <title>Answer</title>
      <program interactive="webr" xml:id="prog-build-dataset-solution">
        <code>
          # Step 1: Create the student data frame
@@ -851,6 +732,7 @@ print(test_number(0))
          avg_gpa_by_major
        </code>
      </program>
+     </exercise>
      
      <exercise xml:id="ex-challenge-task">
        <title>Challenge Task</title>
@@ -889,6 +771,420 @@ print(test_number(0))
    </subsection>
  </section>
 
+
+  <!--TOPIC 5: Data Cleaning and Organization-->
+  <section xml:id="sec-data-cleaning">
+  <title>Data Cleaning and Organizing</title>
+
+  <introduction>
+    <p>
+      Real-world data rarely comes in a perfect, analysis-ready format. Data cleaning (sometimes called data wrangling or data preprocessing) is the process of detecting and correcting errors, inconsistencies, and inaccuracies in datasets. It's often said that data scientists spend up to 80% of their time cleaning and organizing data, making this a critical skill in the data science workflow.
+    </p>
+  </introduction>
+
+  <subsection xml:id="subsec-why-clean-data">
+    <title>Why Clean Data Matters</title>
+    
+    <p>
+      Clean data is a prerequisite for reliable analysis. Working with messy data can lead to:
+    </p>
+    
+    <ul>
+      <li>Incorrect conclusions or predictions</li>
+      <li>Wasted time debugging analytical procedures</li>
+      <li>Difficulties reproducing results</li>
+      <li>Loss of credibility when presenting findings</li>
+    </ul>
+    
+    <p>
+      The concept of "garbage in, garbage out" is especially relevant in data science—even the most sophisticated analysis methods will produce flawed results if applied to poor-quality data.
+    </p>
+  </subsection>
+
+  <subsection xml:id="subsec-common-data-issues">
+    <title>Common Data Quality Issues</title>
+    
+    <p>
+      Before cleaning data, it's important to recognize common quality issues:
+    </p>
+    
+    <dl>
+      <li>
+        <title>Missing values</title>
+        <p>Data points that are absent from the dataset, often represented as NA in R</p>
+      </li>
+      <li>
+        <title>Duplicate records</title>
+        <p>Identical or nearly identical rows that appear multiple times</p>
+      </li>
+      <li>
+        <title>Outliers</title>
+        <p>Values that differ significantly from other observations and may represent errors</p>
+      </li>
+      <li>
+        <title>Inconsistent formatting</title>
+        <p>The same data represented differently (e.g., "New York" vs. "NY" vs. "N.Y.")</p>
+      </li>
+      <li>
+        <title>Incorrect data types</title>
+        <p>Data stored in inappropriate formats (e.g., dates stored as text)</p>
+      </li>
+      <li>
+        <title>Structural issues</title>
+        <p>Problems with how the data is organized (e.g., multiple values in a single cell)</p>
+      </li>
+    </dl>
+  </subsection>
+  
+  <subsection xml:id="subsec-data-cleaning-steps">
+    <title>Data Cleaning Process</title>
+    
+    <p>
+      A systematic approach to data cleaning typically includes:
+    </p>
+    
+    <ol>
+      <li>Inspecting the data to identify issues</li>
+      <li>Handling missing values through deletion or imputation</li>
+      <li>Correcting inconsistencies and errors</li>
+      <li>Validating and verifying the cleaned dataset</li>
+      <li>Documenting the cleaning process for reproducibility</li>
+    </ol>
+    
+    <p>
+      Let's explore how to perform these tasks in R.
+    </p>
+  </subsection>
+
+  <subsection xml:id="subsec-data-cleaning-R">
+    <title>Data Cleaning in R</title>
+    
+    <p>
+      R provides numerous functions and packages for data cleaning. Here are some fundamental techniques:
+    </p>
+    
+    <sage language="r">
+      <input>
+    # Load a sample dataset with quality issues
+    # For this example, we'll create one
+    messy_data &lt;- data.frame(
+    ID = c(1, 2, 2, 3, 4, NA),
+    Name = c("John Smith", "Jane doe", "Jane Doe", "bob wilson", NA, "Sarah Lee"),
+    Age = c(25, "thirty", 30, 22, 41, 38),
+    City = c("New York", "NY", "New York", "Los Angeles", "Chicago", ""),
+    Date = c("2023-01-15", "01/15/2023", "2023-01-15", "15-Jan-23", "2023/01/15", NA)
+      )
+
+# View the messy data
+print(messy_data)
+
+# Step 1: Inspecting the data
+str(messy_data)
+summary(messy_data)
+
+# Step 2: Handling missing values
+# Count missing values in each column
+sapply(messy_data, function(x) sum(is.na(x)))
+
+# Remove rows with any missing values
+clean_data1 &lt;- na.omit(messy_data)
+
+# Or, fill missing values (imputation)
+messy_data$ID[is.na(messy_data$ID)] &lt;- 0
+messy_data$Name[is.na(messy_data$Name)] &lt;- "Unknown"
+
+# Step 3: Removing duplicates
+# Identify duplicates
+duplicated(messy_data$ID)
+
+# Remove duplicate rows based on ID column
+clean_data2 &lt;- messy_data[!duplicated(messy_data$ID),]
+
+# Step 4: Standardize text data
+# Convert names to proper case
+proper_case &lt;- function(x) {
+  return(gsub("\\b([a-z])", "\\U\\1", tolower(x), perl=TRUE))
+}
+
+messy_data$Name &lt;- proper_case(messy_data$Name)
+
+# Standardize city names
+messy_data$City[messy_data$City == "NY"] &lt;- "New York"
+messy_data$City[messy_data$City == ""] &lt;- NA
+
+# Step 5: Convert data types
+# Convert Age to numeric
+messy_data$Age &lt;- as.numeric(as.character(messy_data$Age))
+# This will produce a warning about NAs introduced by coercion
+
+# Step 6: Standardize date formats
+# This requires a more complex approach, using lubridate package
+# install.packages("lubridate")
+library(lubridate)
+
+# Parse dates in different formats
+parse_date &lt;- function(date_str) {
+  if (is.na(date_str)) return(NA)
+  
+  # Try different formats
+  date &lt;- try(ymd(date_str), silent = TRUE)
+  if (inherits(date, "try-error") || is.na(date)) date &lt;- try(mdy(date_str), silent = TRUE)
+  if (inherits(date, "try-error") || is.na(date)) date &lt;- try(dmy(date_str), silent = TRUE)
+  
+  return(date)
+}
+
+# Apply the function to standardize dates
+messy_data$Date &lt;- sapply(messy_data$Date, parse_date)
+
+# Final look at the cleaned data
+print(messy_data)
+
+# Document changes for reproducibility (in practice, you would save this to a file)
+cleaning_log &lt;- c(
+  "1. Replaced missing IDs with 0",
+  "2. Replaced missing names with 'Unknown'",
+  "3. Standardized case for names",
+  "4. Standardized city names (NY → New York)",
+  "5. Converted Age column to numeric",
+  "6. Standardized date formats using lubridate"
+)
+
+print(cleaning_log)
+      </input>
+    </sage>
+    
+    <p>
+      The above example demonstrates basic data cleaning techniques. For more complex datasets, specialized packages like <c>tidyr</c>, <c>dplyr</c>, and <c>janitor</c> offer powerful tools.
+    </p>
+  </subsection>
+  
+  <subsection xml:id="subsec-tidy-data">
+    <title>Tidy Data Principles</title>
+    
+    <p>
+      "Tidy data" is a standard way of organizing data that makes analysis easier. According to Hadley Wickham, tidy data has the following characteristics:
+    </p>
+    
+    <ol>
+      <li>Each variable forms a column</li>
+      <li>Each observation forms a row</li>
+      <li>Each type of observational unit forms a table</li>
+    </ol>
+    
+    <p>
+      The <c>tidyr</c> package helps reshape data to meet these principles:
+    </p>
+    
+    <program language="r">
+      <input>
+# Load tidyr package
+library(tidyr)
+
+# Create a messy dataset where columns represent years
+untidy_data &lt;- data.frame(
+  country = c("USA", "Canada", "Mexico"),
+  `2018` = c(100, 90, 85),
+  `2019` = c(105, 92, 87),
+  `2020` = c(98, 88, 84)
+)
+
+print(untidy_data)
+
+# Convert to tidy format - each row is a country-year observation
+tidy_data &lt;- pivot_longer(
+  untidy_data, 
+  cols = c(`2018`, `2019`, `2020`), 
+  names_to = "year", 
+  values_to = "score"
+)
+
+print(tidy_data)
+
+# The reverse operation - from tidy to wide format
+wide_data &lt;- pivot_wider(
+  tidy_data,
+  names_from = year,
+  values_from = score
+)
+
+print(wide_data)
+      </input>
+    </program>
+  </subsection>
+  
+  <subsection xml:id="subsec-data-validation">
+    <title>Data Validation</title>
+    
+    <p>
+      After cleaning, it's essential to validate your data to ensure it meets quality standards:
+    </p>
+    
+    <program language="r">
+      <input>
+# Create a simple cleaned dataset for validation
+clean_data &lt;- data.frame(
+  ID = 1:5,
+  Age = c(25, 30, 22, 41, 38),
+  Income = c(45000, 52000, 0, 63000, 58000)
+)
+
+# Validation checks
+validation_results &lt;- list(
+  # Check for missing values
+  missing_values = any(is.na(clean_data)),
+  
+  # Check for duplicates
+  duplicates = any(duplicated(clean_data$ID)),
+  
+  # Check value ranges
+  age_in_range = all(clean_data$Age &gt;= 0 &amp; clean_data$Age &lt; 120),
+  
+  # Check for suspicious values
+  suspicious_income = any(clean_data$Income == 0)
+)
+
+print(validation_results)
+
+# Create a validation report
+for (check in names(validation_results)) {
+  status &lt;- if(check == "suspicious_income") {
+    ifelse(validation_results[[check]], "WARNING", "PASS")
+  } else {
+    ifelse(validation_results[[check]], "FAIL", "PASS")
+  }
+  
+  cat(check, ": ", status, "\n", sep="")
+}
+      </input>
+    </program>
+  </subsection>
+  
+  <conclusion>
+    <p>
+      Data cleaning is an iterative process that requires careful attention to detail and domain knowledge. While it may not be the most glamorous part of data science, it is undoubtedly one of the most important. Clean, well-organized data sets the foundation for all subsequent analysis and modeling tasks.
+    </p>
+  </conclusion>
+  
+  <exercise xml:id="ex-data-cleaning">
+    <title>Data Cleaning Practice</title>
+    <statement>
+      <p>
+        Given the following dataset of student records with various issues, apply data cleaning techniques to address the problems:
+      </p>
+      <program language="r">
+        <input>
+# Student records with quality issues
+students &lt;- data.frame(
+  ID = c(101, 102, 102, 103, NA, 105),
+  Name = c("john smith", "JANE DOE", "Jane Doe", "Sam Brown", "Alex Johnson", ""),
+  Score = c(85, "A", 92, 78, 65, 90),
+  Grade = c("B", "A", "A-", "C+", "D", "A-"),
+  Date_Enrolled = c("2023-09-01", "09/01/2023", "2023-09-01", "Sept 1, 2023", NA, "01-09-2023")
+)
+
+# Your cleaning tasks:
+# 1. Handle duplicate student IDs (keep the higher score)
+# 2. Fill in missing or empty values
+# 3. Standardize name formats (proper case)
+# 4. Ensure Score is numeric (convert "A" to 95)
+# 5. Standardize date formats
+# 6. Validate the cleaned data
+        </input>
+      </program>
+    </statement>
+    <answer>
+      <program language="r">
+        <input>
+# Load required packages
+library(dplyr)
+library(lubridate)
+
+# First look at the data
+print(students)
+str(students)
+
+# Define a proper case function
+proper_case &lt;- function(x) {
+  return(gsub("\\b([a-z])", "\\U\\1", tolower(x), perl=TRUE))
+}
+
+# Clean the data
+cleaned_students &lt;- students %&gt;%
+  # Convert Score to numeric (A = 95)
+  mutate(Score = case_when(
+    Score == "A" ~ 95,
+    TRUE ~ as.numeric(as.character(Score))
+  )) %&gt;%
+  # Handle duplicates - keep row with higher score
+  group_by(ID) %&gt;%
+  slice_max(Score, with_ties = FALSE) %&gt;%
+  ungroup() %&gt;%
+  # Standardize names
+  mutate(Name = proper_case(Name)) %&gt;%
+  # Fill missing/empty values
+  mutate(
+    ID = if_else(is.na(ID), 999, ID),
+    Name = if_else(Name == "", "Unknown", Name)
+  )
+
+# Parse and standardize dates
+parse_date &lt;- function(date_str) {
+  if (is.na(date_str) || date_str == "") return(as.Date("2023-09-01"))
+  
+  # Try different formats
+  date &lt;- try(ymd(date_str), silent = TRUE)
+  if (inherits(date, "try-error") || is.na(date)) date &lt;- try(mdy(date_str), silent = TRUE)
+  if (inherits(date, "try-error") || is.na(date)) date &lt;- try(dmy(date_str), silent = TRUE)
+  if (inherits(date, "try-error") || is.na(date)) {
+    # Handle text dates like "Sept 1, 2023"
+    if (grepl("Sept", date_str)) {
+      date &lt;- as.Date("2023-09-01")
+    }
+  }
+  
+  return(date)
+}
+
+# Apply date parsing
+cleaned_students$Date_Enrolled &lt;- sapply(students$Date_Enrolled, parse_date)
+
+# Validate the cleaned data
+validation_checks &lt;- list(
+  no_missing_values = !any(is.na(cleaned_students)),
+  no_duplicates = !any(duplicated(cleaned_students$ID)),
+  all_scores_numeric = is.numeric(cleaned_students$Score),
+  all_dates_standardized = all(class(cleaned_students$Date_Enrolled) == "Date")
+)
+
+# Print validation results
+print(validation_checks)
+
+# Display the cleaned dataset
+print(cleaned_students)
+        </input>
+      </program>
+    </answer>
+  </exercise>
+  
+  <checkpoint xml:id="chk-data-cleaning">
+    <title>Data Cleaning Concepts</title>
+    
+    <p>
+      Which of the following are key principles of "tidy data"? Select all that apply.
+    </p>
+    
+    <ol marker="A.">
+      <li>Each variable forms a column</li>
+      <li>Missing values should be replaced with zeros</li>
+      <li>Each observation forms a row</li>
+      <li>Variable names should be in uppercase</li>
+      <li>Each type of observational unit forms a table</li>
+    </ol>
+  </checkpoint>
+  
+</section>
+ 
 <!-- TOPIC 6: DATA IMPORT AND EXPLORATION -->
   <section xml:id="sec-data-import">
     <title>Data Import and Exploration</title>
